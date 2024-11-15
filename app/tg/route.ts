@@ -18,11 +18,11 @@ bot.command("echo", async (ctx) => {
   }
 
   await ctx.reply(ctx.match);
-})
+});
 
 let inited = false;
 const initTelegram = async () => {
-  if (inited){
+  if (inited) {
     return;
   }
 
@@ -30,19 +30,20 @@ const initTelegram = async () => {
   await bot.api.setMyCommands([
     { command: "echo", description: "Echo the message" },
   ]);
-  
 
-  const webhookUrl = `${baseUrl}/tg`
-  console.log("setting up telegram webhook at", webhookUrl, "...")
-  await bot.api.setWebhook(webhookUrl, { secret_token: webhookSecret, } )
+  const webhookUrl = `${baseUrl}/tg`;
+  console.log("setting up telegram webhook at", webhookUrl, "...");
+  await bot.api.setWebhook(webhookUrl, { secret_token: webhookSecret });
 
   inited = true;
   return;
-}
+};
 
-const callback = webhookCallback(bot, "std/http", { secretToken: webhookSecret });
+const callback = webhookCallback(bot, "std/http", {
+  secretToken: webhookSecret,
+});
 export const POST = async (req: NextRequest) => {
   await initTelegram();
   const res = await callback(req);
   return res;
-}
+};
