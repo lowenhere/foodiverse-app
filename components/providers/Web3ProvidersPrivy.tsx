@@ -3,7 +3,7 @@ import { PropsWithChildren } from "react";
 import { PrivyProvider } from "@privy-io/react-auth";
 import { sepolia } from "viem/chains";
 
-export default function Web3ProvidersPrivy({ children }: PropsWithChildren) {
+export function Web3ProvidersPrivy({ children }: PropsWithChildren) {
   const privyAppId = process.env.NEXT_PUBLIC_PRIVY_APP_ID;
 
   if (!privyAppId) {
@@ -14,11 +14,6 @@ export default function Web3ProvidersPrivy({ children }: PropsWithChildren) {
   return (
     <PrivyProvider
       appId={privyAppId}
-      clientId={
-        process.env.NODE_ENV === "production"
-          ? undefined
-          : "client-WY2o7SWZviVQ5FJdYhRbFWyUnXae2XhwPGexM2YFMeBPD"
-      }
       config={{
         loginMethods: ["email", "wallet"],
         appearance: {

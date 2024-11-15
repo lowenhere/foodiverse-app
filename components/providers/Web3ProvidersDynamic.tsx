@@ -1,41 +1,46 @@
-'use client';
-
-import {
-  DynamicContextProvider,
-  DynamicWidget,
-} from '@dynamic-labs/sdk-react-core';
-import { EthereumWalletConnectors } from '@dynamic-labs/ethereum';
-import { DynamicWagmiConnector } from '@dynamic-labs/wagmi-connector';
-import { createConfig, WagmiProvider } from 'wagmi';
-import { QueryClient, QueryClientProvider } from '@tanstack/react-query';
-import { http } from 'viem';
-import { base } from 'viem/chains';
+import { DynamicContextProvider } from "@dynamic-labs/sdk-react-core";
+import { EthereumWalletConnectors } from "@dynamic-labs/ethereum";
+import { DynamicWagmiConnector } from "@dynamic-labs/wagmi-connector";
+import { createConfig, WagmiProvider } from "wagmi";
+import { QueryClient, QueryClientProvider } from "@tanstack/react-query";
+import { http } from "viem";
+import { sepolia, mainnet, arbitrumSepolia } from "viem/chains";
 
 const config = createConfig({
-  chains: [base],
-  multiInjectedProviderDiscovery: false,
+  chains: [sepolia, mainnet, arbitrumSepolia],
   transports: {
-    [base.id]: http(),
+    [sepolia.id]: http(),
+    [mainnet.id]: http(),
+    [arbitrumSepolia.id]: http(),
   },
 });
 
 const queryClient = new QueryClient();
 
-export function Web3ProvidersDynamic({ children }: { children: React.ReactNode }) {
+const dynamicEnvironmentId =
+  process.env.NEXT_PUBLIC_DYNAMIC_ENVIRONMENT_ID || "";
+
+if (!dynamicEnvironmentId) {
+  throw new Error("NEXT_PUBLIC_DYNAMIC_ENVIRONMENT_ID is not set");
+}
+
+export function Web3ProvidersDynamic({
+  children,
+}: {
+  children: React.ReactNode;
+}) {
   return (
     <DynamicContextProvider
       settings={{
-        environmentId: process.env.NEXT_PUBLIC_DYNAMIC_ENVIRONMENT_ID || '',
+        environmentId: dynamicEnvironmentId,
         walletConnectors: [EthereumWalletConnectors],
       }}
     >
       <WagmiProvider config={config}>
         <QueryClientProvider client={queryClient}>
-          <DynamicWagmiConnector>
-            {children}
-          </DynamicWagmiConnector>
+          <DynamicWagmiConnector>{children}</DynamicWagmiConnector>
         </QueryClientProvider>
       </WagmiProvider>
     </DynamicContextProvider>
   );
-} 
+}
