@@ -6,7 +6,6 @@ const BASE_URL = process.env.NEXT_PUBLIC_BASE_URL ?? "";
 const LOGIN_URL = BASE_URL + "/app/tg_login";
 
 const startHandler = async (ctx: any) => {
-  // Extract user data from the context
   const userData = {
     authDate: Math.floor(new Date().getTime()),
     firstName: ctx.update.message.from.first_name,
@@ -28,10 +27,14 @@ const startHandler = async (ctx: any) => {
     TOKEN, // Use the bot token to sign the JWT
     { algorithm: "HS256" },
   );
-  // console.log("[DEBUG] JWT generated for user", userData);
 
-  // URL-encode the generated JWT for safe usage in a URL
+  let storeId = "1";
+  if (ctx.match.length > 0){
+    storeId = ctx.match;
+  }
+
   const encodedTelegramAuthToken = encodeURIComponent(telegramAuthToken);
+  const encodedReferrer = encodeURIComponent(`/app/store/${storeId}`);
 
   // Create the inline keyboard with the Mini Web App button
   const keyboard = {
@@ -41,7 +44,7 @@ const startHandler = async (ctx: any) => {
           {
             text: "Enter the Foodiverse 🚀",
             web_app: {
-              url: `${LOGIN_URL}/?telegramAuthToken=${encodedTelegramAuthToken}`,
+              url: `${LOGIN_URL}/?telegramAuthToken=${encodedTelegramAuthToken}&referrer=${encodedReferrer}`,
             },
           },
         ],

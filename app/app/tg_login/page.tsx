@@ -16,13 +16,17 @@ export default function TgLoginPage() {
   const { telegramSignIn, isAuthWithTelegram } = useTelegramLogin();
   const isLoggedIn = useIsLoggedIn();
 
+  const referrerParam = searchParams.get("referrer");
+  const referrer =
+    referrerParam !== null ? decodeURIComponent(referrerParam) : "/app/store/1";
+
   useEffect(() => {
     if (!sdkHasLoaded){
       return;
     }
 
     if (isLoggedIn){
-      router.push("/app/store/1");
+      router.push(referrer);
       return;
     }
 
@@ -31,12 +35,6 @@ export default function TgLoginPage() {
       await telegramSignIn({ forceCreateUser: true });
     })()
   }, [sdkHasLoaded, isLoggedIn]);
-
-  const referrerParam = searchParams.get("referrer");
-  const referrer =
-    referrerParam !== null ? decodeURIComponent(referrerParam) : "/";
-
-  const { authProvider } = settings;
 
   return <SpinnerPage message="Loading TG Login ..." />;
 }
