@@ -10,9 +10,11 @@
     "format": "prettier --write ."
   },
   "dependencies": {
+    "@apollo/client": "^3.11.10",
     "@dynamic-labs/ethereum": "^3.6.3",
     "@dynamic-labs/sdk-react-core": "^3.6.3",
     "@dynamic-labs/wagmi-connector": "^3.6.3",
+    "@ethsign/sp-sdk": "^0.7.7",
     "@headlessui/react": "^2.2.0",
     "@heroicons/react": "^2.1.5",
     "@privy-io/react-auth": "^1.94.2",
@@ -28,8 +30,7 @@
     "react-dom": "18.3.1",
     "uuid": "^11.0.3",
     "viem": "^2.21.45",
-    "wagmi": "^2.12.33",
-    "@ethsign/sp-sdk": "^0.7.7"
+    "wagmi": "^2.12.33"
   },
   "devDependencies": {
     "@types/node": "^20",
