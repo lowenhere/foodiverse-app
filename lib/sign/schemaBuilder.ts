@@ -110,6 +110,7 @@ export const createOrderSchema = async (walletClient: WalletClient) => {
             { name: "createdAt", type: "uint256" },
             { name: "updatedAt", type: "uint256" },
             { name: "restaurantId", type: "string" },
+            { name: "items", type: "string[]" },
             { name: "total", type: "uint256" },
         ],
     };
