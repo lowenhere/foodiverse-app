@@ -12,20 +12,23 @@ import {
 } from "@/components/ui/dropdown-menu";
 import { Button } from "@/components/ui/button";
 
-import { useStore } from "@/components/providers/StoreProvider";
-
 type NavBarProps = {
+  title?: string;
+  href?: string;
   profileImageSrc?: string;
+  referrer?: string;
   loggedIn?: boolean;
   children?: React.ReactNode[];
 };
 
 const NavBar: React.FC<NavBarProps> = ({
+  title = "Foodiverse",
+  href = "",
   profileImageSrc,
   loggedIn = false,
+  referrer = "",
   children = [],
 }) => {
-  const storeData = useStore();
   const [isMenuOpen, setIsMenuOpen] = React.useState(false);
 
   const profileIcon = profileImageSrc ? (
@@ -34,11 +37,16 @@ const NavBar: React.FC<NavBarProps> = ({
     <User />
   );
 
+  let params = "";
+  if (referrer){
+    params = `?referrer=${encodeURIComponent(referrer)}`;
+  }
+
   const dropdownItems = [
-    { name: "Profile", to: "/app/profile", visible: true },
+    { name: "Profile", to: "/app/profile", visible: loggedIn },
     { name: "Settings", to: "/app/settings", visible: true },
-    { name: "Login", to: "/app/login", visible: !loggedIn },
-    { name: "Logout", to: "/app/logout", visible: loggedIn },
+    { name: "Login", to: "/app/login" + params, visible: !loggedIn },
+    { name: "Logout", to: "/app/logout" + params, visible: loggedIn },
   ]
     .filter((d) => d.visible)
     .map(({ name, to }) => (
@@ -53,11 +61,11 @@ const NavBar: React.FC<NavBarProps> = ({
         <div className="flex items-center justify-between h-16">
           <div className="flex items-center">
             <Link
-              href={`/app/store/${storeData.data?.id}`}
+              href={href}
               className="flex-shrink-0"
             >
               <span className="text-l font-bold text-primary">
-                {storeData.data?.name ?? "Foodiverse"}
+                {title}
               </span>
             </Link>
           </div>

@@ -1,10 +1,12 @@
 "use client";
 import { ReactNode } from "react";
-import { useParams } from "next/navigation";
+import { useParams, usePathname } from "next/navigation";
+import { usePrivy } from "@privy-io/react-auth";
 
 import StoreNavBar from "@/components/StoreNavBar";
-import { StoreProvider } from "@/components/providers/StoreProvider";
+import { StoreProvider, useStore } from "@/components/providers/StoreProvider";
 import { CartProvider } from "@/components/providers/CartProvider";
+import { useSettings } from "@/components/providers/SettingsProvider";
 
 export default function StoreLayout({
   children,
@@ -12,15 +14,36 @@ export default function StoreLayout({
   children: ReactNode;
 }>) {
   const { storeId } = useParams<{ storeId: string }>();
+  const pathname = usePathname();
+
+  const { authenticated: privyAuthed } = usePrivy();
+  const { settings } = useSettings();
+
+  let loggedIn = false;
+  if (settings.authProvider === "privy"){
+    loggedIn = privyAuthed;
+  }
 
   return (
     <StoreProvider storeId={storeId}>
       <CartProvider storeId={storeId}>
-        <StoreNavBar />
+        <NavBar loggedIn={loggedIn} pathname={pathname}/>
         <main className="container h-full flex flex-col items-center p-4">
           {children}
         </main>
       </CartProvider>
     </StoreProvider>
+  );
+}
+
+const NavBar = ({ loggedIn, pathname }: { loggedIn: boolean, pathname: string }) => {
+  const { data } = useStore();  
+  return (
+    <StoreNavBar
+      title={data?.name}
+      href={`/app/store/${data?.id}`}
+      loggedIn={loggedIn} 
+      referrer={pathname}
+    />
   );
 }

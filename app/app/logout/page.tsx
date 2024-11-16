@@ -3,9 +3,9 @@ import React, { useEffect } from "react";
 import { useSearchParams } from 'next/navigation'
 
 import { useSettings } from "@/components/providers/SettingsProvider";
-import PrivyLogin from "@/app/app/login/privy";
+import PrivyLogout from "@/app/app/logout/privy";
 
-export default function LoginPage() {
+export default function LogoutPage() {
   const searchParams = useSearchParams();  
   const { settings } = useSettings();
 
@@ -15,7 +15,7 @@ export default function LoginPage() {
   const { authProvider } = settings;
 
   if (authProvider === "privy"){
-    return <PrivyLogin referrer={referrer}/>
+    return <PrivyLogout referrer={referrer}/>
   }
 
   return <p>Not Implemented</p>

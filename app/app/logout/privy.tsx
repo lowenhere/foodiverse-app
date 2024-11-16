@@ -5,12 +5,12 @@ import { usePrivy } from "@privy-io/react-auth";
 
 import SpinnerPage from "@/components/SpinnerPage";
 
-type PrivyLoginPageProps = {
+type PrivyLogoutPageProps = {
   referrer: string,
 }
 
-export default function PrivyLoginPage({ referrer }: PrivyLoginPageProps) {
-  const { ready, authenticated, login } = usePrivy();
+export default function PrivyLogoutPage({ referrer }: PrivyLogoutPageProps) {
+  const { ready, authenticated, logout } = usePrivy();
   const router = useRouter();
 
   useEffect(() => {
@@ -18,16 +18,16 @@ export default function PrivyLoginPage({ referrer }: PrivyLoginPageProps) {
       return;
     }
 
-    if (authenticated) {
+    if (!authenticated) {
       router.push(referrer);
       return;
     }
 
-    login();
+    logout();
   }, [ready, authenticated]);
 
   if (!ready) {
-    return <SpinnerPage message="setting up privy login ..." />;
+    return <SpinnerPage message="privy logout ..." />;
   }
 
   return <></>;

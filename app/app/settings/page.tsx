@@ -13,6 +13,7 @@ import {
 } from "@/components/ui/select";
 import { useToast } from "@/hooks/use-toast";
 
+import StoreNavBar from "@/components/StoreNavBar";
 import { useSettings, Settings } from "@/components/providers/SettingsProvider";
 
 export default function SettingsPage() {
@@ -31,6 +32,8 @@ export default function SettingsPage() {
   };
 
   return (
+    <>
+    <StoreNavBar />
     <main className="container h-full flex flex-col items-center p-4">
       <div className="flex items-center w-full mb-4">
         <Button
@@ -68,5 +71,6 @@ export default function SettingsPage() {
         </form>
       </Form>
     </main>
+    </>
   );
 }

@@ -34,7 +34,7 @@ export function Web3ProvidersPrivy({ children }: PropsWithChildren) {
       appId={privyAppId}
       clientId={privyClientId}
       config={{
-        loginMethods: ["email", "wallet"],
+        loginMethods: ["wallet", "google"],
         appearance: {
           theme: "dark",
         },
