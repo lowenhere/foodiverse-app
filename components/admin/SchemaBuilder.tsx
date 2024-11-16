@@ -16,7 +16,7 @@ import {
 import { createMockDataFromJson } from "@/lib/sign/mockData";
 import { FoodiverseSDK } from "@/lib/sign";
 import { getPrivateKeyAccount } from "@/lib/sign/privateKey";
-import storeData from "@/app/api/store/[storeId]/21.json";
+import storeData from "@/app/api/store/[storeId]/1.json";
 
 export const SchemaBuilder = () => {
   const { data: walletClient } = useWalletClient();

@@ -20,13 +20,14 @@ export default function DynamicLoginPage({ referrer }: DynamicLoginPageProps) {
   const { sdkHasLoaded } = useDynamicContext();
   const isLoggedIn = useIsLoggedIn();
 
+  useEffect(() => {
+    if (isLoggedIn) {
+      router.push(referrer);
+    }
+  }, [isLoggedIn])
+
   if (!sdkHasLoaded) {
     return <SpinnerPage message="setting up dynamic login ..." />;
-  }
-
-  if (isLoggedIn) {
-    router.push(referrer);
-    return <></>;
   }
 
   return (
