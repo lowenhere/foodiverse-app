@@ -5,7 +5,7 @@ import {
 } from "@/lib/generated";
 import { Address } from "viem";
 import { Config, switchChain } from "@wagmi/core";
-import { sepolia } from "viem/chains";
+import { sepolia, baseSepolia } from "viem/chains";
 
 export interface ENSRegistrationResult {
     success: boolean;
@@ -21,7 +21,7 @@ export async function registerENS(
     try {
         // Change chain to Base Sepolia
         // Using the correct chain ID for Base Sepolia
-        await switchChain(wagmiConfig, { chainId: 11155111 }); // Sepolia chain ID
+        await switchChain(wagmiConfig, { chainId: baseSepolia.id }); // Sepolia chain ID
 
         // Register the name
         const tx = await writeFoodiverseRegistrarRegister(wagmiConfig, {
