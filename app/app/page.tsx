@@ -2,7 +2,6 @@
 
 import { SendZeroEth } from "@/components/SendZeroEth";
 import { DynamicButton } from "@/components/dynamic/DynamicButton";
-import ConnectWeb3AuthButton from "@/components/web3auth/ConnectWeb3AuthButton";
 import { PrivyButton } from "@/components/privy/PrivyButton";
 
 export default function AppHome() {
@@ -10,7 +9,7 @@ export default function AppHome() {
   return (
     <div className="flex flex-col gap-4">
       <DynamicButton />
-      <ConnectWeb3AuthButton />
+
       <PrivyButton />
       <SendZeroEth />
     </div>

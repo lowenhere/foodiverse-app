@@ -5,7 +5,6 @@ import { createConfig, WagmiProvider } from "wagmi";
 import { QueryClient, QueryClientProvider } from "@tanstack/react-query";
 import { http } from "viem";
 import { sepolia, mainnet, arbitrumSepolia } from "viem/chains";
-// import Web3AuthConnectorInstance from "./Web3AuthConnectorInstance";
 
 const config = createConfig({
   chains: [sepolia, mainnet, arbitrumSepolia],
