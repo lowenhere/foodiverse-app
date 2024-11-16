@@ -7,8 +7,8 @@ type AppConfig = {
   supportedChains: Chain[];
 };
 
-const config: AppConfig = {
-  defaultChain: sepolia,
+export const config: AppConfig = {
+  defaultChain: baseSepolia,
   supportedChains: [sepolia, mainnet, base, baseSepolia],
 };
 
@@ -17,7 +17,7 @@ export const wagmiConfig = createConfig({
   transports: {
     [sepolia.id]: http(),
     [mainnet.id]: http(),
-    [baseSepolia.id]: http(),
+    [baseSepolia.id]: http("https://base-sepolia-rpc.publicnode.com"),
     [base.id]: http(),
   },
   connectors: [],

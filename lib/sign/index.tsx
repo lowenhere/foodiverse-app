@@ -26,36 +26,32 @@ import type {
 } from "./types";
 import { getShortSchemaId, parseAttestationData } from "./utils";
 import { v4 as uuidv4 } from "uuid";
+import { SmartAccountClient } from "permissionless/clients";
 
 export class FoodiverseSDK {
   private client: SignProtocolClient;
   private indexService: IndexService;
-  private walletClient: WalletClient | undefined;
+  private smartAccountClient: SmartAccountClient | undefined;
   private account: PrivateKeyAccount | undefined;
 
-  constructor(account?: PrivateKeyAccount, walletClient?: WalletClient) {
-    if (walletClient) {
+  constructor(smartAccountClient: SmartAccountClient) {
+    if (smartAccountClient) {
       this.client = new SignProtocolClient(SpMode.OnChain, {
         chain: EvmChains.baseSepolia,
-        walletClient: walletClient,
+        walletClient: smartAccountClient,
       });
-      this.walletClient = walletClient;
-    } else {
-      if (!account) throw new Error("Account is required");
-      this.client = new SignProtocolClient(SpMode.OnChain, {
-        chain: EvmChains.baseSepolia,
-        account: account,
-      });
-      this.account = account;
-    }
 
+      this.smartAccountClient = smartAccountClient;
+    } else {
+      throw new Error("Either account or smartAccountClient is required");
+    }
     this.indexService = new IndexService("testnet");
   }
 
   getAttester(): Address {
     return (
-      (this.account?.address as Address) ||
-      (this.walletClient?.account?.address as Address)
+      (this.smartAccountClient?.account?.address as Address) ||
+      (this.account?.address as Address)
     );
   }
 
@@ -120,7 +116,7 @@ export class FoodiverseSDK {
       attester: this.getAttester(),
       indexingValue: `foodiverse_restaurant_orders_${order.restaurantId}`,
     });
-    return result.attestationId;
+    return result;
   }
 
   async createOrderItem(orderItem: OrderItemType): Promise<string> {
@@ -154,7 +150,7 @@ export class FoodiverseSDK {
 
   async createOrderWithItems(
     restaurantId: string,
-    items: string[],
+    items: { menuItemId: string; quantity: number; notes?: string }[],
   ): Promise<string> {
     console.log("Creating order with items:", { restaurantId, items });
 
@@ -162,33 +158,59 @@ export class FoodiverseSDK {
     const menuItems = await this.getMenuItemsByMenuId(restaurantId);
     const menuItemsMap = new Map(menuItems.map((item) => [item.id, item]));
 
-    // Calculate total from items
+    // Calculate total and create order items
+    const orderItems: OrderItemType[] = [];
+    let total = BigInt(0);
 
-    // Create order with only the fields defined in the schema
-    const orderData = {
+    for (const item of items) {
+      const menuItem = menuItemsMap.get(item.menuItemId);
+      if (!menuItem) throw new Error(`Menu item ${item.menuItemId} not found`);
+      if (!menuItem.isAvailable)
+        throw new Error(`Menu item ${menuItem.name} is not available`);
+
+      // Convert price to BigInt and calculate total
+      const itemPrice = BigInt(menuItem.price);
+      const quantity = BigInt(item.quantity);
+      const itemTotal = itemPrice * quantity;
+      total += itemTotal;
+
+      orderItems.push({
+        id: uuidv4(),
+        orderId: "", // Will be set after order creation
+        menuItemId: item.menuItemId,
+        menuItem: menuItem,
+        quantity: item.quantity,
+        notes: item.notes,
+        price: Number(itemPrice),
+      });
+    }
+
+    // Create order
+    const order: OrderType = {
       id: uuidv4(),
       status: "pending",
       createdAt: Math.floor(Date.now() / 1000),
       updatedAt: Math.floor(Date.now() / 1000),
       restaurantId,
-      items: items,
+      items: orderItems,
+      total: Number(total),
     };
 
-    console.log("Created order data:", orderData);
+    console.log("Created order object:", order);
 
     try {
       // Create order attestation first
-      const orderResult = await this.client.createAttestation({
-        schemaId: getShortSchemaId(ORDER_SCHEMA_ID),
-        data: orderData,
-        attester: this.getAttester(),
-        linkedAttestationId: "", // Link to restaurant
-        indexingValue: `foodiverse_restaurant_orders_${restaurantId}`,
-      });
-
+      const orderResult = await this.createOrder(order);
       console.log("Order attestation created:", orderResult);
 
-      return orderResult.attestationId;
+      // Create attestations for each order item
+      for (const item of orderItems) {
+        item.orderId = order.id;
+        const itemResult = await this.createOrderItem(item);
+        console.log("Order item attestation created:", itemResult);
+      }
+
+      return orderResult;
     } catch (error) {
       console.error("Error creating order:", error);
       throw error;
