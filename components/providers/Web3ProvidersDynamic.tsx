@@ -4,14 +4,14 @@ import { DynamicWagmiConnector } from "@dynamic-labs/wagmi-connector";
 import { createConfig, WagmiProvider } from "wagmi";
 import { QueryClient, QueryClientProvider } from "@tanstack/react-query";
 import { http } from "viem";
-import { sepolia, mainnet, baseSepolia } from "viem/chains";
+import { sepolia, mainnet, arbitrumSepolia } from "viem/chains";
 
 const config = createConfig({
-  chains: [sepolia, mainnet, baseSepolia],
+  chains: [sepolia, mainnet, arbitrumSepolia],
   transports: {
     [sepolia.id]: http(),
     [mainnet.id]: http(),
-    [baseSepolia.id]: http(),
+    [arbitrumSepolia.id]: http(),
   },
   connectors: [],
 });
