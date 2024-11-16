@@ -23,28 +23,6 @@ export const createUserSchema = async (walletClient: WalletClient) => {
     return await client.createSchema(schema);
 };
 
-export const createMerchantSchema = async (walletClient: WalletClient) => {
-    const client = new SignProtocolClient(SpMode.OnChain, {
-        chain: EvmChains.baseSepolia,
-        walletClient,
-    });
-
-    const schema: Schema = {
-        name: 'Foodiverse Merchant',
-        description: 'Schema for Foodiverse merchants',
-        resolver: RESOLVER,
-        data: [
-            { name: "id", type: "string" },
-            { name: "address", type: "string" },
-            { name: "ensName", type: "string" },
-            { name: "createdAt", type: "string" },
-            { name: "updatedAt", type: "string" },
-        ],
-    };
-
-    return await client.createSchema(schema);
-};
-
 export const createRestaurantSchema = async (walletClient: WalletClient) => {
     const client = new SignProtocolClient(SpMode.OnChain, {
         chain: EvmChains.baseSepolia,
@@ -132,6 +110,7 @@ export const createOrderSchema = async (walletClient: WalletClient) => {
             { name: "createdAt", type: "uint256" },
             { name: "updatedAt", type: "uint256" },
             { name: "restaurantId", type: "string" },
+            { name: "total", type: "uint256" },
         ],
     };
 
@@ -154,6 +133,7 @@ export const createOrderItemSchema = async (walletClient: WalletClient) => {
             { name: "menuItemId", type: "string" },
             { name: "quantity", type: "uint256" },
             { name: "notes", type: "string" },
+            { name: "price", type: "uint256" },
         ],
     };
 
