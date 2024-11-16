@@ -1,70 +1,82 @@
-import React, { useState } from "react";
+import { useState } from 'react'
+import { Card, CardContent, CardHeader, CardFooter, CardTitle } from "@/components/ui/card"
+import { Button } from "@/components/ui/button"
+import { Badge } from "@/components/ui/badge"
+import { Minus, Plus } from 'lucide-react'
 
 interface MenuItemCardProps {
-  id: string; // UUID
-  name: string; // Name of the menu item
-  price: number; // Price of the menu item
-  isAvailable: boolean; // Whether the menu item is currently available
-  initialQuantity: number; // Initial quantity of the menu item
-  onQuantityChange: (quantity: number) => void; // Callback for quantity change
-  imageUrl?: string; // URL of the menu item image (now optional)
+  id: string;
+  name: string;
+  price: number;
+  isAvailable: boolean;
+  initialQuantity: number;
+  onQuantityChange: (quantity: number) => void;
+  imageUrl?: string;
 }
 
-const MenuItemCard: React.FC<MenuItemCardProps> = ({
+export default function MenuItemCard({
   id,
   name,
   price,
   isAvailable,
   initialQuantity,
   onQuantityChange,
-  imageUrl,
-}) => {
-  const [quantity, setQuantity] = useState(initialQuantity);
+  imageUrl
+}: MenuItemCardProps) {
+  const [quantity, setQuantity] = useState(initialQuantity)
 
-  const increment = () => {
-    const newQuantity = quantity + 1;
-    setQuantity(newQuantity);
-    onQuantityChange(newQuantity);
-  };
-
-  const decrement = () => {
-    if (quantity > 0) {
-      const newQuantity = quantity - 1;
-      setQuantity(newQuantity);
-      onQuantityChange(newQuantity);
+  const handleQuantityChange = (newQuantity: number) => {
+    if (newQuantity >= 0) {
+      setQuantity(newQuantity)
+      onQuantityChange(newQuantity)
     }
-  };
+  }
 
   return (
-    <div
-      className={`card card-compact ${isAvailable ? "bg-base-100" : "bg-gray-200"}`}
-    >
-      <figure className="h-36">
-        <img
-          src={imageUrl || "path/to/placeholder-image.jpg"} // Fallback image
-          alt={name}
-        />
-      </figure>
-      <div className="card-body">
-        <p className="card-title">{name}</p>
-        <p>Price: ${price.toFixed(2)}</p>
-        <div className="flex items-center">
-          <button className="btn" onClick={decrement}>
-            -
-          </button>
-          <span className="mx-2">{quantity}</span>
-          <button className="btn" onClick={increment}>
-            +
-          </button>
-        </div>
-        <p
-          className={`text-sm ${isAvailable ? "text-green-500" : "text-red-500"}`}
-        >
-          {isAvailable ? "Available" : "Not Available"}
-        </p>
+    <Card className="w-full max-w-sm flex flex-col justify-between">
+      <div className="relative">
+        {imageUrl && (
+          <img
+            src={imageUrl}
+            alt={name}
+            className="w-full h-48 object-cover rounded-t-md"
+          />
+        )}
+        <Badge variant={isAvailable ? "default" : "secondary"} className="absolute top-2 right-2">
+          {isAvailable ? "Available" : "Unavailable"}
+        </Badge>
       </div>
-    </div>
-  );
-};
-
-export default MenuItemCard;
+      <CardHeader>
+        <CardTitle className="flex justify-between items-center">
+          <span>{name}</span>
+        </CardTitle>
+      </CardHeader>
+      <CardFooter className="flex flex-col items-center mt-auto">
+        <div className="flex justify-between items-center w-full">
+          <p className="text-xl font-bold">
+            ${price.toFixed(2)}
+          </p>
+          <div className="flex items-center space-x-2">
+            <Button
+              variant="outline"
+              size="icon"
+              onClick={() => handleQuantityChange(quantity - 1)}
+              disabled={!isAvailable || quantity === 0}
+            >
+              <Minus className="h-4 w-4" />
+            </Button>
+            <span className="text-xl font-semibold">{quantity}</span>
+            <Button
+              variant="outline"
+              size="icon"
+              onClick={() => handleQuantityChange(quantity + 1)}
+              disabled={!isAvailable}
+            >
+              <Plus className="h-4 w-4" />
+            </Button>
+          </div>
+        </div>
+      </CardFooter>
+    </Card>
+  )
+}

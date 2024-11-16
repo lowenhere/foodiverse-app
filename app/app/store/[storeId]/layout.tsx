@@ -17,7 +17,7 @@ export default function StoreLayout({
     <StoreProvider storeId={storeId}>
       <CartProvider storeId={storeId}>
         <StoreNavBar />
-        <main className="container-md h-full flex flex-col items-center p-4">
+        <main className="container h-full flex flex-col items-center p-4">
           {children}
         </main>
       </CartProvider>

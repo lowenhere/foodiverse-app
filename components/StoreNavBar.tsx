@@ -1,13 +1,23 @@
-import React, { ReactNode } from "react";
-import Link from "next/link";
-import { UserIcon } from "@heroicons/react/24/solid";
+'use client'
+
+import * as React from 'react';
+import Link from 'next/link';
+import { User } from 'lucide-react';
+
+import {
+  DropdownMenu,
+  DropdownMenuContent,
+  DropdownMenuItem,
+  DropdownMenuTrigger,
+} from '@/components/ui/dropdown-menu';
+import { Button } from '@/components/ui/button';
 
 import { useStore } from "@/components/providers/StoreProvider";
 
 type NavBarProps = {
   profileImageSrc?: string;
   loggedIn?: boolean;
-  children?: ReactNode[];
+  children?: React.ReactNode[];
 };
 
 const NavBar: React.FC<NavBarProps> = ({
@@ -16,11 +26,12 @@ const NavBar: React.FC<NavBarProps> = ({
   children = [],
 }) => {
   const storeData = useStore();
+  const [isMenuOpen, setIsMenuOpen] = React.useState(false);
 
   const profileIcon = profileImageSrc ? (
     <img alt="" src={profileImageSrc} />
   ) : (
-    <UserIcon />
+    <User />
   );
 
   const dropdownItems = [
@@ -30,43 +41,43 @@ const NavBar: React.FC<NavBarProps> = ({
   ]
     .filter((d) => d.visible)
     .map(({ name, to }) => (
-      <li key={to}>
-        <Link href={to}>{name}</Link>
-      </li>
+        <DropdownMenuItem key={to}>
+          <Link href={to}>{name}</Link>
+        </DropdownMenuItem>
     ));
 
   return (
-    <div className="navbar bg-base-100">
-      <div className="flex-1">
-        <Link
-          className="btn btn-ghost"
-          href={`/app/store/${storeData.data?.id}`}
-        >
-          {storeData.data?.name || "Foodiverse"}
-        </Link>
-      </div>
-      <div className="flex-none gap-2">
-        {/* other elements */}
-        <div>{children}</div>
-        {/* profile dropdown */}
-        <div className="dropdown dropdown-end">
-          <div
-            tabIndex={0}
-            role="button"
-            className="btn btn-ghost btn-circle avatar"
-          >
-            <div className="w-10 rounded-full border">{profileIcon}</div>
+    <nav className="sticky top-0 z-10 bg-white shadow w-full">
+      <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+        <div className="flex items-center justify-between h-16">
+          <div className="flex items-center">
+            <Link href={`/app/store/${storeData.data?.id}`} className="flex-shrink-0">
+              <span className="text-l font-bold text-primary">
+                {storeData.data?.name ?? "Foodiverse" }
+              </span>
+            </Link>
           </div>
-          <ul
-            tabIndex={0}
-            className="menu menu-sm dropdown-content bg-base-100 rounded-box z-[1] mt-3 w-32 p-2 shadow"
-          >
-            {dropdownItems}
-          </ul>
+          <div className="hidden md:block">
+          </div>
+          <div className="">
+            <DropdownMenu>
+              <DropdownMenuTrigger>
+                <div className="rounded-full p-4 text-lg">
+                  {profileIcon}
+                </div>
+              </DropdownMenuTrigger>
+              <DropdownMenuContent>
+                <div className="px-2 pt-2 pb-3 space-y-1 sm:px-3">
+                  {dropdownItems}
+                </div>
+              </DropdownMenuContent>
+            </DropdownMenu>
+          </div>
         </div>
       </div>
-    </div>
+    </nav>
   );
 };
+
 
 export default NavBar;

@@ -15,6 +15,7 @@ export default function StorePage() {
 
   const { isPending, error, data: storeData } = useStore();
   const { cartItems, removeFromCart, updateCartItem } = useCart();
+  // return <SpinnerPage message="Loading Store ..." />;
 
   if (isPending) {
     return <SpinnerPage message="Loading Store ..." />;

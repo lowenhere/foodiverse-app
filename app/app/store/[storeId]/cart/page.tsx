@@ -8,6 +8,8 @@ import { useCart, CartItem } from "@/components/providers/CartProvider";
 
 import SpinnerPage from "@/components/SpinnerPage";
 import ErrorPage from "@/components/ErrorPage";
+import { Table, TableHeader, TableBody, TableRow, TableHead, TableCell } from "@/components/ui/table";
+import { Button } from "@/components/ui/button";
 
 export default function StoreCartPage() {
   const router = useRouter();
@@ -51,22 +53,22 @@ export default function StoreCartPage() {
       totalCost += cost;
 
       return (
-        <tr key={menuItemId}>
-          <td>
+        <TableRow key={menuItemId}>
+          <TableCell className="text-left w-16">
             <div className="flex items-center justify-center">
-              <div className="mask mask-squircle h-12 w-12">
-                <img src={imgSrc} alt={name} />
+              <div className="rounded-lg h-12 w-12">
+                <img src={imgSrc} alt={name} className="rounded-lg object-cover" />
               </div>
             </div>
-          </td>
-          <td>
+          </TableCell>
+          <TableCell className="text-left">
             <div>
               <div className="font-bold">{`${quantity} x ${name}`}</div>
               <div className="text-sm opacity-50">${price.toFixed(2)}</div>
             </div>
-          </td>
-          <td>${cost.toFixed(2)}</td>
-        </tr>
+          </TableCell>
+          <TableCell className="text-left w-24">${cost.toFixed(2)}</TableCell>
+        </TableRow>
       );
     })
     .filter((i) => i !== null);
@@ -74,45 +76,47 @@ export default function StoreCartPage() {
   return (
     <div className="flex flex-col items-center w-full max-w-4xl mx-auto">
       <div className="flex items-center w-full mb-4">
-        <button className="w-6 mr-2" onClick={() => router.back()}>
-          <ArrowLeftIcon/>
-        </button>
+        <Button className="w-6 mr-2" onClick={() => router.back()} variant="link">
+          <ArrowLeftIcon />
+        </Button>
         <h1 className="text-2xl font-bold">Your Order</h1>
       </div>
-      <table className="table w-full">
-        <thead>
-          <tr>
-            <th></th>
-            <th>Item</th>
-            <th>Cost</th>
-          </tr>
-        </thead>
-        <tbody>
+      <Table>
+        <TableHeader>
+          <TableRow>
+            <TableHead></TableHead>
+            <TableHead>Item</TableHead>
+            <TableHead>Cost</TableHead>
+          </TableRow>
+        </TableHeader>
+        <TableBody>
           {items}
-          <tr className="font-bold">
-            <td>
+          <TableRow className="font-bold">
+            <TableCell className="text-left w-16">
               <div className="flex items-center justify-center">
                 Total
               </div>
-            </td>
-            <td>{totalItems} x Items</td>
-            <td>${totalCost.toFixed(2)}</td>
-          </tr>
-        </tbody>
-      </table>
+            </TableCell>
+            <TableCell className="text-left">{totalItems} x Items</TableCell>
+            <TableCell className="text-left w-24">${totalCost.toFixed(2)}</TableCell>
+          </TableRow>
+        </TableBody>
+      </Table>
       <div className="mt-4 flex justify-between w-full">
-        <button 
-          className="btn btn-outline btn-secondary" 
-          onClick={clearCart}
+        <Button 
+          variant="outline" 
+          onClick={clearCart} 
+          className="btn btn-outline btn-secondary"
         >
           Clear Cart
-        </button>
-        <button 
-          className="btn btn-primary"
+        </Button>
+        <Button 
+          variant="default"
           onClick={() => {router.push(`/app/store/${storeData.id}/checkout`)}}
+          className="btn btn-primary"
         >
           Checkout
-        </button>
+        </Button>
       </div>
     </div>
   );
