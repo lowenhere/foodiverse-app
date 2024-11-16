@@ -9,7 +9,6 @@ export default function AppHome() {
   return (
     <div className="flex flex-col gap-4">
       <DynamicButton />
-
       <PrivyButton />
       <SendZeroEth />
     </div>
