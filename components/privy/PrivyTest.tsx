@@ -4,7 +4,7 @@ import React, { useState } from "react";
 import { usePrivy } from "@privy-io/react-auth";
 import { SendZeroEth } from "../SendZeroEth";
 
-export default function PrivyTest() {
+export function PrivyTest() {
   const [verifyResult, setVerifyResult] = useState();
   const {
     user,

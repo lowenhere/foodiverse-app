@@ -2,7 +2,7 @@
 import React, { useState, useEffect } from "react";
 import { usePrivy, useWallets } from "@privy-io/react-auth";
 
-export default function PrivyButton() {
+export function PrivyButton() {
   const { login, logout, ready, authenticated, user } = usePrivy();
   const { wallets } = useWallets();
   const [isHovering, setIsHovering] = useState(false);
