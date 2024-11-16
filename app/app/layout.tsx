@@ -1,11 +1,11 @@
 "use client";
-import { PrivyProvider } from "@privy-io/react-auth";
-import { getPrivyProps } from "@/lib/privy";
+
+import { Web3Providers } from "@/components/providers/Web3Providers";
 
 export default function AppLayout({
   children,
 }: Readonly<{
   children: React.ReactNode;
 }>) {
-  return <PrivyProvider {...getPrivyProps()}>{children}</PrivyProvider>;
+  return <Web3Providers>{children}</Web3Providers>;
 }

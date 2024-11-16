@@ -7,10 +7,12 @@ export default function StoreLayout({
 }: Readonly<{
   children: React.ReactNode;
 }>) {
-  return <>
-    <NavBar/>
-    <div>
-      {children}
-    </div>
-  </>;
+  return (
+    <>
+      <NavBar />
+      <main className="container-md h-full flex flex-col items-center p-4">
+        {children}
+      </main>
+    </>
+  );
 }

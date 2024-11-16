@@ -42,6 +42,7 @@ const initTelegram = async () => {
 const callback = webhookCallback(bot, "std/http", {
   secretToken: webhookSecret,
 });
+
 export const POST = async (req: NextRequest) => {
   await initTelegram();
   const res = await callback(req);

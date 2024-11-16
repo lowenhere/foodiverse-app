@@ -3,6 +3,8 @@ import React, { useEffect } from "react";
 import { useRouter } from "next/navigation";
 import { usePrivy } from "@privy-io/react-auth";
 
+import SpinnerPage from "@/components/SpinnerPage";
+
 export default function LoginPage() {
   const { ready, authenticated, login } = usePrivy();
   const router = useRouter();
@@ -22,10 +24,9 @@ export default function LoginPage() {
 
   if (!ready) {
     return (
-      <>
-        <span className="loading loading-spinner loading-lg"></span>
-        <p className="my-4">setting up login ...</p>
-      </>
+      <SpinnerPage>
+        <p>setting up login ...</p>
+      </SpinnerPage>
     );
   }
 
