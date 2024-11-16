@@ -1,5 +1,5 @@
 "use client";
-
+import { ReactNode } from "react";
 import { useParams } from "next/navigation";
 
 import StoreNavBar from "@/components/StoreNavBar";
@@ -9,7 +9,7 @@ import { CartProvider } from "@/components/providers/CartProvider";
 export default function StoreLayout({
   children,
 }: Readonly<{
-  children: React.ReactNode;
+  children: ReactNode;
 }>) {
   const { storeId } = useParams<{ storeId: string }>();
 
