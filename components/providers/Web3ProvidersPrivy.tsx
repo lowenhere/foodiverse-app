@@ -18,20 +18,21 @@ export function Web3ProvidersPrivy({ children }: PropsWithChildren) {
   });
 
   const privyAppId = process.env.NEXT_PUBLIC_PRIVY_APP_ID;
-
   if (!privyAppId) {
     console.error("NEXT_PUBLIC_PRIVY_APP_ID is not set");
+    return null;
+  }
+
+  const privyClientId = process.env.NEXT_PUBLIC_PRIVY_CLIENT_ID;
+  if (!privyAppId) {
+    console.error("NEXT_PUBLIC_PRIVY_CLIENT_ID is not set");
     return null;
   }
 
   return (
     <PrivyProvider
       appId={privyAppId}
-      clientId={
-        process.env.NODE_ENV === "production"
-          ? undefined
-          : "client-WY2o7SWZviVQ5FJdYhRbFWyUnXae2XhwPGexM2YFMeBPD"
-      }
+      clientId={privyClientId}
       config={{
         loginMethods: ["email", "wallet"],
         appearance: {

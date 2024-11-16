@@ -1,8 +1,14 @@
-import { useState } from 'react'
-import { Card, CardContent, CardHeader, CardFooter, CardTitle } from "@/components/ui/card"
-import { Button } from "@/components/ui/button"
-import { Badge } from "@/components/ui/badge"
-import { Minus, Plus } from 'lucide-react'
+import { useState } from "react";
+import {
+  Card,
+  CardContent,
+  CardHeader,
+  CardFooter,
+  CardTitle,
+} from "@/components/ui/card";
+import { Button } from "@/components/ui/button";
+import { Badge } from "@/components/ui/badge";
+import { Minus, Plus } from "lucide-react";
 
 interface MenuItemCardProps {
   id: string;
@@ -21,16 +27,16 @@ export default function MenuItemCard({
   isAvailable,
   initialQuantity,
   onQuantityChange,
-  imageUrl
+  imageUrl,
 }: MenuItemCardProps) {
-  const [quantity, setQuantity] = useState(initialQuantity)
+  const [quantity, setQuantity] = useState(initialQuantity);
 
   const handleQuantityChange = (newQuantity: number) => {
     if (newQuantity >= 0) {
-      setQuantity(newQuantity)
-      onQuantityChange(newQuantity)
+      setQuantity(newQuantity);
+      onQuantityChange(newQuantity);
     }
-  }
+  };
 
   return (
     <Card className="w-full max-w-sm flex flex-col justify-between">
@@ -42,7 +48,10 @@ export default function MenuItemCard({
             className="w-full h-48 object-cover rounded-t-md"
           />
         )}
-        <Badge variant={isAvailable ? "default" : "secondary"} className="absolute top-2 right-2">
+        <Badge
+          variant={isAvailable ? "default" : "secondary"}
+          className="absolute top-2 right-2"
+        >
           {isAvailable ? "Available" : "Unavailable"}
         </Badge>
       </div>
@@ -53,9 +62,7 @@ export default function MenuItemCard({
       </CardHeader>
       <CardFooter className="flex flex-col items-center mt-auto">
         <div className="flex justify-between items-center w-full">
-          <p className="text-xl font-bold">
-            ${price.toFixed(2)}
-          </p>
+          <p className="text-xl font-bold">${price.toFixed(2)}</p>
           <div className="flex items-center space-x-2">
             <Button
               variant="outline"
@@ -78,5 +85,5 @@ export default function MenuItemCard({
         </div>
       </CardFooter>
     </Card>
-  )
+  );
 }

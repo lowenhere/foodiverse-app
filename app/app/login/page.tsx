@@ -1,32 +1,17 @@
 "use client";
 import React, { useEffect } from "react";
-import { useRouter } from "next/navigation";
-import { usePrivy } from "@privy-io/react-auth";
 
-import SpinnerPage from "@/components/SpinnerPage";
+import { useSettings } from "@/components/providers/SettingsProvider";
+import PrivyLogin from "@/app/app/login/privy";
 
 export default function LoginPage() {
-  const { ready, authenticated, login } = usePrivy();
-  const router = useRouter();
+  const { settings } = useSettings();
 
-  useEffect(() => {
-    if (!ready) {
-      return;
-    }
+  const { authProvider } = settings;
 
-    if (authenticated) {
-      router.push("/app");
-      return;
-    }
-
-    login();
-  }, [ready, authenticated]);
-
-  if (!ready) {
-    return (
-      <SpinnerPage message="setting up login ..." />
-    );
+  if (authProvider === "privy"){
+    return <PrivyLogin/>
   }
 
-  return <></>;
+  return <p>Not Implemented</p>
 }

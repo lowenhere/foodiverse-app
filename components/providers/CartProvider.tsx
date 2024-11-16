@@ -1,6 +1,7 @@
 "use client";
 
 import React, { createContext, useContext, useEffect, useState } from "react";
+import { getLocalStorage } from "@/lib/localstorage";
 
 export type CartItem = {
   menuItemId: string;
@@ -15,14 +16,6 @@ type CartContextType = {
 };
 
 const CartContext = createContext<CartContextType | undefined>(undefined);
-
-const getLocalStorage = () => {
-  if (typeof window == "undefined") {
-    return undefined;
-  }
-
-  return window.localStorage;
-};
 
 const loadCartFromLocalStorage = (key: string): Record<string, CartItem> => {
   const localStorage = getLocalStorage();

@@ -3,7 +3,7 @@ import {
   createWriteContract,
   createSimulateContract,
   createWatchContractEvent,
-} from 'wagmi/codegen'
+} from "wagmi/codegen";
 
 //////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
 // foodiRegistrar
@@ -11,65 +11,65 @@ import {
 
 export const foodiRegistrarAbi = [
   {
-    type: 'constructor',
+    type: "constructor",
     inputs: [
       {
-        name: '_registry',
-        internalType: 'contract IL2Registry',
-        type: 'address',
+        name: "_registry",
+        internalType: "contract IL2Registry",
+        type: "address",
       },
     ],
-    stateMutability: 'nonpayable',
+    stateMutability: "nonpayable",
   },
   {
-    type: 'function',
-    inputs: [{ name: 'tokenId', internalType: 'uint256', type: 'uint256' }],
-    name: 'available',
-    outputs: [{ name: '', internalType: 'bool', type: 'bool' }],
-    stateMutability: 'view',
+    type: "function",
+    inputs: [{ name: "tokenId", internalType: "uint256", type: "uint256" }],
+    name: "available",
+    outputs: [{ name: "", internalType: "bool", type: "bool" }],
+    stateMutability: "view",
   },
   {
-    type: 'function',
+    type: "function",
     inputs: [
-      { name: 'label', internalType: 'string', type: 'string' },
-      { name: 'owner', internalType: 'address', type: 'address' },
+      { name: "label", internalType: "string", type: "string" },
+      { name: "owner", internalType: "address", type: "address" },
     ],
-    name: 'register',
+    name: "register",
     outputs: [],
-    stateMutability: 'nonpayable',
+    stateMutability: "nonpayable",
   },
   {
-    type: 'function',
+    type: "function",
     inputs: [],
-    name: 'targetRegistry',
+    name: "targetRegistry",
     outputs: [
-      { name: '', internalType: 'contract IL2Registry', type: 'address' },
+      { name: "", internalType: "contract IL2Registry", type: "address" },
     ],
-    stateMutability: 'view',
+    stateMutability: "view",
   },
   {
-    type: 'event',
+    type: "event",
     anonymous: false,
     inputs: [
-      { name: 'label', internalType: 'string', type: 'string', indexed: true },
+      { name: "label", internalType: "string", type: "string", indexed: true },
       {
-        name: 'owner',
-        internalType: 'address',
-        type: 'address',
+        name: "owner",
+        internalType: "address",
+        type: "address",
         indexed: true,
       },
     ],
-    name: 'NameRegistered',
+    name: "NameRegistered",
   },
-] as const
+] as const;
 
 export const foodiRegistrarAddress =
-  '0xD1eA89F676763b6238951adc2D5521D0e0Cddb4d' as const
+  "0xD1eA89F676763b6238951adc2D5521D0e0Cddb4d" as const;
 
 export const foodiRegistrarConfig = {
   address: foodiRegistrarAddress,
   abi: foodiRegistrarAbi,
-} as const
+} as const;
 
 //////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
 // foodiverseRegistrar
@@ -77,65 +77,65 @@ export const foodiRegistrarConfig = {
 
 export const foodiverseRegistrarAbi = [
   {
-    type: 'constructor',
+    type: "constructor",
     inputs: [
       {
-        name: '_registry',
-        internalType: 'contract IL2Registry',
-        type: 'address',
+        name: "_registry",
+        internalType: "contract IL2Registry",
+        type: "address",
       },
     ],
-    stateMutability: 'nonpayable',
+    stateMutability: "nonpayable",
   },
   {
-    type: 'function',
-    inputs: [{ name: 'tokenId', internalType: 'uint256', type: 'uint256' }],
-    name: 'available',
-    outputs: [{ name: '', internalType: 'bool', type: 'bool' }],
-    stateMutability: 'view',
+    type: "function",
+    inputs: [{ name: "tokenId", internalType: "uint256", type: "uint256" }],
+    name: "available",
+    outputs: [{ name: "", internalType: "bool", type: "bool" }],
+    stateMutability: "view",
   },
   {
-    type: 'function',
+    type: "function",
     inputs: [
-      { name: 'label', internalType: 'string', type: 'string' },
-      { name: 'owner', internalType: 'address', type: 'address' },
+      { name: "label", internalType: "string", type: "string" },
+      { name: "owner", internalType: "address", type: "address" },
     ],
-    name: 'register',
+    name: "register",
     outputs: [],
-    stateMutability: 'nonpayable',
+    stateMutability: "nonpayable",
   },
   {
-    type: 'function',
+    type: "function",
     inputs: [],
-    name: 'targetRegistry',
+    name: "targetRegistry",
     outputs: [
-      { name: '', internalType: 'contract IL2Registry', type: 'address' },
+      { name: "", internalType: "contract IL2Registry", type: "address" },
     ],
-    stateMutability: 'view',
+    stateMutability: "view",
   },
   {
-    type: 'event',
+    type: "event",
     anonymous: false,
     inputs: [
-      { name: 'label', internalType: 'string', type: 'string', indexed: true },
+      { name: "label", internalType: "string", type: "string", indexed: true },
       {
-        name: 'owner',
-        internalType: 'address',
-        type: 'address',
+        name: "owner",
+        internalType: "address",
+        type: "address",
         indexed: true,
       },
     ],
-    name: 'NameRegistered',
+    name: "NameRegistered",
   },
-] as const
+] as const;
 
 export const foodiverseRegistrarAddress =
-  '0xCa556332723D2aB7b6a23440908e2cED85578AB6' as const
+  "0xCa556332723D2aB7b6a23440908e2cED85578AB6" as const;
 
 export const foodiverseRegistrarConfig = {
   address: foodiverseRegistrarAddress,
   abi: foodiverseRegistrarAbi,
-} as const
+} as const;
 
 //////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
 // reverseRegistrar
@@ -143,191 +143,191 @@ export const foodiverseRegistrarConfig = {
 
 export const reverseRegistrarAbi = [
   {
-    type: 'constructor',
+    type: "constructor",
     inputs: [
-      { name: 'ensAddr', internalType: 'contract ENS', type: 'address' },
+      { name: "ensAddr", internalType: "contract ENS", type: "address" },
     ],
-    stateMutability: 'nonpayable',
+    stateMutability: "nonpayable",
   },
   {
-    type: 'event',
+    type: "event",
     anonymous: false,
     inputs: [
       {
-        name: 'controller',
-        internalType: 'address',
-        type: 'address',
+        name: "controller",
+        internalType: "address",
+        type: "address",
         indexed: true,
       },
-      { name: 'enabled', internalType: 'bool', type: 'bool', indexed: false },
+      { name: "enabled", internalType: "bool", type: "bool", indexed: false },
     ],
-    name: 'ControllerChanged',
+    name: "ControllerChanged",
   },
   {
-    type: 'event',
+    type: "event",
     anonymous: false,
     inputs: [
       {
-        name: 'resolver',
-        internalType: 'contract NameResolver',
-        type: 'address',
+        name: "resolver",
+        internalType: "contract NameResolver",
+        type: "address",
         indexed: true,
       },
     ],
-    name: 'DefaultResolverChanged',
+    name: "DefaultResolverChanged",
   },
   {
-    type: 'event',
+    type: "event",
     anonymous: false,
     inputs: [
       {
-        name: 'previousOwner',
-        internalType: 'address',
-        type: 'address',
+        name: "previousOwner",
+        internalType: "address",
+        type: "address",
         indexed: true,
       },
       {
-        name: 'newOwner',
-        internalType: 'address',
-        type: 'address',
+        name: "newOwner",
+        internalType: "address",
+        type: "address",
         indexed: true,
       },
     ],
-    name: 'OwnershipTransferred',
+    name: "OwnershipTransferred",
   },
   {
-    type: 'event',
+    type: "event",
     anonymous: false,
     inputs: [
-      { name: 'addr', internalType: 'address', type: 'address', indexed: true },
-      { name: 'node', internalType: 'bytes32', type: 'bytes32', indexed: true },
+      { name: "addr", internalType: "address", type: "address", indexed: true },
+      { name: "node", internalType: "bytes32", type: "bytes32", indexed: true },
     ],
-    name: 'ReverseClaimed',
+    name: "ReverseClaimed",
   },
   {
-    type: 'function',
-    inputs: [{ name: 'owner', internalType: 'address', type: 'address' }],
-    name: 'claim',
-    outputs: [{ name: '', internalType: 'bytes32', type: 'bytes32' }],
-    stateMutability: 'nonpayable',
+    type: "function",
+    inputs: [{ name: "owner", internalType: "address", type: "address" }],
+    name: "claim",
+    outputs: [{ name: "", internalType: "bytes32", type: "bytes32" }],
+    stateMutability: "nonpayable",
   },
   {
-    type: 'function',
+    type: "function",
     inputs: [
-      { name: 'addr', internalType: 'address', type: 'address' },
-      { name: 'owner', internalType: 'address', type: 'address' },
-      { name: 'resolver', internalType: 'address', type: 'address' },
+      { name: "addr", internalType: "address", type: "address" },
+      { name: "owner", internalType: "address", type: "address" },
+      { name: "resolver", internalType: "address", type: "address" },
     ],
-    name: 'claimForAddr',
-    outputs: [{ name: '', internalType: 'bytes32', type: 'bytes32' }],
-    stateMutability: 'nonpayable',
+    name: "claimForAddr",
+    outputs: [{ name: "", internalType: "bytes32", type: "bytes32" }],
+    stateMutability: "nonpayable",
   },
   {
-    type: 'function',
+    type: "function",
     inputs: [
-      { name: 'owner', internalType: 'address', type: 'address' },
-      { name: 'resolver', internalType: 'address', type: 'address' },
+      { name: "owner", internalType: "address", type: "address" },
+      { name: "resolver", internalType: "address", type: "address" },
     ],
-    name: 'claimWithResolver',
-    outputs: [{ name: '', internalType: 'bytes32', type: 'bytes32' }],
-    stateMutability: 'nonpayable',
+    name: "claimWithResolver",
+    outputs: [{ name: "", internalType: "bytes32", type: "bytes32" }],
+    stateMutability: "nonpayable",
   },
   {
-    type: 'function',
-    inputs: [{ name: '', internalType: 'address', type: 'address' }],
-    name: 'controllers',
-    outputs: [{ name: '', internalType: 'bool', type: 'bool' }],
-    stateMutability: 'view',
+    type: "function",
+    inputs: [{ name: "", internalType: "address", type: "address" }],
+    name: "controllers",
+    outputs: [{ name: "", internalType: "bool", type: "bool" }],
+    stateMutability: "view",
   },
   {
-    type: 'function',
+    type: "function",
     inputs: [],
-    name: 'defaultResolver',
+    name: "defaultResolver",
     outputs: [
-      { name: '', internalType: 'contract NameResolver', type: 'address' },
+      { name: "", internalType: "contract NameResolver", type: "address" },
     ],
-    stateMutability: 'view',
+    stateMutability: "view",
   },
   {
-    type: 'function',
+    type: "function",
     inputs: [],
-    name: 'ens',
-    outputs: [{ name: '', internalType: 'contract ENS', type: 'address' }],
-    stateMutability: 'view',
+    name: "ens",
+    outputs: [{ name: "", internalType: "contract ENS", type: "address" }],
+    stateMutability: "view",
   },
   {
-    type: 'function',
-    inputs: [{ name: 'addr', internalType: 'address', type: 'address' }],
-    name: 'node',
-    outputs: [{ name: '', internalType: 'bytes32', type: 'bytes32' }],
-    stateMutability: 'pure',
+    type: "function",
+    inputs: [{ name: "addr", internalType: "address", type: "address" }],
+    name: "node",
+    outputs: [{ name: "", internalType: "bytes32", type: "bytes32" }],
+    stateMutability: "pure",
   },
   {
-    type: 'function',
+    type: "function",
     inputs: [],
-    name: 'owner',
-    outputs: [{ name: '', internalType: 'address', type: 'address' }],
-    stateMutability: 'view',
+    name: "owner",
+    outputs: [{ name: "", internalType: "address", type: "address" }],
+    stateMutability: "view",
   },
   {
-    type: 'function',
+    type: "function",
     inputs: [],
-    name: 'renounceOwnership',
+    name: "renounceOwnership",
     outputs: [],
-    stateMutability: 'nonpayable',
+    stateMutability: "nonpayable",
   },
   {
-    type: 'function',
+    type: "function",
     inputs: [
-      { name: 'controller', internalType: 'address', type: 'address' },
-      { name: 'enabled', internalType: 'bool', type: 'bool' },
+      { name: "controller", internalType: "address", type: "address" },
+      { name: "enabled", internalType: "bool", type: "bool" },
     ],
-    name: 'setController',
+    name: "setController",
     outputs: [],
-    stateMutability: 'nonpayable',
+    stateMutability: "nonpayable",
   },
   {
-    type: 'function',
-    inputs: [{ name: 'resolver', internalType: 'address', type: 'address' }],
-    name: 'setDefaultResolver',
+    type: "function",
+    inputs: [{ name: "resolver", internalType: "address", type: "address" }],
+    name: "setDefaultResolver",
     outputs: [],
-    stateMutability: 'nonpayable',
+    stateMutability: "nonpayable",
   },
   {
-    type: 'function',
-    inputs: [{ name: 'name', internalType: 'string', type: 'string' }],
-    name: 'setName',
-    outputs: [{ name: '', internalType: 'bytes32', type: 'bytes32' }],
-    stateMutability: 'nonpayable',
+    type: "function",
+    inputs: [{ name: "name", internalType: "string", type: "string" }],
+    name: "setName",
+    outputs: [{ name: "", internalType: "bytes32", type: "bytes32" }],
+    stateMutability: "nonpayable",
   },
   {
-    type: 'function',
+    type: "function",
     inputs: [
-      { name: 'addr', internalType: 'address', type: 'address' },
-      { name: 'owner', internalType: 'address', type: 'address' },
-      { name: 'resolver', internalType: 'address', type: 'address' },
-      { name: 'name', internalType: 'string', type: 'string' },
+      { name: "addr", internalType: "address", type: "address" },
+      { name: "owner", internalType: "address", type: "address" },
+      { name: "resolver", internalType: "address", type: "address" },
+      { name: "name", internalType: "string", type: "string" },
     ],
-    name: 'setNameForAddr',
-    outputs: [{ name: '', internalType: 'bytes32', type: 'bytes32' }],
-    stateMutability: 'nonpayable',
+    name: "setNameForAddr",
+    outputs: [{ name: "", internalType: "bytes32", type: "bytes32" }],
+    stateMutability: "nonpayable",
   },
   {
-    type: 'function',
-    inputs: [{ name: 'newOwner', internalType: 'address', type: 'address' }],
-    name: 'transferOwnership',
+    type: "function",
+    inputs: [{ name: "newOwner", internalType: "address", type: "address" }],
+    name: "transferOwnership",
     outputs: [],
-    stateMutability: 'nonpayable',
+    stateMutability: "nonpayable",
   },
-] as const
+] as const;
 
 export const reverseRegistrarAddress =
-  '0xCF75B92126B02C9811d8c632144288a3eb84afC8' as const
+  "0xCF75B92126B02C9811d8c632144288a3eb84afC8" as const;
 
 export const reverseRegistrarConfig = {
   address: reverseRegistrarAddress,
   abi: reverseRegistrarAbi,
-} as const
+} as const;
 
 //////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
 // Action
@@ -339,7 +339,7 @@ export const reverseRegistrarConfig = {
 export const readFoodiRegistrar = /*#__PURE__*/ createReadContract({
   abi: foodiRegistrarAbi,
   address: foodiRegistrarAddress,
-})
+});
 
 /**
  * Wraps __{@link readContract}__ with `abi` set to __{@link foodiRegistrarAbi}__ and `functionName` set to `"available"`
@@ -347,8 +347,8 @@ export const readFoodiRegistrar = /*#__PURE__*/ createReadContract({
 export const readFoodiRegistrarAvailable = /*#__PURE__*/ createReadContract({
   abi: foodiRegistrarAbi,
   address: foodiRegistrarAddress,
-  functionName: 'available',
-})
+  functionName: "available",
+});
 
 /**
  * Wraps __{@link readContract}__ with `abi` set to __{@link foodiRegistrarAbi}__ and `functionName` set to `"targetRegistry"`
@@ -357,8 +357,8 @@ export const readFoodiRegistrarTargetRegistry =
   /*#__PURE__*/ createReadContract({
     abi: foodiRegistrarAbi,
     address: foodiRegistrarAddress,
-    functionName: 'targetRegistry',
-  })
+    functionName: "targetRegistry",
+  });
 
 /**
  * Wraps __{@link writeContract}__ with `abi` set to __{@link foodiRegistrarAbi}__
@@ -366,7 +366,7 @@ export const readFoodiRegistrarTargetRegistry =
 export const writeFoodiRegistrar = /*#__PURE__*/ createWriteContract({
   abi: foodiRegistrarAbi,
   address: foodiRegistrarAddress,
-})
+});
 
 /**
  * Wraps __{@link writeContract}__ with `abi` set to __{@link foodiRegistrarAbi}__ and `functionName` set to `"register"`
@@ -374,8 +374,8 @@ export const writeFoodiRegistrar = /*#__PURE__*/ createWriteContract({
 export const writeFoodiRegistrarRegister = /*#__PURE__*/ createWriteContract({
   abi: foodiRegistrarAbi,
   address: foodiRegistrarAddress,
-  functionName: 'register',
-})
+  functionName: "register",
+});
 
 /**
  * Wraps __{@link simulateContract}__ with `abi` set to __{@link foodiRegistrarAbi}__
@@ -383,7 +383,7 @@ export const writeFoodiRegistrarRegister = /*#__PURE__*/ createWriteContract({
 export const simulateFoodiRegistrar = /*#__PURE__*/ createSimulateContract({
   abi: foodiRegistrarAbi,
   address: foodiRegistrarAddress,
-})
+});
 
 /**
  * Wraps __{@link simulateContract}__ with `abi` set to __{@link foodiRegistrarAbi}__ and `functionName` set to `"register"`
@@ -392,8 +392,8 @@ export const simulateFoodiRegistrarRegister =
   /*#__PURE__*/ createSimulateContract({
     abi: foodiRegistrarAbi,
     address: foodiRegistrarAddress,
-    functionName: 'register',
-  })
+    functionName: "register",
+  });
 
 /**
  * Wraps __{@link watchContractEvent}__ with `abi` set to __{@link foodiRegistrarAbi}__
@@ -401,7 +401,7 @@ export const simulateFoodiRegistrarRegister =
 export const watchFoodiRegistrarEvent = /*#__PURE__*/ createWatchContractEvent({
   abi: foodiRegistrarAbi,
   address: foodiRegistrarAddress,
-})
+});
 
 /**
  * Wraps __{@link watchContractEvent}__ with `abi` set to __{@link foodiRegistrarAbi}__ and `eventName` set to `"NameRegistered"`
@@ -410,8 +410,8 @@ export const watchFoodiRegistrarNameRegisteredEvent =
   /*#__PURE__*/ createWatchContractEvent({
     abi: foodiRegistrarAbi,
     address: foodiRegistrarAddress,
-    eventName: 'NameRegistered',
-  })
+    eventName: "NameRegistered",
+  });
 
 /**
  * Wraps __{@link readContract}__ with `abi` set to __{@link foodiverseRegistrarAbi}__
@@ -419,7 +419,7 @@ export const watchFoodiRegistrarNameRegisteredEvent =
 export const readFoodiverseRegistrar = /*#__PURE__*/ createReadContract({
   abi: foodiverseRegistrarAbi,
   address: foodiverseRegistrarAddress,
-})
+});
 
 /**
  * Wraps __{@link readContract}__ with `abi` set to __{@link foodiverseRegistrarAbi}__ and `functionName` set to `"available"`
@@ -428,8 +428,8 @@ export const readFoodiverseRegistrarAvailable =
   /*#__PURE__*/ createReadContract({
     abi: foodiverseRegistrarAbi,
     address: foodiverseRegistrarAddress,
-    functionName: 'available',
-  })
+    functionName: "available",
+  });
 
 /**
  * Wraps __{@link readContract}__ with `abi` set to __{@link foodiverseRegistrarAbi}__ and `functionName` set to `"targetRegistry"`
@@ -438,8 +438,8 @@ export const readFoodiverseRegistrarTargetRegistry =
   /*#__PURE__*/ createReadContract({
     abi: foodiverseRegistrarAbi,
     address: foodiverseRegistrarAddress,
-    functionName: 'targetRegistry',
-  })
+    functionName: "targetRegistry",
+  });
 
 /**
  * Wraps __{@link writeContract}__ with `abi` set to __{@link foodiverseRegistrarAbi}__
@@ -447,7 +447,7 @@ export const readFoodiverseRegistrarTargetRegistry =
 export const writeFoodiverseRegistrar = /*#__PURE__*/ createWriteContract({
   abi: foodiverseRegistrarAbi,
   address: foodiverseRegistrarAddress,
-})
+});
 
 /**
  * Wraps __{@link writeContract}__ with `abi` set to __{@link foodiverseRegistrarAbi}__ and `functionName` set to `"register"`
@@ -456,15 +456,15 @@ export const writeFoodiverseRegistrarRegister =
   /*#__PURE__*/ createWriteContract({
     abi: foodiverseRegistrarAbi,
     address: foodiverseRegistrarAddress,
-    functionName: 'register',
-  })
+    functionName: "register",
+  });
 
 /**
  * Wraps __{@link simulateContract}__ with `abi` set to __{@link foodiverseRegistrarAbi}__
  */
 export const simulateFoodiverseRegistrar = /*#__PURE__*/ createSimulateContract(
   { abi: foodiverseRegistrarAbi, address: foodiverseRegistrarAddress },
-)
+);
 
 /**
  * Wraps __{@link simulateContract}__ with `abi` set to __{@link foodiverseRegistrarAbi}__ and `functionName` set to `"register"`
@@ -473,8 +473,8 @@ export const simulateFoodiverseRegistrarRegister =
   /*#__PURE__*/ createSimulateContract({
     abi: foodiverseRegistrarAbi,
     address: foodiverseRegistrarAddress,
-    functionName: 'register',
-  })
+    functionName: "register",
+  });
 
 /**
  * Wraps __{@link watchContractEvent}__ with `abi` set to __{@link foodiverseRegistrarAbi}__
@@ -483,7 +483,7 @@ export const watchFoodiverseRegistrarEvent =
   /*#__PURE__*/ createWatchContractEvent({
     abi: foodiverseRegistrarAbi,
     address: foodiverseRegistrarAddress,
-  })
+  });
 
 /**
  * Wraps __{@link watchContractEvent}__ with `abi` set to __{@link foodiverseRegistrarAbi}__ and `eventName` set to `"NameRegistered"`
@@ -492,8 +492,8 @@ export const watchFoodiverseRegistrarNameRegisteredEvent =
   /*#__PURE__*/ createWatchContractEvent({
     abi: foodiverseRegistrarAbi,
     address: foodiverseRegistrarAddress,
-    eventName: 'NameRegistered',
-  })
+    eventName: "NameRegistered",
+  });
 
 /**
  * Wraps __{@link readContract}__ with `abi` set to __{@link reverseRegistrarAbi}__
@@ -501,7 +501,7 @@ export const watchFoodiverseRegistrarNameRegisteredEvent =
 export const readReverseRegistrar = /*#__PURE__*/ createReadContract({
   abi: reverseRegistrarAbi,
   address: reverseRegistrarAddress,
-})
+});
 
 /**
  * Wraps __{@link readContract}__ with `abi` set to __{@link reverseRegistrarAbi}__ and `functionName` set to `"controllers"`
@@ -510,9 +510,9 @@ export const readReverseRegistrarControllers = /*#__PURE__*/ createReadContract(
   {
     abi: reverseRegistrarAbi,
     address: reverseRegistrarAddress,
-    functionName: 'controllers',
+    functionName: "controllers",
   },
-)
+);
 
 /**
  * Wraps __{@link readContract}__ with `abi` set to __{@link reverseRegistrarAbi}__ and `functionName` set to `"defaultResolver"`
@@ -521,8 +521,8 @@ export const readReverseRegistrarDefaultResolver =
   /*#__PURE__*/ createReadContract({
     abi: reverseRegistrarAbi,
     address: reverseRegistrarAddress,
-    functionName: 'defaultResolver',
-  })
+    functionName: "defaultResolver",
+  });
 
 /**
  * Wraps __{@link readContract}__ with `abi` set to __{@link reverseRegistrarAbi}__ and `functionName` set to `"ens"`
@@ -530,8 +530,8 @@ export const readReverseRegistrarDefaultResolver =
 export const readReverseRegistrarEns = /*#__PURE__*/ createReadContract({
   abi: reverseRegistrarAbi,
   address: reverseRegistrarAddress,
-  functionName: 'ens',
-})
+  functionName: "ens",
+});
 
 /**
  * Wraps __{@link readContract}__ with `abi` set to __{@link reverseRegistrarAbi}__ and `functionName` set to `"node"`
@@ -539,8 +539,8 @@ export const readReverseRegistrarEns = /*#__PURE__*/ createReadContract({
 export const readReverseRegistrarNode = /*#__PURE__*/ createReadContract({
   abi: reverseRegistrarAbi,
   address: reverseRegistrarAddress,
-  functionName: 'node',
-})
+  functionName: "node",
+});
 
 /**
  * Wraps __{@link readContract}__ with `abi` set to __{@link reverseRegistrarAbi}__ and `functionName` set to `"owner"`
@@ -548,8 +548,8 @@ export const readReverseRegistrarNode = /*#__PURE__*/ createReadContract({
 export const readReverseRegistrarOwner = /*#__PURE__*/ createReadContract({
   abi: reverseRegistrarAbi,
   address: reverseRegistrarAddress,
-  functionName: 'owner',
-})
+  functionName: "owner",
+});
 
 /**
  * Wraps __{@link writeContract}__ with `abi` set to __{@link reverseRegistrarAbi}__
@@ -557,7 +557,7 @@ export const readReverseRegistrarOwner = /*#__PURE__*/ createReadContract({
 export const writeReverseRegistrar = /*#__PURE__*/ createWriteContract({
   abi: reverseRegistrarAbi,
   address: reverseRegistrarAddress,
-})
+});
 
 /**
  * Wraps __{@link writeContract}__ with `abi` set to __{@link reverseRegistrarAbi}__ and `functionName` set to `"claim"`
@@ -565,8 +565,8 @@ export const writeReverseRegistrar = /*#__PURE__*/ createWriteContract({
 export const writeReverseRegistrarClaim = /*#__PURE__*/ createWriteContract({
   abi: reverseRegistrarAbi,
   address: reverseRegistrarAddress,
-  functionName: 'claim',
-})
+  functionName: "claim",
+});
 
 /**
  * Wraps __{@link writeContract}__ with `abi` set to __{@link reverseRegistrarAbi}__ and `functionName` set to `"claimForAddr"`
@@ -575,8 +575,8 @@ export const writeReverseRegistrarClaimForAddr =
   /*#__PURE__*/ createWriteContract({
     abi: reverseRegistrarAbi,
     address: reverseRegistrarAddress,
-    functionName: 'claimForAddr',
-  })
+    functionName: "claimForAddr",
+  });
 
 /**
  * Wraps __{@link writeContract}__ with `abi` set to __{@link reverseRegistrarAbi}__ and `functionName` set to `"claimWithResolver"`
@@ -585,8 +585,8 @@ export const writeReverseRegistrarClaimWithResolver =
   /*#__PURE__*/ createWriteContract({
     abi: reverseRegistrarAbi,
     address: reverseRegistrarAddress,
-    functionName: 'claimWithResolver',
-  })
+    functionName: "claimWithResolver",
+  });
 
 /**
  * Wraps __{@link writeContract}__ with `abi` set to __{@link reverseRegistrarAbi}__ and `functionName` set to `"renounceOwnership"`
@@ -595,8 +595,8 @@ export const writeReverseRegistrarRenounceOwnership =
   /*#__PURE__*/ createWriteContract({
     abi: reverseRegistrarAbi,
     address: reverseRegistrarAddress,
-    functionName: 'renounceOwnership',
-  })
+    functionName: "renounceOwnership",
+  });
 
 /**
  * Wraps __{@link writeContract}__ with `abi` set to __{@link reverseRegistrarAbi}__ and `functionName` set to `"setController"`
@@ -605,8 +605,8 @@ export const writeReverseRegistrarSetController =
   /*#__PURE__*/ createWriteContract({
     abi: reverseRegistrarAbi,
     address: reverseRegistrarAddress,
-    functionName: 'setController',
-  })
+    functionName: "setController",
+  });
 
 /**
  * Wraps __{@link writeContract}__ with `abi` set to __{@link reverseRegistrarAbi}__ and `functionName` set to `"setDefaultResolver"`
@@ -615,8 +615,8 @@ export const writeReverseRegistrarSetDefaultResolver =
   /*#__PURE__*/ createWriteContract({
     abi: reverseRegistrarAbi,
     address: reverseRegistrarAddress,
-    functionName: 'setDefaultResolver',
-  })
+    functionName: "setDefaultResolver",
+  });
 
 /**
  * Wraps __{@link writeContract}__ with `abi` set to __{@link reverseRegistrarAbi}__ and `functionName` set to `"setName"`
@@ -624,8 +624,8 @@ export const writeReverseRegistrarSetDefaultResolver =
 export const writeReverseRegistrarSetName = /*#__PURE__*/ createWriteContract({
   abi: reverseRegistrarAbi,
   address: reverseRegistrarAddress,
-  functionName: 'setName',
-})
+  functionName: "setName",
+});
 
 /**
  * Wraps __{@link writeContract}__ with `abi` set to __{@link reverseRegistrarAbi}__ and `functionName` set to `"setNameForAddr"`
@@ -634,8 +634,8 @@ export const writeReverseRegistrarSetNameForAddr =
   /*#__PURE__*/ createWriteContract({
     abi: reverseRegistrarAbi,
     address: reverseRegistrarAddress,
-    functionName: 'setNameForAddr',
-  })
+    functionName: "setNameForAddr",
+  });
 
 /**
  * Wraps __{@link writeContract}__ with `abi` set to __{@link reverseRegistrarAbi}__ and `functionName` set to `"transferOwnership"`
@@ -644,8 +644,8 @@ export const writeReverseRegistrarTransferOwnership =
   /*#__PURE__*/ createWriteContract({
     abi: reverseRegistrarAbi,
     address: reverseRegistrarAddress,
-    functionName: 'transferOwnership',
-  })
+    functionName: "transferOwnership",
+  });
 
 /**
  * Wraps __{@link simulateContract}__ with `abi` set to __{@link reverseRegistrarAbi}__
@@ -653,7 +653,7 @@ export const writeReverseRegistrarTransferOwnership =
 export const simulateReverseRegistrar = /*#__PURE__*/ createSimulateContract({
   abi: reverseRegistrarAbi,
   address: reverseRegistrarAddress,
-})
+});
 
 /**
  * Wraps __{@link simulateContract}__ with `abi` set to __{@link reverseRegistrarAbi}__ and `functionName` set to `"claim"`
@@ -662,8 +662,8 @@ export const simulateReverseRegistrarClaim =
   /*#__PURE__*/ createSimulateContract({
     abi: reverseRegistrarAbi,
     address: reverseRegistrarAddress,
-    functionName: 'claim',
-  })
+    functionName: "claim",
+  });
 
 /**
  * Wraps __{@link simulateContract}__ with `abi` set to __{@link reverseRegistrarAbi}__ and `functionName` set to `"claimForAddr"`
@@ -672,8 +672,8 @@ export const simulateReverseRegistrarClaimForAddr =
   /*#__PURE__*/ createSimulateContract({
     abi: reverseRegistrarAbi,
     address: reverseRegistrarAddress,
-    functionName: 'claimForAddr',
-  })
+    functionName: "claimForAddr",
+  });
 
 /**
  * Wraps __{@link simulateContract}__ with `abi` set to __{@link reverseRegistrarAbi}__ and `functionName` set to `"claimWithResolver"`
@@ -682,8 +682,8 @@ export const simulateReverseRegistrarClaimWithResolver =
   /*#__PURE__*/ createSimulateContract({
     abi: reverseRegistrarAbi,
     address: reverseRegistrarAddress,
-    functionName: 'claimWithResolver',
-  })
+    functionName: "claimWithResolver",
+  });
 
 /**
  * Wraps __{@link simulateContract}__ with `abi` set to __{@link reverseRegistrarAbi}__ and `functionName` set to `"renounceOwnership"`
@@ -692,8 +692,8 @@ export const simulateReverseRegistrarRenounceOwnership =
   /*#__PURE__*/ createSimulateContract({
     abi: reverseRegistrarAbi,
     address: reverseRegistrarAddress,
-    functionName: 'renounceOwnership',
-  })
+    functionName: "renounceOwnership",
+  });
 
 /**
  * Wraps __{@link simulateContract}__ with `abi` set to __{@link reverseRegistrarAbi}__ and `functionName` set to `"setController"`
@@ -702,8 +702,8 @@ export const simulateReverseRegistrarSetController =
   /*#__PURE__*/ createSimulateContract({
     abi: reverseRegistrarAbi,
     address: reverseRegistrarAddress,
-    functionName: 'setController',
-  })
+    functionName: "setController",
+  });
 
 /**
  * Wraps __{@link simulateContract}__ with `abi` set to __{@link reverseRegistrarAbi}__ and `functionName` set to `"setDefaultResolver"`
@@ -712,8 +712,8 @@ export const simulateReverseRegistrarSetDefaultResolver =
   /*#__PURE__*/ createSimulateContract({
     abi: reverseRegistrarAbi,
     address: reverseRegistrarAddress,
-    functionName: 'setDefaultResolver',
-  })
+    functionName: "setDefaultResolver",
+  });
 
 /**
  * Wraps __{@link simulateContract}__ with `abi` set to __{@link reverseRegistrarAbi}__ and `functionName` set to `"setName"`
@@ -722,8 +722,8 @@ export const simulateReverseRegistrarSetName =
   /*#__PURE__*/ createSimulateContract({
     abi: reverseRegistrarAbi,
     address: reverseRegistrarAddress,
-    functionName: 'setName',
-  })
+    functionName: "setName",
+  });
 
 /**
  * Wraps __{@link simulateContract}__ with `abi` set to __{@link reverseRegistrarAbi}__ and `functionName` set to `"setNameForAddr"`
@@ -732,8 +732,8 @@ export const simulateReverseRegistrarSetNameForAddr =
   /*#__PURE__*/ createSimulateContract({
     abi: reverseRegistrarAbi,
     address: reverseRegistrarAddress,
-    functionName: 'setNameForAddr',
-  })
+    functionName: "setNameForAddr",
+  });
 
 /**
  * Wraps __{@link simulateContract}__ with `abi` set to __{@link reverseRegistrarAbi}__ and `functionName` set to `"transferOwnership"`
@@ -742,8 +742,8 @@ export const simulateReverseRegistrarTransferOwnership =
   /*#__PURE__*/ createSimulateContract({
     abi: reverseRegistrarAbi,
     address: reverseRegistrarAddress,
-    functionName: 'transferOwnership',
-  })
+    functionName: "transferOwnership",
+  });
 
 /**
  * Wraps __{@link watchContractEvent}__ with `abi` set to __{@link reverseRegistrarAbi}__
@@ -752,7 +752,7 @@ export const watchReverseRegistrarEvent =
   /*#__PURE__*/ createWatchContractEvent({
     abi: reverseRegistrarAbi,
     address: reverseRegistrarAddress,
-  })
+  });
 
 /**
  * Wraps __{@link watchContractEvent}__ with `abi` set to __{@link reverseRegistrarAbi}__ and `eventName` set to `"ControllerChanged"`
@@ -761,8 +761,8 @@ export const watchReverseRegistrarControllerChangedEvent =
   /*#__PURE__*/ createWatchContractEvent({
     abi: reverseRegistrarAbi,
     address: reverseRegistrarAddress,
-    eventName: 'ControllerChanged',
-  })
+    eventName: "ControllerChanged",
+  });
 
 /**
  * Wraps __{@link watchContractEvent}__ with `abi` set to __{@link reverseRegistrarAbi}__ and `eventName` set to `"DefaultResolverChanged"`
@@ -771,8 +771,8 @@ export const watchReverseRegistrarDefaultResolverChangedEvent =
   /*#__PURE__*/ createWatchContractEvent({
     abi: reverseRegistrarAbi,
     address: reverseRegistrarAddress,
-    eventName: 'DefaultResolverChanged',
-  })
+    eventName: "DefaultResolverChanged",
+  });
 
 /**
  * Wraps __{@link watchContractEvent}__ with `abi` set to __{@link reverseRegistrarAbi}__ and `eventName` set to `"OwnershipTransferred"`
@@ -781,8 +781,8 @@ export const watchReverseRegistrarOwnershipTransferredEvent =
   /*#__PURE__*/ createWatchContractEvent({
     abi: reverseRegistrarAbi,
     address: reverseRegistrarAddress,
-    eventName: 'OwnershipTransferred',
-  })
+    eventName: "OwnershipTransferred",
+  });
 
 /**
  * Wraps __{@link watchContractEvent}__ with `abi` set to __{@link reverseRegistrarAbi}__ and `eventName` set to `"ReverseClaimed"`
@@ -791,5 +791,5 @@ export const watchReverseRegistrarReverseClaimedEvent =
   /*#__PURE__*/ createWatchContractEvent({
     abi: reverseRegistrarAbi,
     address: reverseRegistrarAddress,
-    eventName: 'ReverseClaimed',
-  })
+    eventName: "ReverseClaimed",
+  });

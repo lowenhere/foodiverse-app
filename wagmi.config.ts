@@ -350,5 +350,5 @@ export default defineConfig({
     },
   ],
   plugins: [actions()],
-  out: 'lib/generated.ts',
+  out: "lib/generated.ts",
 });

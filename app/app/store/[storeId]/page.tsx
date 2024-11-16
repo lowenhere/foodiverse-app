@@ -95,4 +95,3 @@ const getCartSummary = (
 
   return { totalItems, totalPrice };
 };
-
