@@ -1,6 +1,5 @@
 import { defineConfig } from "@wagmi/cli";
 import { actions } from "@wagmi/cli/plugins";
-import { sepolia } from 'viem/chains'
 
 export default defineConfig({
   out: "src/generated.ts",
@@ -352,5 +351,4 @@ export default defineConfig({
   ],
   plugins: [actions()],
   out: 'lib/generated.ts',
-  chains: [sepolia],
 });

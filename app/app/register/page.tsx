@@ -28,6 +28,7 @@ import { useAccount, useConfig } from "wagmi";
 import { shortenAddress } from "@/lib/utils"; // You'll need to create this utility
 import { DynamicButton } from "@/components/dynamic/DynamicButton";
 import { registerENS, setPrimaryName } from "@/lib/ens";
+import { EnsName } from "@/lib/ensReverse";
 
 const formSchema = z.object({
   name: z
@@ -100,6 +101,9 @@ export default function RegistrationForm() {
     <Card className="w-full max-w-md mx-auto">
       <CardHeader>
         <CardTitle>Register Your Foodiverse Name</CardTitle>
+        <EnsName
+          address={address || "0x88827a6d3693F33Bb4Ab61adc5a880Baa4B333bD"}
+        />
         <CardDescription>
           Create your unique Foodiverse identity
         </CardDescription>
