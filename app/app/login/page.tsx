@@ -24,9 +24,7 @@ export default function LoginPage() {
 
   if (!ready) {
     return (
-      <SpinnerPage>
-        <p>setting up login ...</p>
-      </SpinnerPage>
+      <SpinnerPage message="setting up login ..." />
     );
   }
 
