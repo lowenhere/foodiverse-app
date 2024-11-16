@@ -24,7 +24,7 @@ export default function DynamicLoginPage({ referrer }: DynamicLoginPageProps) {
     if (isLoggedIn) {
       router.push(referrer);
     }
-  }, [isLoggedIn])
+  }, [isLoggedIn]);
 
   if (!sdkHasLoaded) {
     return <SpinnerPage message="setting up dynamic login ..." />;

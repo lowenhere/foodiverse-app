@@ -29,7 +29,7 @@ const startHandler = async (ctx: any) => {
   );
 
   let storeId = "1";
-  if (ctx.match.length > 0){
+  if (ctx.match.length > 0) {
     storeId = ctx.match;
   }
 

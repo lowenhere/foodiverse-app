@@ -14,7 +14,7 @@ const webhookSecret = signData("WebhookTokenString", token);
 
 const bot = new Bot(token);
 
-bot.command("start", startHandler)
+bot.command("start", startHandler);
 
 bot.command("echo", async (ctx) => {
   if (ctx.match.length === 0) {

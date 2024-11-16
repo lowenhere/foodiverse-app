@@ -2,7 +2,11 @@
 import React, { useEffect } from "react";
 import { useRouter } from "next/navigation";
 import { useSearchParams } from "next/navigation";
-import { useTelegramLogin, useDynamicContext, useIsLoggedIn } from "@dynamic-labs/sdk-react-core";
+import {
+  useTelegramLogin,
+  useDynamicContext,
+  useIsLoggedIn,
+} from "@dynamic-labs/sdk-react-core";
 
 import SpinnerPage from "@/components/SpinnerPage";
 import { useSettings } from "@/components/providers/SettingsProvider";
@@ -21,11 +25,11 @@ export default function TgLoginPage() {
     referrerParam !== null ? decodeURIComponent(referrerParam) : "/app/store/1";
 
   useEffect(() => {
-    if (!sdkHasLoaded){
+    if (!sdkHasLoaded) {
       return;
     }
 
-    if (isLoggedIn){
+    if (isLoggedIn) {
       router.push(referrer);
       return;
     }
@@ -33,12 +37,12 @@ export default function TgLoginPage() {
     (async () => {
       updateSettings({ authProvider: "dynamic" });
       const isLinkedWithTelegram = await isAuthWithTelegram();
-      if (isLinkedWithTelegram){
+      if (isLinkedWithTelegram) {
         return await telegramSignIn();
       }
 
       await telegramSignIn({ forceCreateUser: true });
-    })()
+    })();
   }, [sdkHasLoaded, isLoggedIn]);
 
   return <SpinnerPage message="Loading TG Login ..." />;

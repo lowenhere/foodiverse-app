@@ -40,6 +40,6 @@ const Spinner = React.forwardRef<HTMLDivElement, SpinnerProps>(
   },
 );
 
-Spinner.displayName = 'Spinner';
+Spinner.displayName = "Spinner";
 
 export default Spinner;
