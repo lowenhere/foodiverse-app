@@ -6,7 +6,7 @@ export function parseAttestationData(attestation: AttestationInfo): any {
     attestation.dataLocation === "onchain"
       ? attestation.schema.data
       : [{ type: "string" }],
-    attestation.data as `0x${string}`
+    attestation.data as `0x${string}`,
   );
   const parsedData: any = {};
   data.forEach((item: any, i: number) => {
@@ -35,10 +35,10 @@ export function getLongSchemaId(chainId: string, schemaId: string): string {
 export function encodeWorldIdExtraData(
   root: bigint,
   nullifierHash: bigint,
-  proof: [bigint, bigint, bigint, bigint, bigint, bigint, bigint, bigint]
+  proof: [bigint, bigint, bigint, bigint, bigint, bigint, bigint, bigint],
 ): `0x${string}` {
   return encodeAbiParameters(
     [{ type: "uint256" }, { type: "uint256" }, { type: "uint256[8]" }],
-    [root, nullifierHash, proof]
+    [root, nullifierHash, proof],
   );
 }
