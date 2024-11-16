@@ -1,12 +1,12 @@
-import { useState, useEffect, useCallback } from 'react';
-import { usePrivy, useWallets } from '@privy-io/react-auth';
-import { useWalletClient, usePublicClient } from 'wagmi';
-import { http } from 'viem';
-import { SmartAccountClient, createSmartAccountClient } from 'permissionless';
-import { toSimpleSmartAccount } from 'permissionless/accounts';
-import { createPimlicoClient } from 'permissionless/clients/pimlico';
-import { entryPoint07Address } from 'viem/account-abstraction';
-import { useSetActiveWallet } from '@privy-io/wagmi';
+import { useState, useEffect, useCallback } from "react";
+import { usePrivy, useWallets } from "@privy-io/react-auth";
+import { useWalletClient, usePublicClient } from "wagmi";
+import { http } from "viem";
+import { SmartAccountClient, createSmartAccountClient } from "permissionless";
+import { toSimpleSmartAccount } from "permissionless/accounts";
+import { createPimlicoClient } from "permissionless/clients/pimlico";
+import { entryPoint07Address } from "viem/account-abstraction";
+import { useSetActiveWallet } from "@privy-io/wagmi";
 
 export function useSmartWalletClient() {
   const { authenticated, ready } = usePrivy();
@@ -28,11 +28,11 @@ export function useSmartWalletClient() {
     }
 
     const embeddedWallet = wallets.find(
-      (wallet) => wallet.walletClientType === 'privy'
+      (wallet) => wallet.walletClientType === "privy",
     );
 
     if (!embeddedWallet) {
-      setError('No embedded wallet found');
+      setError("No embedded wallet found");
       setIsLoading(false);
       return;
     }
@@ -46,7 +46,7 @@ export function useSmartWalletClient() {
 
       // Create a wallet client from the embedded wallet
       const chain = wagmiWalletClient?.chain;
-      if (!chain) throw new Error('Chain not found');
+      if (!chain) throw new Error("Chain not found");
 
       const pimlicoUrl = `https://api.pimlico.io/v2/${chain.id}/rpc?apikey=pim_As77M6yp9fi7YKpymfBs84`;
 
@@ -54,7 +54,7 @@ export function useSmartWalletClient() {
         transport: http(pimlicoUrl),
         entryPoint: {
           address: entryPoint07Address,
-          version: '0.7',
+          version: "0.7",
         },
       });
 
@@ -63,7 +63,7 @@ export function useSmartWalletClient() {
         owner: wagmiWalletClient,
         entryPoint: {
           address: entryPoint07Address,
-          version: '0.7',
+          version: "0.7",
         },
       });
 
@@ -81,8 +81,8 @@ export function useSmartWalletClient() {
 
       setSmartAccountClient(smartAccountClient);
     } catch (err) {
-      console.error('Error setting up smart account:', err);
-      setError('Failed to set up smart account');
+      console.error("Error setting up smart account:", err);
+      setError("Failed to set up smart account");
     } finally {
       setIsLoading(false);
     }

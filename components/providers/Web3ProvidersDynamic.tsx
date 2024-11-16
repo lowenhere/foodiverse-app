@@ -2,6 +2,7 @@ import { ReactNode } from "react";
 import { DynamicContextProvider } from "@dynamic-labs/sdk-react-core";
 import { EthereumWalletConnectors } from "@dynamic-labs/ethereum";
 import { DynamicWagmiConnector } from "@dynamic-labs/wagmi-connector";
+import { GlobalWalletExtension } from "@dynamic-labs/global-wallet";
 import { WagmiProvider } from "wagmi";
 import { QueryClient, QueryClientProvider } from "@tanstack/react-query";
 import { wagmiConfig } from "@/config";
@@ -21,6 +22,7 @@ export function Web3ProvidersDynamic({ children }: { children: ReactNode }) {
       settings={{
         environmentId: dynamicEnvironmentId,
         walletConnectors: [EthereumWalletConnectors],
+        walletConnectorExtensions: [GlobalWalletExtension],
       }}
     >
       <WagmiProvider config={wagmiConfig}>

@@ -6,8 +6,8 @@ import { usePrivy } from "@privy-io/react-auth";
 import SpinnerPage from "@/components/SpinnerPage";
 
 type PrivyLoginPageProps = {
-  referrer: string,
-}
+  referrer: string;
+};
 
 export default function PrivyLoginPage({ referrer }: PrivyLoginPageProps) {
   const { ready, authenticated, login } = usePrivy();

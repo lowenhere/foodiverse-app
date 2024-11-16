@@ -29,8 +29,6 @@ const NavBar: React.FC<NavBarProps> = ({
   referrer = "",
   children = [],
 }) => {
-  const [isMenuOpen, setIsMenuOpen] = React.useState(false);
-
   const profileIcon = profileImageSrc ? (
     <img alt="" src={profileImageSrc} />
   ) : (
@@ -38,12 +36,12 @@ const NavBar: React.FC<NavBarProps> = ({
   );
 
   let params = "";
-  if (referrer){
+  if (referrer) {
     params = `?referrer=${encodeURIComponent(referrer)}`;
   }
 
   const dropdownItems = [
-    { name: "Profile", to: "/app/profile", visible: loggedIn },
+    { name: "Profile", to: "/app/profile", visible: true },
     { name: "Settings", to: "/app/settings", visible: true },
     { name: "Login", to: "/app/login" + params, visible: !loggedIn },
     { name: "Logout", to: "/app/logout" + params, visible: loggedIn },
@@ -60,13 +58,8 @@ const NavBar: React.FC<NavBarProps> = ({
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         <div className="flex items-center justify-between h-16">
           <div className="flex items-center">
-            <Link
-              href={href}
-              className="flex-shrink-0"
-            >
-              <span className="text-l font-bold text-primary">
-                {title}
-              </span>
+            <Link href={href} className="flex-shrink-0">
+              <span className="text-l font-bold text-primary">{title}</span>
             </Link>
           </div>
           <div className="hidden md:block"></div>

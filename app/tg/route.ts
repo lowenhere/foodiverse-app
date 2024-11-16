@@ -2,6 +2,8 @@ import { NextRequest } from "next/server";
 import { signData } from "@telegram-apps/init-data-node";
 import { Bot, webhookCallback } from "grammy";
 
+import startHandler from "@/app/tg/startHandler";
+
 export const dynamic = "force-dynamic";
 export const fetchCache = "force-no-store";
 
@@ -11,6 +13,8 @@ const token = process.env.TELEGRAM_BOT_TOKEN ?? "";
 const webhookSecret = signData("WebhookTokenString", token);
 
 const bot = new Bot(token);
+
+bot.command("start", startHandler)
 
 bot.command("echo", async (ctx) => {
   if (ctx.match.length === 0) {
