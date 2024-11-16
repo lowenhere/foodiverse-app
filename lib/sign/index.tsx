@@ -104,9 +104,18 @@ export class FoodiverseSDK {
 
   // Order Management
   async createOrder(order: OrderType): Promise<string> {
+    const orderData = {
+      id: order.id,
+      status: order.status,
+      createdAt: order.createdAt,
+      updatedAt: order.updatedAt,
+      restaurantId: order.restaurantId,
+      total: order.total,
+    };
+
     const result = await this.client.createAttestation({
       schemaId: getShortSchemaId(ORDER_SCHEMA_ID),
-      data: order,
+      data: orderData,
       attester: this.getAttester(),
       indexingValue: `foodiverse_restaurant_orders_${order.restaurantId}`,
     });
@@ -114,9 +123,18 @@ export class FoodiverseSDK {
   }
 
   async createOrderItem(orderItem: OrderItemType): Promise<string> {
+    const orderItemData = {
+      id: orderItem.id,
+      orderId: orderItem.orderId,
+      menuItemId: orderItem.menuItemId,
+      quantity: orderItem.quantity,
+      notes: orderItem.notes || "",
+      price: orderItem.price,
+    };
+
     const result = await this.client.createAttestation({
       schemaId: getShortSchemaId(ORDER_ITEM_SCHEMA_ID),
-      data: orderItem,
+      data: orderItemData,
       attester: this.getAttester(),
       indexingValue: `foodiverse_orderitem_${orderItem.orderId}_${orderItem.id}`,
     });
@@ -163,43 +181,55 @@ export class FoodiverseSDK {
         id: uuidv4(),
         orderId: "", // Will be set after order creation
         menuItemId: item.menuItemId,
-        menuItem: menuItem,
-        quantity: item.quantity,
-        notes: item.notes,
-        price: Number(itemPrice), // Convert back to number for storage
+        quantity: Number(quantity),
+        notes: item.notes || "",
+        price: Number(itemPrice),
       });
     }
 
-    // Create order
-    const order: OrderType = {
+    // Create order with only the fields defined in the schema
+    const orderData = {
       id: uuidv4(),
       status: "pending",
       createdAt: Math.floor(Date.now() / 1000),
       updatedAt: Math.floor(Date.now() / 1000),
       restaurantId,
-      items: orderItems,
-      total: Number(total), // Convert back to number for storage
+      total: Number(total),
     };
 
-    console.log("Created order object:", order);
-
-    // Update order IDs in items
-    order.items.forEach((item) => {
-      item.orderId = order.id;
-    });
+    console.log("Created order data:", orderData);
 
     try {
-      // Create attestations
-      const orderResult = await this.createOrder(order);
+      // Create order attestation first
+      const orderResult = await this.client.createAttestation({
+        schemaId: getShortSchemaId(ORDER_SCHEMA_ID),
+        data: orderData,
+        attester: this.getAttester(),
+        indexingValue: `foodiverse_restaurant_orders_${restaurantId}`,
+      });
+
       console.log("Order attestation created:", orderResult);
 
-      // Create attestations for each order item
-      for (const item of order.items) {
-        const itemResult = await this.createOrderItem(item);
+      // Create order items with the order ID
+      for (const item of orderItems) {
+        item.orderId = orderData.id;
+        const itemResult = await this.client.createAttestation({
+          schemaId: getShortSchemaId(ORDER_ITEM_SCHEMA_ID),
+          data: {
+            id: item.id,
+            orderId: item.orderId,
+            menuItemId: item.menuItemId,
+            quantity: item.quantity,
+            notes: item.notes,
+            price: item.price,
+          },
+          attester: this.getAttester(),
+          indexingValue: `foodiverse_orderitem_${item.orderId}_${item.id}`,
+        });
         console.log("Order item attestation created:", itemResult);
       }
 
-      return orderResult;
+      return orderResult.attestationId;
     } catch (error) {
       console.error("Error creating order:", error);
       throw error;
