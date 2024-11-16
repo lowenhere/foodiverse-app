@@ -32,6 +32,11 @@ export default function TgLoginPage() {
 
     (async () => {
       updateSettings({ authProvider: "dynamic" });
+      const isLinkedWithTelegram = await isAuthWithTelegram();
+      if (isLinkedWithTelegram){
+        return await telegramSignIn();
+      }
+
       await telegramSignIn({ forceCreateUser: true });
     })()
   }, [sdkHasLoaded, isLoggedIn]);
