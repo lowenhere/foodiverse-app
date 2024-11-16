@@ -2,6 +2,8 @@ import React, { ReactNode } from "react";
 import Link from "next/link";
 import { UserIcon } from "@heroicons/react/24/solid";
 
+import { useStore } from "@/components/providers/StoreProvider";
+
 type NavBarProps = {
   profileImageSrc?: string;
   loggedIn?: boolean;
@@ -13,6 +15,8 @@ const NavBar: React.FC<NavBarProps> = ({
   loggedIn = false,
   children = [],
 }) => {
+  const storeData = useStore();
+
   const profileIcon = profileImageSrc ? (
     <img alt="" src={profileImageSrc} />
   ) : (
@@ -34,7 +38,12 @@ const NavBar: React.FC<NavBarProps> = ({
   return (
     <div className="navbar bg-base-100">
       <div className="flex-1">
-        <a className="text-xl">Foodiverse</a>
+        <Link
+          className="btn btn-ghost"
+          href={`/app/store/${storeData.data?.id}`}
+        >
+          {storeData.data?.name || "Foodiverse"}
+        </Link>
       </div>
       <div className="flex-none gap-2">
         {/* other elements */}

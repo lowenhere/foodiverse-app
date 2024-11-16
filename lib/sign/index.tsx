@@ -66,7 +66,7 @@ export class TrendSDK {
 
   async createUserProfile(
     profile: PersonType,
-    proof: WorldIdProof
+    proof: WorldIdProof,
   ): Promise<string> {
     console.log("Creating user profile", getShortSchemaId(PERSON_SCHEMA_ID));
     const result = await this.client.createAttestation(
@@ -80,9 +80,9 @@ export class TrendSDK {
         extraData: encodeWorldIdExtraData(
           proof.root,
           proof.nullifierHash,
-          proof.proof
+          proof.proof,
         ),
-      }
+      },
     );
     console.log("User profile created", result);
     return result.attestationId;
@@ -90,7 +90,7 @@ export class TrendSDK {
 
   async getUserProfileByAddress(
     address: string,
-    page: number = 1
+    page: number = 1,
   ): Promise<PersonType | null> {
     const attestations = await this.indexService.queryAttestationList({
       schemaId: PERSON_SCHEMA_ID,
@@ -116,7 +116,7 @@ export class TrendSDK {
 
   async getUserProfileByUsername(
     username: string,
-    page: number = 1
+    page: number = 1,
   ): Promise<PersonType | null> {
     const attestations = await this.indexService.queryAttestationList({
       schemaId: PERSON_SCHEMA_ID,
@@ -141,7 +141,7 @@ export class TrendSDK {
     let proofEncoded = encodeWorldIdExtraData(
       proof.root,
       proof.nullifierHash,
-      proof.proof
+      proof.proof,
     );
 
     console.log(proofEncoded);
@@ -156,7 +156,7 @@ export class TrendSDK {
       },
       {
         extraData: proofEncoded,
-      }
+      },
     );
     return result.attestationId;
   }
@@ -207,7 +207,7 @@ export class TrendSDK {
   async reactToPost(
     postId: string,
     reaction: ReactionType,
-    proof: WorldIdProof
+    proof: WorldIdProof,
   ): Promise<string> {
     const result = await this.client.createAttestation(
       {
@@ -221,9 +221,9 @@ export class TrendSDK {
         extraData: encodeWorldIdExtraData(
           proof.root,
           proof.nullifierHash,
-          proof.proof
+          proof.proof,
         ),
-      }
+      },
     );
     return result.attestationId;
   }
@@ -250,7 +250,7 @@ export class TrendSDK {
 
   async getReactsByUser(
     address: string,
-    page: number = 1
+    page: number = 1,
   ): Promise<ReactionType[] | null> {
     const attestations = await this.indexService.queryAttestationList({
       schemaId: REACTION_SCHEMA_ID,
