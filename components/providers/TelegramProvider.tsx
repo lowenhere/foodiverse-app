@@ -13,7 +13,6 @@ const TelegramProvider: React.FC<{ children: React.ReactNode }> = ({
 }) => {
   const [webApp, setWebApp] = useState<WebAppTypes | null>(null);
   useEffect(() => {
-    /* eslint-disable  @typescript-eslint/no-explicit-any */
     if (typeof window !== "undefined" && (window as any).Telegram) {
       setWebApp(WebApp);
     }
