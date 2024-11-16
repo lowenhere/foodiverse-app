@@ -110,6 +110,7 @@ export class FoodiverseSDK {
       createdAt: order.createdAt,
       updatedAt: order.updatedAt,
       restaurantId: order.restaurantId,
+      items: order.items,
       total: order.total,
     };
 
@@ -153,7 +154,7 @@ export class FoodiverseSDK {
 
   async createOrderWithItems(
     restaurantId: string,
-    items: { menuItemId: string; quantity: number; notes?: string }[],
+    items: string[],
   ): Promise<string> {
     console.log("Creating order with items:", { restaurantId, items });
 
@@ -161,31 +162,7 @@ export class FoodiverseSDK {
     const menuItems = await this.getMenuItemsByMenuId(restaurantId);
     const menuItemsMap = new Map(menuItems.map((item) => [item.id, item]));
 
-    // Calculate total and create order items
-    const orderItems: OrderItemType[] = [];
-    let total = BigInt(0);
-
-    for (const item of items) {
-      const menuItem = menuItemsMap.get(item.menuItemId);
-      if (!menuItem) throw new Error(`Menu item ${item.menuItemId} not found`);
-      if (!menuItem.isAvailable)
-        throw new Error(`Menu item ${menuItem.name} is not available`);
-
-      // Convert price to BigInt and calculate total
-      const itemPrice = BigInt(menuItem.price);
-      const quantity = BigInt(item.quantity);
-      const itemTotal = itemPrice * quantity;
-      total += itemTotal;
-
-      orderItems.push({
-        id: uuidv4(),
-        orderId: "", // Will be set after order creation
-        menuItemId: item.menuItemId,
-        quantity: Number(quantity),
-        notes: item.notes || "",
-        price: Number(itemPrice),
-      });
-    }
+    // Calculate total from items
 
     // Create order with only the fields defined in the schema
     const orderData = {
@@ -194,7 +171,7 @@ export class FoodiverseSDK {
       createdAt: Math.floor(Date.now() / 1000),
       updatedAt: Math.floor(Date.now() / 1000),
       restaurantId,
-      total: Number(total),
+      items: items,
     };
 
     console.log("Created order data:", orderData);
@@ -205,29 +182,11 @@ export class FoodiverseSDK {
         schemaId: getShortSchemaId(ORDER_SCHEMA_ID),
         data: orderData,
         attester: this.getAttester(),
+        linkedAttestationId: "", // Link to restaurant
         indexingValue: `foodiverse_restaurant_orders_${restaurantId}`,
       });
 
       console.log("Order attestation created:", orderResult);
-
-      // Create order items with the order ID
-      for (const item of orderItems) {
-        item.orderId = orderData.id;
-        const itemResult = await this.client.createAttestation({
-          schemaId: getShortSchemaId(ORDER_ITEM_SCHEMA_ID),
-          data: {
-            id: item.id,
-            orderId: item.orderId,
-            menuItemId: item.menuItemId,
-            quantity: item.quantity,
-            notes: item.notes,
-            price: item.price,
-          },
-          attester: this.getAttester(),
-          indexingValue: `foodiverse_orderitem_${item.orderId}_${item.id}`,
-        });
-        console.log("Order item attestation created:", itemResult);
-      }
 
       return orderResult.attestationId;
     } catch (error) {

@@ -32,11 +32,16 @@ export const useReverseEnsLookup = (
  * @param props.address The Ethereum address to lookup
  * @param props.className Optional CSS classes
  */
-export const EnsName: React.FC<{
+function EnsName({
+  address,
+  className,
+}: {
   address: Address;
   className?: string;
-}> = ({ address }) => {
+}) {
   const { ensName } = useReverseEnsLookup(address);
 
-  return <div>{ensName || address}</div>;
-};
+  return <div className={className}>{ensName || address}</div>;
+}
+
+export { EnsName };
