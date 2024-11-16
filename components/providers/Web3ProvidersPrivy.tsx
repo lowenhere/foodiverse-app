@@ -1,22 +1,9 @@
 "use client";
 import { PropsWithChildren } from "react";
 import { PrivyProvider } from "@privy-io/react-auth";
-import { sepolia } from "viem/chains";
-import { http, createConfig } from "wagmi";
-import { WagmiProvider } from "@privy-io/wagmi";
-import { QueryClient, QueryClientProvider } from "@tanstack/react-query";
-import { mantle } from "viem/chains";
+import { baseSepolia, sepolia } from "viem/chains";
 
 export function Web3ProvidersPrivy({ children }: PropsWithChildren) {
-  const queryClient = new QueryClient();
-
-  const wagmiConfig = createConfig({
-    chains: [mantle],
-    transports: {
-      [mantle.id]: http(),
-    },
-  });
-
   const privyAppId = process.env.NEXT_PUBLIC_PRIVY_APP_ID;
 
   if (!privyAppId) {
@@ -27,11 +14,6 @@ export function Web3ProvidersPrivy({ children }: PropsWithChildren) {
   return (
     <PrivyProvider
       appId={privyAppId}
-      clientId={
-        process.env.NODE_ENV === "production"
-          ? undefined
-          : "client-WY2o7SWZviVQ5FJdYhRbFWyUnXae2XhwPGexM2YFMeBPD"
-      }
       config={{
         loginMethods: ["email", "wallet"],
         appearance: {
@@ -41,7 +23,7 @@ export function Web3ProvidersPrivy({ children }: PropsWithChildren) {
           createOnLogin: "all-users",
         },
         defaultChain: sepolia,
-        supportedChains: [sepolia],
+        supportedChains: [sepolia, baseSepolia],
       }}
     >
       {children}
