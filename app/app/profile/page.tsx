@@ -17,12 +17,12 @@ export default function ProfilePage() {
   if (settings.authProvider === "privy") {
     content = (
       <>
-        <div className="mb-4">
+        {/* <div className="mb-4">
           <h2 className="text-l font-bold">Telegram</h2>
           <TelegramProfile />
-        </div>
-        <div className="mb-4">
-          <h2 className="text-l font-bold">Privy</h2>
+        </div> */}
+        <div className="w-full">
+          <h2 className="text-l font-bold">Privy Profile</h2>
           <PrivyProfile />
         </div>
       </>

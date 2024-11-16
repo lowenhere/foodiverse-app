@@ -3,17 +3,20 @@ import React, { useEffect } from "react";
 import { useSearchParams } from "next/navigation";
 import { useTelegramLogin } from "@dynamic-labs/sdk-react-core";
 
+import SpinnerPage from "@/components/SpinnerPage";
 import { useSettings } from "@/components/providers/SettingsProvider";
 
+// for dynamic only
 export default function TgLoginPage() {
   const searchParams = useSearchParams();
-  const { settings } = useSettings();
+  const { settings, updateSettings } = useSettings();
   const { telegramSignIn, isAuthWithTelegram } = useTelegramLogin();
 
   useEffect(() => {
-    telegramSignIn({
-      forceCreateUser: true,
-    });
+    (async () => {
+      updateSettings({ authProvider: "dynamic" });
+      await telegramSignIn({ forceCreateUser: true });
+    })()
   }, []);
 
   const referrerParam = searchParams.get("referrer");
@@ -22,9 +25,5 @@ export default function TgLoginPage() {
 
   const { authProvider } = settings;
 
-  if (authProvider === "dynamic") {
-    return <></>;
-  }
-
-  return <p>Not Implemented</p>;
+  return <SpinnerPage message="Loading TG Login ..." />;
 }
