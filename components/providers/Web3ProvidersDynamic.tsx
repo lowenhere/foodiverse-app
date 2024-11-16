@@ -1,3 +1,4 @@
+import { ReactNode } from "react";
 import { DynamicContextProvider } from "@dynamic-labs/sdk-react-core";
 import { EthereumWalletConnectors } from "@dynamic-labs/ethereum";
 import { DynamicWagmiConnector } from "@dynamic-labs/wagmi-connector";
@@ -28,7 +29,7 @@ if (!dynamicEnvironmentId) {
 export function Web3ProvidersDynamic({
   children,
 }: {
-  children: React.ReactNode;
+  children: ReactNode;
 }) {
   return (
     <DynamicContextProvider
