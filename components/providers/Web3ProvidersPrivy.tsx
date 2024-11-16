@@ -27,11 +27,6 @@ export function Web3ProvidersPrivy({ children }: PropsWithChildren) {
   return (
     <PrivyProvider
       appId={privyAppId}
-      clientId={
-        process.env.NODE_ENV === "production"
-          ? undefined
-          : "client-WY2o7SWZviVQ5FJdYhRbFWyUnXae2XhwPGexM2YFMeBPD"
-      }
       config={{
         loginMethods: ["email", "wallet"],
         appearance: {

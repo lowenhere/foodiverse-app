@@ -1,7 +1,7 @@
 import { SignProtocolClient, SpMode, EvmChains, type Schema } from "@ethsign/sp-sdk";
-import type { WalletClient } from "viem";
+import { zeroAddress, type WalletClient } from "viem";
 
-const RESOLVER = "0x2e64c9D5007Ab5E6bA6a65F04708d5ae949B8573";
+const RESOLVER = zeroAddress;
 
 export const createUserSchema = async (walletClient: WalletClient) => {
     const client = new SignProtocolClient(SpMode.OnChain, {
@@ -15,8 +15,8 @@ export const createUserSchema = async (walletClient: WalletClient) => {
         resolver: RESOLVER,
         data: [
             { name: "id", type: "string" },
-            { name: "createdAt", type: "string" },
-            { name: "updatedAt", type: "string" },
+            { name: "createdAt", type: "uint256" },
+            { name: "updatedAt", type: "uint256" },
         ],
     };
 
@@ -57,11 +57,11 @@ export const createRestaurantSchema = async (walletClient: WalletClient) => {
         resolver: RESOLVER,
         data: [
             { name: "id", type: "string" },
-            { name: "ensName", type: "string" },
+            { name: "name", type: "string" },
             { name: "paymentAddress", type: "string" },
-            { name: "createdAt", type: "string" },
-            { name: "updatedAt", type: "string" },
-            { name: "merchantId", type: "string" },
+            { name: "ensName", type: "string" },
+            { name: "createdAt", type: "uint256" },
+            { name: "updatedAt", type: "uint256" },
         ],
     };
 
@@ -81,10 +81,10 @@ export const createMenuSchema = async (walletClient: WalletClient) => {
         data: [
             { name: "id", type: "string" },
             { name: "menuType", type: "string" },
-            { name: "startDate", type: "string" },
-            { name: "endDate", type: "string" },
-            { name: "createdAt", type: "string" },
-            { name: "updatedAt", type: "string" },
+            { name: "startDate", type: "uint256" },
+            { name: "endDate", type: "uint256" },
+            { name: "createdAt", type: "uint256" },
+            { name: "updatedAt", type: "uint256" },
             { name: "restaurantId", type: "string" },
         ],
     };
@@ -107,8 +107,8 @@ export const createMenuItemSchema = async (walletClient: WalletClient) => {
             { name: "name", type: "string" },
             { name: "price", type: "uint256" },
             { name: "isAvailable", type: "bool" },
-            { name: "createdAt", type: "string" },
-            { name: "updatedAt", type: "string" },
+            { name: "createdAt", type: "uint256" },
+            { name: "updatedAt", type: "uint256" },
             { name: "menuId", type: "string" },
         ],
     };
@@ -129,8 +129,8 @@ export const createOrderSchema = async (walletClient: WalletClient) => {
         data: [
             { name: "id", type: "string" },
             { name: "status", type: "string" },
-            { name: "createdAt", type: "string" },
-            { name: "updatedAt", type: "string" },
+            { name: "createdAt", type: "uint256" },
+            { name: "updatedAt", type: "uint256" },
             { name: "restaurantId", type: "string" },
         ],
     };
@@ -177,7 +177,7 @@ export const createPaymentSchema = async (walletClient: WalletClient) => {
             { name: "amount", type: "uint256" },
             { name: "currency", type: "string" },
             { name: "paymentStatus", type: "string" },
-            { name: "paymentTime", type: "string" },
+            { name: "paymentTime", type: "uint256" },
         ],
     };
 

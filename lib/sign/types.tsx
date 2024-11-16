@@ -1,35 +1,26 @@
-import { type Address } from "viem";
-
 export type UserType = {
   id: string;
-  createdAt: string;
-  updatedAt: string;
+  createdAt: number;
+  updatedAt: number;
 };
 
-export type MerchantType = {
-  id: string;
-  address: string;
-  ensName?: string;
-  createdAt: string;
-  updatedAt: string;
-};
-
-export type RestaurantType = {
-  id: string;
-  ensName?: string;
-  paymentAddress: string;
-  createdAt: string;
-  updatedAt: string;
-  merchantId: string;
+// Restaurant (Merged with Merchant)
+export type Restaurant = {
+  id: string; // UUID
+  name: string; // Name of the restaurant or merchant
+  paymentAddress: string; // Wallet address for payments
+  ensName?: string; // Optional ENS domain name
+  createdAt: number; // Unix timestamp
+  updatedAt: number; // Unix timestamp
 };
 
 export type MenuType = {
   id: string;
   menuType: "regular" | "special" | "seasonal";
-  startDate?: string;
-  endDate?: string;
-  createdAt: string;
-  updatedAt: string;
+  startDate?: number;
+  endDate?: number;
+  createdAt: number;
+  updatedAt: number;
   restaurantId: string;
 };
 
@@ -38,16 +29,16 @@ export type MenuItemType = {
   name: string;
   price: number;
   isAvailable: boolean;
-  createdAt: string;
-  updatedAt: string;
+  createdAt: number;
+  updatedAt: number;
   menuId: string;
 };
 
 export type OrderType = {
   id: string;
   status: "pending" | "completed" | "cancelled";
-  createdAt: string;
-  updatedAt: string;
+  createdAt: number;
+  updatedAt: number;
   restaurantId: string;
 };
 
@@ -66,5 +57,5 @@ export type PaymentType = {
   amount: number;
   currency: string;
   paymentStatus: "pending" | "paid" | "failed";
-  paymentTime: string;
+  paymentTime: number;
 };
