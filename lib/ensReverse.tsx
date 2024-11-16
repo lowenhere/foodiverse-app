@@ -9,7 +9,7 @@ import { sepolia, mainnet } from "wagmi/chains";
  */
 export const useReverseEnsLookup = (
   address: Address,
-  testnet: boolean = false,
+  testnet: boolean = true,
 ) => {
   const {
     data: ensName,
