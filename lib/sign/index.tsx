@@ -25,6 +25,7 @@ import type {
   PaymentType,
 } from "./types";
 import { getShortSchemaId, parseAttestationData } from "./utils";
+import { v4 as uuidv4 } from "uuid";
 
 export class FoodiverseSDK {
   private client: SignProtocolClient;
@@ -130,6 +131,79 @@ export class FoodiverseSDK {
       indexingValue: `foodiverse_payment_${payment.orderId}_${payment.id}`,
     });
     return result.attestationId;
+  }
+
+  async createOrderWithItems(
+    restaurantId: string,
+    items: { menuItemId: string; quantity: number; notes?: string }[],
+  ): Promise<string> {
+    console.log("Creating order with items:", { restaurantId, items });
+
+    // Fetch menu items to get prices
+    const menuItems = await this.getMenuItemsByMenuId(restaurantId);
+    const menuItemsMap = new Map(menuItems.map((item) => [item.id, item]));
+
+    // Calculate total and create order items
+    const orderItems: OrderItemType[] = [];
+    let total = BigInt(0);
+
+    for (const item of items) {
+      const menuItem = menuItemsMap.get(item.menuItemId);
+      if (!menuItem) throw new Error(`Menu item ${item.menuItemId} not found`);
+      if (!menuItem.isAvailable)
+        throw new Error(`Menu item ${menuItem.name} is not available`);
+
+      // Convert price to BigInt and calculate total
+      const itemPrice = BigInt(menuItem.price);
+      const quantity = BigInt(item.quantity);
+      const itemTotal = itemPrice * quantity;
+      total += itemTotal;
+
+      orderItems.push({
+        id: uuidv4(),
+        orderId: "", // Will be set after order creation
+        menuItemId: item.menuItemId,
+        menuItem: menuItem,
+        quantity: item.quantity,
+        notes: item.notes,
+        price: Number(itemPrice), // Convert back to number for storage
+      });
+    }
+
+    // Create order
+    const order: OrderType = {
+      id: uuidv4(),
+      status: "pending",
+      createdAt: Math.floor(Date.now() / 1000),
+      updatedAt: Math.floor(Date.now() / 1000),
+      restaurantId,
+      items: orderItems,
+      total: Number(total), // Convert back to number for storage
+    };
+
+    console.log("Created order object:", order);
+
+    // Update order IDs in items
+    order.items.forEach((item) => {
+      item.orderId = order.id;
+    });
+
+    try {
+      // Create attestations
+      const orderResult = await this.createOrder(order);
+      console.log("Order attestation created:", orderResult);
+
+      // Create attestations for each order item
+      for (const item of order.items) {
+        const itemResult = await this.createOrderItem(item);
+        console.log("Order item attestation created:", itemResult);
+      }
+
+      return orderResult;
+    } catch (error) {
+      console.error("Error creating order:", error);
+      throw error;
+    }
   }
 
   // Query Methods

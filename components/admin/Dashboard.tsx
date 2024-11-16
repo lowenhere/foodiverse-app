@@ -11,6 +11,7 @@ import type {
   OrderItemType,
   PaymentType,
 } from "@/lib/sign/types";
+import { v4 as uuidv4 } from "uuid";
 
 export const Dashboard = () => {
   const [restaurants, setRestaurants] = useState<Restaurant[]>([]);
@@ -28,6 +29,13 @@ export const Dashboard = () => {
   } | null>(null);
   const [loading, setLoading] = useState(false);
   const [error, setError] = useState<string | null>(null);
+  const [cart, setCart] = useState<
+    {
+      menuItemId: string;
+      quantity: number;
+      notes?: string;
+    }[]
+  >([]);
 
   useEffect(() => {
     loadRestaurants();
@@ -103,6 +111,73 @@ export const Dashboard = () => {
     // Convert to string for decimal handling
     const ethValue = Number(priceInWei) / 1e18;
     return `${ethValue.toFixed(4)} ETH`;
+  };
+
+  const addToCart = (menuItem: MenuItemType) => {
+    setCart((prev) => {
+      const existing = prev.find((item) => item.menuItemId === menuItem.id);
+      if (existing) {
+        return prev.map((item) =>
+          item.menuItemId === menuItem.id
+            ? { ...item, quantity: item.quantity + 1 }
+            : item,
+        );
+      }
+      return [...prev, { menuItemId: menuItem.id, quantity: 1 }];
+    });
+  };
+
+  const updateCartItemQuantity = (menuItemId: string, quantity: number) => {
+    if (quantity <= 0) {
+      setCart((prev) => prev.filter((item) => item.menuItemId !== menuItemId));
+    } else {
+      setCart((prev) =>
+        prev.map((item) =>
+          item.menuItemId === menuItemId ? { ...item, quantity } : item,
+        ),
+      );
+    }
+  };
+
+  const updateCartItemNotes = (menuItemId: string, notes: string) => {
+    setCart((prev) =>
+      prev.map((item) =>
+        item.menuItemId === menuItemId ? { ...item, notes } : item,
+      ),
+    );
+  };
+
+  const calculateCartTotal = () => {
+    if (!menuData) return BigInt(0);
+
+    return cart.reduce((total, item) => {
+      const menuItem = Object.values(menuData.menuItems)
+        .flat()
+        .find((mi) => mi.id === item.menuItemId);
+
+      if (!menuItem) return total;
+
+      const itemPrice = BigInt(menuItem.price);
+      const quantity = BigInt(item.quantity);
+      return total + itemPrice * quantity;
+    }, BigInt(0));
+  };
+
+  const placeOrder = async () => {
+    if (!selectedRestaurant || cart.length === 0) return;
+
+    try {
+      setLoading(true);
+      const sdk = new FoodiverseSDK(getPrivateKeyAccount());
+      await sdk.createOrderWithItems(selectedRestaurant, cart);
+      setCart([]);
+      // Refresh orders
+      loadRestaurantData(selectedRestaurant);
+    } catch (error: any) {
+      setError(`Failed to place order: ${error.message}`);
+    } finally {
+      setLoading(false);
+    }
   };
 
   if (loading) {
@@ -182,6 +257,14 @@ export const Dashboard = () => {
                             {item.isAvailable ? "Available" : "Unavailable"}
                           </span>
                         </p>
+                        {item.isAvailable && (
+                          <button
+                            onClick={() => addToCart(item)}
+                            className="mt-2 bg-blue-500 text-white px-4 py-1 rounded hover:bg-blue-600"
+                          >
+                            Add to Order
+                          </button>
+                        )}
                       </div>
                     ))}
                   </div>
@@ -263,6 +346,73 @@ export const Dashboard = () => {
                   </div>
                 </div>
               ))}
+            </div>
+          )}
+
+          {/* Shopping Cart */}
+          {cart.length > 0 && (
+            <div className="fixed bottom-0 left-0 right-0 bg-white border-t p-4 shadow-lg">
+              <div className="max-w-7xl mx-auto">
+                <h3 className="text-lg font-semibold mb-2">Your Order</h3>
+                <div className="space-y-2">
+                  {cart.map((item) => {
+                    const menuItem = Object.values(menuData?.menuItems || {})
+                      .flat()
+                      .find((mi) => mi.id === item.menuItemId);
+                    return (
+                      <div
+                        key={item.menuItemId}
+                        className="flex items-center gap-4"
+                      >
+                        <span className="flex-1">{menuItem?.name}</span>
+                        <span className="text-sm text-gray-600">
+                          {menuItem ? formatPrice(menuItem.price) : "N/A"}
+                        </span>
+                        <input
+                          type="number"
+                          value={item.quantity}
+                          onChange={(e) =>
+                            updateCartItemQuantity(
+                              item.menuItemId,
+                              parseInt(e.target.value),
+                            )
+                          }
+                          className="w-20 p-1 border rounded"
+                          min="1"
+                        />
+                        <input
+                          type="text"
+                          placeholder="Notes"
+                          value={item.notes || ""}
+                          onChange={(e) =>
+                            updateCartItemNotes(item.menuItemId, e.target.value)
+                          }
+                          className="w-40 p-1 border rounded"
+                        />
+                        <button
+                          onClick={() =>
+                            updateCartItemQuantity(item.menuItemId, 0)
+                          }
+                          className="text-red-500"
+                        >
+                          Remove
+                        </button>
+                      </div>
+                    );
+                  })}
+                </div>
+                <div className="mt-4 flex justify-between items-center">
+                  <span className="font-semibold">Total:</span>
+                  <span>{formatPrice(calculateCartTotal())}</span>
+                </div>
+                <button
+                  onClick={placeOrder}
+                  disabled={loading}
+                  className="mt-4 w-full bg-green-500 text-white py-2 rounded hover:bg-green-600 disabled:bg-gray-400"
+                >
+                  {loading ? "Placing Order..." : "Place Order"}
+                </button>
+              </div>
             </div>
           )}
         </>

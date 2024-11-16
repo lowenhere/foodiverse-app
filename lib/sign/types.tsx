@@ -40,14 +40,18 @@ export type OrderType = {
   createdAt: number;
   updatedAt: number;
   restaurantId: string;
+  items: OrderItemType[];
+  total: number;
 };
 
 export type OrderItemType = {
   id: string;
   orderId: string;
   menuItemId: string;
+  menuItem?: MenuItemType;
   quantity: number;
   notes?: string;
+  price: number;
 };
 
 export type PaymentType = {
