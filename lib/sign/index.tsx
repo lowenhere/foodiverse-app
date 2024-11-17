@@ -206,6 +206,9 @@ export class FoodiverseSDK {
           hash: userOperation,
         });
       console.log("Transaction receipt:", receipt);
+
+      // Return blockscout link
+      return `https://base-sepolia.blockscout.com/tx/${receipt.logs[0].transactionHash}`;
     } else {
       const orderData = {
         id: order.id,

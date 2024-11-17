@@ -6,6 +6,771 @@ import {
 } from '@wagmi/core/codegen'
 
 //////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
+// Foodiverse Points
+//////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
+
+/**
+ * - [__View Contract on Morph Holesky Morph Holesky Explorer__](https://explorer-holesky.morphl2.io/address/0xf2Fb39bBfA77D9beF88b319360BF963Ea208a0f2)
+ * - [__View Contract on Zircuit Testnet Zircuit Testnet Explorer__](https://explorer.testnet.zircuit.com/address/0xD1eA89F676763b6238951adc2D5521D0e0Cddb4d)
+ * - [__View Contract on Polygon Amoy Polygon Scan__](https://amoy.polygonscan.com/address/0xD1eA89F676763b6238951adc2D5521D0e0Cddb4d)
+ * - [__View Contract on Base Sepolia Basescan__](https://sepolia.basescan.org/address/0xBFa7034670eA7d69E369569eC8216a1EEae74bCa)
+ * - [__View Contract on Scroll Sepolia Scrollscan__](https://sepolia.scrollscan.com/address/0x814200754D0C6672ca20fC74c066A2b9AD47018d)
+ */
+export const foodiversePointsAbi = [
+  { type: 'constructor', inputs: [], stateMutability: 'nonpayable' },
+  {
+    type: 'function',
+    inputs: [
+      { name: 'owner', internalType: 'address', type: 'address' },
+      { name: 'spender', internalType: 'address', type: 'address' },
+    ],
+    name: 'allowance',
+    outputs: [{ name: '', internalType: 'uint256', type: 'uint256' }],
+    stateMutability: 'view',
+  },
+  {
+    type: 'function',
+    inputs: [
+      { name: 'spender', internalType: 'address', type: 'address' },
+      { name: 'value', internalType: 'uint256', type: 'uint256' },
+    ],
+    name: 'approve',
+    outputs: [{ name: '', internalType: 'bool', type: 'bool' }],
+    stateMutability: 'nonpayable',
+  },
+  {
+    type: 'function',
+    inputs: [{ name: 'account', internalType: 'address', type: 'address' }],
+    name: 'balanceOf',
+    outputs: [{ name: '', internalType: 'uint256', type: 'uint256' }],
+    stateMutability: 'view',
+  },
+  {
+    type: 'function',
+    inputs: [],
+    name: 'decimals',
+    outputs: [{ name: '', internalType: 'uint8', type: 'uint8' }],
+    stateMutability: 'view',
+  },
+  {
+    type: 'function',
+    inputs: [
+      { name: 'to', internalType: 'address', type: 'address' },
+      { name: 'amount', internalType: 'uint256', type: 'uint256' },
+    ],
+    name: 'mint',
+    outputs: [],
+    stateMutability: 'nonpayable',
+  },
+  {
+    type: 'function',
+    inputs: [],
+    name: 'name',
+    outputs: [{ name: '', internalType: 'string', type: 'string' }],
+    stateMutability: 'view',
+  },
+  {
+    type: 'function',
+    inputs: [],
+    name: 'owner',
+    outputs: [{ name: '', internalType: 'address', type: 'address' }],
+    stateMutability: 'view',
+  },
+  {
+    type: 'function',
+    inputs: [],
+    name: 'renounceOwnership',
+    outputs: [],
+    stateMutability: 'nonpayable',
+  },
+  {
+    type: 'function',
+    inputs: [],
+    name: 'symbol',
+    outputs: [{ name: '', internalType: 'string', type: 'string' }],
+    stateMutability: 'view',
+  },
+  {
+    type: 'function',
+    inputs: [],
+    name: 'totalSupply',
+    outputs: [{ name: '', internalType: 'uint256', type: 'uint256' }],
+    stateMutability: 'view',
+  },
+  {
+    type: 'function',
+    inputs: [
+      { name: 'to', internalType: 'address', type: 'address' },
+      { name: 'value', internalType: 'uint256', type: 'uint256' },
+    ],
+    name: 'transfer',
+    outputs: [{ name: '', internalType: 'bool', type: 'bool' }],
+    stateMutability: 'nonpayable',
+  },
+  {
+    type: 'function',
+    inputs: [
+      { name: 'from', internalType: 'address', type: 'address' },
+      { name: 'to', internalType: 'address', type: 'address' },
+      { name: 'value', internalType: 'uint256', type: 'uint256' },
+    ],
+    name: 'transferFrom',
+    outputs: [{ name: '', internalType: 'bool', type: 'bool' }],
+    stateMutability: 'nonpayable',
+  },
+  {
+    type: 'function',
+    inputs: [{ name: 'newOwner', internalType: 'address', type: 'address' }],
+    name: 'transferOwnership',
+    outputs: [],
+    stateMutability: 'nonpayable',
+  },
+  {
+    type: 'event',
+    anonymous: false,
+    inputs: [
+      {
+        name: 'owner',
+        internalType: 'address',
+        type: 'address',
+        indexed: true,
+      },
+      {
+        name: 'spender',
+        internalType: 'address',
+        type: 'address',
+        indexed: true,
+      },
+      {
+        name: 'value',
+        internalType: 'uint256',
+        type: 'uint256',
+        indexed: false,
+      },
+    ],
+    name: 'Approval',
+  },
+  {
+    type: 'event',
+    anonymous: false,
+    inputs: [
+      {
+        name: 'previousOwner',
+        internalType: 'address',
+        type: 'address',
+        indexed: true,
+      },
+      {
+        name: 'newOwner',
+        internalType: 'address',
+        type: 'address',
+        indexed: true,
+      },
+    ],
+    name: 'OwnershipTransferred',
+  },
+  {
+    type: 'event',
+    anonymous: false,
+    inputs: [
+      { name: 'from', internalType: 'address', type: 'address', indexed: true },
+      { name: 'to', internalType: 'address', type: 'address', indexed: true },
+      {
+        name: 'value',
+        internalType: 'uint256',
+        type: 'uint256',
+        indexed: false,
+      },
+    ],
+    name: 'Transfer',
+  },
+  {
+    type: 'error',
+    inputs: [
+      { name: 'spender', internalType: 'address', type: 'address' },
+      { name: 'allowance', internalType: 'uint256', type: 'uint256' },
+      { name: 'needed', internalType: 'uint256', type: 'uint256' },
+    ],
+    name: 'ERC20InsufficientAllowance',
+  },
+  {
+    type: 'error',
+    inputs: [
+      { name: 'sender', internalType: 'address', type: 'address' },
+      { name: 'balance', internalType: 'uint256', type: 'uint256' },
+      { name: 'needed', internalType: 'uint256', type: 'uint256' },
+    ],
+    name: 'ERC20InsufficientBalance',
+  },
+  {
+    type: 'error',
+    inputs: [{ name: 'approver', internalType: 'address', type: 'address' }],
+    name: 'ERC20InvalidApprover',
+  },
+  {
+    type: 'error',
+    inputs: [{ name: 'receiver', internalType: 'address', type: 'address' }],
+    name: 'ERC20InvalidReceiver',
+  },
+  {
+    type: 'error',
+    inputs: [{ name: 'sender', internalType: 'address', type: 'address' }],
+    name: 'ERC20InvalidSender',
+  },
+  {
+    type: 'error',
+    inputs: [{ name: 'spender', internalType: 'address', type: 'address' }],
+    name: 'ERC20InvalidSpender',
+  },
+  {
+    type: 'error',
+    inputs: [{ name: 'owner', internalType: 'address', type: 'address' }],
+    name: 'OwnableInvalidOwner',
+  },
+  {
+    type: 'error',
+    inputs: [{ name: 'account', internalType: 'address', type: 'address' }],
+    name: 'OwnableUnauthorizedAccount',
+  },
+] as const
+
+/**
+ * - [__View Contract on Morph Holesky Morph Holesky Explorer__](https://explorer-holesky.morphl2.io/address/0xf2Fb39bBfA77D9beF88b319360BF963Ea208a0f2)
+ * - [__View Contract on Zircuit Testnet Zircuit Testnet Explorer__](https://explorer.testnet.zircuit.com/address/0xD1eA89F676763b6238951adc2D5521D0e0Cddb4d)
+ * - [__View Contract on Polygon Amoy Polygon Scan__](https://amoy.polygonscan.com/address/0xD1eA89F676763b6238951adc2D5521D0e0Cddb4d)
+ * - [__View Contract on Base Sepolia Basescan__](https://sepolia.basescan.org/address/0xBFa7034670eA7d69E369569eC8216a1EEae74bCa)
+ * - [__View Contract on Scroll Sepolia Scrollscan__](https://sepolia.scrollscan.com/address/0x814200754D0C6672ca20fC74c066A2b9AD47018d)
+ */
+export const foodiversePointsAddress = {
+  2810: '0xf2Fb39bBfA77D9beF88b319360BF963Ea208a0f2',
+  48899: '0xD1eA89F676763b6238951adc2D5521D0e0Cddb4d',
+  80002: '0xD1eA89F676763b6238951adc2D5521D0e0Cddb4d',
+  84532: '0xBFa7034670eA7d69E369569eC8216a1EEae74bCa',
+  534351: '0x814200754D0C6672ca20fC74c066A2b9AD47018d',
+} as const
+
+/**
+ * - [__View Contract on Morph Holesky Morph Holesky Explorer__](https://explorer-holesky.morphl2.io/address/0xf2Fb39bBfA77D9beF88b319360BF963Ea208a0f2)
+ * - [__View Contract on Zircuit Testnet Zircuit Testnet Explorer__](https://explorer.testnet.zircuit.com/address/0xD1eA89F676763b6238951adc2D5521D0e0Cddb4d)
+ * - [__View Contract on Polygon Amoy Polygon Scan__](https://amoy.polygonscan.com/address/0xD1eA89F676763b6238951adc2D5521D0e0Cddb4d)
+ * - [__View Contract on Base Sepolia Basescan__](https://sepolia.basescan.org/address/0xBFa7034670eA7d69E369569eC8216a1EEae74bCa)
+ * - [__View Contract on Scroll Sepolia Scrollscan__](https://sepolia.scrollscan.com/address/0x814200754D0C6672ca20fC74c066A2b9AD47018d)
+ */
+export const foodiversePointsConfig = {
+  address: foodiversePointsAddress,
+  abi: foodiversePointsAbi,
+} as const
+
+//////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
+// PaymentGateway
+//////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
+
+/**
+ * - [__View Contract on Morph Holesky Morph Holesky Explorer__](https://explorer-holesky.morphl2.io/address/0x805CFDCc0638C2B1aB2B2A3fDC057207BB3222f5)
+ * - [__View Contract on Zircuit Testnet Zircuit Testnet Explorer__](https://explorer.testnet.zircuit.com/address/0x814200754D0C6672ca20fC74c066A2b9AD47018d)
+ * - [__View Contract on Polygon Amoy Polygon Scan__](https://amoy.polygonscan.com/address/0x814200754D0C6672ca20fC74c066A2b9AD47018d)
+ * - [__View Contract on Base Sepolia Basescan__](https://sepolia.basescan.org/address/0x06b2C86164f7398355fFB382BC812b299bBd9477)
+ * - [__View Contract on Scroll Sepolia Scrollscan__](https://sepolia.scrollscan.com/address/0x814200754D0C6672ca20fC74c066A2b9AD47018d)
+ */
+export const paymentGatewayAbi = [
+  { type: 'constructor', inputs: [], stateMutability: 'nonpayable' },
+  {
+    type: 'function',
+    inputs: [
+      { name: 'owner', internalType: 'address', type: 'address' },
+      { name: 'spender', internalType: 'address', type: 'address' },
+    ],
+    name: 'allowance',
+    outputs: [{ name: '', internalType: 'uint256', type: 'uint256' }],
+    stateMutability: 'view',
+  },
+  {
+    type: 'function',
+    inputs: [
+      { name: 'spender', internalType: 'address', type: 'address' },
+      { name: 'value', internalType: 'uint256', type: 'uint256' },
+    ],
+    name: 'approve',
+    outputs: [{ name: '', internalType: 'bool', type: 'bool' }],
+    stateMutability: 'nonpayable',
+  },
+  {
+    type: 'function',
+    inputs: [{ name: 'account', internalType: 'address', type: 'address' }],
+    name: 'balanceOf',
+    outputs: [{ name: '', internalType: 'uint256', type: 'uint256' }],
+    stateMutability: 'view',
+  },
+  {
+    type: 'function',
+    inputs: [],
+    name: 'decimals',
+    outputs: [{ name: '', internalType: 'uint8', type: 'uint8' }],
+    stateMutability: 'view',
+  },
+  {
+    type: 'function',
+    inputs: [
+      { name: 'to', internalType: 'address', type: 'address' },
+      { name: 'amount', internalType: 'uint256', type: 'uint256' },
+    ],
+    name: 'mint',
+    outputs: [],
+    stateMutability: 'nonpayable',
+  },
+  {
+    type: 'function',
+    inputs: [],
+    name: 'name',
+    outputs: [{ name: '', internalType: 'string', type: 'string' }],
+    stateMutability: 'view',
+  },
+  {
+    type: 'function',
+    inputs: [],
+    name: 'owner',
+    outputs: [{ name: '', internalType: 'address', type: 'address' }],
+    stateMutability: 'view',
+  },
+  {
+    type: 'function',
+    inputs: [],
+    name: 'renounceOwnership',
+    outputs: [],
+    stateMutability: 'nonpayable',
+  },
+  {
+    type: 'function',
+    inputs: [],
+    name: 'symbol',
+    outputs: [{ name: '', internalType: 'string', type: 'string' }],
+    stateMutability: 'view',
+  },
+  {
+    type: 'function',
+    inputs: [],
+    name: 'totalSupply',
+    outputs: [{ name: '', internalType: 'uint256', type: 'uint256' }],
+    stateMutability: 'view',
+  },
+  {
+    type: 'function',
+    inputs: [
+      { name: 'to', internalType: 'address', type: 'address' },
+      { name: 'value', internalType: 'uint256', type: 'uint256' },
+    ],
+    name: 'transfer',
+    outputs: [{ name: '', internalType: 'bool', type: 'bool' }],
+    stateMutability: 'nonpayable',
+  },
+  {
+    type: 'function',
+    inputs: [
+      { name: 'from', internalType: 'address', type: 'address' },
+      { name: 'to', internalType: 'address', type: 'address' },
+      { name: 'value', internalType: 'uint256', type: 'uint256' },
+    ],
+    name: 'transferFrom',
+    outputs: [{ name: '', internalType: 'bool', type: 'bool' }],
+    stateMutability: 'nonpayable',
+  },
+  {
+    type: 'function',
+    inputs: [{ name: 'newOwner', internalType: 'address', type: 'address' }],
+    name: 'transferOwnership',
+    outputs: [],
+    stateMutability: 'nonpayable',
+  },
+  {
+    type: 'event',
+    anonymous: false,
+    inputs: [
+      {
+        name: 'owner',
+        internalType: 'address',
+        type: 'address',
+        indexed: true,
+      },
+      {
+        name: 'spender',
+        internalType: 'address',
+        type: 'address',
+        indexed: true,
+      },
+      {
+        name: 'value',
+        internalType: 'uint256',
+        type: 'uint256',
+        indexed: false,
+      },
+    ],
+    name: 'Approval',
+  },
+  {
+    type: 'event',
+    anonymous: false,
+    inputs: [
+      {
+        name: 'previousOwner',
+        internalType: 'address',
+        type: 'address',
+        indexed: true,
+      },
+      {
+        name: 'newOwner',
+        internalType: 'address',
+        type: 'address',
+        indexed: true,
+      },
+    ],
+    name: 'OwnershipTransferred',
+  },
+  {
+    type: 'event',
+    anonymous: false,
+    inputs: [
+      { name: 'from', internalType: 'address', type: 'address', indexed: true },
+      { name: 'to', internalType: 'address', type: 'address', indexed: true },
+      {
+        name: 'value',
+        internalType: 'uint256',
+        type: 'uint256',
+        indexed: false,
+      },
+    ],
+    name: 'Transfer',
+  },
+  {
+    type: 'error',
+    inputs: [
+      { name: 'spender', internalType: 'address', type: 'address' },
+      { name: 'allowance', internalType: 'uint256', type: 'uint256' },
+      { name: 'needed', internalType: 'uint256', type: 'uint256' },
+    ],
+    name: 'ERC20InsufficientAllowance',
+  },
+  {
+    type: 'error',
+    inputs: [
+      { name: 'sender', internalType: 'address', type: 'address' },
+      { name: 'balance', internalType: 'uint256', type: 'uint256' },
+      { name: 'needed', internalType: 'uint256', type: 'uint256' },
+    ],
+    name: 'ERC20InsufficientBalance',
+  },
+  {
+    type: 'error',
+    inputs: [{ name: 'approver', internalType: 'address', type: 'address' }],
+    name: 'ERC20InvalidApprover',
+  },
+  {
+    type: 'error',
+    inputs: [{ name: 'receiver', internalType: 'address', type: 'address' }],
+    name: 'ERC20InvalidReceiver',
+  },
+  {
+    type: 'error',
+    inputs: [{ name: 'sender', internalType: 'address', type: 'address' }],
+    name: 'ERC20InvalidSender',
+  },
+  {
+    type: 'error',
+    inputs: [{ name: 'spender', internalType: 'address', type: 'address' }],
+    name: 'ERC20InvalidSpender',
+  },
+  {
+    type: 'error',
+    inputs: [{ name: 'owner', internalType: 'address', type: 'address' }],
+    name: 'OwnableInvalidOwner',
+  },
+  {
+    type: 'error',
+    inputs: [{ name: 'account', internalType: 'address', type: 'address' }],
+    name: 'OwnableUnauthorizedAccount',
+  },
+] as const
+
+/**
+ * - [__View Contract on Morph Holesky Morph Holesky Explorer__](https://explorer-holesky.morphl2.io/address/0x805CFDCc0638C2B1aB2B2A3fDC057207BB3222f5)
+ * - [__View Contract on Zircuit Testnet Zircuit Testnet Explorer__](https://explorer.testnet.zircuit.com/address/0x814200754D0C6672ca20fC74c066A2b9AD47018d)
+ * - [__View Contract on Polygon Amoy Polygon Scan__](https://amoy.polygonscan.com/address/0x814200754D0C6672ca20fC74c066A2b9AD47018d)
+ * - [__View Contract on Base Sepolia Basescan__](https://sepolia.basescan.org/address/0x06b2C86164f7398355fFB382BC812b299bBd9477)
+ * - [__View Contract on Scroll Sepolia Scrollscan__](https://sepolia.scrollscan.com/address/0x814200754D0C6672ca20fC74c066A2b9AD47018d)
+ */
+export const paymentGatewayAddress = {
+  2810: '0x805CFDCc0638C2B1aB2B2A3fDC057207BB3222f5',
+  48899: '0x814200754D0C6672ca20fC74c066A2b9AD47018d',
+  80002: '0x814200754D0C6672ca20fC74c066A2b9AD47018d',
+  84532: '0x06b2C86164f7398355fFB382BC812b299bBd9477',
+  534351: '0x814200754D0C6672ca20fC74c066A2b9AD47018d',
+} as const
+
+/**
+ * - [__View Contract on Morph Holesky Morph Holesky Explorer__](https://explorer-holesky.morphl2.io/address/0x805CFDCc0638C2B1aB2B2A3fDC057207BB3222f5)
+ * - [__View Contract on Zircuit Testnet Zircuit Testnet Explorer__](https://explorer.testnet.zircuit.com/address/0x814200754D0C6672ca20fC74c066A2b9AD47018d)
+ * - [__View Contract on Polygon Amoy Polygon Scan__](https://amoy.polygonscan.com/address/0x814200754D0C6672ca20fC74c066A2b9AD47018d)
+ * - [__View Contract on Base Sepolia Basescan__](https://sepolia.basescan.org/address/0x06b2C86164f7398355fFB382BC812b299bBd9477)
+ * - [__View Contract on Scroll Sepolia Scrollscan__](https://sepolia.scrollscan.com/address/0x814200754D0C6672ca20fC74c066A2b9AD47018d)
+ */
+export const paymentGatewayConfig = {
+  address: paymentGatewayAddress,
+  abi: paymentGatewayAbi,
+} as const
+
+//////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
+// USDC
+//////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
+
+/**
+ * - [__View Contract on Morph Holesky Morph Holesky Explorer__](https://explorer-holesky.morphl2.io/address/0x483EC90D0DCf0C808c9ddfcCc3011DE80f1e5915)
+ * - [__View Contract on Zircuit Testnet Zircuit Testnet Explorer__](https://explorer.testnet.zircuit.com/address/0x5da0c2ed4EcC08915B2490Fc9d9cF8B861e9a7b9)
+ * - [__View Contract on Polygon Amoy Polygon Scan__](https://amoy.polygonscan.com/address/0xD1eA89F676763b6238951adc2D5521D0e0Cddb4d)
+ * - [__View Contract on Base Sepolia Basescan__](https://sepolia.basescan.org/address/0xfD4aC8071991423e79971BEC2fcfEb78d28B3789)
+ * - [__View Contract on Scroll Sepolia Scrollscan__](https://sepolia.scrollscan.com/address/0x483EC90D0DCf0C808c9ddfcCc3011DE80f1e5915)
+ */
+export const usdcAbi = [
+  { type: 'constructor', inputs: [], stateMutability: 'nonpayable' },
+  {
+    type: 'function',
+    inputs: [
+      { name: 'owner', internalType: 'address', type: 'address' },
+      { name: 'spender', internalType: 'address', type: 'address' },
+    ],
+    name: 'allowance',
+    outputs: [{ name: '', internalType: 'uint256', type: 'uint256' }],
+    stateMutability: 'view',
+  },
+  {
+    type: 'function',
+    inputs: [
+      { name: 'spender', internalType: 'address', type: 'address' },
+      { name: 'value', internalType: 'uint256', type: 'uint256' },
+    ],
+    name: 'approve',
+    outputs: [{ name: '', internalType: 'bool', type: 'bool' }],
+    stateMutability: 'nonpayable',
+  },
+  {
+    type: 'function',
+    inputs: [{ name: 'account', internalType: 'address', type: 'address' }],
+    name: 'balanceOf',
+    outputs: [{ name: '', internalType: 'uint256', type: 'uint256' }],
+    stateMutability: 'view',
+  },
+  {
+    type: 'function',
+    inputs: [],
+    name: 'decimals',
+    outputs: [{ name: '', internalType: 'uint8', type: 'uint8' }],
+    stateMutability: 'view',
+  },
+  {
+    type: 'function',
+    inputs: [
+      { name: 'to', internalType: 'address', type: 'address' },
+      { name: 'amount', internalType: 'uint256', type: 'uint256' },
+    ],
+    name: 'mint',
+    outputs: [],
+    stateMutability: 'nonpayable',
+  },
+  {
+    type: 'function',
+    inputs: [],
+    name: 'name',
+    outputs: [{ name: '', internalType: 'string', type: 'string' }],
+    stateMutability: 'view',
+  },
+  {
+    type: 'function',
+    inputs: [],
+    name: 'owner',
+    outputs: [{ name: '', internalType: 'address', type: 'address' }],
+    stateMutability: 'view',
+  },
+  {
+    type: 'function',
+    inputs: [],
+    name: 'renounceOwnership',
+    outputs: [],
+    stateMutability: 'nonpayable',
+  },
+  {
+    type: 'function',
+    inputs: [],
+    name: 'symbol',
+    outputs: [{ name: '', internalType: 'string', type: 'string' }],
+    stateMutability: 'view',
+  },
+  {
+    type: 'function',
+    inputs: [],
+    name: 'totalSupply',
+    outputs: [{ name: '', internalType: 'uint256', type: 'uint256' }],
+    stateMutability: 'view',
+  },
+  {
+    type: 'function',
+    inputs: [
+      { name: 'to', internalType: 'address', type: 'address' },
+      { name: 'value', internalType: 'uint256', type: 'uint256' },
+    ],
+    name: 'transfer',
+    outputs: [{ name: '', internalType: 'bool', type: 'bool' }],
+    stateMutability: 'nonpayable',
+  },
+  {
+    type: 'function',
+    inputs: [
+      { name: 'from', internalType: 'address', type: 'address' },
+      { name: 'to', internalType: 'address', type: 'address' },
+      { name: 'value', internalType: 'uint256', type: 'uint256' },
+    ],
+    name: 'transferFrom',
+    outputs: [{ name: '', internalType: 'bool', type: 'bool' }],
+    stateMutability: 'nonpayable',
+  },
+  {
+    type: 'function',
+    inputs: [{ name: 'newOwner', internalType: 'address', type: 'address' }],
+    name: 'transferOwnership',
+    outputs: [],
+    stateMutability: 'nonpayable',
+  },
+  {
+    type: 'event',
+    anonymous: false,
+    inputs: [
+      {
+        name: 'owner',
+        internalType: 'address',
+        type: 'address',
+        indexed: true,
+      },
+      {
+        name: 'spender',
+        internalType: 'address',
+        type: 'address',
+        indexed: true,
+      },
+      {
+        name: 'value',
+        internalType: 'uint256',
+        type: 'uint256',
+        indexed: false,
+      },
+    ],
+    name: 'Approval',
+  },
+  {
+    type: 'event',
+    anonymous: false,
+    inputs: [
+      {
+        name: 'previousOwner',
+        internalType: 'address',
+        type: 'address',
+        indexed: true,
+      },
+      {
+        name: 'newOwner',
+        internalType: 'address',
+        type: 'address',
+        indexed: true,
+      },
+    ],
+    name: 'OwnershipTransferred',
+  },
+  {
+    type: 'event',
+    anonymous: false,
+    inputs: [
+      { name: 'from', internalType: 'address', type: 'address', indexed: true },
+      { name: 'to', internalType: 'address', type: 'address', indexed: true },
+      {
+        name: 'value',
+        internalType: 'uint256',
+        type: 'uint256',
+        indexed: false,
+      },
+    ],
+    name: 'Transfer',
+  },
+  {
+    type: 'error',
+    inputs: [
+      { name: 'spender', internalType: 'address', type: 'address' },
+      { name: 'allowance', internalType: 'uint256', type: 'uint256' },
+      { name: 'needed', internalType: 'uint256', type: 'uint256' },
+    ],
+    name: 'ERC20InsufficientAllowance',
+  },
+  {
+    type: 'error',
+    inputs: [
+      { name: 'sender', internalType: 'address', type: 'address' },
+      { name: 'balance', internalType: 'uint256', type: 'uint256' },
+      { name: 'needed', internalType: 'uint256', type: 'uint256' },
+    ],
+    name: 'ERC20InsufficientBalance',
+  },
+  {
+    type: 'error',
+    inputs: [{ name: 'approver', internalType: 'address', type: 'address' }],
+    name: 'ERC20InvalidApprover',
+  },
+  {
+    type: 'error',
+    inputs: [{ name: 'receiver', internalType: 'address', type: 'address' }],
+    name: 'ERC20InvalidReceiver',
+  },
+  {
+    type: 'error',
+    inputs: [{ name: 'sender', internalType: 'address', type: 'address' }],
+    name: 'ERC20InvalidSender',
+  },
+  {
+    type: 'error',
+    inputs: [{ name: 'spender', internalType: 'address', type: 'address' }],
+    name: 'ERC20InvalidSpender',
+  },
+  {
+    type: 'error',
+    inputs: [{ name: 'owner', internalType: 'address', type: 'address' }],
+    name: 'OwnableInvalidOwner',
+  },
+  {
+    type: 'error',
+    inputs: [{ name: 'account', internalType: 'address', type: 'address' }],
+    name: 'OwnableUnauthorizedAccount',
+  },
+] as const
+
+/**
+ * - [__View Contract on Morph Holesky Morph Holesky Explorer__](https://explorer-holesky.morphl2.io/address/0x483EC90D0DCf0C808c9ddfcCc3011DE80f1e5915)
+ * - [__View Contract on Zircuit Testnet Zircuit Testnet Explorer__](https://explorer.testnet.zircuit.com/address/0x5da0c2ed4EcC08915B2490Fc9d9cF8B861e9a7b9)
+ * - [__View Contract on Polygon Amoy Polygon Scan__](https://amoy.polygonscan.com/address/0xD1eA89F676763b6238951adc2D5521D0e0Cddb4d)
+ * - [__View Contract on Base Sepolia Basescan__](https://sepolia.basescan.org/address/0xfD4aC8071991423e79971BEC2fcfEb78d28B3789)
+ * - [__View Contract on Scroll Sepolia Scrollscan__](https://sepolia.scrollscan.com/address/0x483EC90D0DCf0C808c9ddfcCc3011DE80f1e5915)
+ */
+export const usdcAddress = {
+  2810: '0x483EC90D0DCf0C808c9ddfcCc3011DE80f1e5915',
+  48899: '0x5da0c2ed4EcC08915B2490Fc9d9cF8B861e9a7b9',
+  80002: '0xD1eA89F676763b6238951adc2D5521D0e0Cddb4d',
+  84532: '0xfD4aC8071991423e79971BEC2fcfEb78d28B3789',
+  534351: '0x483EC90D0DCf0C808c9ddfcCc3011DE80f1e5915',
+} as const
+
+/**
+ * - [__View Contract on Morph Holesky Morph Holesky Explorer__](https://explorer-holesky.morphl2.io/address/0x483EC90D0DCf0C808c9ddfcCc3011DE80f1e5915)
+ * - [__View Contract on Zircuit Testnet Zircuit Testnet Explorer__](https://explorer.testnet.zircuit.com/address/0x5da0c2ed4EcC08915B2490Fc9d9cF8B861e9a7b9)
+ * - [__View Contract on Polygon Amoy Polygon Scan__](https://amoy.polygonscan.com/address/0xD1eA89F676763b6238951adc2D5521D0e0Cddb4d)
+ * - [__View Contract on Base Sepolia Basescan__](https://sepolia.basescan.org/address/0xfD4aC8071991423e79971BEC2fcfEb78d28B3789)
+ * - [__View Contract on Scroll Sepolia Scrollscan__](https://sepolia.scrollscan.com/address/0x483EC90D0DCf0C808c9ddfcCc3011DE80f1e5915)
+ */
+export const usdcConfig = { address: usdcAddress, abi: usdcAbi } as const
+
+//////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
 // foodiRegistrar
 //////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
 
@@ -1315,6 +2080,1193 @@ export const signProtocolConfig = {
 //////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
 // Action
 //////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
+
+/**
+ * Wraps __{@link readContract}__ with `abi` set to __{@link foodiversePointsAbi}__
+ *
+ * - [__View Contract on Morph Holesky Morph Holesky Explorer__](https://explorer-holesky.morphl2.io/address/0xf2Fb39bBfA77D9beF88b319360BF963Ea208a0f2)
+ * - [__View Contract on Zircuit Testnet Zircuit Testnet Explorer__](https://explorer.testnet.zircuit.com/address/0xD1eA89F676763b6238951adc2D5521D0e0Cddb4d)
+ * - [__View Contract on Polygon Amoy Polygon Scan__](https://amoy.polygonscan.com/address/0xD1eA89F676763b6238951adc2D5521D0e0Cddb4d)
+ * - [__View Contract on Base Sepolia Basescan__](https://sepolia.basescan.org/address/0xBFa7034670eA7d69E369569eC8216a1EEae74bCa)
+ * - [__View Contract on Scroll Sepolia Scrollscan__](https://sepolia.scrollscan.com/address/0x814200754D0C6672ca20fC74c066A2b9AD47018d)
+ */
+export const readFoodiversePoints = /*#__PURE__*/ createReadContract({
+  abi: foodiversePointsAbi,
+  address: foodiversePointsAddress,
+})
+
+/**
+ * Wraps __{@link readContract}__ with `abi` set to __{@link foodiversePointsAbi}__ and `functionName` set to `"allowance"`
+ *
+ * - [__View Contract on Morph Holesky Morph Holesky Explorer__](https://explorer-holesky.morphl2.io/address/0xf2Fb39bBfA77D9beF88b319360BF963Ea208a0f2)
+ * - [__View Contract on Zircuit Testnet Zircuit Testnet Explorer__](https://explorer.testnet.zircuit.com/address/0xD1eA89F676763b6238951adc2D5521D0e0Cddb4d)
+ * - [__View Contract on Polygon Amoy Polygon Scan__](https://amoy.polygonscan.com/address/0xD1eA89F676763b6238951adc2D5521D0e0Cddb4d)
+ * - [__View Contract on Base Sepolia Basescan__](https://sepolia.basescan.org/address/0xBFa7034670eA7d69E369569eC8216a1EEae74bCa)
+ * - [__View Contract on Scroll Sepolia Scrollscan__](https://sepolia.scrollscan.com/address/0x814200754D0C6672ca20fC74c066A2b9AD47018d)
+ */
+export const readFoodiversePointsAllowance = /*#__PURE__*/ createReadContract({
+  abi: foodiversePointsAbi,
+  address: foodiversePointsAddress,
+  functionName: 'allowance',
+})
+
+/**
+ * Wraps __{@link readContract}__ with `abi` set to __{@link foodiversePointsAbi}__ and `functionName` set to `"balanceOf"`
+ *
+ * - [__View Contract on Morph Holesky Morph Holesky Explorer__](https://explorer-holesky.morphl2.io/address/0xf2Fb39bBfA77D9beF88b319360BF963Ea208a0f2)
+ * - [__View Contract on Zircuit Testnet Zircuit Testnet Explorer__](https://explorer.testnet.zircuit.com/address/0xD1eA89F676763b6238951adc2D5521D0e0Cddb4d)
+ * - [__View Contract on Polygon Amoy Polygon Scan__](https://amoy.polygonscan.com/address/0xD1eA89F676763b6238951adc2D5521D0e0Cddb4d)
+ * - [__View Contract on Base Sepolia Basescan__](https://sepolia.basescan.org/address/0xBFa7034670eA7d69E369569eC8216a1EEae74bCa)
+ * - [__View Contract on Scroll Sepolia Scrollscan__](https://sepolia.scrollscan.com/address/0x814200754D0C6672ca20fC74c066A2b9AD47018d)
+ */
+export const readFoodiversePointsBalanceOf = /*#__PURE__*/ createReadContract({
+  abi: foodiversePointsAbi,
+  address: foodiversePointsAddress,
+  functionName: 'balanceOf',
+})
+
+/**
+ * Wraps __{@link readContract}__ with `abi` set to __{@link foodiversePointsAbi}__ and `functionName` set to `"decimals"`
+ *
+ * - [__View Contract on Morph Holesky Morph Holesky Explorer__](https://explorer-holesky.morphl2.io/address/0xf2Fb39bBfA77D9beF88b319360BF963Ea208a0f2)
+ * - [__View Contract on Zircuit Testnet Zircuit Testnet Explorer__](https://explorer.testnet.zircuit.com/address/0xD1eA89F676763b6238951adc2D5521D0e0Cddb4d)
+ * - [__View Contract on Polygon Amoy Polygon Scan__](https://amoy.polygonscan.com/address/0xD1eA89F676763b6238951adc2D5521D0e0Cddb4d)
+ * - [__View Contract on Base Sepolia Basescan__](https://sepolia.basescan.org/address/0xBFa7034670eA7d69E369569eC8216a1EEae74bCa)
+ * - [__View Contract on Scroll Sepolia Scrollscan__](https://sepolia.scrollscan.com/address/0x814200754D0C6672ca20fC74c066A2b9AD47018d)
+ */
+export const readFoodiversePointsDecimals = /*#__PURE__*/ createReadContract({
+  abi: foodiversePointsAbi,
+  address: foodiversePointsAddress,
+  functionName: 'decimals',
+})
+
+/**
+ * Wraps __{@link readContract}__ with `abi` set to __{@link foodiversePointsAbi}__ and `functionName` set to `"name"`
+ *
+ * - [__View Contract on Morph Holesky Morph Holesky Explorer__](https://explorer-holesky.morphl2.io/address/0xf2Fb39bBfA77D9beF88b319360BF963Ea208a0f2)
+ * - [__View Contract on Zircuit Testnet Zircuit Testnet Explorer__](https://explorer.testnet.zircuit.com/address/0xD1eA89F676763b6238951adc2D5521D0e0Cddb4d)
+ * - [__View Contract on Polygon Amoy Polygon Scan__](https://amoy.polygonscan.com/address/0xD1eA89F676763b6238951adc2D5521D0e0Cddb4d)
+ * - [__View Contract on Base Sepolia Basescan__](https://sepolia.basescan.org/address/0xBFa7034670eA7d69E369569eC8216a1EEae74bCa)
+ * - [__View Contract on Scroll Sepolia Scrollscan__](https://sepolia.scrollscan.com/address/0x814200754D0C6672ca20fC74c066A2b9AD47018d)
+ */
+export const readFoodiversePointsName = /*#__PURE__*/ createReadContract({
+  abi: foodiversePointsAbi,
+  address: foodiversePointsAddress,
+  functionName: 'name',
+})
+
+/**
+ * Wraps __{@link readContract}__ with `abi` set to __{@link foodiversePointsAbi}__ and `functionName` set to `"owner"`
+ *
+ * - [__View Contract on Morph Holesky Morph Holesky Explorer__](https://explorer-holesky.morphl2.io/address/0xf2Fb39bBfA77D9beF88b319360BF963Ea208a0f2)
+ * - [__View Contract on Zircuit Testnet Zircuit Testnet Explorer__](https://explorer.testnet.zircuit.com/address/0xD1eA89F676763b6238951adc2D5521D0e0Cddb4d)
+ * - [__View Contract on Polygon Amoy Polygon Scan__](https://amoy.polygonscan.com/address/0xD1eA89F676763b6238951adc2D5521D0e0Cddb4d)
+ * - [__View Contract on Base Sepolia Basescan__](https://sepolia.basescan.org/address/0xBFa7034670eA7d69E369569eC8216a1EEae74bCa)
+ * - [__View Contract on Scroll Sepolia Scrollscan__](https://sepolia.scrollscan.com/address/0x814200754D0C6672ca20fC74c066A2b9AD47018d)
+ */
+export const readFoodiversePointsOwner = /*#__PURE__*/ createReadContract({
+  abi: foodiversePointsAbi,
+  address: foodiversePointsAddress,
+  functionName: 'owner',
+})
+
+/**
+ * Wraps __{@link readContract}__ with `abi` set to __{@link foodiversePointsAbi}__ and `functionName` set to `"symbol"`
+ *
+ * - [__View Contract on Morph Holesky Morph Holesky Explorer__](https://explorer-holesky.morphl2.io/address/0xf2Fb39bBfA77D9beF88b319360BF963Ea208a0f2)
+ * - [__View Contract on Zircuit Testnet Zircuit Testnet Explorer__](https://explorer.testnet.zircuit.com/address/0xD1eA89F676763b6238951adc2D5521D0e0Cddb4d)
+ * - [__View Contract on Polygon Amoy Polygon Scan__](https://amoy.polygonscan.com/address/0xD1eA89F676763b6238951adc2D5521D0e0Cddb4d)
+ * - [__View Contract on Base Sepolia Basescan__](https://sepolia.basescan.org/address/0xBFa7034670eA7d69E369569eC8216a1EEae74bCa)
+ * - [__View Contract on Scroll Sepolia Scrollscan__](https://sepolia.scrollscan.com/address/0x814200754D0C6672ca20fC74c066A2b9AD47018d)
+ */
+export const readFoodiversePointsSymbol = /*#__PURE__*/ createReadContract({
+  abi: foodiversePointsAbi,
+  address: foodiversePointsAddress,
+  functionName: 'symbol',
+})
+
+/**
+ * Wraps __{@link readContract}__ with `abi` set to __{@link foodiversePointsAbi}__ and `functionName` set to `"totalSupply"`
+ *
+ * - [__View Contract on Morph Holesky Morph Holesky Explorer__](https://explorer-holesky.morphl2.io/address/0xf2Fb39bBfA77D9beF88b319360BF963Ea208a0f2)
+ * - [__View Contract on Zircuit Testnet Zircuit Testnet Explorer__](https://explorer.testnet.zircuit.com/address/0xD1eA89F676763b6238951adc2D5521D0e0Cddb4d)
+ * - [__View Contract on Polygon Amoy Polygon Scan__](https://amoy.polygonscan.com/address/0xD1eA89F676763b6238951adc2D5521D0e0Cddb4d)
+ * - [__View Contract on Base Sepolia Basescan__](https://sepolia.basescan.org/address/0xBFa7034670eA7d69E369569eC8216a1EEae74bCa)
+ * - [__View Contract on Scroll Sepolia Scrollscan__](https://sepolia.scrollscan.com/address/0x814200754D0C6672ca20fC74c066A2b9AD47018d)
+ */
+export const readFoodiversePointsTotalSupply = /*#__PURE__*/ createReadContract(
+  {
+    abi: foodiversePointsAbi,
+    address: foodiversePointsAddress,
+    functionName: 'totalSupply',
+  },
+)
+
+/**
+ * Wraps __{@link writeContract}__ with `abi` set to __{@link foodiversePointsAbi}__
+ *
+ * - [__View Contract on Morph Holesky Morph Holesky Explorer__](https://explorer-holesky.morphl2.io/address/0xf2Fb39bBfA77D9beF88b319360BF963Ea208a0f2)
+ * - [__View Contract on Zircuit Testnet Zircuit Testnet Explorer__](https://explorer.testnet.zircuit.com/address/0xD1eA89F676763b6238951adc2D5521D0e0Cddb4d)
+ * - [__View Contract on Polygon Amoy Polygon Scan__](https://amoy.polygonscan.com/address/0xD1eA89F676763b6238951adc2D5521D0e0Cddb4d)
+ * - [__View Contract on Base Sepolia Basescan__](https://sepolia.basescan.org/address/0xBFa7034670eA7d69E369569eC8216a1EEae74bCa)
+ * - [__View Contract on Scroll Sepolia Scrollscan__](https://sepolia.scrollscan.com/address/0x814200754D0C6672ca20fC74c066A2b9AD47018d)
+ */
+export const writeFoodiversePoints = /*#__PURE__*/ createWriteContract({
+  abi: foodiversePointsAbi,
+  address: foodiversePointsAddress,
+})
+
+/**
+ * Wraps __{@link writeContract}__ with `abi` set to __{@link foodiversePointsAbi}__ and `functionName` set to `"approve"`
+ *
+ * - [__View Contract on Morph Holesky Morph Holesky Explorer__](https://explorer-holesky.morphl2.io/address/0xf2Fb39bBfA77D9beF88b319360BF963Ea208a0f2)
+ * - [__View Contract on Zircuit Testnet Zircuit Testnet Explorer__](https://explorer.testnet.zircuit.com/address/0xD1eA89F676763b6238951adc2D5521D0e0Cddb4d)
+ * - [__View Contract on Polygon Amoy Polygon Scan__](https://amoy.polygonscan.com/address/0xD1eA89F676763b6238951adc2D5521D0e0Cddb4d)
+ * - [__View Contract on Base Sepolia Basescan__](https://sepolia.basescan.org/address/0xBFa7034670eA7d69E369569eC8216a1EEae74bCa)
+ * - [__View Contract on Scroll Sepolia Scrollscan__](https://sepolia.scrollscan.com/address/0x814200754D0C6672ca20fC74c066A2b9AD47018d)
+ */
+export const writeFoodiversePointsApprove = /*#__PURE__*/ createWriteContract({
+  abi: foodiversePointsAbi,
+  address: foodiversePointsAddress,
+  functionName: 'approve',
+})
+
+/**
+ * Wraps __{@link writeContract}__ with `abi` set to __{@link foodiversePointsAbi}__ and `functionName` set to `"mint"`
+ *
+ * - [__View Contract on Morph Holesky Morph Holesky Explorer__](https://explorer-holesky.morphl2.io/address/0xf2Fb39bBfA77D9beF88b319360BF963Ea208a0f2)
+ * - [__View Contract on Zircuit Testnet Zircuit Testnet Explorer__](https://explorer.testnet.zircuit.com/address/0xD1eA89F676763b6238951adc2D5521D0e0Cddb4d)
+ * - [__View Contract on Polygon Amoy Polygon Scan__](https://amoy.polygonscan.com/address/0xD1eA89F676763b6238951adc2D5521D0e0Cddb4d)
+ * - [__View Contract on Base Sepolia Basescan__](https://sepolia.basescan.org/address/0xBFa7034670eA7d69E369569eC8216a1EEae74bCa)
+ * - [__View Contract on Scroll Sepolia Scrollscan__](https://sepolia.scrollscan.com/address/0x814200754D0C6672ca20fC74c066A2b9AD47018d)
+ */
+export const writeFoodiversePointsMint = /*#__PURE__*/ createWriteContract({
+  abi: foodiversePointsAbi,
+  address: foodiversePointsAddress,
+  functionName: 'mint',
+})
+
+/**
+ * Wraps __{@link writeContract}__ with `abi` set to __{@link foodiversePointsAbi}__ and `functionName` set to `"renounceOwnership"`
+ *
+ * - [__View Contract on Morph Holesky Morph Holesky Explorer__](https://explorer-holesky.morphl2.io/address/0xf2Fb39bBfA77D9beF88b319360BF963Ea208a0f2)
+ * - [__View Contract on Zircuit Testnet Zircuit Testnet Explorer__](https://explorer.testnet.zircuit.com/address/0xD1eA89F676763b6238951adc2D5521D0e0Cddb4d)
+ * - [__View Contract on Polygon Amoy Polygon Scan__](https://amoy.polygonscan.com/address/0xD1eA89F676763b6238951adc2D5521D0e0Cddb4d)
+ * - [__View Contract on Base Sepolia Basescan__](https://sepolia.basescan.org/address/0xBFa7034670eA7d69E369569eC8216a1EEae74bCa)
+ * - [__View Contract on Scroll Sepolia Scrollscan__](https://sepolia.scrollscan.com/address/0x814200754D0C6672ca20fC74c066A2b9AD47018d)
+ */
+export const writeFoodiversePointsRenounceOwnership =
+  /*#__PURE__*/ createWriteContract({
+    abi: foodiversePointsAbi,
+    address: foodiversePointsAddress,
+    functionName: 'renounceOwnership',
+  })
+
+/**
+ * Wraps __{@link writeContract}__ with `abi` set to __{@link foodiversePointsAbi}__ and `functionName` set to `"transfer"`
+ *
+ * - [__View Contract on Morph Holesky Morph Holesky Explorer__](https://explorer-holesky.morphl2.io/address/0xf2Fb39bBfA77D9beF88b319360BF963Ea208a0f2)
+ * - [__View Contract on Zircuit Testnet Zircuit Testnet Explorer__](https://explorer.testnet.zircuit.com/address/0xD1eA89F676763b6238951adc2D5521D0e0Cddb4d)
+ * - [__View Contract on Polygon Amoy Polygon Scan__](https://amoy.polygonscan.com/address/0xD1eA89F676763b6238951adc2D5521D0e0Cddb4d)
+ * - [__View Contract on Base Sepolia Basescan__](https://sepolia.basescan.org/address/0xBFa7034670eA7d69E369569eC8216a1EEae74bCa)
+ * - [__View Contract on Scroll Sepolia Scrollscan__](https://sepolia.scrollscan.com/address/0x814200754D0C6672ca20fC74c066A2b9AD47018d)
+ */
+export const writeFoodiversePointsTransfer = /*#__PURE__*/ createWriteContract({
+  abi: foodiversePointsAbi,
+  address: foodiversePointsAddress,
+  functionName: 'transfer',
+})
+
+/**
+ * Wraps __{@link writeContract}__ with `abi` set to __{@link foodiversePointsAbi}__ and `functionName` set to `"transferFrom"`
+ *
+ * - [__View Contract on Morph Holesky Morph Holesky Explorer__](https://explorer-holesky.morphl2.io/address/0xf2Fb39bBfA77D9beF88b319360BF963Ea208a0f2)
+ * - [__View Contract on Zircuit Testnet Zircuit Testnet Explorer__](https://explorer.testnet.zircuit.com/address/0xD1eA89F676763b6238951adc2D5521D0e0Cddb4d)
+ * - [__View Contract on Polygon Amoy Polygon Scan__](https://amoy.polygonscan.com/address/0xD1eA89F676763b6238951adc2D5521D0e0Cddb4d)
+ * - [__View Contract on Base Sepolia Basescan__](https://sepolia.basescan.org/address/0xBFa7034670eA7d69E369569eC8216a1EEae74bCa)
+ * - [__View Contract on Scroll Sepolia Scrollscan__](https://sepolia.scrollscan.com/address/0x814200754D0C6672ca20fC74c066A2b9AD47018d)
+ */
+export const writeFoodiversePointsTransferFrom =
+  /*#__PURE__*/ createWriteContract({
+    abi: foodiversePointsAbi,
+    address: foodiversePointsAddress,
+    functionName: 'transferFrom',
+  })
+
+/**
+ * Wraps __{@link writeContract}__ with `abi` set to __{@link foodiversePointsAbi}__ and `functionName` set to `"transferOwnership"`
+ *
+ * - [__View Contract on Morph Holesky Morph Holesky Explorer__](https://explorer-holesky.morphl2.io/address/0xf2Fb39bBfA77D9beF88b319360BF963Ea208a0f2)
+ * - [__View Contract on Zircuit Testnet Zircuit Testnet Explorer__](https://explorer.testnet.zircuit.com/address/0xD1eA89F676763b6238951adc2D5521D0e0Cddb4d)
+ * - [__View Contract on Polygon Amoy Polygon Scan__](https://amoy.polygonscan.com/address/0xD1eA89F676763b6238951adc2D5521D0e0Cddb4d)
+ * - [__View Contract on Base Sepolia Basescan__](https://sepolia.basescan.org/address/0xBFa7034670eA7d69E369569eC8216a1EEae74bCa)
+ * - [__View Contract on Scroll Sepolia Scrollscan__](https://sepolia.scrollscan.com/address/0x814200754D0C6672ca20fC74c066A2b9AD47018d)
+ */
+export const writeFoodiversePointsTransferOwnership =
+  /*#__PURE__*/ createWriteContract({
+    abi: foodiversePointsAbi,
+    address: foodiversePointsAddress,
+    functionName: 'transferOwnership',
+  })
+
+/**
+ * Wraps __{@link simulateContract}__ with `abi` set to __{@link foodiversePointsAbi}__
+ *
+ * - [__View Contract on Morph Holesky Morph Holesky Explorer__](https://explorer-holesky.morphl2.io/address/0xf2Fb39bBfA77D9beF88b319360BF963Ea208a0f2)
+ * - [__View Contract on Zircuit Testnet Zircuit Testnet Explorer__](https://explorer.testnet.zircuit.com/address/0xD1eA89F676763b6238951adc2D5521D0e0Cddb4d)
+ * - [__View Contract on Polygon Amoy Polygon Scan__](https://amoy.polygonscan.com/address/0xD1eA89F676763b6238951adc2D5521D0e0Cddb4d)
+ * - [__View Contract on Base Sepolia Basescan__](https://sepolia.basescan.org/address/0xBFa7034670eA7d69E369569eC8216a1EEae74bCa)
+ * - [__View Contract on Scroll Sepolia Scrollscan__](https://sepolia.scrollscan.com/address/0x814200754D0C6672ca20fC74c066A2b9AD47018d)
+ */
+export const simulateFoodiversePoints = /*#__PURE__*/ createSimulateContract({
+  abi: foodiversePointsAbi,
+  address: foodiversePointsAddress,
+})
+
+/**
+ * Wraps __{@link simulateContract}__ with `abi` set to __{@link foodiversePointsAbi}__ and `functionName` set to `"approve"`
+ *
+ * - [__View Contract on Morph Holesky Morph Holesky Explorer__](https://explorer-holesky.morphl2.io/address/0xf2Fb39bBfA77D9beF88b319360BF963Ea208a0f2)
+ * - [__View Contract on Zircuit Testnet Zircuit Testnet Explorer__](https://explorer.testnet.zircuit.com/address/0xD1eA89F676763b6238951adc2D5521D0e0Cddb4d)
+ * - [__View Contract on Polygon Amoy Polygon Scan__](https://amoy.polygonscan.com/address/0xD1eA89F676763b6238951adc2D5521D0e0Cddb4d)
+ * - [__View Contract on Base Sepolia Basescan__](https://sepolia.basescan.org/address/0xBFa7034670eA7d69E369569eC8216a1EEae74bCa)
+ * - [__View Contract on Scroll Sepolia Scrollscan__](https://sepolia.scrollscan.com/address/0x814200754D0C6672ca20fC74c066A2b9AD47018d)
+ */
+export const simulateFoodiversePointsApprove =
+  /*#__PURE__*/ createSimulateContract({
+    abi: foodiversePointsAbi,
+    address: foodiversePointsAddress,
+    functionName: 'approve',
+  })
+
+/**
+ * Wraps __{@link simulateContract}__ with `abi` set to __{@link foodiversePointsAbi}__ and `functionName` set to `"mint"`
+ *
+ * - [__View Contract on Morph Holesky Morph Holesky Explorer__](https://explorer-holesky.morphl2.io/address/0xf2Fb39bBfA77D9beF88b319360BF963Ea208a0f2)
+ * - [__View Contract on Zircuit Testnet Zircuit Testnet Explorer__](https://explorer.testnet.zircuit.com/address/0xD1eA89F676763b6238951adc2D5521D0e0Cddb4d)
+ * - [__View Contract on Polygon Amoy Polygon Scan__](https://amoy.polygonscan.com/address/0xD1eA89F676763b6238951adc2D5521D0e0Cddb4d)
+ * - [__View Contract on Base Sepolia Basescan__](https://sepolia.basescan.org/address/0xBFa7034670eA7d69E369569eC8216a1EEae74bCa)
+ * - [__View Contract on Scroll Sepolia Scrollscan__](https://sepolia.scrollscan.com/address/0x814200754D0C6672ca20fC74c066A2b9AD47018d)
+ */
+export const simulateFoodiversePointsMint =
+  /*#__PURE__*/ createSimulateContract({
+    abi: foodiversePointsAbi,
+    address: foodiversePointsAddress,
+    functionName: 'mint',
+  })
+
+/**
+ * Wraps __{@link simulateContract}__ with `abi` set to __{@link foodiversePointsAbi}__ and `functionName` set to `"renounceOwnership"`
+ *
+ * - [__View Contract on Morph Holesky Morph Holesky Explorer__](https://explorer-holesky.morphl2.io/address/0xf2Fb39bBfA77D9beF88b319360BF963Ea208a0f2)
+ * - [__View Contract on Zircuit Testnet Zircuit Testnet Explorer__](https://explorer.testnet.zircuit.com/address/0xD1eA89F676763b6238951adc2D5521D0e0Cddb4d)
+ * - [__View Contract on Polygon Amoy Polygon Scan__](https://amoy.polygonscan.com/address/0xD1eA89F676763b6238951adc2D5521D0e0Cddb4d)
+ * - [__View Contract on Base Sepolia Basescan__](https://sepolia.basescan.org/address/0xBFa7034670eA7d69E369569eC8216a1EEae74bCa)
+ * - [__View Contract on Scroll Sepolia Scrollscan__](https://sepolia.scrollscan.com/address/0x814200754D0C6672ca20fC74c066A2b9AD47018d)
+ */
+export const simulateFoodiversePointsRenounceOwnership =
+  /*#__PURE__*/ createSimulateContract({
+    abi: foodiversePointsAbi,
+    address: foodiversePointsAddress,
+    functionName: 'renounceOwnership',
+  })
+
+/**
+ * Wraps __{@link simulateContract}__ with `abi` set to __{@link foodiversePointsAbi}__ and `functionName` set to `"transfer"`
+ *
+ * - [__View Contract on Morph Holesky Morph Holesky Explorer__](https://explorer-holesky.morphl2.io/address/0xf2Fb39bBfA77D9beF88b319360BF963Ea208a0f2)
+ * - [__View Contract on Zircuit Testnet Zircuit Testnet Explorer__](https://explorer.testnet.zircuit.com/address/0xD1eA89F676763b6238951adc2D5521D0e0Cddb4d)
+ * - [__View Contract on Polygon Amoy Polygon Scan__](https://amoy.polygonscan.com/address/0xD1eA89F676763b6238951adc2D5521D0e0Cddb4d)
+ * - [__View Contract on Base Sepolia Basescan__](https://sepolia.basescan.org/address/0xBFa7034670eA7d69E369569eC8216a1EEae74bCa)
+ * - [__View Contract on Scroll Sepolia Scrollscan__](https://sepolia.scrollscan.com/address/0x814200754D0C6672ca20fC74c066A2b9AD47018d)
+ */
+export const simulateFoodiversePointsTransfer =
+  /*#__PURE__*/ createSimulateContract({
+    abi: foodiversePointsAbi,
+    address: foodiversePointsAddress,
+    functionName: 'transfer',
+  })
+
+/**
+ * Wraps __{@link simulateContract}__ with `abi` set to __{@link foodiversePointsAbi}__ and `functionName` set to `"transferFrom"`
+ *
+ * - [__View Contract on Morph Holesky Morph Holesky Explorer__](https://explorer-holesky.morphl2.io/address/0xf2Fb39bBfA77D9beF88b319360BF963Ea208a0f2)
+ * - [__View Contract on Zircuit Testnet Zircuit Testnet Explorer__](https://explorer.testnet.zircuit.com/address/0xD1eA89F676763b6238951adc2D5521D0e0Cddb4d)
+ * - [__View Contract on Polygon Amoy Polygon Scan__](https://amoy.polygonscan.com/address/0xD1eA89F676763b6238951adc2D5521D0e0Cddb4d)
+ * - [__View Contract on Base Sepolia Basescan__](https://sepolia.basescan.org/address/0xBFa7034670eA7d69E369569eC8216a1EEae74bCa)
+ * - [__View Contract on Scroll Sepolia Scrollscan__](https://sepolia.scrollscan.com/address/0x814200754D0C6672ca20fC74c066A2b9AD47018d)
+ */
+export const simulateFoodiversePointsTransferFrom =
+  /*#__PURE__*/ createSimulateContract({
+    abi: foodiversePointsAbi,
+    address: foodiversePointsAddress,
+    functionName: 'transferFrom',
+  })
+
+/**
+ * Wraps __{@link simulateContract}__ with `abi` set to __{@link foodiversePointsAbi}__ and `functionName` set to `"transferOwnership"`
+ *
+ * - [__View Contract on Morph Holesky Morph Holesky Explorer__](https://explorer-holesky.morphl2.io/address/0xf2Fb39bBfA77D9beF88b319360BF963Ea208a0f2)
+ * - [__View Contract on Zircuit Testnet Zircuit Testnet Explorer__](https://explorer.testnet.zircuit.com/address/0xD1eA89F676763b6238951adc2D5521D0e0Cddb4d)
+ * - [__View Contract on Polygon Amoy Polygon Scan__](https://amoy.polygonscan.com/address/0xD1eA89F676763b6238951adc2D5521D0e0Cddb4d)
+ * - [__View Contract on Base Sepolia Basescan__](https://sepolia.basescan.org/address/0xBFa7034670eA7d69E369569eC8216a1EEae74bCa)
+ * - [__View Contract on Scroll Sepolia Scrollscan__](https://sepolia.scrollscan.com/address/0x814200754D0C6672ca20fC74c066A2b9AD47018d)
+ */
+export const simulateFoodiversePointsTransferOwnership =
+  /*#__PURE__*/ createSimulateContract({
+    abi: foodiversePointsAbi,
+    address: foodiversePointsAddress,
+    functionName: 'transferOwnership',
+  })
+
+/**
+ * Wraps __{@link watchContractEvent}__ with `abi` set to __{@link foodiversePointsAbi}__
+ *
+ * - [__View Contract on Morph Holesky Morph Holesky Explorer__](https://explorer-holesky.morphl2.io/address/0xf2Fb39bBfA77D9beF88b319360BF963Ea208a0f2)
+ * - [__View Contract on Zircuit Testnet Zircuit Testnet Explorer__](https://explorer.testnet.zircuit.com/address/0xD1eA89F676763b6238951adc2D5521D0e0Cddb4d)
+ * - [__View Contract on Polygon Amoy Polygon Scan__](https://amoy.polygonscan.com/address/0xD1eA89F676763b6238951adc2D5521D0e0Cddb4d)
+ * - [__View Contract on Base Sepolia Basescan__](https://sepolia.basescan.org/address/0xBFa7034670eA7d69E369569eC8216a1EEae74bCa)
+ * - [__View Contract on Scroll Sepolia Scrollscan__](https://sepolia.scrollscan.com/address/0x814200754D0C6672ca20fC74c066A2b9AD47018d)
+ */
+export const watchFoodiversePointsEvent =
+  /*#__PURE__*/ createWatchContractEvent({
+    abi: foodiversePointsAbi,
+    address: foodiversePointsAddress,
+  })
+
+/**
+ * Wraps __{@link watchContractEvent}__ with `abi` set to __{@link foodiversePointsAbi}__ and `eventName` set to `"Approval"`
+ *
+ * - [__View Contract on Morph Holesky Morph Holesky Explorer__](https://explorer-holesky.morphl2.io/address/0xf2Fb39bBfA77D9beF88b319360BF963Ea208a0f2)
+ * - [__View Contract on Zircuit Testnet Zircuit Testnet Explorer__](https://explorer.testnet.zircuit.com/address/0xD1eA89F676763b6238951adc2D5521D0e0Cddb4d)
+ * - [__View Contract on Polygon Amoy Polygon Scan__](https://amoy.polygonscan.com/address/0xD1eA89F676763b6238951adc2D5521D0e0Cddb4d)
+ * - [__View Contract on Base Sepolia Basescan__](https://sepolia.basescan.org/address/0xBFa7034670eA7d69E369569eC8216a1EEae74bCa)
+ * - [__View Contract on Scroll Sepolia Scrollscan__](https://sepolia.scrollscan.com/address/0x814200754D0C6672ca20fC74c066A2b9AD47018d)
+ */
+export const watchFoodiversePointsApprovalEvent =
+  /*#__PURE__*/ createWatchContractEvent({
+    abi: foodiversePointsAbi,
+    address: foodiversePointsAddress,
+    eventName: 'Approval',
+  })
+
+/**
+ * Wraps __{@link watchContractEvent}__ with `abi` set to __{@link foodiversePointsAbi}__ and `eventName` set to `"OwnershipTransferred"`
+ *
+ * - [__View Contract on Morph Holesky Morph Holesky Explorer__](https://explorer-holesky.morphl2.io/address/0xf2Fb39bBfA77D9beF88b319360BF963Ea208a0f2)
+ * - [__View Contract on Zircuit Testnet Zircuit Testnet Explorer__](https://explorer.testnet.zircuit.com/address/0xD1eA89F676763b6238951adc2D5521D0e0Cddb4d)
+ * - [__View Contract on Polygon Amoy Polygon Scan__](https://amoy.polygonscan.com/address/0xD1eA89F676763b6238951adc2D5521D0e0Cddb4d)
+ * - [__View Contract on Base Sepolia Basescan__](https://sepolia.basescan.org/address/0xBFa7034670eA7d69E369569eC8216a1EEae74bCa)
+ * - [__View Contract on Scroll Sepolia Scrollscan__](https://sepolia.scrollscan.com/address/0x814200754D0C6672ca20fC74c066A2b9AD47018d)
+ */
+export const watchFoodiversePointsOwnershipTransferredEvent =
+  /*#__PURE__*/ createWatchContractEvent({
+    abi: foodiversePointsAbi,
+    address: foodiversePointsAddress,
+    eventName: 'OwnershipTransferred',
+  })
+
+/**
+ * Wraps __{@link watchContractEvent}__ with `abi` set to __{@link foodiversePointsAbi}__ and `eventName` set to `"Transfer"`
+ *
+ * - [__View Contract on Morph Holesky Morph Holesky Explorer__](https://explorer-holesky.morphl2.io/address/0xf2Fb39bBfA77D9beF88b319360BF963Ea208a0f2)
+ * - [__View Contract on Zircuit Testnet Zircuit Testnet Explorer__](https://explorer.testnet.zircuit.com/address/0xD1eA89F676763b6238951adc2D5521D0e0Cddb4d)
+ * - [__View Contract on Polygon Amoy Polygon Scan__](https://amoy.polygonscan.com/address/0xD1eA89F676763b6238951adc2D5521D0e0Cddb4d)
+ * - [__View Contract on Base Sepolia Basescan__](https://sepolia.basescan.org/address/0xBFa7034670eA7d69E369569eC8216a1EEae74bCa)
+ * - [__View Contract on Scroll Sepolia Scrollscan__](https://sepolia.scrollscan.com/address/0x814200754D0C6672ca20fC74c066A2b9AD47018d)
+ */
+export const watchFoodiversePointsTransferEvent =
+  /*#__PURE__*/ createWatchContractEvent({
+    abi: foodiversePointsAbi,
+    address: foodiversePointsAddress,
+    eventName: 'Transfer',
+  })
+
+/**
+ * Wraps __{@link readContract}__ with `abi` set to __{@link paymentGatewayAbi}__
+ *
+ * - [__View Contract on Morph Holesky Morph Holesky Explorer__](https://explorer-holesky.morphl2.io/address/0x805CFDCc0638C2B1aB2B2A3fDC057207BB3222f5)
+ * - [__View Contract on Zircuit Testnet Zircuit Testnet Explorer__](https://explorer.testnet.zircuit.com/address/0x814200754D0C6672ca20fC74c066A2b9AD47018d)
+ * - [__View Contract on Polygon Amoy Polygon Scan__](https://amoy.polygonscan.com/address/0x814200754D0C6672ca20fC74c066A2b9AD47018d)
+ * - [__View Contract on Base Sepolia Basescan__](https://sepolia.basescan.org/address/0x06b2C86164f7398355fFB382BC812b299bBd9477)
+ * - [__View Contract on Scroll Sepolia Scrollscan__](https://sepolia.scrollscan.com/address/0x814200754D0C6672ca20fC74c066A2b9AD47018d)
+ */
+export const readPaymentGateway = /*#__PURE__*/ createReadContract({
+  abi: paymentGatewayAbi,
+  address: paymentGatewayAddress,
+})
+
+/**
+ * Wraps __{@link readContract}__ with `abi` set to __{@link paymentGatewayAbi}__ and `functionName` set to `"allowance"`
+ *
+ * - [__View Contract on Morph Holesky Morph Holesky Explorer__](https://explorer-holesky.morphl2.io/address/0x805CFDCc0638C2B1aB2B2A3fDC057207BB3222f5)
+ * - [__View Contract on Zircuit Testnet Zircuit Testnet Explorer__](https://explorer.testnet.zircuit.com/address/0x814200754D0C6672ca20fC74c066A2b9AD47018d)
+ * - [__View Contract on Polygon Amoy Polygon Scan__](https://amoy.polygonscan.com/address/0x814200754D0C6672ca20fC74c066A2b9AD47018d)
+ * - [__View Contract on Base Sepolia Basescan__](https://sepolia.basescan.org/address/0x06b2C86164f7398355fFB382BC812b299bBd9477)
+ * - [__View Contract on Scroll Sepolia Scrollscan__](https://sepolia.scrollscan.com/address/0x814200754D0C6672ca20fC74c066A2b9AD47018d)
+ */
+export const readPaymentGatewayAllowance = /*#__PURE__*/ createReadContract({
+  abi: paymentGatewayAbi,
+  address: paymentGatewayAddress,
+  functionName: 'allowance',
+})
+
+/**
+ * Wraps __{@link readContract}__ with `abi` set to __{@link paymentGatewayAbi}__ and `functionName` set to `"balanceOf"`
+ *
+ * - [__View Contract on Morph Holesky Morph Holesky Explorer__](https://explorer-holesky.morphl2.io/address/0x805CFDCc0638C2B1aB2B2A3fDC057207BB3222f5)
+ * - [__View Contract on Zircuit Testnet Zircuit Testnet Explorer__](https://explorer.testnet.zircuit.com/address/0x814200754D0C6672ca20fC74c066A2b9AD47018d)
+ * - [__View Contract on Polygon Amoy Polygon Scan__](https://amoy.polygonscan.com/address/0x814200754D0C6672ca20fC74c066A2b9AD47018d)
+ * - [__View Contract on Base Sepolia Basescan__](https://sepolia.basescan.org/address/0x06b2C86164f7398355fFB382BC812b299bBd9477)
+ * - [__View Contract on Scroll Sepolia Scrollscan__](https://sepolia.scrollscan.com/address/0x814200754D0C6672ca20fC74c066A2b9AD47018d)
+ */
+export const readPaymentGatewayBalanceOf = /*#__PURE__*/ createReadContract({
+  abi: paymentGatewayAbi,
+  address: paymentGatewayAddress,
+  functionName: 'balanceOf',
+})
+
+/**
+ * Wraps __{@link readContract}__ with `abi` set to __{@link paymentGatewayAbi}__ and `functionName` set to `"decimals"`
+ *
+ * - [__View Contract on Morph Holesky Morph Holesky Explorer__](https://explorer-holesky.morphl2.io/address/0x805CFDCc0638C2B1aB2B2A3fDC057207BB3222f5)
+ * - [__View Contract on Zircuit Testnet Zircuit Testnet Explorer__](https://explorer.testnet.zircuit.com/address/0x814200754D0C6672ca20fC74c066A2b9AD47018d)
+ * - [__View Contract on Polygon Amoy Polygon Scan__](https://amoy.polygonscan.com/address/0x814200754D0C6672ca20fC74c066A2b9AD47018d)
+ * - [__View Contract on Base Sepolia Basescan__](https://sepolia.basescan.org/address/0x06b2C86164f7398355fFB382BC812b299bBd9477)
+ * - [__View Contract on Scroll Sepolia Scrollscan__](https://sepolia.scrollscan.com/address/0x814200754D0C6672ca20fC74c066A2b9AD47018d)
+ */
+export const readPaymentGatewayDecimals = /*#__PURE__*/ createReadContract({
+  abi: paymentGatewayAbi,
+  address: paymentGatewayAddress,
+  functionName: 'decimals',
+})
+
+/**
+ * Wraps __{@link readContract}__ with `abi` set to __{@link paymentGatewayAbi}__ and `functionName` set to `"name"`
+ *
+ * - [__View Contract on Morph Holesky Morph Holesky Explorer__](https://explorer-holesky.morphl2.io/address/0x805CFDCc0638C2B1aB2B2A3fDC057207BB3222f5)
+ * - [__View Contract on Zircuit Testnet Zircuit Testnet Explorer__](https://explorer.testnet.zircuit.com/address/0x814200754D0C6672ca20fC74c066A2b9AD47018d)
+ * - [__View Contract on Polygon Amoy Polygon Scan__](https://amoy.polygonscan.com/address/0x814200754D0C6672ca20fC74c066A2b9AD47018d)
+ * - [__View Contract on Base Sepolia Basescan__](https://sepolia.basescan.org/address/0x06b2C86164f7398355fFB382BC812b299bBd9477)
+ * - [__View Contract on Scroll Sepolia Scrollscan__](https://sepolia.scrollscan.com/address/0x814200754D0C6672ca20fC74c066A2b9AD47018d)
+ */
+export const readPaymentGatewayName = /*#__PURE__*/ createReadContract({
+  abi: paymentGatewayAbi,
+  address: paymentGatewayAddress,
+  functionName: 'name',
+})
+
+/**
+ * Wraps __{@link readContract}__ with `abi` set to __{@link paymentGatewayAbi}__ and `functionName` set to `"owner"`
+ *
+ * - [__View Contract on Morph Holesky Morph Holesky Explorer__](https://explorer-holesky.morphl2.io/address/0x805CFDCc0638C2B1aB2B2A3fDC057207BB3222f5)
+ * - [__View Contract on Zircuit Testnet Zircuit Testnet Explorer__](https://explorer.testnet.zircuit.com/address/0x814200754D0C6672ca20fC74c066A2b9AD47018d)
+ * - [__View Contract on Polygon Amoy Polygon Scan__](https://amoy.polygonscan.com/address/0x814200754D0C6672ca20fC74c066A2b9AD47018d)
+ * - [__View Contract on Base Sepolia Basescan__](https://sepolia.basescan.org/address/0x06b2C86164f7398355fFB382BC812b299bBd9477)
+ * - [__View Contract on Scroll Sepolia Scrollscan__](https://sepolia.scrollscan.com/address/0x814200754D0C6672ca20fC74c066A2b9AD47018d)
+ */
+export const readPaymentGatewayOwner = /*#__PURE__*/ createReadContract({
+  abi: paymentGatewayAbi,
+  address: paymentGatewayAddress,
+  functionName: 'owner',
+})
+
+/**
+ * Wraps __{@link readContract}__ with `abi` set to __{@link paymentGatewayAbi}__ and `functionName` set to `"symbol"`
+ *
+ * - [__View Contract on Morph Holesky Morph Holesky Explorer__](https://explorer-holesky.morphl2.io/address/0x805CFDCc0638C2B1aB2B2A3fDC057207BB3222f5)
+ * - [__View Contract on Zircuit Testnet Zircuit Testnet Explorer__](https://explorer.testnet.zircuit.com/address/0x814200754D0C6672ca20fC74c066A2b9AD47018d)
+ * - [__View Contract on Polygon Amoy Polygon Scan__](https://amoy.polygonscan.com/address/0x814200754D0C6672ca20fC74c066A2b9AD47018d)
+ * - [__View Contract on Base Sepolia Basescan__](https://sepolia.basescan.org/address/0x06b2C86164f7398355fFB382BC812b299bBd9477)
+ * - [__View Contract on Scroll Sepolia Scrollscan__](https://sepolia.scrollscan.com/address/0x814200754D0C6672ca20fC74c066A2b9AD47018d)
+ */
+export const readPaymentGatewaySymbol = /*#__PURE__*/ createReadContract({
+  abi: paymentGatewayAbi,
+  address: paymentGatewayAddress,
+  functionName: 'symbol',
+})
+
+/**
+ * Wraps __{@link readContract}__ with `abi` set to __{@link paymentGatewayAbi}__ and `functionName` set to `"totalSupply"`
+ *
+ * - [__View Contract on Morph Holesky Morph Holesky Explorer__](https://explorer-holesky.morphl2.io/address/0x805CFDCc0638C2B1aB2B2A3fDC057207BB3222f5)
+ * - [__View Contract on Zircuit Testnet Zircuit Testnet Explorer__](https://explorer.testnet.zircuit.com/address/0x814200754D0C6672ca20fC74c066A2b9AD47018d)
+ * - [__View Contract on Polygon Amoy Polygon Scan__](https://amoy.polygonscan.com/address/0x814200754D0C6672ca20fC74c066A2b9AD47018d)
+ * - [__View Contract on Base Sepolia Basescan__](https://sepolia.basescan.org/address/0x06b2C86164f7398355fFB382BC812b299bBd9477)
+ * - [__View Contract on Scroll Sepolia Scrollscan__](https://sepolia.scrollscan.com/address/0x814200754D0C6672ca20fC74c066A2b9AD47018d)
+ */
+export const readPaymentGatewayTotalSupply = /*#__PURE__*/ createReadContract({
+  abi: paymentGatewayAbi,
+  address: paymentGatewayAddress,
+  functionName: 'totalSupply',
+})
+
+/**
+ * Wraps __{@link writeContract}__ with `abi` set to __{@link paymentGatewayAbi}__
+ *
+ * - [__View Contract on Morph Holesky Morph Holesky Explorer__](https://explorer-holesky.morphl2.io/address/0x805CFDCc0638C2B1aB2B2A3fDC057207BB3222f5)
+ * - [__View Contract on Zircuit Testnet Zircuit Testnet Explorer__](https://explorer.testnet.zircuit.com/address/0x814200754D0C6672ca20fC74c066A2b9AD47018d)
+ * - [__View Contract on Polygon Amoy Polygon Scan__](https://amoy.polygonscan.com/address/0x814200754D0C6672ca20fC74c066A2b9AD47018d)
+ * - [__View Contract on Base Sepolia Basescan__](https://sepolia.basescan.org/address/0x06b2C86164f7398355fFB382BC812b299bBd9477)
+ * - [__View Contract on Scroll Sepolia Scrollscan__](https://sepolia.scrollscan.com/address/0x814200754D0C6672ca20fC74c066A2b9AD47018d)
+ */
+export const writePaymentGateway = /*#__PURE__*/ createWriteContract({
+  abi: paymentGatewayAbi,
+  address: paymentGatewayAddress,
+})
+
+/**
+ * Wraps __{@link writeContract}__ with `abi` set to __{@link paymentGatewayAbi}__ and `functionName` set to `"approve"`
+ *
+ * - [__View Contract on Morph Holesky Morph Holesky Explorer__](https://explorer-holesky.morphl2.io/address/0x805CFDCc0638C2B1aB2B2A3fDC057207BB3222f5)
+ * - [__View Contract on Zircuit Testnet Zircuit Testnet Explorer__](https://explorer.testnet.zircuit.com/address/0x814200754D0C6672ca20fC74c066A2b9AD47018d)
+ * - [__View Contract on Polygon Amoy Polygon Scan__](https://amoy.polygonscan.com/address/0x814200754D0C6672ca20fC74c066A2b9AD47018d)
+ * - [__View Contract on Base Sepolia Basescan__](https://sepolia.basescan.org/address/0x06b2C86164f7398355fFB382BC812b299bBd9477)
+ * - [__View Contract on Scroll Sepolia Scrollscan__](https://sepolia.scrollscan.com/address/0x814200754D0C6672ca20fC74c066A2b9AD47018d)
+ */
+export const writePaymentGatewayApprove = /*#__PURE__*/ createWriteContract({
+  abi: paymentGatewayAbi,
+  address: paymentGatewayAddress,
+  functionName: 'approve',
+})
+
+/**
+ * Wraps __{@link writeContract}__ with `abi` set to __{@link paymentGatewayAbi}__ and `functionName` set to `"mint"`
+ *
+ * - [__View Contract on Morph Holesky Morph Holesky Explorer__](https://explorer-holesky.morphl2.io/address/0x805CFDCc0638C2B1aB2B2A3fDC057207BB3222f5)
+ * - [__View Contract on Zircuit Testnet Zircuit Testnet Explorer__](https://explorer.testnet.zircuit.com/address/0x814200754D0C6672ca20fC74c066A2b9AD47018d)
+ * - [__View Contract on Polygon Amoy Polygon Scan__](https://amoy.polygonscan.com/address/0x814200754D0C6672ca20fC74c066A2b9AD47018d)
+ * - [__View Contract on Base Sepolia Basescan__](https://sepolia.basescan.org/address/0x06b2C86164f7398355fFB382BC812b299bBd9477)
+ * - [__View Contract on Scroll Sepolia Scrollscan__](https://sepolia.scrollscan.com/address/0x814200754D0C6672ca20fC74c066A2b9AD47018d)
+ */
+export const writePaymentGatewayMint = /*#__PURE__*/ createWriteContract({
+  abi: paymentGatewayAbi,
+  address: paymentGatewayAddress,
+  functionName: 'mint',
+})
+
+/**
+ * Wraps __{@link writeContract}__ with `abi` set to __{@link paymentGatewayAbi}__ and `functionName` set to `"renounceOwnership"`
+ *
+ * - [__View Contract on Morph Holesky Morph Holesky Explorer__](https://explorer-holesky.morphl2.io/address/0x805CFDCc0638C2B1aB2B2A3fDC057207BB3222f5)
+ * - [__View Contract on Zircuit Testnet Zircuit Testnet Explorer__](https://explorer.testnet.zircuit.com/address/0x814200754D0C6672ca20fC74c066A2b9AD47018d)
+ * - [__View Contract on Polygon Amoy Polygon Scan__](https://amoy.polygonscan.com/address/0x814200754D0C6672ca20fC74c066A2b9AD47018d)
+ * - [__View Contract on Base Sepolia Basescan__](https://sepolia.basescan.org/address/0x06b2C86164f7398355fFB382BC812b299bBd9477)
+ * - [__View Contract on Scroll Sepolia Scrollscan__](https://sepolia.scrollscan.com/address/0x814200754D0C6672ca20fC74c066A2b9AD47018d)
+ */
+export const writePaymentGatewayRenounceOwnership =
+  /*#__PURE__*/ createWriteContract({
+    abi: paymentGatewayAbi,
+    address: paymentGatewayAddress,
+    functionName: 'renounceOwnership',
+  })
+
+/**
+ * Wraps __{@link writeContract}__ with `abi` set to __{@link paymentGatewayAbi}__ and `functionName` set to `"transfer"`
+ *
+ * - [__View Contract on Morph Holesky Morph Holesky Explorer__](https://explorer-holesky.morphl2.io/address/0x805CFDCc0638C2B1aB2B2A3fDC057207BB3222f5)
+ * - [__View Contract on Zircuit Testnet Zircuit Testnet Explorer__](https://explorer.testnet.zircuit.com/address/0x814200754D0C6672ca20fC74c066A2b9AD47018d)
+ * - [__View Contract on Polygon Amoy Polygon Scan__](https://amoy.polygonscan.com/address/0x814200754D0C6672ca20fC74c066A2b9AD47018d)
+ * - [__View Contract on Base Sepolia Basescan__](https://sepolia.basescan.org/address/0x06b2C86164f7398355fFB382BC812b299bBd9477)
+ * - [__View Contract on Scroll Sepolia Scrollscan__](https://sepolia.scrollscan.com/address/0x814200754D0C6672ca20fC74c066A2b9AD47018d)
+ */
+export const writePaymentGatewayTransfer = /*#__PURE__*/ createWriteContract({
+  abi: paymentGatewayAbi,
+  address: paymentGatewayAddress,
+  functionName: 'transfer',
+})
+
+/**
+ * Wraps __{@link writeContract}__ with `abi` set to __{@link paymentGatewayAbi}__ and `functionName` set to `"transferFrom"`
+ *
+ * - [__View Contract on Morph Holesky Morph Holesky Explorer__](https://explorer-holesky.morphl2.io/address/0x805CFDCc0638C2B1aB2B2A3fDC057207BB3222f5)
+ * - [__View Contract on Zircuit Testnet Zircuit Testnet Explorer__](https://explorer.testnet.zircuit.com/address/0x814200754D0C6672ca20fC74c066A2b9AD47018d)
+ * - [__View Contract on Polygon Amoy Polygon Scan__](https://amoy.polygonscan.com/address/0x814200754D0C6672ca20fC74c066A2b9AD47018d)
+ * - [__View Contract on Base Sepolia Basescan__](https://sepolia.basescan.org/address/0x06b2C86164f7398355fFB382BC812b299bBd9477)
+ * - [__View Contract on Scroll Sepolia Scrollscan__](https://sepolia.scrollscan.com/address/0x814200754D0C6672ca20fC74c066A2b9AD47018d)
+ */
+export const writePaymentGatewayTransferFrom =
+  /*#__PURE__*/ createWriteContract({
+    abi: paymentGatewayAbi,
+    address: paymentGatewayAddress,
+    functionName: 'transferFrom',
+  })
+
+/**
+ * Wraps __{@link writeContract}__ with `abi` set to __{@link paymentGatewayAbi}__ and `functionName` set to `"transferOwnership"`
+ *
+ * - [__View Contract on Morph Holesky Morph Holesky Explorer__](https://explorer-holesky.morphl2.io/address/0x805CFDCc0638C2B1aB2B2A3fDC057207BB3222f5)
+ * - [__View Contract on Zircuit Testnet Zircuit Testnet Explorer__](https://explorer.testnet.zircuit.com/address/0x814200754D0C6672ca20fC74c066A2b9AD47018d)
+ * - [__View Contract on Polygon Amoy Polygon Scan__](https://amoy.polygonscan.com/address/0x814200754D0C6672ca20fC74c066A2b9AD47018d)
+ * - [__View Contract on Base Sepolia Basescan__](https://sepolia.basescan.org/address/0x06b2C86164f7398355fFB382BC812b299bBd9477)
+ * - [__View Contract on Scroll Sepolia Scrollscan__](https://sepolia.scrollscan.com/address/0x814200754D0C6672ca20fC74c066A2b9AD47018d)
+ */
+export const writePaymentGatewayTransferOwnership =
+  /*#__PURE__*/ createWriteContract({
+    abi: paymentGatewayAbi,
+    address: paymentGatewayAddress,
+    functionName: 'transferOwnership',
+  })
+
+/**
+ * Wraps __{@link simulateContract}__ with `abi` set to __{@link paymentGatewayAbi}__
+ *
+ * - [__View Contract on Morph Holesky Morph Holesky Explorer__](https://explorer-holesky.morphl2.io/address/0x805CFDCc0638C2B1aB2B2A3fDC057207BB3222f5)
+ * - [__View Contract on Zircuit Testnet Zircuit Testnet Explorer__](https://explorer.testnet.zircuit.com/address/0x814200754D0C6672ca20fC74c066A2b9AD47018d)
+ * - [__View Contract on Polygon Amoy Polygon Scan__](https://amoy.polygonscan.com/address/0x814200754D0C6672ca20fC74c066A2b9AD47018d)
+ * - [__View Contract on Base Sepolia Basescan__](https://sepolia.basescan.org/address/0x06b2C86164f7398355fFB382BC812b299bBd9477)
+ * - [__View Contract on Scroll Sepolia Scrollscan__](https://sepolia.scrollscan.com/address/0x814200754D0C6672ca20fC74c066A2b9AD47018d)
+ */
+export const simulatePaymentGateway = /*#__PURE__*/ createSimulateContract({
+  abi: paymentGatewayAbi,
+  address: paymentGatewayAddress,
+})
+
+/**
+ * Wraps __{@link simulateContract}__ with `abi` set to __{@link paymentGatewayAbi}__ and `functionName` set to `"approve"`
+ *
+ * - [__View Contract on Morph Holesky Morph Holesky Explorer__](https://explorer-holesky.morphl2.io/address/0x805CFDCc0638C2B1aB2B2A3fDC057207BB3222f5)
+ * - [__View Contract on Zircuit Testnet Zircuit Testnet Explorer__](https://explorer.testnet.zircuit.com/address/0x814200754D0C6672ca20fC74c066A2b9AD47018d)
+ * - [__View Contract on Polygon Amoy Polygon Scan__](https://amoy.polygonscan.com/address/0x814200754D0C6672ca20fC74c066A2b9AD47018d)
+ * - [__View Contract on Base Sepolia Basescan__](https://sepolia.basescan.org/address/0x06b2C86164f7398355fFB382BC812b299bBd9477)
+ * - [__View Contract on Scroll Sepolia Scrollscan__](https://sepolia.scrollscan.com/address/0x814200754D0C6672ca20fC74c066A2b9AD47018d)
+ */
+export const simulatePaymentGatewayApprove =
+  /*#__PURE__*/ createSimulateContract({
+    abi: paymentGatewayAbi,
+    address: paymentGatewayAddress,
+    functionName: 'approve',
+  })
+
+/**
+ * Wraps __{@link simulateContract}__ with `abi` set to __{@link paymentGatewayAbi}__ and `functionName` set to `"mint"`
+ *
+ * - [__View Contract on Morph Holesky Morph Holesky Explorer__](https://explorer-holesky.morphl2.io/address/0x805CFDCc0638C2B1aB2B2A3fDC057207BB3222f5)
+ * - [__View Contract on Zircuit Testnet Zircuit Testnet Explorer__](https://explorer.testnet.zircuit.com/address/0x814200754D0C6672ca20fC74c066A2b9AD47018d)
+ * - [__View Contract on Polygon Amoy Polygon Scan__](https://amoy.polygonscan.com/address/0x814200754D0C6672ca20fC74c066A2b9AD47018d)
+ * - [__View Contract on Base Sepolia Basescan__](https://sepolia.basescan.org/address/0x06b2C86164f7398355fFB382BC812b299bBd9477)
+ * - [__View Contract on Scroll Sepolia Scrollscan__](https://sepolia.scrollscan.com/address/0x814200754D0C6672ca20fC74c066A2b9AD47018d)
+ */
+export const simulatePaymentGatewayMint = /*#__PURE__*/ createSimulateContract({
+  abi: paymentGatewayAbi,
+  address: paymentGatewayAddress,
+  functionName: 'mint',
+})
+
+/**
+ * Wraps __{@link simulateContract}__ with `abi` set to __{@link paymentGatewayAbi}__ and `functionName` set to `"renounceOwnership"`
+ *
+ * - [__View Contract on Morph Holesky Morph Holesky Explorer__](https://explorer-holesky.morphl2.io/address/0x805CFDCc0638C2B1aB2B2A3fDC057207BB3222f5)
+ * - [__View Contract on Zircuit Testnet Zircuit Testnet Explorer__](https://explorer.testnet.zircuit.com/address/0x814200754D0C6672ca20fC74c066A2b9AD47018d)
+ * - [__View Contract on Polygon Amoy Polygon Scan__](https://amoy.polygonscan.com/address/0x814200754D0C6672ca20fC74c066A2b9AD47018d)
+ * - [__View Contract on Base Sepolia Basescan__](https://sepolia.basescan.org/address/0x06b2C86164f7398355fFB382BC812b299bBd9477)
+ * - [__View Contract on Scroll Sepolia Scrollscan__](https://sepolia.scrollscan.com/address/0x814200754D0C6672ca20fC74c066A2b9AD47018d)
+ */
+export const simulatePaymentGatewayRenounceOwnership =
+  /*#__PURE__*/ createSimulateContract({
+    abi: paymentGatewayAbi,
+    address: paymentGatewayAddress,
+    functionName: 'renounceOwnership',
+  })
+
+/**
+ * Wraps __{@link simulateContract}__ with `abi` set to __{@link paymentGatewayAbi}__ and `functionName` set to `"transfer"`
+ *
+ * - [__View Contract on Morph Holesky Morph Holesky Explorer__](https://explorer-holesky.morphl2.io/address/0x805CFDCc0638C2B1aB2B2A3fDC057207BB3222f5)
+ * - [__View Contract on Zircuit Testnet Zircuit Testnet Explorer__](https://explorer.testnet.zircuit.com/address/0x814200754D0C6672ca20fC74c066A2b9AD47018d)
+ * - [__View Contract on Polygon Amoy Polygon Scan__](https://amoy.polygonscan.com/address/0x814200754D0C6672ca20fC74c066A2b9AD47018d)
+ * - [__View Contract on Base Sepolia Basescan__](https://sepolia.basescan.org/address/0x06b2C86164f7398355fFB382BC812b299bBd9477)
+ * - [__View Contract on Scroll Sepolia Scrollscan__](https://sepolia.scrollscan.com/address/0x814200754D0C6672ca20fC74c066A2b9AD47018d)
+ */
+export const simulatePaymentGatewayTransfer =
+  /*#__PURE__*/ createSimulateContract({
+    abi: paymentGatewayAbi,
+    address: paymentGatewayAddress,
+    functionName: 'transfer',
+  })
+
+/**
+ * Wraps __{@link simulateContract}__ with `abi` set to __{@link paymentGatewayAbi}__ and `functionName` set to `"transferFrom"`
+ *
+ * - [__View Contract on Morph Holesky Morph Holesky Explorer__](https://explorer-holesky.morphl2.io/address/0x805CFDCc0638C2B1aB2B2A3fDC057207BB3222f5)
+ * - [__View Contract on Zircuit Testnet Zircuit Testnet Explorer__](https://explorer.testnet.zircuit.com/address/0x814200754D0C6672ca20fC74c066A2b9AD47018d)
+ * - [__View Contract on Polygon Amoy Polygon Scan__](https://amoy.polygonscan.com/address/0x814200754D0C6672ca20fC74c066A2b9AD47018d)
+ * - [__View Contract on Base Sepolia Basescan__](https://sepolia.basescan.org/address/0x06b2C86164f7398355fFB382BC812b299bBd9477)
+ * - [__View Contract on Scroll Sepolia Scrollscan__](https://sepolia.scrollscan.com/address/0x814200754D0C6672ca20fC74c066A2b9AD47018d)
+ */
+export const simulatePaymentGatewayTransferFrom =
+  /*#__PURE__*/ createSimulateContract({
+    abi: paymentGatewayAbi,
+    address: paymentGatewayAddress,
+    functionName: 'transferFrom',
+  })
+
+/**
+ * Wraps __{@link simulateContract}__ with `abi` set to __{@link paymentGatewayAbi}__ and `functionName` set to `"transferOwnership"`
+ *
+ * - [__View Contract on Morph Holesky Morph Holesky Explorer__](https://explorer-holesky.morphl2.io/address/0x805CFDCc0638C2B1aB2B2A3fDC057207BB3222f5)
+ * - [__View Contract on Zircuit Testnet Zircuit Testnet Explorer__](https://explorer.testnet.zircuit.com/address/0x814200754D0C6672ca20fC74c066A2b9AD47018d)
+ * - [__View Contract on Polygon Amoy Polygon Scan__](https://amoy.polygonscan.com/address/0x814200754D0C6672ca20fC74c066A2b9AD47018d)
+ * - [__View Contract on Base Sepolia Basescan__](https://sepolia.basescan.org/address/0x06b2C86164f7398355fFB382BC812b299bBd9477)
+ * - [__View Contract on Scroll Sepolia Scrollscan__](https://sepolia.scrollscan.com/address/0x814200754D0C6672ca20fC74c066A2b9AD47018d)
+ */
+export const simulatePaymentGatewayTransferOwnership =
+  /*#__PURE__*/ createSimulateContract({
+    abi: paymentGatewayAbi,
+    address: paymentGatewayAddress,
+    functionName: 'transferOwnership',
+  })
+
+/**
+ * Wraps __{@link watchContractEvent}__ with `abi` set to __{@link paymentGatewayAbi}__
+ *
+ * - [__View Contract on Morph Holesky Morph Holesky Explorer__](https://explorer-holesky.morphl2.io/address/0x805CFDCc0638C2B1aB2B2A3fDC057207BB3222f5)
+ * - [__View Contract on Zircuit Testnet Zircuit Testnet Explorer__](https://explorer.testnet.zircuit.com/address/0x814200754D0C6672ca20fC74c066A2b9AD47018d)
+ * - [__View Contract on Polygon Amoy Polygon Scan__](https://amoy.polygonscan.com/address/0x814200754D0C6672ca20fC74c066A2b9AD47018d)
+ * - [__View Contract on Base Sepolia Basescan__](https://sepolia.basescan.org/address/0x06b2C86164f7398355fFB382BC812b299bBd9477)
+ * - [__View Contract on Scroll Sepolia Scrollscan__](https://sepolia.scrollscan.com/address/0x814200754D0C6672ca20fC74c066A2b9AD47018d)
+ */
+export const watchPaymentGatewayEvent = /*#__PURE__*/ createWatchContractEvent({
+  abi: paymentGatewayAbi,
+  address: paymentGatewayAddress,
+})
+
+/**
+ * Wraps __{@link watchContractEvent}__ with `abi` set to __{@link paymentGatewayAbi}__ and `eventName` set to `"Approval"`
+ *
+ * - [__View Contract on Morph Holesky Morph Holesky Explorer__](https://explorer-holesky.morphl2.io/address/0x805CFDCc0638C2B1aB2B2A3fDC057207BB3222f5)
+ * - [__View Contract on Zircuit Testnet Zircuit Testnet Explorer__](https://explorer.testnet.zircuit.com/address/0x814200754D0C6672ca20fC74c066A2b9AD47018d)
+ * - [__View Contract on Polygon Amoy Polygon Scan__](https://amoy.polygonscan.com/address/0x814200754D0C6672ca20fC74c066A2b9AD47018d)
+ * - [__View Contract on Base Sepolia Basescan__](https://sepolia.basescan.org/address/0x06b2C86164f7398355fFB382BC812b299bBd9477)
+ * - [__View Contract on Scroll Sepolia Scrollscan__](https://sepolia.scrollscan.com/address/0x814200754D0C6672ca20fC74c066A2b9AD47018d)
+ */
+export const watchPaymentGatewayApprovalEvent =
+  /*#__PURE__*/ createWatchContractEvent({
+    abi: paymentGatewayAbi,
+    address: paymentGatewayAddress,
+    eventName: 'Approval',
+  })
+
+/**
+ * Wraps __{@link watchContractEvent}__ with `abi` set to __{@link paymentGatewayAbi}__ and `eventName` set to `"OwnershipTransferred"`
+ *
+ * - [__View Contract on Morph Holesky Morph Holesky Explorer__](https://explorer-holesky.morphl2.io/address/0x805CFDCc0638C2B1aB2B2A3fDC057207BB3222f5)
+ * - [__View Contract on Zircuit Testnet Zircuit Testnet Explorer__](https://explorer.testnet.zircuit.com/address/0x814200754D0C6672ca20fC74c066A2b9AD47018d)
+ * - [__View Contract on Polygon Amoy Polygon Scan__](https://amoy.polygonscan.com/address/0x814200754D0C6672ca20fC74c066A2b9AD47018d)
+ * - [__View Contract on Base Sepolia Basescan__](https://sepolia.basescan.org/address/0x06b2C86164f7398355fFB382BC812b299bBd9477)
+ * - [__View Contract on Scroll Sepolia Scrollscan__](https://sepolia.scrollscan.com/address/0x814200754D0C6672ca20fC74c066A2b9AD47018d)
+ */
+export const watchPaymentGatewayOwnershipTransferredEvent =
+  /*#__PURE__*/ createWatchContractEvent({
+    abi: paymentGatewayAbi,
+    address: paymentGatewayAddress,
+    eventName: 'OwnershipTransferred',
+  })
+
+/**
+ * Wraps __{@link watchContractEvent}__ with `abi` set to __{@link paymentGatewayAbi}__ and `eventName` set to `"Transfer"`
+ *
+ * - [__View Contract on Morph Holesky Morph Holesky Explorer__](https://explorer-holesky.morphl2.io/address/0x805CFDCc0638C2B1aB2B2A3fDC057207BB3222f5)
+ * - [__View Contract on Zircuit Testnet Zircuit Testnet Explorer__](https://explorer.testnet.zircuit.com/address/0x814200754D0C6672ca20fC74c066A2b9AD47018d)
+ * - [__View Contract on Polygon Amoy Polygon Scan__](https://amoy.polygonscan.com/address/0x814200754D0C6672ca20fC74c066A2b9AD47018d)
+ * - [__View Contract on Base Sepolia Basescan__](https://sepolia.basescan.org/address/0x06b2C86164f7398355fFB382BC812b299bBd9477)
+ * - [__View Contract on Scroll Sepolia Scrollscan__](https://sepolia.scrollscan.com/address/0x814200754D0C6672ca20fC74c066A2b9AD47018d)
+ */
+export const watchPaymentGatewayTransferEvent =
+  /*#__PURE__*/ createWatchContractEvent({
+    abi: paymentGatewayAbi,
+    address: paymentGatewayAddress,
+    eventName: 'Transfer',
+  })
+
+/**
+ * Wraps __{@link readContract}__ with `abi` set to __{@link usdcAbi}__
+ *
+ * - [__View Contract on Morph Holesky Morph Holesky Explorer__](https://explorer-holesky.morphl2.io/address/0x483EC90D0DCf0C808c9ddfcCc3011DE80f1e5915)
+ * - [__View Contract on Zircuit Testnet Zircuit Testnet Explorer__](https://explorer.testnet.zircuit.com/address/0x5da0c2ed4EcC08915B2490Fc9d9cF8B861e9a7b9)
+ * - [__View Contract on Polygon Amoy Polygon Scan__](https://amoy.polygonscan.com/address/0xD1eA89F676763b6238951adc2D5521D0e0Cddb4d)
+ * - [__View Contract on Base Sepolia Basescan__](https://sepolia.basescan.org/address/0xfD4aC8071991423e79971BEC2fcfEb78d28B3789)
+ * - [__View Contract on Scroll Sepolia Scrollscan__](https://sepolia.scrollscan.com/address/0x483EC90D0DCf0C808c9ddfcCc3011DE80f1e5915)
+ */
+export const readUsdc = /*#__PURE__*/ createReadContract({
+  abi: usdcAbi,
+  address: usdcAddress,
+})
+
+/**
+ * Wraps __{@link readContract}__ with `abi` set to __{@link usdcAbi}__ and `functionName` set to `"allowance"`
+ *
+ * - [__View Contract on Morph Holesky Morph Holesky Explorer__](https://explorer-holesky.morphl2.io/address/0x483EC90D0DCf0C808c9ddfcCc3011DE80f1e5915)
+ * - [__View Contract on Zircuit Testnet Zircuit Testnet Explorer__](https://explorer.testnet.zircuit.com/address/0x5da0c2ed4EcC08915B2490Fc9d9cF8B861e9a7b9)
+ * - [__View Contract on Polygon Amoy Polygon Scan__](https://amoy.polygonscan.com/address/0xD1eA89F676763b6238951adc2D5521D0e0Cddb4d)
+ * - [__View Contract on Base Sepolia Basescan__](https://sepolia.basescan.org/address/0xfD4aC8071991423e79971BEC2fcfEb78d28B3789)
+ * - [__View Contract on Scroll Sepolia Scrollscan__](https://sepolia.scrollscan.com/address/0x483EC90D0DCf0C808c9ddfcCc3011DE80f1e5915)
+ */
+export const readUsdcAllowance = /*#__PURE__*/ createReadContract({
+  abi: usdcAbi,
+  address: usdcAddress,
+  functionName: 'allowance',
+})
+
+/**
+ * Wraps __{@link readContract}__ with `abi` set to __{@link usdcAbi}__ and `functionName` set to `"balanceOf"`
+ *
+ * - [__View Contract on Morph Holesky Morph Holesky Explorer__](https://explorer-holesky.morphl2.io/address/0x483EC90D0DCf0C808c9ddfcCc3011DE80f1e5915)
+ * - [__View Contract on Zircuit Testnet Zircuit Testnet Explorer__](https://explorer.testnet.zircuit.com/address/0x5da0c2ed4EcC08915B2490Fc9d9cF8B861e9a7b9)
+ * - [__View Contract on Polygon Amoy Polygon Scan__](https://amoy.polygonscan.com/address/0xD1eA89F676763b6238951adc2D5521D0e0Cddb4d)
+ * - [__View Contract on Base Sepolia Basescan__](https://sepolia.basescan.org/address/0xfD4aC8071991423e79971BEC2fcfEb78d28B3789)
+ * - [__View Contract on Scroll Sepolia Scrollscan__](https://sepolia.scrollscan.com/address/0x483EC90D0DCf0C808c9ddfcCc3011DE80f1e5915)
+ */
+export const readUsdcBalanceOf = /*#__PURE__*/ createReadContract({
+  abi: usdcAbi,
+  address: usdcAddress,
+  functionName: 'balanceOf',
+})
+
+/**
+ * Wraps __{@link readContract}__ with `abi` set to __{@link usdcAbi}__ and `functionName` set to `"decimals"`
+ *
+ * - [__View Contract on Morph Holesky Morph Holesky Explorer__](https://explorer-holesky.morphl2.io/address/0x483EC90D0DCf0C808c9ddfcCc3011DE80f1e5915)
+ * - [__View Contract on Zircuit Testnet Zircuit Testnet Explorer__](https://explorer.testnet.zircuit.com/address/0x5da0c2ed4EcC08915B2490Fc9d9cF8B861e9a7b9)
+ * - [__View Contract on Polygon Amoy Polygon Scan__](https://amoy.polygonscan.com/address/0xD1eA89F676763b6238951adc2D5521D0e0Cddb4d)
+ * - [__View Contract on Base Sepolia Basescan__](https://sepolia.basescan.org/address/0xfD4aC8071991423e79971BEC2fcfEb78d28B3789)
+ * - [__View Contract on Scroll Sepolia Scrollscan__](https://sepolia.scrollscan.com/address/0x483EC90D0DCf0C808c9ddfcCc3011DE80f1e5915)
+ */
+export const readUsdcDecimals = /*#__PURE__*/ createReadContract({
+  abi: usdcAbi,
+  address: usdcAddress,
+  functionName: 'decimals',
+})
+
+/**
+ * Wraps __{@link readContract}__ with `abi` set to __{@link usdcAbi}__ and `functionName` set to `"name"`
+ *
+ * - [__View Contract on Morph Holesky Morph Holesky Explorer__](https://explorer-holesky.morphl2.io/address/0x483EC90D0DCf0C808c9ddfcCc3011DE80f1e5915)
+ * - [__View Contract on Zircuit Testnet Zircuit Testnet Explorer__](https://explorer.testnet.zircuit.com/address/0x5da0c2ed4EcC08915B2490Fc9d9cF8B861e9a7b9)
+ * - [__View Contract on Polygon Amoy Polygon Scan__](https://amoy.polygonscan.com/address/0xD1eA89F676763b6238951adc2D5521D0e0Cddb4d)
+ * - [__View Contract on Base Sepolia Basescan__](https://sepolia.basescan.org/address/0xfD4aC8071991423e79971BEC2fcfEb78d28B3789)
+ * - [__View Contract on Scroll Sepolia Scrollscan__](https://sepolia.scrollscan.com/address/0x483EC90D0DCf0C808c9ddfcCc3011DE80f1e5915)
+ */
+export const readUsdcName = /*#__PURE__*/ createReadContract({
+  abi: usdcAbi,
+  address: usdcAddress,
+  functionName: 'name',
+})
+
+/**
+ * Wraps __{@link readContract}__ with `abi` set to __{@link usdcAbi}__ and `functionName` set to `"owner"`
+ *
+ * - [__View Contract on Morph Holesky Morph Holesky Explorer__](https://explorer-holesky.morphl2.io/address/0x483EC90D0DCf0C808c9ddfcCc3011DE80f1e5915)
+ * - [__View Contract on Zircuit Testnet Zircuit Testnet Explorer__](https://explorer.testnet.zircuit.com/address/0x5da0c2ed4EcC08915B2490Fc9d9cF8B861e9a7b9)
+ * - [__View Contract on Polygon Amoy Polygon Scan__](https://amoy.polygonscan.com/address/0xD1eA89F676763b6238951adc2D5521D0e0Cddb4d)
+ * - [__View Contract on Base Sepolia Basescan__](https://sepolia.basescan.org/address/0xfD4aC8071991423e79971BEC2fcfEb78d28B3789)
+ * - [__View Contract on Scroll Sepolia Scrollscan__](https://sepolia.scrollscan.com/address/0x483EC90D0DCf0C808c9ddfcCc3011DE80f1e5915)
+ */
+export const readUsdcOwner = /*#__PURE__*/ createReadContract({
+  abi: usdcAbi,
+  address: usdcAddress,
+  functionName: 'owner',
+})
+
+/**
+ * Wraps __{@link readContract}__ with `abi` set to __{@link usdcAbi}__ and `functionName` set to `"symbol"`
+ *
+ * - [__View Contract on Morph Holesky Morph Holesky Explorer__](https://explorer-holesky.morphl2.io/address/0x483EC90D0DCf0C808c9ddfcCc3011DE80f1e5915)
+ * - [__View Contract on Zircuit Testnet Zircuit Testnet Explorer__](https://explorer.testnet.zircuit.com/address/0x5da0c2ed4EcC08915B2490Fc9d9cF8B861e9a7b9)
+ * - [__View Contract on Polygon Amoy Polygon Scan__](https://amoy.polygonscan.com/address/0xD1eA89F676763b6238951adc2D5521D0e0Cddb4d)
+ * - [__View Contract on Base Sepolia Basescan__](https://sepolia.basescan.org/address/0xfD4aC8071991423e79971BEC2fcfEb78d28B3789)
+ * - [__View Contract on Scroll Sepolia Scrollscan__](https://sepolia.scrollscan.com/address/0x483EC90D0DCf0C808c9ddfcCc3011DE80f1e5915)
+ */
+export const readUsdcSymbol = /*#__PURE__*/ createReadContract({
+  abi: usdcAbi,
+  address: usdcAddress,
+  functionName: 'symbol',
+})
+
+/**
+ * Wraps __{@link readContract}__ with `abi` set to __{@link usdcAbi}__ and `functionName` set to `"totalSupply"`
+ *
+ * - [__View Contract on Morph Holesky Morph Holesky Explorer__](https://explorer-holesky.morphl2.io/address/0x483EC90D0DCf0C808c9ddfcCc3011DE80f1e5915)
+ * - [__View Contract on Zircuit Testnet Zircuit Testnet Explorer__](https://explorer.testnet.zircuit.com/address/0x5da0c2ed4EcC08915B2490Fc9d9cF8B861e9a7b9)
+ * - [__View Contract on Polygon Amoy Polygon Scan__](https://amoy.polygonscan.com/address/0xD1eA89F676763b6238951adc2D5521D0e0Cddb4d)
+ * - [__View Contract on Base Sepolia Basescan__](https://sepolia.basescan.org/address/0xfD4aC8071991423e79971BEC2fcfEb78d28B3789)
+ * - [__View Contract on Scroll Sepolia Scrollscan__](https://sepolia.scrollscan.com/address/0x483EC90D0DCf0C808c9ddfcCc3011DE80f1e5915)
+ */
+export const readUsdcTotalSupply = /*#__PURE__*/ createReadContract({
+  abi: usdcAbi,
+  address: usdcAddress,
+  functionName: 'totalSupply',
+})
+
+/**
+ * Wraps __{@link writeContract}__ with `abi` set to __{@link usdcAbi}__
+ *
+ * - [__View Contract on Morph Holesky Morph Holesky Explorer__](https://explorer-holesky.morphl2.io/address/0x483EC90D0DCf0C808c9ddfcCc3011DE80f1e5915)
+ * - [__View Contract on Zircuit Testnet Zircuit Testnet Explorer__](https://explorer.testnet.zircuit.com/address/0x5da0c2ed4EcC08915B2490Fc9d9cF8B861e9a7b9)
+ * - [__View Contract on Polygon Amoy Polygon Scan__](https://amoy.polygonscan.com/address/0xD1eA89F676763b6238951adc2D5521D0e0Cddb4d)
+ * - [__View Contract on Base Sepolia Basescan__](https://sepolia.basescan.org/address/0xfD4aC8071991423e79971BEC2fcfEb78d28B3789)
+ * - [__View Contract on Scroll Sepolia Scrollscan__](https://sepolia.scrollscan.com/address/0x483EC90D0DCf0C808c9ddfcCc3011DE80f1e5915)
+ */
+export const writeUsdc = /*#__PURE__*/ createWriteContract({
+  abi: usdcAbi,
+  address: usdcAddress,
+})
+
+/**
+ * Wraps __{@link writeContract}__ with `abi` set to __{@link usdcAbi}__ and `functionName` set to `"approve"`
+ *
+ * - [__View Contract on Morph Holesky Morph Holesky Explorer__](https://explorer-holesky.morphl2.io/address/0x483EC90D0DCf0C808c9ddfcCc3011DE80f1e5915)
+ * - [__View Contract on Zircuit Testnet Zircuit Testnet Explorer__](https://explorer.testnet.zircuit.com/address/0x5da0c2ed4EcC08915B2490Fc9d9cF8B861e9a7b9)
+ * - [__View Contract on Polygon Amoy Polygon Scan__](https://amoy.polygonscan.com/address/0xD1eA89F676763b6238951adc2D5521D0e0Cddb4d)
+ * - [__View Contract on Base Sepolia Basescan__](https://sepolia.basescan.org/address/0xfD4aC8071991423e79971BEC2fcfEb78d28B3789)
+ * - [__View Contract on Scroll Sepolia Scrollscan__](https://sepolia.scrollscan.com/address/0x483EC90D0DCf0C808c9ddfcCc3011DE80f1e5915)
+ */
+export const writeUsdcApprove = /*#__PURE__*/ createWriteContract({
+  abi: usdcAbi,
+  address: usdcAddress,
+  functionName: 'approve',
+})
+
+/**
+ * Wraps __{@link writeContract}__ with `abi` set to __{@link usdcAbi}__ and `functionName` set to `"mint"`
+ *
+ * - [__View Contract on Morph Holesky Morph Holesky Explorer__](https://explorer-holesky.morphl2.io/address/0x483EC90D0DCf0C808c9ddfcCc3011DE80f1e5915)
+ * - [__View Contract on Zircuit Testnet Zircuit Testnet Explorer__](https://explorer.testnet.zircuit.com/address/0x5da0c2ed4EcC08915B2490Fc9d9cF8B861e9a7b9)
+ * - [__View Contract on Polygon Amoy Polygon Scan__](https://amoy.polygonscan.com/address/0xD1eA89F676763b6238951adc2D5521D0e0Cddb4d)
+ * - [__View Contract on Base Sepolia Basescan__](https://sepolia.basescan.org/address/0xfD4aC8071991423e79971BEC2fcfEb78d28B3789)
+ * - [__View Contract on Scroll Sepolia Scrollscan__](https://sepolia.scrollscan.com/address/0x483EC90D0DCf0C808c9ddfcCc3011DE80f1e5915)
+ */
+export const writeUsdcMint = /*#__PURE__*/ createWriteContract({
+  abi: usdcAbi,
+  address: usdcAddress,
+  functionName: 'mint',
+})
+
+/**
+ * Wraps __{@link writeContract}__ with `abi` set to __{@link usdcAbi}__ and `functionName` set to `"renounceOwnership"`
+ *
+ * - [__View Contract on Morph Holesky Morph Holesky Explorer__](https://explorer-holesky.morphl2.io/address/0x483EC90D0DCf0C808c9ddfcCc3011DE80f1e5915)
+ * - [__View Contract on Zircuit Testnet Zircuit Testnet Explorer__](https://explorer.testnet.zircuit.com/address/0x5da0c2ed4EcC08915B2490Fc9d9cF8B861e9a7b9)
+ * - [__View Contract on Polygon Amoy Polygon Scan__](https://amoy.polygonscan.com/address/0xD1eA89F676763b6238951adc2D5521D0e0Cddb4d)
+ * - [__View Contract on Base Sepolia Basescan__](https://sepolia.basescan.org/address/0xfD4aC8071991423e79971BEC2fcfEb78d28B3789)
+ * - [__View Contract on Scroll Sepolia Scrollscan__](https://sepolia.scrollscan.com/address/0x483EC90D0DCf0C808c9ddfcCc3011DE80f1e5915)
+ */
+export const writeUsdcRenounceOwnership = /*#__PURE__*/ createWriteContract({
+  abi: usdcAbi,
+  address: usdcAddress,
+  functionName: 'renounceOwnership',
+})
+
+/**
+ * Wraps __{@link writeContract}__ with `abi` set to __{@link usdcAbi}__ and `functionName` set to `"transfer"`
+ *
+ * - [__View Contract on Morph Holesky Morph Holesky Explorer__](https://explorer-holesky.morphl2.io/address/0x483EC90D0DCf0C808c9ddfcCc3011DE80f1e5915)
+ * - [__View Contract on Zircuit Testnet Zircuit Testnet Explorer__](https://explorer.testnet.zircuit.com/address/0x5da0c2ed4EcC08915B2490Fc9d9cF8B861e9a7b9)
+ * - [__View Contract on Polygon Amoy Polygon Scan__](https://amoy.polygonscan.com/address/0xD1eA89F676763b6238951adc2D5521D0e0Cddb4d)
+ * - [__View Contract on Base Sepolia Basescan__](https://sepolia.basescan.org/address/0xfD4aC8071991423e79971BEC2fcfEb78d28B3789)
+ * - [__View Contract on Scroll Sepolia Scrollscan__](https://sepolia.scrollscan.com/address/0x483EC90D0DCf0C808c9ddfcCc3011DE80f1e5915)
+ */
+export const writeUsdcTransfer = /*#__PURE__*/ createWriteContract({
+  abi: usdcAbi,
+  address: usdcAddress,
+  functionName: 'transfer',
+})
+
+/**
+ * Wraps __{@link writeContract}__ with `abi` set to __{@link usdcAbi}__ and `functionName` set to `"transferFrom"`
+ *
+ * - [__View Contract on Morph Holesky Morph Holesky Explorer__](https://explorer-holesky.morphl2.io/address/0x483EC90D0DCf0C808c9ddfcCc3011DE80f1e5915)
+ * - [__View Contract on Zircuit Testnet Zircuit Testnet Explorer__](https://explorer.testnet.zircuit.com/address/0x5da0c2ed4EcC08915B2490Fc9d9cF8B861e9a7b9)
+ * - [__View Contract on Polygon Amoy Polygon Scan__](https://amoy.polygonscan.com/address/0xD1eA89F676763b6238951adc2D5521D0e0Cddb4d)
+ * - [__View Contract on Base Sepolia Basescan__](https://sepolia.basescan.org/address/0xfD4aC8071991423e79971BEC2fcfEb78d28B3789)
+ * - [__View Contract on Scroll Sepolia Scrollscan__](https://sepolia.scrollscan.com/address/0x483EC90D0DCf0C808c9ddfcCc3011DE80f1e5915)
+ */
+export const writeUsdcTransferFrom = /*#__PURE__*/ createWriteContract({
+  abi: usdcAbi,
+  address: usdcAddress,
+  functionName: 'transferFrom',
+})
+
+/**
+ * Wraps __{@link writeContract}__ with `abi` set to __{@link usdcAbi}__ and `functionName` set to `"transferOwnership"`
+ *
+ * - [__View Contract on Morph Holesky Morph Holesky Explorer__](https://explorer-holesky.morphl2.io/address/0x483EC90D0DCf0C808c9ddfcCc3011DE80f1e5915)
+ * - [__View Contract on Zircuit Testnet Zircuit Testnet Explorer__](https://explorer.testnet.zircuit.com/address/0x5da0c2ed4EcC08915B2490Fc9d9cF8B861e9a7b9)
+ * - [__View Contract on Polygon Amoy Polygon Scan__](https://amoy.polygonscan.com/address/0xD1eA89F676763b6238951adc2D5521D0e0Cddb4d)
+ * - [__View Contract on Base Sepolia Basescan__](https://sepolia.basescan.org/address/0xfD4aC8071991423e79971BEC2fcfEb78d28B3789)
+ * - [__View Contract on Scroll Sepolia Scrollscan__](https://sepolia.scrollscan.com/address/0x483EC90D0DCf0C808c9ddfcCc3011DE80f1e5915)
+ */
+export const writeUsdcTransferOwnership = /*#__PURE__*/ createWriteContract({
+  abi: usdcAbi,
+  address: usdcAddress,
+  functionName: 'transferOwnership',
+})
+
+/**
+ * Wraps __{@link simulateContract}__ with `abi` set to __{@link usdcAbi}__
+ *
+ * - [__View Contract on Morph Holesky Morph Holesky Explorer__](https://explorer-holesky.morphl2.io/address/0x483EC90D0DCf0C808c9ddfcCc3011DE80f1e5915)
+ * - [__View Contract on Zircuit Testnet Zircuit Testnet Explorer__](https://explorer.testnet.zircuit.com/address/0x5da0c2ed4EcC08915B2490Fc9d9cF8B861e9a7b9)
+ * - [__View Contract on Polygon Amoy Polygon Scan__](https://amoy.polygonscan.com/address/0xD1eA89F676763b6238951adc2D5521D0e0Cddb4d)
+ * - [__View Contract on Base Sepolia Basescan__](https://sepolia.basescan.org/address/0xfD4aC8071991423e79971BEC2fcfEb78d28B3789)
+ * - [__View Contract on Scroll Sepolia Scrollscan__](https://sepolia.scrollscan.com/address/0x483EC90D0DCf0C808c9ddfcCc3011DE80f1e5915)
+ */
+export const simulateUsdc = /*#__PURE__*/ createSimulateContract({
+  abi: usdcAbi,
+  address: usdcAddress,
+})
+
+/**
+ * Wraps __{@link simulateContract}__ with `abi` set to __{@link usdcAbi}__ and `functionName` set to `"approve"`
+ *
+ * - [__View Contract on Morph Holesky Morph Holesky Explorer__](https://explorer-holesky.morphl2.io/address/0x483EC90D0DCf0C808c9ddfcCc3011DE80f1e5915)
+ * - [__View Contract on Zircuit Testnet Zircuit Testnet Explorer__](https://explorer.testnet.zircuit.com/address/0x5da0c2ed4EcC08915B2490Fc9d9cF8B861e9a7b9)
+ * - [__View Contract on Polygon Amoy Polygon Scan__](https://amoy.polygonscan.com/address/0xD1eA89F676763b6238951adc2D5521D0e0Cddb4d)
+ * - [__View Contract on Base Sepolia Basescan__](https://sepolia.basescan.org/address/0xfD4aC8071991423e79971BEC2fcfEb78d28B3789)
+ * - [__View Contract on Scroll Sepolia Scrollscan__](https://sepolia.scrollscan.com/address/0x483EC90D0DCf0C808c9ddfcCc3011DE80f1e5915)
+ */
+export const simulateUsdcApprove = /*#__PURE__*/ createSimulateContract({
+  abi: usdcAbi,
+  address: usdcAddress,
+  functionName: 'approve',
+})
+
+/**
+ * Wraps __{@link simulateContract}__ with `abi` set to __{@link usdcAbi}__ and `functionName` set to `"mint"`
+ *
+ * - [__View Contract on Morph Holesky Morph Holesky Explorer__](https://explorer-holesky.morphl2.io/address/0x483EC90D0DCf0C808c9ddfcCc3011DE80f1e5915)
+ * - [__View Contract on Zircuit Testnet Zircuit Testnet Explorer__](https://explorer.testnet.zircuit.com/address/0x5da0c2ed4EcC08915B2490Fc9d9cF8B861e9a7b9)
+ * - [__View Contract on Polygon Amoy Polygon Scan__](https://amoy.polygonscan.com/address/0xD1eA89F676763b6238951adc2D5521D0e0Cddb4d)
+ * - [__View Contract on Base Sepolia Basescan__](https://sepolia.basescan.org/address/0xfD4aC8071991423e79971BEC2fcfEb78d28B3789)
+ * - [__View Contract on Scroll Sepolia Scrollscan__](https://sepolia.scrollscan.com/address/0x483EC90D0DCf0C808c9ddfcCc3011DE80f1e5915)
+ */
+export const simulateUsdcMint = /*#__PURE__*/ createSimulateContract({
+  abi: usdcAbi,
+  address: usdcAddress,
+  functionName: 'mint',
+})
+
+/**
+ * Wraps __{@link simulateContract}__ with `abi` set to __{@link usdcAbi}__ and `functionName` set to `"renounceOwnership"`
+ *
+ * - [__View Contract on Morph Holesky Morph Holesky Explorer__](https://explorer-holesky.morphl2.io/address/0x483EC90D0DCf0C808c9ddfcCc3011DE80f1e5915)
+ * - [__View Contract on Zircuit Testnet Zircuit Testnet Explorer__](https://explorer.testnet.zircuit.com/address/0x5da0c2ed4EcC08915B2490Fc9d9cF8B861e9a7b9)
+ * - [__View Contract on Polygon Amoy Polygon Scan__](https://amoy.polygonscan.com/address/0xD1eA89F676763b6238951adc2D5521D0e0Cddb4d)
+ * - [__View Contract on Base Sepolia Basescan__](https://sepolia.basescan.org/address/0xfD4aC8071991423e79971BEC2fcfEb78d28B3789)
+ * - [__View Contract on Scroll Sepolia Scrollscan__](https://sepolia.scrollscan.com/address/0x483EC90D0DCf0C808c9ddfcCc3011DE80f1e5915)
+ */
+export const simulateUsdcRenounceOwnership =
+  /*#__PURE__*/ createSimulateContract({
+    abi: usdcAbi,
+    address: usdcAddress,
+    functionName: 'renounceOwnership',
+  })
+
+/**
+ * Wraps __{@link simulateContract}__ with `abi` set to __{@link usdcAbi}__ and `functionName` set to `"transfer"`
+ *
+ * - [__View Contract on Morph Holesky Morph Holesky Explorer__](https://explorer-holesky.morphl2.io/address/0x483EC90D0DCf0C808c9ddfcCc3011DE80f1e5915)
+ * - [__View Contract on Zircuit Testnet Zircuit Testnet Explorer__](https://explorer.testnet.zircuit.com/address/0x5da0c2ed4EcC08915B2490Fc9d9cF8B861e9a7b9)
+ * - [__View Contract on Polygon Amoy Polygon Scan__](https://amoy.polygonscan.com/address/0xD1eA89F676763b6238951adc2D5521D0e0Cddb4d)
+ * - [__View Contract on Base Sepolia Basescan__](https://sepolia.basescan.org/address/0xfD4aC8071991423e79971BEC2fcfEb78d28B3789)
+ * - [__View Contract on Scroll Sepolia Scrollscan__](https://sepolia.scrollscan.com/address/0x483EC90D0DCf0C808c9ddfcCc3011DE80f1e5915)
+ */
+export const simulateUsdcTransfer = /*#__PURE__*/ createSimulateContract({
+  abi: usdcAbi,
+  address: usdcAddress,
+  functionName: 'transfer',
+})
+
+/**
+ * Wraps __{@link simulateContract}__ with `abi` set to __{@link usdcAbi}__ and `functionName` set to `"transferFrom"`
+ *
+ * - [__View Contract on Morph Holesky Morph Holesky Explorer__](https://explorer-holesky.morphl2.io/address/0x483EC90D0DCf0C808c9ddfcCc3011DE80f1e5915)
+ * - [__View Contract on Zircuit Testnet Zircuit Testnet Explorer__](https://explorer.testnet.zircuit.com/address/0x5da0c2ed4EcC08915B2490Fc9d9cF8B861e9a7b9)
+ * - [__View Contract on Polygon Amoy Polygon Scan__](https://amoy.polygonscan.com/address/0xD1eA89F676763b6238951adc2D5521D0e0Cddb4d)
+ * - [__View Contract on Base Sepolia Basescan__](https://sepolia.basescan.org/address/0xfD4aC8071991423e79971BEC2fcfEb78d28B3789)
+ * - [__View Contract on Scroll Sepolia Scrollscan__](https://sepolia.scrollscan.com/address/0x483EC90D0DCf0C808c9ddfcCc3011DE80f1e5915)
+ */
+export const simulateUsdcTransferFrom = /*#__PURE__*/ createSimulateContract({
+  abi: usdcAbi,
+  address: usdcAddress,
+  functionName: 'transferFrom',
+})
+
+/**
+ * Wraps __{@link simulateContract}__ with `abi` set to __{@link usdcAbi}__ and `functionName` set to `"transferOwnership"`
+ *
+ * - [__View Contract on Morph Holesky Morph Holesky Explorer__](https://explorer-holesky.morphl2.io/address/0x483EC90D0DCf0C808c9ddfcCc3011DE80f1e5915)
+ * - [__View Contract on Zircuit Testnet Zircuit Testnet Explorer__](https://explorer.testnet.zircuit.com/address/0x5da0c2ed4EcC08915B2490Fc9d9cF8B861e9a7b9)
+ * - [__View Contract on Polygon Amoy Polygon Scan__](https://amoy.polygonscan.com/address/0xD1eA89F676763b6238951adc2D5521D0e0Cddb4d)
+ * - [__View Contract on Base Sepolia Basescan__](https://sepolia.basescan.org/address/0xfD4aC8071991423e79971BEC2fcfEb78d28B3789)
+ * - [__View Contract on Scroll Sepolia Scrollscan__](https://sepolia.scrollscan.com/address/0x483EC90D0DCf0C808c9ddfcCc3011DE80f1e5915)
+ */
+export const simulateUsdcTransferOwnership =
+  /*#__PURE__*/ createSimulateContract({
+    abi: usdcAbi,
+    address: usdcAddress,
+    functionName: 'transferOwnership',
+  })
+
+/**
+ * Wraps __{@link watchContractEvent}__ with `abi` set to __{@link usdcAbi}__
+ *
+ * - [__View Contract on Morph Holesky Morph Holesky Explorer__](https://explorer-holesky.morphl2.io/address/0x483EC90D0DCf0C808c9ddfcCc3011DE80f1e5915)
+ * - [__View Contract on Zircuit Testnet Zircuit Testnet Explorer__](https://explorer.testnet.zircuit.com/address/0x5da0c2ed4EcC08915B2490Fc9d9cF8B861e9a7b9)
+ * - [__View Contract on Polygon Amoy Polygon Scan__](https://amoy.polygonscan.com/address/0xD1eA89F676763b6238951adc2D5521D0e0Cddb4d)
+ * - [__View Contract on Base Sepolia Basescan__](https://sepolia.basescan.org/address/0xfD4aC8071991423e79971BEC2fcfEb78d28B3789)
+ * - [__View Contract on Scroll Sepolia Scrollscan__](https://sepolia.scrollscan.com/address/0x483EC90D0DCf0C808c9ddfcCc3011DE80f1e5915)
+ */
+export const watchUsdcEvent = /*#__PURE__*/ createWatchContractEvent({
+  abi: usdcAbi,
+  address: usdcAddress,
+})
+
+/**
+ * Wraps __{@link watchContractEvent}__ with `abi` set to __{@link usdcAbi}__ and `eventName` set to `"Approval"`
+ *
+ * - [__View Contract on Morph Holesky Morph Holesky Explorer__](https://explorer-holesky.morphl2.io/address/0x483EC90D0DCf0C808c9ddfcCc3011DE80f1e5915)
+ * - [__View Contract on Zircuit Testnet Zircuit Testnet Explorer__](https://explorer.testnet.zircuit.com/address/0x5da0c2ed4EcC08915B2490Fc9d9cF8B861e9a7b9)
+ * - [__View Contract on Polygon Amoy Polygon Scan__](https://amoy.polygonscan.com/address/0xD1eA89F676763b6238951adc2D5521D0e0Cddb4d)
+ * - [__View Contract on Base Sepolia Basescan__](https://sepolia.basescan.org/address/0xfD4aC8071991423e79971BEC2fcfEb78d28B3789)
+ * - [__View Contract on Scroll Sepolia Scrollscan__](https://sepolia.scrollscan.com/address/0x483EC90D0DCf0C808c9ddfcCc3011DE80f1e5915)
+ */
+export const watchUsdcApprovalEvent = /*#__PURE__*/ createWatchContractEvent({
+  abi: usdcAbi,
+  address: usdcAddress,
+  eventName: 'Approval',
+})
+
+/**
+ * Wraps __{@link watchContractEvent}__ with `abi` set to __{@link usdcAbi}__ and `eventName` set to `"OwnershipTransferred"`
+ *
+ * - [__View Contract on Morph Holesky Morph Holesky Explorer__](https://explorer-holesky.morphl2.io/address/0x483EC90D0DCf0C808c9ddfcCc3011DE80f1e5915)
+ * - [__View Contract on Zircuit Testnet Zircuit Testnet Explorer__](https://explorer.testnet.zircuit.com/address/0x5da0c2ed4EcC08915B2490Fc9d9cF8B861e9a7b9)
+ * - [__View Contract on Polygon Amoy Polygon Scan__](https://amoy.polygonscan.com/address/0xD1eA89F676763b6238951adc2D5521D0e0Cddb4d)
+ * - [__View Contract on Base Sepolia Basescan__](https://sepolia.basescan.org/address/0xfD4aC8071991423e79971BEC2fcfEb78d28B3789)
+ * - [__View Contract on Scroll Sepolia Scrollscan__](https://sepolia.scrollscan.com/address/0x483EC90D0DCf0C808c9ddfcCc3011DE80f1e5915)
+ */
+export const watchUsdcOwnershipTransferredEvent =
+  /*#__PURE__*/ createWatchContractEvent({
+    abi: usdcAbi,
+    address: usdcAddress,
+    eventName: 'OwnershipTransferred',
+  })
+
+/**
+ * Wraps __{@link watchContractEvent}__ with `abi` set to __{@link usdcAbi}__ and `eventName` set to `"Transfer"`
+ *
+ * - [__View Contract on Morph Holesky Morph Holesky Explorer__](https://explorer-holesky.morphl2.io/address/0x483EC90D0DCf0C808c9ddfcCc3011DE80f1e5915)
+ * - [__View Contract on Zircuit Testnet Zircuit Testnet Explorer__](https://explorer.testnet.zircuit.com/address/0x5da0c2ed4EcC08915B2490Fc9d9cF8B861e9a7b9)
+ * - [__View Contract on Polygon Amoy Polygon Scan__](https://amoy.polygonscan.com/address/0xD1eA89F676763b6238951adc2D5521D0e0Cddb4d)
+ * - [__View Contract on Base Sepolia Basescan__](https://sepolia.basescan.org/address/0xfD4aC8071991423e79971BEC2fcfEb78d28B3789)
+ * - [__View Contract on Scroll Sepolia Scrollscan__](https://sepolia.scrollscan.com/address/0x483EC90D0DCf0C808c9ddfcCc3011DE80f1e5915)
+ */
+export const watchUsdcTransferEvent = /*#__PURE__*/ createWatchContractEvent({
+  abi: usdcAbi,
+  address: usdcAddress,
+  eventName: 'Transfer',
+})
 
 /**
  * Wraps __{@link readContract}__ with `abi` set to __{@link foodiRegistrarAbi}__
