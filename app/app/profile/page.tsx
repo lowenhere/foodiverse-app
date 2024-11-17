@@ -48,7 +48,6 @@ export default function ProfilePage() {
                 value={ensName ?? address}
               />
               <Button
-                disabled={ensName !== ""}
                 onClick={() => {
                   router.push("/app/profile/ens");
                 }}

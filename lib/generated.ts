@@ -3,7 +3,7 @@ import {
   createWriteContract,
   createSimulateContract,
   createWatchContractEvent,
-} from '@wagmi/core/codegen'
+} from "@wagmi/core/codegen";
 
 //////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
 // Foodiverse Points
@@ -17,222 +17,222 @@ import {
  * - [__View Contract on Scroll Sepolia Scrollscan__](https://sepolia.scrollscan.com/address/0x814200754D0C6672ca20fC74c066A2b9AD47018d)
  */
 export const foodiversePointsAbi = [
-  { type: 'constructor', inputs: [], stateMutability: 'nonpayable' },
+  { type: "constructor", inputs: [], stateMutability: "nonpayable" },
   {
-    type: 'function',
+    type: "function",
     inputs: [
-      { name: 'owner', internalType: 'address', type: 'address' },
-      { name: 'spender', internalType: 'address', type: 'address' },
+      { name: "owner", internalType: "address", type: "address" },
+      { name: "spender", internalType: "address", type: "address" },
     ],
-    name: 'allowance',
-    outputs: [{ name: '', internalType: 'uint256', type: 'uint256' }],
-    stateMutability: 'view',
+    name: "allowance",
+    outputs: [{ name: "", internalType: "uint256", type: "uint256" }],
+    stateMutability: "view",
   },
   {
-    type: 'function',
+    type: "function",
     inputs: [
-      { name: 'spender', internalType: 'address', type: 'address' },
-      { name: 'value', internalType: 'uint256', type: 'uint256' },
+      { name: "spender", internalType: "address", type: "address" },
+      { name: "value", internalType: "uint256", type: "uint256" },
     ],
-    name: 'approve',
-    outputs: [{ name: '', internalType: 'bool', type: 'bool' }],
-    stateMutability: 'nonpayable',
+    name: "approve",
+    outputs: [{ name: "", internalType: "bool", type: "bool" }],
+    stateMutability: "nonpayable",
   },
   {
-    type: 'function',
-    inputs: [{ name: 'account', internalType: 'address', type: 'address' }],
-    name: 'balanceOf',
-    outputs: [{ name: '', internalType: 'uint256', type: 'uint256' }],
-    stateMutability: 'view',
+    type: "function",
+    inputs: [{ name: "account", internalType: "address", type: "address" }],
+    name: "balanceOf",
+    outputs: [{ name: "", internalType: "uint256", type: "uint256" }],
+    stateMutability: "view",
   },
   {
-    type: 'function',
+    type: "function",
     inputs: [],
-    name: 'decimals',
-    outputs: [{ name: '', internalType: 'uint8', type: 'uint8' }],
-    stateMutability: 'view',
+    name: "decimals",
+    outputs: [{ name: "", internalType: "uint8", type: "uint8" }],
+    stateMutability: "view",
   },
   {
-    type: 'function',
+    type: "function",
     inputs: [
-      { name: 'to', internalType: 'address', type: 'address' },
-      { name: 'amount', internalType: 'uint256', type: 'uint256' },
+      { name: "to", internalType: "address", type: "address" },
+      { name: "amount", internalType: "uint256", type: "uint256" },
     ],
-    name: 'mint',
+    name: "mint",
     outputs: [],
-    stateMutability: 'nonpayable',
+    stateMutability: "nonpayable",
   },
   {
-    type: 'function',
+    type: "function",
     inputs: [],
-    name: 'name',
-    outputs: [{ name: '', internalType: 'string', type: 'string' }],
-    stateMutability: 'view',
+    name: "name",
+    outputs: [{ name: "", internalType: "string", type: "string" }],
+    stateMutability: "view",
   },
   {
-    type: 'function',
+    type: "function",
     inputs: [],
-    name: 'owner',
-    outputs: [{ name: '', internalType: 'address', type: 'address' }],
-    stateMutability: 'view',
+    name: "owner",
+    outputs: [{ name: "", internalType: "address", type: "address" }],
+    stateMutability: "view",
   },
   {
-    type: 'function',
+    type: "function",
     inputs: [],
-    name: 'renounceOwnership',
+    name: "renounceOwnership",
     outputs: [],
-    stateMutability: 'nonpayable',
+    stateMutability: "nonpayable",
   },
   {
-    type: 'function',
+    type: "function",
     inputs: [],
-    name: 'symbol',
-    outputs: [{ name: '', internalType: 'string', type: 'string' }],
-    stateMutability: 'view',
+    name: "symbol",
+    outputs: [{ name: "", internalType: "string", type: "string" }],
+    stateMutability: "view",
   },
   {
-    type: 'function',
+    type: "function",
     inputs: [],
-    name: 'totalSupply',
-    outputs: [{ name: '', internalType: 'uint256', type: 'uint256' }],
-    stateMutability: 'view',
+    name: "totalSupply",
+    outputs: [{ name: "", internalType: "uint256", type: "uint256" }],
+    stateMutability: "view",
   },
   {
-    type: 'function',
+    type: "function",
     inputs: [
-      { name: 'to', internalType: 'address', type: 'address' },
-      { name: 'value', internalType: 'uint256', type: 'uint256' },
+      { name: "to", internalType: "address", type: "address" },
+      { name: "value", internalType: "uint256", type: "uint256" },
     ],
-    name: 'transfer',
-    outputs: [{ name: '', internalType: 'bool', type: 'bool' }],
-    stateMutability: 'nonpayable',
+    name: "transfer",
+    outputs: [{ name: "", internalType: "bool", type: "bool" }],
+    stateMutability: "nonpayable",
   },
   {
-    type: 'function',
+    type: "function",
     inputs: [
-      { name: 'from', internalType: 'address', type: 'address' },
-      { name: 'to', internalType: 'address', type: 'address' },
-      { name: 'value', internalType: 'uint256', type: 'uint256' },
+      { name: "from", internalType: "address", type: "address" },
+      { name: "to", internalType: "address", type: "address" },
+      { name: "value", internalType: "uint256", type: "uint256" },
     ],
-    name: 'transferFrom',
-    outputs: [{ name: '', internalType: 'bool', type: 'bool' }],
-    stateMutability: 'nonpayable',
+    name: "transferFrom",
+    outputs: [{ name: "", internalType: "bool", type: "bool" }],
+    stateMutability: "nonpayable",
   },
   {
-    type: 'function',
-    inputs: [{ name: 'newOwner', internalType: 'address', type: 'address' }],
-    name: 'transferOwnership',
+    type: "function",
+    inputs: [{ name: "newOwner", internalType: "address", type: "address" }],
+    name: "transferOwnership",
     outputs: [],
-    stateMutability: 'nonpayable',
+    stateMutability: "nonpayable",
   },
   {
-    type: 'event',
+    type: "event",
     anonymous: false,
     inputs: [
       {
-        name: 'owner',
-        internalType: 'address',
-        type: 'address',
+        name: "owner",
+        internalType: "address",
+        type: "address",
         indexed: true,
       },
       {
-        name: 'spender',
-        internalType: 'address',
-        type: 'address',
+        name: "spender",
+        internalType: "address",
+        type: "address",
         indexed: true,
       },
       {
-        name: 'value',
-        internalType: 'uint256',
-        type: 'uint256',
+        name: "value",
+        internalType: "uint256",
+        type: "uint256",
         indexed: false,
       },
     ],
-    name: 'Approval',
+    name: "Approval",
   },
   {
-    type: 'event',
+    type: "event",
     anonymous: false,
     inputs: [
       {
-        name: 'previousOwner',
-        internalType: 'address',
-        type: 'address',
+        name: "previousOwner",
+        internalType: "address",
+        type: "address",
         indexed: true,
       },
       {
-        name: 'newOwner',
-        internalType: 'address',
-        type: 'address',
+        name: "newOwner",
+        internalType: "address",
+        type: "address",
         indexed: true,
       },
     ],
-    name: 'OwnershipTransferred',
+    name: "OwnershipTransferred",
   },
   {
-    type: 'event',
+    type: "event",
     anonymous: false,
     inputs: [
-      { name: 'from', internalType: 'address', type: 'address', indexed: true },
-      { name: 'to', internalType: 'address', type: 'address', indexed: true },
+      { name: "from", internalType: "address", type: "address", indexed: true },
+      { name: "to", internalType: "address", type: "address", indexed: true },
       {
-        name: 'value',
-        internalType: 'uint256',
-        type: 'uint256',
+        name: "value",
+        internalType: "uint256",
+        type: "uint256",
         indexed: false,
       },
     ],
-    name: 'Transfer',
+    name: "Transfer",
   },
   {
-    type: 'error',
+    type: "error",
     inputs: [
-      { name: 'spender', internalType: 'address', type: 'address' },
-      { name: 'allowance', internalType: 'uint256', type: 'uint256' },
-      { name: 'needed', internalType: 'uint256', type: 'uint256' },
+      { name: "spender", internalType: "address", type: "address" },
+      { name: "allowance", internalType: "uint256", type: "uint256" },
+      { name: "needed", internalType: "uint256", type: "uint256" },
     ],
-    name: 'ERC20InsufficientAllowance',
+    name: "ERC20InsufficientAllowance",
   },
   {
-    type: 'error',
+    type: "error",
     inputs: [
-      { name: 'sender', internalType: 'address', type: 'address' },
-      { name: 'balance', internalType: 'uint256', type: 'uint256' },
-      { name: 'needed', internalType: 'uint256', type: 'uint256' },
+      { name: "sender", internalType: "address", type: "address" },
+      { name: "balance", internalType: "uint256", type: "uint256" },
+      { name: "needed", internalType: "uint256", type: "uint256" },
     ],
-    name: 'ERC20InsufficientBalance',
+    name: "ERC20InsufficientBalance",
   },
   {
-    type: 'error',
-    inputs: [{ name: 'approver', internalType: 'address', type: 'address' }],
-    name: 'ERC20InvalidApprover',
+    type: "error",
+    inputs: [{ name: "approver", internalType: "address", type: "address" }],
+    name: "ERC20InvalidApprover",
   },
   {
-    type: 'error',
-    inputs: [{ name: 'receiver', internalType: 'address', type: 'address' }],
-    name: 'ERC20InvalidReceiver',
+    type: "error",
+    inputs: [{ name: "receiver", internalType: "address", type: "address" }],
+    name: "ERC20InvalidReceiver",
   },
   {
-    type: 'error',
-    inputs: [{ name: 'sender', internalType: 'address', type: 'address' }],
-    name: 'ERC20InvalidSender',
+    type: "error",
+    inputs: [{ name: "sender", internalType: "address", type: "address" }],
+    name: "ERC20InvalidSender",
   },
   {
-    type: 'error',
-    inputs: [{ name: 'spender', internalType: 'address', type: 'address' }],
-    name: 'ERC20InvalidSpender',
+    type: "error",
+    inputs: [{ name: "spender", internalType: "address", type: "address" }],
+    name: "ERC20InvalidSpender",
   },
   {
-    type: 'error',
-    inputs: [{ name: 'owner', internalType: 'address', type: 'address' }],
-    name: 'OwnableInvalidOwner',
+    type: "error",
+    inputs: [{ name: "owner", internalType: "address", type: "address" }],
+    name: "OwnableInvalidOwner",
   },
   {
-    type: 'error',
-    inputs: [{ name: 'account', internalType: 'address', type: 'address' }],
-    name: 'OwnableUnauthorizedAccount',
+    type: "error",
+    inputs: [{ name: "account", internalType: "address", type: "address" }],
+    name: "OwnableUnauthorizedAccount",
   },
-] as const
+] as const;
 
 /**
  * - [__View Contract on Morph Holesky Morph Holesky Explorer__](https://explorer-holesky.morphl2.io/address/0xf2Fb39bBfA77D9beF88b319360BF963Ea208a0f2)
@@ -242,12 +242,12 @@ export const foodiversePointsAbi = [
  * - [__View Contract on Scroll Sepolia Scrollscan__](https://sepolia.scrollscan.com/address/0x814200754D0C6672ca20fC74c066A2b9AD47018d)
  */
 export const foodiversePointsAddress = {
-  2810: '0xf2Fb39bBfA77D9beF88b319360BF963Ea208a0f2',
-  48899: '0xD1eA89F676763b6238951adc2D5521D0e0Cddb4d',
-  80002: '0xD1eA89F676763b6238951adc2D5521D0e0Cddb4d',
-  84532: '0xBFa7034670eA7d69E369569eC8216a1EEae74bCa',
-  534351: '0x814200754D0C6672ca20fC74c066A2b9AD47018d',
-} as const
+  2810: "0xf2Fb39bBfA77D9beF88b319360BF963Ea208a0f2",
+  48899: "0xD1eA89F676763b6238951adc2D5521D0e0Cddb4d",
+  80002: "0xD1eA89F676763b6238951adc2D5521D0e0Cddb4d",
+  84532: "0xBFa7034670eA7d69E369569eC8216a1EEae74bCa",
+  534351: "0x814200754D0C6672ca20fC74c066A2b9AD47018d",
+} as const;
 
 /**
  * - [__View Contract on Morph Holesky Morph Holesky Explorer__](https://explorer-holesky.morphl2.io/address/0xf2Fb39bBfA77D9beF88b319360BF963Ea208a0f2)
@@ -259,7 +259,7 @@ export const foodiversePointsAddress = {
 export const foodiversePointsConfig = {
   address: foodiversePointsAddress,
   abi: foodiversePointsAbi,
-} as const
+} as const;
 
 //////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
 // PaymentGateway
@@ -273,222 +273,222 @@ export const foodiversePointsConfig = {
  * - [__View Contract on Scroll Sepolia Scrollscan__](https://sepolia.scrollscan.com/address/0x814200754D0C6672ca20fC74c066A2b9AD47018d)
  */
 export const paymentGatewayAbi = [
-  { type: 'constructor', inputs: [], stateMutability: 'nonpayable' },
+  { type: "constructor", inputs: [], stateMutability: "nonpayable" },
   {
-    type: 'function',
+    type: "function",
     inputs: [
-      { name: 'owner', internalType: 'address', type: 'address' },
-      { name: 'spender', internalType: 'address', type: 'address' },
+      { name: "owner", internalType: "address", type: "address" },
+      { name: "spender", internalType: "address", type: "address" },
     ],
-    name: 'allowance',
-    outputs: [{ name: '', internalType: 'uint256', type: 'uint256' }],
-    stateMutability: 'view',
+    name: "allowance",
+    outputs: [{ name: "", internalType: "uint256", type: "uint256" }],
+    stateMutability: "view",
   },
   {
-    type: 'function',
+    type: "function",
     inputs: [
-      { name: 'spender', internalType: 'address', type: 'address' },
-      { name: 'value', internalType: 'uint256', type: 'uint256' },
+      { name: "spender", internalType: "address", type: "address" },
+      { name: "value", internalType: "uint256", type: "uint256" },
     ],
-    name: 'approve',
-    outputs: [{ name: '', internalType: 'bool', type: 'bool' }],
-    stateMutability: 'nonpayable',
+    name: "approve",
+    outputs: [{ name: "", internalType: "bool", type: "bool" }],
+    stateMutability: "nonpayable",
   },
   {
-    type: 'function',
-    inputs: [{ name: 'account', internalType: 'address', type: 'address' }],
-    name: 'balanceOf',
-    outputs: [{ name: '', internalType: 'uint256', type: 'uint256' }],
-    stateMutability: 'view',
+    type: "function",
+    inputs: [{ name: "account", internalType: "address", type: "address" }],
+    name: "balanceOf",
+    outputs: [{ name: "", internalType: "uint256", type: "uint256" }],
+    stateMutability: "view",
   },
   {
-    type: 'function',
+    type: "function",
     inputs: [],
-    name: 'decimals',
-    outputs: [{ name: '', internalType: 'uint8', type: 'uint8' }],
-    stateMutability: 'view',
+    name: "decimals",
+    outputs: [{ name: "", internalType: "uint8", type: "uint8" }],
+    stateMutability: "view",
   },
   {
-    type: 'function',
+    type: "function",
     inputs: [
-      { name: 'to', internalType: 'address', type: 'address' },
-      { name: 'amount', internalType: 'uint256', type: 'uint256' },
+      { name: "to", internalType: "address", type: "address" },
+      { name: "amount", internalType: "uint256", type: "uint256" },
     ],
-    name: 'mint',
+    name: "mint",
     outputs: [],
-    stateMutability: 'nonpayable',
+    stateMutability: "nonpayable",
   },
   {
-    type: 'function',
+    type: "function",
     inputs: [],
-    name: 'name',
-    outputs: [{ name: '', internalType: 'string', type: 'string' }],
-    stateMutability: 'view',
+    name: "name",
+    outputs: [{ name: "", internalType: "string", type: "string" }],
+    stateMutability: "view",
   },
   {
-    type: 'function',
+    type: "function",
     inputs: [],
-    name: 'owner',
-    outputs: [{ name: '', internalType: 'address', type: 'address' }],
-    stateMutability: 'view',
+    name: "owner",
+    outputs: [{ name: "", internalType: "address", type: "address" }],
+    stateMutability: "view",
   },
   {
-    type: 'function',
+    type: "function",
     inputs: [],
-    name: 'renounceOwnership',
+    name: "renounceOwnership",
     outputs: [],
-    stateMutability: 'nonpayable',
+    stateMutability: "nonpayable",
   },
   {
-    type: 'function',
+    type: "function",
     inputs: [],
-    name: 'symbol',
-    outputs: [{ name: '', internalType: 'string', type: 'string' }],
-    stateMutability: 'view',
+    name: "symbol",
+    outputs: [{ name: "", internalType: "string", type: "string" }],
+    stateMutability: "view",
   },
   {
-    type: 'function',
+    type: "function",
     inputs: [],
-    name: 'totalSupply',
-    outputs: [{ name: '', internalType: 'uint256', type: 'uint256' }],
-    stateMutability: 'view',
+    name: "totalSupply",
+    outputs: [{ name: "", internalType: "uint256", type: "uint256" }],
+    stateMutability: "view",
   },
   {
-    type: 'function',
+    type: "function",
     inputs: [
-      { name: 'to', internalType: 'address', type: 'address' },
-      { name: 'value', internalType: 'uint256', type: 'uint256' },
+      { name: "to", internalType: "address", type: "address" },
+      { name: "value", internalType: "uint256", type: "uint256" },
     ],
-    name: 'transfer',
-    outputs: [{ name: '', internalType: 'bool', type: 'bool' }],
-    stateMutability: 'nonpayable',
+    name: "transfer",
+    outputs: [{ name: "", internalType: "bool", type: "bool" }],
+    stateMutability: "nonpayable",
   },
   {
-    type: 'function',
+    type: "function",
     inputs: [
-      { name: 'from', internalType: 'address', type: 'address' },
-      { name: 'to', internalType: 'address', type: 'address' },
-      { name: 'value', internalType: 'uint256', type: 'uint256' },
+      { name: "from", internalType: "address", type: "address" },
+      { name: "to", internalType: "address", type: "address" },
+      { name: "value", internalType: "uint256", type: "uint256" },
     ],
-    name: 'transferFrom',
-    outputs: [{ name: '', internalType: 'bool', type: 'bool' }],
-    stateMutability: 'nonpayable',
+    name: "transferFrom",
+    outputs: [{ name: "", internalType: "bool", type: "bool" }],
+    stateMutability: "nonpayable",
   },
   {
-    type: 'function',
-    inputs: [{ name: 'newOwner', internalType: 'address', type: 'address' }],
-    name: 'transferOwnership',
+    type: "function",
+    inputs: [{ name: "newOwner", internalType: "address", type: "address" }],
+    name: "transferOwnership",
     outputs: [],
-    stateMutability: 'nonpayable',
+    stateMutability: "nonpayable",
   },
   {
-    type: 'event',
+    type: "event",
     anonymous: false,
     inputs: [
       {
-        name: 'owner',
-        internalType: 'address',
-        type: 'address',
+        name: "owner",
+        internalType: "address",
+        type: "address",
         indexed: true,
       },
       {
-        name: 'spender',
-        internalType: 'address',
-        type: 'address',
+        name: "spender",
+        internalType: "address",
+        type: "address",
         indexed: true,
       },
       {
-        name: 'value',
-        internalType: 'uint256',
-        type: 'uint256',
+        name: "value",
+        internalType: "uint256",
+        type: "uint256",
         indexed: false,
       },
     ],
-    name: 'Approval',
+    name: "Approval",
   },
   {
-    type: 'event',
+    type: "event",
     anonymous: false,
     inputs: [
       {
-        name: 'previousOwner',
-        internalType: 'address',
-        type: 'address',
+        name: "previousOwner",
+        internalType: "address",
+        type: "address",
         indexed: true,
       },
       {
-        name: 'newOwner',
-        internalType: 'address',
-        type: 'address',
+        name: "newOwner",
+        internalType: "address",
+        type: "address",
         indexed: true,
       },
     ],
-    name: 'OwnershipTransferred',
+    name: "OwnershipTransferred",
   },
   {
-    type: 'event',
+    type: "event",
     anonymous: false,
     inputs: [
-      { name: 'from', internalType: 'address', type: 'address', indexed: true },
-      { name: 'to', internalType: 'address', type: 'address', indexed: true },
+      { name: "from", internalType: "address", type: "address", indexed: true },
+      { name: "to", internalType: "address", type: "address", indexed: true },
       {
-        name: 'value',
-        internalType: 'uint256',
-        type: 'uint256',
+        name: "value",
+        internalType: "uint256",
+        type: "uint256",
         indexed: false,
       },
     ],
-    name: 'Transfer',
+    name: "Transfer",
   },
   {
-    type: 'error',
+    type: "error",
     inputs: [
-      { name: 'spender', internalType: 'address', type: 'address' },
-      { name: 'allowance', internalType: 'uint256', type: 'uint256' },
-      { name: 'needed', internalType: 'uint256', type: 'uint256' },
+      { name: "spender", internalType: "address", type: "address" },
+      { name: "allowance", internalType: "uint256", type: "uint256" },
+      { name: "needed", internalType: "uint256", type: "uint256" },
     ],
-    name: 'ERC20InsufficientAllowance',
+    name: "ERC20InsufficientAllowance",
   },
   {
-    type: 'error',
+    type: "error",
     inputs: [
-      { name: 'sender', internalType: 'address', type: 'address' },
-      { name: 'balance', internalType: 'uint256', type: 'uint256' },
-      { name: 'needed', internalType: 'uint256', type: 'uint256' },
+      { name: "sender", internalType: "address", type: "address" },
+      { name: "balance", internalType: "uint256", type: "uint256" },
+      { name: "needed", internalType: "uint256", type: "uint256" },
     ],
-    name: 'ERC20InsufficientBalance',
+    name: "ERC20InsufficientBalance",
   },
   {
-    type: 'error',
-    inputs: [{ name: 'approver', internalType: 'address', type: 'address' }],
-    name: 'ERC20InvalidApprover',
+    type: "error",
+    inputs: [{ name: "approver", internalType: "address", type: "address" }],
+    name: "ERC20InvalidApprover",
   },
   {
-    type: 'error',
-    inputs: [{ name: 'receiver', internalType: 'address', type: 'address' }],
-    name: 'ERC20InvalidReceiver',
+    type: "error",
+    inputs: [{ name: "receiver", internalType: "address", type: "address" }],
+    name: "ERC20InvalidReceiver",
   },
   {
-    type: 'error',
-    inputs: [{ name: 'sender', internalType: 'address', type: 'address' }],
-    name: 'ERC20InvalidSender',
+    type: "error",
+    inputs: [{ name: "sender", internalType: "address", type: "address" }],
+    name: "ERC20InvalidSender",
   },
   {
-    type: 'error',
-    inputs: [{ name: 'spender', internalType: 'address', type: 'address' }],
-    name: 'ERC20InvalidSpender',
+    type: "error",
+    inputs: [{ name: "spender", internalType: "address", type: "address" }],
+    name: "ERC20InvalidSpender",
   },
   {
-    type: 'error',
-    inputs: [{ name: 'owner', internalType: 'address', type: 'address' }],
-    name: 'OwnableInvalidOwner',
+    type: "error",
+    inputs: [{ name: "owner", internalType: "address", type: "address" }],
+    name: "OwnableInvalidOwner",
   },
   {
-    type: 'error',
-    inputs: [{ name: 'account', internalType: 'address', type: 'address' }],
-    name: 'OwnableUnauthorizedAccount',
+    type: "error",
+    inputs: [{ name: "account", internalType: "address", type: "address" }],
+    name: "OwnableUnauthorizedAccount",
   },
-] as const
+] as const;
 
 /**
  * - [__View Contract on Morph Holesky Morph Holesky Explorer__](https://explorer-holesky.morphl2.io/address/0x805CFDCc0638C2B1aB2B2A3fDC057207BB3222f5)
@@ -498,12 +498,12 @@ export const paymentGatewayAbi = [
  * - [__View Contract on Scroll Sepolia Scrollscan__](https://sepolia.scrollscan.com/address/0x814200754D0C6672ca20fC74c066A2b9AD47018d)
  */
 export const paymentGatewayAddress = {
-  2810: '0x805CFDCc0638C2B1aB2B2A3fDC057207BB3222f5',
-  48899: '0x814200754D0C6672ca20fC74c066A2b9AD47018d',
-  80002: '0x814200754D0C6672ca20fC74c066A2b9AD47018d',
-  84532: '0x06b2C86164f7398355fFB382BC812b299bBd9477',
-  534351: '0x814200754D0C6672ca20fC74c066A2b9AD47018d',
-} as const
+  2810: "0x805CFDCc0638C2B1aB2B2A3fDC057207BB3222f5",
+  48899: "0x814200754D0C6672ca20fC74c066A2b9AD47018d",
+  80002: "0x814200754D0C6672ca20fC74c066A2b9AD47018d",
+  84532: "0x06b2C86164f7398355fFB382BC812b299bBd9477",
+  534351: "0x814200754D0C6672ca20fC74c066A2b9AD47018d",
+} as const;
 
 /**
  * - [__View Contract on Morph Holesky Morph Holesky Explorer__](https://explorer-holesky.morphl2.io/address/0x805CFDCc0638C2B1aB2B2A3fDC057207BB3222f5)
@@ -515,7 +515,7 @@ export const paymentGatewayAddress = {
 export const paymentGatewayConfig = {
   address: paymentGatewayAddress,
   abi: paymentGatewayAbi,
-} as const
+} as const;
 
 //////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
 // USDC
@@ -529,222 +529,222 @@ export const paymentGatewayConfig = {
  * - [__View Contract on Scroll Sepolia Scrollscan__](https://sepolia.scrollscan.com/address/0x483EC90D0DCf0C808c9ddfcCc3011DE80f1e5915)
  */
 export const usdcAbi = [
-  { type: 'constructor', inputs: [], stateMutability: 'nonpayable' },
+  { type: "constructor", inputs: [], stateMutability: "nonpayable" },
   {
-    type: 'function',
+    type: "function",
     inputs: [
-      { name: 'owner', internalType: 'address', type: 'address' },
-      { name: 'spender', internalType: 'address', type: 'address' },
+      { name: "owner", internalType: "address", type: "address" },
+      { name: "spender", internalType: "address", type: "address" },
     ],
-    name: 'allowance',
-    outputs: [{ name: '', internalType: 'uint256', type: 'uint256' }],
-    stateMutability: 'view',
+    name: "allowance",
+    outputs: [{ name: "", internalType: "uint256", type: "uint256" }],
+    stateMutability: "view",
   },
   {
-    type: 'function',
+    type: "function",
     inputs: [
-      { name: 'spender', internalType: 'address', type: 'address' },
-      { name: 'value', internalType: 'uint256', type: 'uint256' },
+      { name: "spender", internalType: "address", type: "address" },
+      { name: "value", internalType: "uint256", type: "uint256" },
     ],
-    name: 'approve',
-    outputs: [{ name: '', internalType: 'bool', type: 'bool' }],
-    stateMutability: 'nonpayable',
+    name: "approve",
+    outputs: [{ name: "", internalType: "bool", type: "bool" }],
+    stateMutability: "nonpayable",
   },
   {
-    type: 'function',
-    inputs: [{ name: 'account', internalType: 'address', type: 'address' }],
-    name: 'balanceOf',
-    outputs: [{ name: '', internalType: 'uint256', type: 'uint256' }],
-    stateMutability: 'view',
+    type: "function",
+    inputs: [{ name: "account", internalType: "address", type: "address" }],
+    name: "balanceOf",
+    outputs: [{ name: "", internalType: "uint256", type: "uint256" }],
+    stateMutability: "view",
   },
   {
-    type: 'function',
+    type: "function",
     inputs: [],
-    name: 'decimals',
-    outputs: [{ name: '', internalType: 'uint8', type: 'uint8' }],
-    stateMutability: 'view',
+    name: "decimals",
+    outputs: [{ name: "", internalType: "uint8", type: "uint8" }],
+    stateMutability: "view",
   },
   {
-    type: 'function',
+    type: "function",
     inputs: [
-      { name: 'to', internalType: 'address', type: 'address' },
-      { name: 'amount', internalType: 'uint256', type: 'uint256' },
+      { name: "to", internalType: "address", type: "address" },
+      { name: "amount", internalType: "uint256", type: "uint256" },
     ],
-    name: 'mint',
+    name: "mint",
     outputs: [],
-    stateMutability: 'nonpayable',
+    stateMutability: "nonpayable",
   },
   {
-    type: 'function',
+    type: "function",
     inputs: [],
-    name: 'name',
-    outputs: [{ name: '', internalType: 'string', type: 'string' }],
-    stateMutability: 'view',
+    name: "name",
+    outputs: [{ name: "", internalType: "string", type: "string" }],
+    stateMutability: "view",
   },
   {
-    type: 'function',
+    type: "function",
     inputs: [],
-    name: 'owner',
-    outputs: [{ name: '', internalType: 'address', type: 'address' }],
-    stateMutability: 'view',
+    name: "owner",
+    outputs: [{ name: "", internalType: "address", type: "address" }],
+    stateMutability: "view",
   },
   {
-    type: 'function',
+    type: "function",
     inputs: [],
-    name: 'renounceOwnership',
+    name: "renounceOwnership",
     outputs: [],
-    stateMutability: 'nonpayable',
+    stateMutability: "nonpayable",
   },
   {
-    type: 'function',
+    type: "function",
     inputs: [],
-    name: 'symbol',
-    outputs: [{ name: '', internalType: 'string', type: 'string' }],
-    stateMutability: 'view',
+    name: "symbol",
+    outputs: [{ name: "", internalType: "string", type: "string" }],
+    stateMutability: "view",
   },
   {
-    type: 'function',
+    type: "function",
     inputs: [],
-    name: 'totalSupply',
-    outputs: [{ name: '', internalType: 'uint256', type: 'uint256' }],
-    stateMutability: 'view',
+    name: "totalSupply",
+    outputs: [{ name: "", internalType: "uint256", type: "uint256" }],
+    stateMutability: "view",
   },
   {
-    type: 'function',
+    type: "function",
     inputs: [
-      { name: 'to', internalType: 'address', type: 'address' },
-      { name: 'value', internalType: 'uint256', type: 'uint256' },
+      { name: "to", internalType: "address", type: "address" },
+      { name: "value", internalType: "uint256", type: "uint256" },
     ],
-    name: 'transfer',
-    outputs: [{ name: '', internalType: 'bool', type: 'bool' }],
-    stateMutability: 'nonpayable',
+    name: "transfer",
+    outputs: [{ name: "", internalType: "bool", type: "bool" }],
+    stateMutability: "nonpayable",
   },
   {
-    type: 'function',
+    type: "function",
     inputs: [
-      { name: 'from', internalType: 'address', type: 'address' },
-      { name: 'to', internalType: 'address', type: 'address' },
-      { name: 'value', internalType: 'uint256', type: 'uint256' },
+      { name: "from", internalType: "address", type: "address" },
+      { name: "to", internalType: "address", type: "address" },
+      { name: "value", internalType: "uint256", type: "uint256" },
     ],
-    name: 'transferFrom',
-    outputs: [{ name: '', internalType: 'bool', type: 'bool' }],
-    stateMutability: 'nonpayable',
+    name: "transferFrom",
+    outputs: [{ name: "", internalType: "bool", type: "bool" }],
+    stateMutability: "nonpayable",
   },
   {
-    type: 'function',
-    inputs: [{ name: 'newOwner', internalType: 'address', type: 'address' }],
-    name: 'transferOwnership',
+    type: "function",
+    inputs: [{ name: "newOwner", internalType: "address", type: "address" }],
+    name: "transferOwnership",
     outputs: [],
-    stateMutability: 'nonpayable',
+    stateMutability: "nonpayable",
   },
   {
-    type: 'event',
+    type: "event",
     anonymous: false,
     inputs: [
       {
-        name: 'owner',
-        internalType: 'address',
-        type: 'address',
+        name: "owner",
+        internalType: "address",
+        type: "address",
         indexed: true,
       },
       {
-        name: 'spender',
-        internalType: 'address',
-        type: 'address',
+        name: "spender",
+        internalType: "address",
+        type: "address",
         indexed: true,
       },
       {
-        name: 'value',
-        internalType: 'uint256',
-        type: 'uint256',
+        name: "value",
+        internalType: "uint256",
+        type: "uint256",
         indexed: false,
       },
     ],
-    name: 'Approval',
+    name: "Approval",
   },
   {
-    type: 'event',
+    type: "event",
     anonymous: false,
     inputs: [
       {
-        name: 'previousOwner',
-        internalType: 'address',
-        type: 'address',
+        name: "previousOwner",
+        internalType: "address",
+        type: "address",
         indexed: true,
       },
       {
-        name: 'newOwner',
-        internalType: 'address',
-        type: 'address',
+        name: "newOwner",
+        internalType: "address",
+        type: "address",
         indexed: true,
       },
     ],
-    name: 'OwnershipTransferred',
+    name: "OwnershipTransferred",
   },
   {
-    type: 'event',
+    type: "event",
     anonymous: false,
     inputs: [
-      { name: 'from', internalType: 'address', type: 'address', indexed: true },
-      { name: 'to', internalType: 'address', type: 'address', indexed: true },
+      { name: "from", internalType: "address", type: "address", indexed: true },
+      { name: "to", internalType: "address", type: "address", indexed: true },
       {
-        name: 'value',
-        internalType: 'uint256',
-        type: 'uint256',
+        name: "value",
+        internalType: "uint256",
+        type: "uint256",
         indexed: false,
       },
     ],
-    name: 'Transfer',
+    name: "Transfer",
   },
   {
-    type: 'error',
+    type: "error",
     inputs: [
-      { name: 'spender', internalType: 'address', type: 'address' },
-      { name: 'allowance', internalType: 'uint256', type: 'uint256' },
-      { name: 'needed', internalType: 'uint256', type: 'uint256' },
+      { name: "spender", internalType: "address", type: "address" },
+      { name: "allowance", internalType: "uint256", type: "uint256" },
+      { name: "needed", internalType: "uint256", type: "uint256" },
     ],
-    name: 'ERC20InsufficientAllowance',
+    name: "ERC20InsufficientAllowance",
   },
   {
-    type: 'error',
+    type: "error",
     inputs: [
-      { name: 'sender', internalType: 'address', type: 'address' },
-      { name: 'balance', internalType: 'uint256', type: 'uint256' },
-      { name: 'needed', internalType: 'uint256', type: 'uint256' },
+      { name: "sender", internalType: "address", type: "address" },
+      { name: "balance", internalType: "uint256", type: "uint256" },
+      { name: "needed", internalType: "uint256", type: "uint256" },
     ],
-    name: 'ERC20InsufficientBalance',
+    name: "ERC20InsufficientBalance",
   },
   {
-    type: 'error',
-    inputs: [{ name: 'approver', internalType: 'address', type: 'address' }],
-    name: 'ERC20InvalidApprover',
+    type: "error",
+    inputs: [{ name: "approver", internalType: "address", type: "address" }],
+    name: "ERC20InvalidApprover",
   },
   {
-    type: 'error',
-    inputs: [{ name: 'receiver', internalType: 'address', type: 'address' }],
-    name: 'ERC20InvalidReceiver',
+    type: "error",
+    inputs: [{ name: "receiver", internalType: "address", type: "address" }],
+    name: "ERC20InvalidReceiver",
   },
   {
-    type: 'error',
-    inputs: [{ name: 'sender', internalType: 'address', type: 'address' }],
-    name: 'ERC20InvalidSender',
+    type: "error",
+    inputs: [{ name: "sender", internalType: "address", type: "address" }],
+    name: "ERC20InvalidSender",
   },
   {
-    type: 'error',
-    inputs: [{ name: 'spender', internalType: 'address', type: 'address' }],
-    name: 'ERC20InvalidSpender',
+    type: "error",
+    inputs: [{ name: "spender", internalType: "address", type: "address" }],
+    name: "ERC20InvalidSpender",
   },
   {
-    type: 'error',
-    inputs: [{ name: 'owner', internalType: 'address', type: 'address' }],
-    name: 'OwnableInvalidOwner',
+    type: "error",
+    inputs: [{ name: "owner", internalType: "address", type: "address" }],
+    name: "OwnableInvalidOwner",
   },
   {
-    type: 'error',
-    inputs: [{ name: 'account', internalType: 'address', type: 'address' }],
-    name: 'OwnableUnauthorizedAccount',
+    type: "error",
+    inputs: [{ name: "account", internalType: "address", type: "address" }],
+    name: "OwnableUnauthorizedAccount",
   },
-] as const
+] as const;
 
 /**
  * - [__View Contract on Morph Holesky Morph Holesky Explorer__](https://explorer-holesky.morphl2.io/address/0x483EC90D0DCf0C808c9ddfcCc3011DE80f1e5915)
@@ -754,12 +754,12 @@ export const usdcAbi = [
  * - [__View Contract on Scroll Sepolia Scrollscan__](https://sepolia.scrollscan.com/address/0x483EC90D0DCf0C808c9ddfcCc3011DE80f1e5915)
  */
 export const usdcAddress = {
-  2810: '0x483EC90D0DCf0C808c9ddfcCc3011DE80f1e5915',
-  48899: '0x5da0c2ed4EcC08915B2490Fc9d9cF8B861e9a7b9',
-  80002: '0xD1eA89F676763b6238951adc2D5521D0e0Cddb4d',
-  84532: '0xfD4aC8071991423e79971BEC2fcfEb78d28B3789',
-  534351: '0x483EC90D0DCf0C808c9ddfcCc3011DE80f1e5915',
-} as const
+  2810: "0x483EC90D0DCf0C808c9ddfcCc3011DE80f1e5915",
+  48899: "0x5da0c2ed4EcC08915B2490Fc9d9cF8B861e9a7b9",
+  80002: "0xD1eA89F676763b6238951adc2D5521D0e0Cddb4d",
+  84532: "0xfD4aC8071991423e79971BEC2fcfEb78d28B3789",
+  534351: "0x483EC90D0DCf0C808c9ddfcCc3011DE80f1e5915",
+} as const;
 
 /**
  * - [__View Contract on Morph Holesky Morph Holesky Explorer__](https://explorer-holesky.morphl2.io/address/0x483EC90D0DCf0C808c9ddfcCc3011DE80f1e5915)
@@ -768,7 +768,7 @@ export const usdcAddress = {
  * - [__View Contract on Base Sepolia Basescan__](https://sepolia.basescan.org/address/0xfD4aC8071991423e79971BEC2fcfEb78d28B3789)
  * - [__View Contract on Scroll Sepolia Scrollscan__](https://sepolia.scrollscan.com/address/0x483EC90D0DCf0C808c9ddfcCc3011DE80f1e5915)
  */
-export const usdcConfig = { address: usdcAddress, abi: usdcAbi } as const
+export const usdcConfig = { address: usdcAddress, abi: usdcAbi } as const;
 
 //////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
 // foodiRegistrar
@@ -776,65 +776,65 @@ export const usdcConfig = { address: usdcAddress, abi: usdcAbi } as const
 
 export const foodiRegistrarAbi = [
   {
-    type: 'constructor',
+    type: "constructor",
     inputs: [
       {
-        name: '_registry',
-        internalType: 'contract IL2Registry',
-        type: 'address',
+        name: "_registry",
+        internalType: "contract IL2Registry",
+        type: "address",
       },
     ],
-    stateMutability: 'nonpayable',
+    stateMutability: "nonpayable",
   },
   {
-    type: 'function',
-    inputs: [{ name: 'tokenId', internalType: 'uint256', type: 'uint256' }],
-    name: 'available',
-    outputs: [{ name: '', internalType: 'bool', type: 'bool' }],
-    stateMutability: 'view',
+    type: "function",
+    inputs: [{ name: "tokenId", internalType: "uint256", type: "uint256" }],
+    name: "available",
+    outputs: [{ name: "", internalType: "bool", type: "bool" }],
+    stateMutability: "view",
   },
   {
-    type: 'function',
+    type: "function",
     inputs: [
-      { name: 'label', internalType: 'string', type: 'string' },
-      { name: 'owner', internalType: 'address', type: 'address' },
+      { name: "label", internalType: "string", type: "string" },
+      { name: "owner", internalType: "address", type: "address" },
     ],
-    name: 'register',
+    name: "register",
     outputs: [],
-    stateMutability: 'nonpayable',
+    stateMutability: "nonpayable",
   },
   {
-    type: 'function',
+    type: "function",
     inputs: [],
-    name: 'targetRegistry',
+    name: "targetRegistry",
     outputs: [
-      { name: '', internalType: 'contract IL2Registry', type: 'address' },
+      { name: "", internalType: "contract IL2Registry", type: "address" },
     ],
-    stateMutability: 'view',
+    stateMutability: "view",
   },
   {
-    type: 'event',
+    type: "event",
     anonymous: false,
     inputs: [
-      { name: 'label', internalType: 'string', type: 'string', indexed: true },
+      { name: "label", internalType: "string", type: "string", indexed: true },
       {
-        name: 'owner',
-        internalType: 'address',
-        type: 'address',
+        name: "owner",
+        internalType: "address",
+        type: "address",
         indexed: true,
       },
     ],
-    name: 'NameRegistered',
+    name: "NameRegistered",
   },
-] as const
+] as const;
 
 export const foodiRegistrarAddress =
-  '0xD1eA89F676763b6238951adc2D5521D0e0Cddb4d' as const
+  "0xD1eA89F676763b6238951adc2D5521D0e0Cddb4d" as const;
 
 export const foodiRegistrarConfig = {
   address: foodiRegistrarAddress,
   abi: foodiRegistrarAbi,
-} as const
+} as const;
 
 //////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
 // foodiverseRegistrar
@@ -842,65 +842,65 @@ export const foodiRegistrarConfig = {
 
 export const foodiverseRegistrarAbi = [
   {
-    type: 'constructor',
+    type: "constructor",
     inputs: [
       {
-        name: '_registry',
-        internalType: 'contract IL2Registry',
-        type: 'address',
+        name: "_registry",
+        internalType: "contract IL2Registry",
+        type: "address",
       },
     ],
-    stateMutability: 'nonpayable',
+    stateMutability: "nonpayable",
   },
   {
-    type: 'function',
-    inputs: [{ name: 'tokenId', internalType: 'uint256', type: 'uint256' }],
-    name: 'available',
-    outputs: [{ name: '', internalType: 'bool', type: 'bool' }],
-    stateMutability: 'view',
+    type: "function",
+    inputs: [{ name: "tokenId", internalType: "uint256", type: "uint256" }],
+    name: "available",
+    outputs: [{ name: "", internalType: "bool", type: "bool" }],
+    stateMutability: "view",
   },
   {
-    type: 'function',
+    type: "function",
     inputs: [
-      { name: 'label', internalType: 'string', type: 'string' },
-      { name: 'owner', internalType: 'address', type: 'address' },
+      { name: "label", internalType: "string", type: "string" },
+      { name: "owner", internalType: "address", type: "address" },
     ],
-    name: 'register',
+    name: "register",
     outputs: [],
-    stateMutability: 'nonpayable',
+    stateMutability: "nonpayable",
   },
   {
-    type: 'function',
+    type: "function",
     inputs: [],
-    name: 'targetRegistry',
+    name: "targetRegistry",
     outputs: [
-      { name: '', internalType: 'contract IL2Registry', type: 'address' },
+      { name: "", internalType: "contract IL2Registry", type: "address" },
     ],
-    stateMutability: 'view',
+    stateMutability: "view",
   },
   {
-    type: 'event',
+    type: "event",
     anonymous: false,
     inputs: [
-      { name: 'label', internalType: 'string', type: 'string', indexed: true },
+      { name: "label", internalType: "string", type: "string", indexed: true },
       {
-        name: 'owner',
-        internalType: 'address',
-        type: 'address',
+        name: "owner",
+        internalType: "address",
+        type: "address",
         indexed: true,
       },
     ],
-    name: 'NameRegistered',
+    name: "NameRegistered",
   },
-] as const
+] as const;
 
 export const foodiverseRegistrarAddress =
-  '0xCa556332723D2aB7b6a23440908e2cED85578AB6' as const
+  "0xCa556332723D2aB7b6a23440908e2cED85578AB6" as const;
 
 export const foodiverseRegistrarConfig = {
   address: foodiverseRegistrarAddress,
   abi: foodiverseRegistrarAbi,
-} as const
+} as const;
 
 //////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
 // reverseRegistrar
@@ -908,1174 +908,1174 @@ export const foodiverseRegistrarConfig = {
 
 export const reverseRegistrarAbi = [
   {
-    type: 'constructor',
+    type: "constructor",
     inputs: [
-      { name: 'ensAddr', internalType: 'contract ENS', type: 'address' },
+      { name: "ensAddr", internalType: "contract ENS", type: "address" },
     ],
-    stateMutability: 'nonpayable',
+    stateMutability: "nonpayable",
   },
   {
-    type: 'event',
+    type: "event",
     anonymous: false,
     inputs: [
       {
-        name: 'controller',
-        internalType: 'address',
-        type: 'address',
+        name: "controller",
+        internalType: "address",
+        type: "address",
         indexed: true,
       },
-      { name: 'enabled', internalType: 'bool', type: 'bool', indexed: false },
+      { name: "enabled", internalType: "bool", type: "bool", indexed: false },
     ],
-    name: 'ControllerChanged',
+    name: "ControllerChanged",
   },
   {
-    type: 'event',
+    type: "event",
     anonymous: false,
     inputs: [
       {
-        name: 'resolver',
-        internalType: 'contract NameResolver',
-        type: 'address',
+        name: "resolver",
+        internalType: "contract NameResolver",
+        type: "address",
         indexed: true,
       },
     ],
-    name: 'DefaultResolverChanged',
+    name: "DefaultResolverChanged",
   },
   {
-    type: 'event',
+    type: "event",
     anonymous: false,
     inputs: [
       {
-        name: 'previousOwner',
-        internalType: 'address',
-        type: 'address',
+        name: "previousOwner",
+        internalType: "address",
+        type: "address",
         indexed: true,
       },
       {
-        name: 'newOwner',
-        internalType: 'address',
-        type: 'address',
+        name: "newOwner",
+        internalType: "address",
+        type: "address",
         indexed: true,
       },
     ],
-    name: 'OwnershipTransferred',
+    name: "OwnershipTransferred",
   },
   {
-    type: 'event',
+    type: "event",
     anonymous: false,
     inputs: [
-      { name: 'addr', internalType: 'address', type: 'address', indexed: true },
-      { name: 'node', internalType: 'bytes32', type: 'bytes32', indexed: true },
+      { name: "addr", internalType: "address", type: "address", indexed: true },
+      { name: "node", internalType: "bytes32", type: "bytes32", indexed: true },
     ],
-    name: 'ReverseClaimed',
+    name: "ReverseClaimed",
   },
   {
-    type: 'function',
-    inputs: [{ name: 'owner', internalType: 'address', type: 'address' }],
-    name: 'claim',
-    outputs: [{ name: '', internalType: 'bytes32', type: 'bytes32' }],
-    stateMutability: 'nonpayable',
+    type: "function",
+    inputs: [{ name: "owner", internalType: "address", type: "address" }],
+    name: "claim",
+    outputs: [{ name: "", internalType: "bytes32", type: "bytes32" }],
+    stateMutability: "nonpayable",
   },
   {
-    type: 'function',
+    type: "function",
     inputs: [
-      { name: 'addr', internalType: 'address', type: 'address' },
-      { name: 'owner', internalType: 'address', type: 'address' },
-      { name: 'resolver', internalType: 'address', type: 'address' },
+      { name: "addr", internalType: "address", type: "address" },
+      { name: "owner", internalType: "address", type: "address" },
+      { name: "resolver", internalType: "address", type: "address" },
     ],
-    name: 'claimForAddr',
-    outputs: [{ name: '', internalType: 'bytes32', type: 'bytes32' }],
-    stateMutability: 'nonpayable',
+    name: "claimForAddr",
+    outputs: [{ name: "", internalType: "bytes32", type: "bytes32" }],
+    stateMutability: "nonpayable",
   },
   {
-    type: 'function',
+    type: "function",
     inputs: [
-      { name: 'owner', internalType: 'address', type: 'address' },
-      { name: 'resolver', internalType: 'address', type: 'address' },
+      { name: "owner", internalType: "address", type: "address" },
+      { name: "resolver", internalType: "address", type: "address" },
     ],
-    name: 'claimWithResolver',
-    outputs: [{ name: '', internalType: 'bytes32', type: 'bytes32' }],
-    stateMutability: 'nonpayable',
+    name: "claimWithResolver",
+    outputs: [{ name: "", internalType: "bytes32", type: "bytes32" }],
+    stateMutability: "nonpayable",
   },
   {
-    type: 'function',
-    inputs: [{ name: '', internalType: 'address', type: 'address' }],
-    name: 'controllers',
-    outputs: [{ name: '', internalType: 'bool', type: 'bool' }],
-    stateMutability: 'view',
+    type: "function",
+    inputs: [{ name: "", internalType: "address", type: "address" }],
+    name: "controllers",
+    outputs: [{ name: "", internalType: "bool", type: "bool" }],
+    stateMutability: "view",
   },
   {
-    type: 'function',
+    type: "function",
     inputs: [],
-    name: 'defaultResolver',
+    name: "defaultResolver",
     outputs: [
-      { name: '', internalType: 'contract NameResolver', type: 'address' },
+      { name: "", internalType: "contract NameResolver", type: "address" },
     ],
-    stateMutability: 'view',
+    stateMutability: "view",
   },
   {
-    type: 'function',
+    type: "function",
     inputs: [],
-    name: 'ens',
-    outputs: [{ name: '', internalType: 'contract ENS', type: 'address' }],
-    stateMutability: 'view',
+    name: "ens",
+    outputs: [{ name: "", internalType: "contract ENS", type: "address" }],
+    stateMutability: "view",
   },
   {
-    type: 'function',
-    inputs: [{ name: 'addr', internalType: 'address', type: 'address' }],
-    name: 'node',
-    outputs: [{ name: '', internalType: 'bytes32', type: 'bytes32' }],
-    stateMutability: 'pure',
+    type: "function",
+    inputs: [{ name: "addr", internalType: "address", type: "address" }],
+    name: "node",
+    outputs: [{ name: "", internalType: "bytes32", type: "bytes32" }],
+    stateMutability: "pure",
   },
   {
-    type: 'function',
+    type: "function",
     inputs: [],
-    name: 'owner',
-    outputs: [{ name: '', internalType: 'address', type: 'address' }],
-    stateMutability: 'view',
+    name: "owner",
+    outputs: [{ name: "", internalType: "address", type: "address" }],
+    stateMutability: "view",
   },
   {
-    type: 'function',
+    type: "function",
     inputs: [],
-    name: 'renounceOwnership',
+    name: "renounceOwnership",
     outputs: [],
-    stateMutability: 'nonpayable',
+    stateMutability: "nonpayable",
   },
   {
-    type: 'function',
+    type: "function",
     inputs: [
-      { name: 'controller', internalType: 'address', type: 'address' },
-      { name: 'enabled', internalType: 'bool', type: 'bool' },
+      { name: "controller", internalType: "address", type: "address" },
+      { name: "enabled", internalType: "bool", type: "bool" },
     ],
-    name: 'setController',
+    name: "setController",
     outputs: [],
-    stateMutability: 'nonpayable',
+    stateMutability: "nonpayable",
   },
   {
-    type: 'function',
-    inputs: [{ name: 'resolver', internalType: 'address', type: 'address' }],
-    name: 'setDefaultResolver',
+    type: "function",
+    inputs: [{ name: "resolver", internalType: "address", type: "address" }],
+    name: "setDefaultResolver",
     outputs: [],
-    stateMutability: 'nonpayable',
+    stateMutability: "nonpayable",
   },
   {
-    type: 'function',
-    inputs: [{ name: 'name', internalType: 'string', type: 'string' }],
-    name: 'setName',
-    outputs: [{ name: '', internalType: 'bytes32', type: 'bytes32' }],
-    stateMutability: 'nonpayable',
+    type: "function",
+    inputs: [{ name: "name", internalType: "string", type: "string" }],
+    name: "setName",
+    outputs: [{ name: "", internalType: "bytes32", type: "bytes32" }],
+    stateMutability: "nonpayable",
   },
   {
-    type: 'function',
+    type: "function",
     inputs: [
-      { name: 'addr', internalType: 'address', type: 'address' },
-      { name: 'owner', internalType: 'address', type: 'address' },
-      { name: 'resolver', internalType: 'address', type: 'address' },
-      { name: 'name', internalType: 'string', type: 'string' },
+      { name: "addr", internalType: "address", type: "address" },
+      { name: "owner", internalType: "address", type: "address" },
+      { name: "resolver", internalType: "address", type: "address" },
+      { name: "name", internalType: "string", type: "string" },
     ],
-    name: 'setNameForAddr',
-    outputs: [{ name: '', internalType: 'bytes32', type: 'bytes32' }],
-    stateMutability: 'nonpayable',
+    name: "setNameForAddr",
+    outputs: [{ name: "", internalType: "bytes32", type: "bytes32" }],
+    stateMutability: "nonpayable",
   },
   {
-    type: 'function',
-    inputs: [{ name: 'newOwner', internalType: 'address', type: 'address' }],
-    name: 'transferOwnership',
+    type: "function",
+    inputs: [{ name: "newOwner", internalType: "address", type: "address" }],
+    name: "transferOwnership",
     outputs: [],
-    stateMutability: 'nonpayable',
+    stateMutability: "nonpayable",
   },
-] as const
+] as const;
 
 export const reverseRegistrarAddress =
-  '0xCF75B92126B02C9811d8c632144288a3eb84afC8' as const
+  "0xCF75B92126B02C9811d8c632144288a3eb84afC8" as const;
 
 export const reverseRegistrarConfig = {
   address: reverseRegistrarAddress,
   abi: reverseRegistrarAbi,
-} as const
+} as const;
 
 //////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
 // signProtocol
 //////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
 
 export const signProtocolAbi = [
-  { type: 'constructor', inputs: [], stateMutability: 'nonpayable' },
+  { type: "constructor", inputs: [], stateMutability: "nonpayable" },
   {
-    type: 'error',
-    inputs: [{ name: 'target', internalType: 'address', type: 'address' }],
-    name: 'AddressEmptyCode',
+    type: "error",
+    inputs: [{ name: "target", internalType: "address", type: "address" }],
+    name: "AddressEmptyCode",
   },
-  { type: 'error', inputs: [], name: 'AttestationAlreadyRevoked' },
-  { type: 'error', inputs: [], name: 'AttestationInvalidDuration' },
-  { type: 'error', inputs: [], name: 'AttestationIrrevocable' },
-  { type: 'error', inputs: [], name: 'AttestationNonexistent' },
-  { type: 'error', inputs: [], name: 'AttestationWrongAttester' },
+  { type: "error", inputs: [], name: "AttestationAlreadyRevoked" },
+  { type: "error", inputs: [], name: "AttestationInvalidDuration" },
+  { type: "error", inputs: [], name: "AttestationIrrevocable" },
+  { type: "error", inputs: [], name: "AttestationNonexistent" },
+  { type: "error", inputs: [], name: "AttestationWrongAttester" },
   {
-    type: 'error',
+    type: "error",
     inputs: [
-      { name: 'implementation', internalType: 'address', type: 'address' },
+      { name: "implementation", internalType: "address", type: "address" },
     ],
-    name: 'ERC1967InvalidImplementation',
+    name: "ERC1967InvalidImplementation",
   },
-  { type: 'error', inputs: [], name: 'ERC1967NonPayable' },
-  { type: 'error', inputs: [], name: 'FailedInnerCall' },
-  { type: 'error', inputs: [], name: 'InvalidDelegateSignature' },
-  { type: 'error', inputs: [], name: 'InvalidInitialization' },
-  { type: 'error', inputs: [], name: 'LegacySPRequired' },
-  { type: 'error', inputs: [], name: 'NotInitializing' },
-  { type: 'error', inputs: [], name: 'OffchainAttestationAlreadyRevoked' },
-  { type: 'error', inputs: [], name: 'OffchainAttestationExists' },
-  { type: 'error', inputs: [], name: 'OffchainAttestationNonexistent' },
+  { type: "error", inputs: [], name: "ERC1967NonPayable" },
+  { type: "error", inputs: [], name: "FailedInnerCall" },
+  { type: "error", inputs: [], name: "InvalidDelegateSignature" },
+  { type: "error", inputs: [], name: "InvalidInitialization" },
+  { type: "error", inputs: [], name: "LegacySPRequired" },
+  { type: "error", inputs: [], name: "NotInitializing" },
+  { type: "error", inputs: [], name: "OffchainAttestationAlreadyRevoked" },
+  { type: "error", inputs: [], name: "OffchainAttestationExists" },
+  { type: "error", inputs: [], name: "OffchainAttestationNonexistent" },
   {
-    type: 'error',
-    inputs: [{ name: 'owner', internalType: 'address', type: 'address' }],
-    name: 'OwnableInvalidOwner',
-  },
-  {
-    type: 'error',
-    inputs: [{ name: 'account', internalType: 'address', type: 'address' }],
-    name: 'OwnableUnauthorizedAccount',
-  },
-  { type: 'error', inputs: [], name: 'Paused' },
-  { type: 'error', inputs: [], name: 'SchemaNonexistent' },
-  { type: 'error', inputs: [], name: 'SchemaWrongRegistrant' },
-  { type: 'error', inputs: [], name: 'UUPSUnauthorizedCallContext' },
-  {
-    type: 'error',
-    inputs: [{ name: 'slot', internalType: 'bytes32', type: 'bytes32' }],
-    name: 'UUPSUnsupportedProxiableUUID',
+    type: "error",
+    inputs: [{ name: "owner", internalType: "address", type: "address" }],
+    name: "OwnableInvalidOwner",
   },
   {
-    type: 'event',
+    type: "error",
+    inputs: [{ name: "account", internalType: "address", type: "address" }],
+    name: "OwnableUnauthorizedAccount",
+  },
+  { type: "error", inputs: [], name: "Paused" },
+  { type: "error", inputs: [], name: "SchemaNonexistent" },
+  { type: "error", inputs: [], name: "SchemaWrongRegistrant" },
+  { type: "error", inputs: [], name: "UUPSUnauthorizedCallContext" },
+  {
+    type: "error",
+    inputs: [{ name: "slot", internalType: "bytes32", type: "bytes32" }],
+    name: "UUPSUnsupportedProxiableUUID",
+  },
+  {
+    type: "event",
     anonymous: false,
     inputs: [
       {
-        name: 'attestationId',
-        internalType: 'uint64',
-        type: 'uint64',
+        name: "attestationId",
+        internalType: "uint64",
+        type: "uint64",
         indexed: false,
       },
       {
-        name: 'indexingKey',
-        internalType: 'string',
-        type: 'string',
-        indexed: false,
-      },
-    ],
-    name: 'AttestationMade',
-  },
-  {
-    type: 'event',
-    anonymous: false,
-    inputs: [
-      {
-        name: 'attestationId',
-        internalType: 'uint64',
-        type: 'uint64',
-        indexed: false,
-      },
-      {
-        name: 'reason',
-        internalType: 'string',
-        type: 'string',
+        name: "indexingKey",
+        internalType: "string",
+        type: "string",
         indexed: false,
       },
     ],
-    name: 'AttestationRevoked',
+    name: "AttestationMade",
   },
   {
-    type: 'event',
+    type: "event",
     anonymous: false,
     inputs: [
       {
-        name: 'version',
-        internalType: 'uint64',
-        type: 'uint64',
+        name: "attestationId",
+        internalType: "uint64",
+        type: "uint64",
+        indexed: false,
+      },
+      {
+        name: "reason",
+        internalType: "string",
+        type: "string",
         indexed: false,
       },
     ],
-    name: 'Initialized',
+    name: "AttestationRevoked",
   },
   {
-    type: 'event',
+    type: "event",
     anonymous: false,
     inputs: [
       {
-        name: 'attestationId',
-        internalType: 'string',
-        type: 'string',
+        name: "version",
+        internalType: "uint64",
+        type: "uint64",
         indexed: false,
       },
     ],
-    name: 'OffchainAttestationMade',
+    name: "Initialized",
   },
   {
-    type: 'event',
+    type: "event",
     anonymous: false,
     inputs: [
       {
-        name: 'attestationId',
-        internalType: 'string',
-        type: 'string',
-        indexed: false,
-      },
-      {
-        name: 'reason',
-        internalType: 'string',
-        type: 'string',
+        name: "attestationId",
+        internalType: "string",
+        type: "string",
         indexed: false,
       },
     ],
-    name: 'OffchainAttestationRevoked',
+    name: "OffchainAttestationMade",
   },
   {
-    type: 'event',
+    type: "event",
     anonymous: false,
     inputs: [
       {
-        name: 'previousOwner',
-        internalType: 'address',
-        type: 'address',
+        name: "attestationId",
+        internalType: "string",
+        type: "string",
+        indexed: false,
+      },
+      {
+        name: "reason",
+        internalType: "string",
+        type: "string",
+        indexed: false,
+      },
+    ],
+    name: "OffchainAttestationRevoked",
+  },
+  {
+    type: "event",
+    anonymous: false,
+    inputs: [
+      {
+        name: "previousOwner",
+        internalType: "address",
+        type: "address",
         indexed: true,
       },
       {
-        name: 'newOwner',
-        internalType: 'address',
-        type: 'address',
+        name: "newOwner",
+        internalType: "address",
+        type: "address",
         indexed: true,
       },
     ],
-    name: 'OwnershipTransferred',
+    name: "OwnershipTransferred",
   },
   {
-    type: 'event',
+    type: "event",
     anonymous: false,
     inputs: [
       {
-        name: 'schemaId',
-        internalType: 'uint64',
-        type: 'uint64',
+        name: "schemaId",
+        internalType: "uint64",
+        type: "uint64",
         indexed: false,
       },
     ],
-    name: 'SchemaRegistered',
+    name: "SchemaRegistered",
   },
   {
-    type: 'event',
+    type: "event",
     anonymous: false,
     inputs: [
       {
-        name: 'implementation',
-        internalType: 'address',
-        type: 'address',
+        name: "implementation",
+        internalType: "address",
+        type: "address",
         indexed: true,
       },
     ],
-    name: 'Upgraded',
+    name: "Upgraded",
   },
   {
-    type: 'function',
+    type: "function",
     inputs: [],
-    name: 'UPGRADE_INTERFACE_VERSION',
-    outputs: [{ name: '', internalType: 'string', type: 'string' }],
-    stateMutability: 'view',
+    name: "UPGRADE_INTERFACE_VERSION",
+    outputs: [{ name: "", internalType: "string", type: "string" }],
+    stateMutability: "view",
   },
   {
-    type: 'function',
+    type: "function",
     inputs: [
       {
-        name: 'attestation',
-        internalType: 'struct Attestation',
-        type: 'tuple',
+        name: "attestation",
+        internalType: "struct Attestation",
+        type: "tuple",
         components: [
-          { name: 'schemaId', internalType: 'uint64', type: 'uint64' },
+          { name: "schemaId", internalType: "uint64", type: "uint64" },
           {
-            name: 'linkedAttestationId',
-            internalType: 'uint64',
-            type: 'uint64',
+            name: "linkedAttestationId",
+            internalType: "uint64",
+            type: "uint64",
           },
-          { name: 'attestTimestamp', internalType: 'uint64', type: 'uint64' },
-          { name: 'revokeTimestamp', internalType: 'uint64', type: 'uint64' },
-          { name: 'attester', internalType: 'address', type: 'address' },
-          { name: 'validUntil', internalType: 'uint64', type: 'uint64' },
+          { name: "attestTimestamp", internalType: "uint64", type: "uint64" },
+          { name: "revokeTimestamp", internalType: "uint64", type: "uint64" },
+          { name: "attester", internalType: "address", type: "address" },
+          { name: "validUntil", internalType: "uint64", type: "uint64" },
           {
-            name: 'dataLocation',
-            internalType: 'enum DataLocation',
-            type: 'uint8',
+            name: "dataLocation",
+            internalType: "enum DataLocation",
+            type: "uint8",
           },
-          { name: 'revoked', internalType: 'bool', type: 'bool' },
-          { name: 'recipients', internalType: 'bytes[]', type: 'bytes[]' },
-          { name: 'data', internalType: 'bytes', type: 'bytes' },
+          { name: "revoked", internalType: "bool", type: "bool" },
+          { name: "recipients", internalType: "bytes[]", type: "bytes[]" },
+          { name: "data", internalType: "bytes", type: "bytes" },
         ],
       },
       {
-        name: 'resolverFeesERC20Token',
-        internalType: 'contract IERC20',
-        type: 'address',
+        name: "resolverFeesERC20Token",
+        internalType: "contract IERC20",
+        type: "address",
       },
       {
-        name: 'resolverFeesERC20Amount',
-        internalType: 'uint256',
-        type: 'uint256',
+        name: "resolverFeesERC20Amount",
+        internalType: "uint256",
+        type: "uint256",
       },
-      { name: 'indexingKey', internalType: 'string', type: 'string' },
-      { name: 'delegateSignature', internalType: 'bytes', type: 'bytes' },
-      { name: 'extraData', internalType: 'bytes', type: 'bytes' },
+      { name: "indexingKey", internalType: "string", type: "string" },
+      { name: "delegateSignature", internalType: "bytes", type: "bytes" },
+      { name: "extraData", internalType: "bytes", type: "bytes" },
     ],
-    name: 'attest',
-    outputs: [{ name: '', internalType: 'uint64', type: 'uint64' }],
-    stateMutability: 'nonpayable',
+    name: "attest",
+    outputs: [{ name: "", internalType: "uint64", type: "uint64" }],
+    stateMutability: "nonpayable",
   },
   {
-    type: 'function',
+    type: "function",
     inputs: [
       {
-        name: 'attestation',
-        internalType: 'struct Attestation',
-        type: 'tuple',
+        name: "attestation",
+        internalType: "struct Attestation",
+        type: "tuple",
         components: [
-          { name: 'schemaId', internalType: 'uint64', type: 'uint64' },
+          { name: "schemaId", internalType: "uint64", type: "uint64" },
           {
-            name: 'linkedAttestationId',
-            internalType: 'uint64',
-            type: 'uint64',
+            name: "linkedAttestationId",
+            internalType: "uint64",
+            type: "uint64",
           },
-          { name: 'attestTimestamp', internalType: 'uint64', type: 'uint64' },
-          { name: 'revokeTimestamp', internalType: 'uint64', type: 'uint64' },
-          { name: 'attester', internalType: 'address', type: 'address' },
-          { name: 'validUntil', internalType: 'uint64', type: 'uint64' },
+          { name: "attestTimestamp", internalType: "uint64", type: "uint64" },
+          { name: "revokeTimestamp", internalType: "uint64", type: "uint64" },
+          { name: "attester", internalType: "address", type: "address" },
+          { name: "validUntil", internalType: "uint64", type: "uint64" },
           {
-            name: 'dataLocation',
-            internalType: 'enum DataLocation',
-            type: 'uint8',
+            name: "dataLocation",
+            internalType: "enum DataLocation",
+            type: "uint8",
           },
-          { name: 'revoked', internalType: 'bool', type: 'bool' },
-          { name: 'recipients', internalType: 'bytes[]', type: 'bytes[]' },
-          { name: 'data', internalType: 'bytes', type: 'bytes' },
+          { name: "revoked", internalType: "bool", type: "bool" },
+          { name: "recipients", internalType: "bytes[]", type: "bytes[]" },
+          { name: "data", internalType: "bytes", type: "bytes" },
         ],
       },
-      { name: 'indexingKey', internalType: 'string', type: 'string' },
-      { name: 'delegateSignature', internalType: 'bytes', type: 'bytes' },
-      { name: 'extraData', internalType: 'bytes', type: 'bytes' },
+      { name: "indexingKey", internalType: "string", type: "string" },
+      { name: "delegateSignature", internalType: "bytes", type: "bytes" },
+      { name: "extraData", internalType: "bytes", type: "bytes" },
     ],
-    name: 'attest',
-    outputs: [{ name: '', internalType: 'uint64', type: 'uint64' }],
-    stateMutability: 'nonpayable',
+    name: "attest",
+    outputs: [{ name: "", internalType: "uint64", type: "uint64" }],
+    stateMutability: "nonpayable",
   },
   {
-    type: 'function',
+    type: "function",
     inputs: [
       {
-        name: 'attestation',
-        internalType: 'struct Attestation',
-        type: 'tuple',
+        name: "attestation",
+        internalType: "struct Attestation",
+        type: "tuple",
         components: [
-          { name: 'schemaId', internalType: 'uint64', type: 'uint64' },
+          { name: "schemaId", internalType: "uint64", type: "uint64" },
           {
-            name: 'linkedAttestationId',
-            internalType: 'uint64',
-            type: 'uint64',
+            name: "linkedAttestationId",
+            internalType: "uint64",
+            type: "uint64",
           },
-          { name: 'attestTimestamp', internalType: 'uint64', type: 'uint64' },
-          { name: 'revokeTimestamp', internalType: 'uint64', type: 'uint64' },
-          { name: 'attester', internalType: 'address', type: 'address' },
-          { name: 'validUntil', internalType: 'uint64', type: 'uint64' },
+          { name: "attestTimestamp", internalType: "uint64", type: "uint64" },
+          { name: "revokeTimestamp", internalType: "uint64", type: "uint64" },
+          { name: "attester", internalType: "address", type: "address" },
+          { name: "validUntil", internalType: "uint64", type: "uint64" },
           {
-            name: 'dataLocation',
-            internalType: 'enum DataLocation',
-            type: 'uint8',
+            name: "dataLocation",
+            internalType: "enum DataLocation",
+            type: "uint8",
           },
-          { name: 'revoked', internalType: 'bool', type: 'bool' },
-          { name: 'recipients', internalType: 'bytes[]', type: 'bytes[]' },
-          { name: 'data', internalType: 'bytes', type: 'bytes' },
+          { name: "revoked", internalType: "bool", type: "bool" },
+          { name: "recipients", internalType: "bytes[]", type: "bytes[]" },
+          { name: "data", internalType: "bytes", type: "bytes" },
         ],
       },
-      { name: 'resolverFeesETH', internalType: 'uint256', type: 'uint256' },
-      { name: 'indexingKey', internalType: 'string', type: 'string' },
-      { name: 'delegateSignature', internalType: 'bytes', type: 'bytes' },
-      { name: 'extraData', internalType: 'bytes', type: 'bytes' },
+      { name: "resolverFeesETH", internalType: "uint256", type: "uint256" },
+      { name: "indexingKey", internalType: "string", type: "string" },
+      { name: "delegateSignature", internalType: "bytes", type: "bytes" },
+      { name: "extraData", internalType: "bytes", type: "bytes" },
     ],
-    name: 'attest',
-    outputs: [{ name: '', internalType: 'uint64', type: 'uint64' }],
-    stateMutability: 'payable',
+    name: "attest",
+    outputs: [{ name: "", internalType: "uint64", type: "uint64" }],
+    stateMutability: "payable",
   },
   {
-    type: 'function',
+    type: "function",
     inputs: [
       {
-        name: 'attestations',
-        internalType: 'struct Attestation[]',
-        type: 'tuple[]',
+        name: "attestations",
+        internalType: "struct Attestation[]",
+        type: "tuple[]",
         components: [
-          { name: 'schemaId', internalType: 'uint64', type: 'uint64' },
+          { name: "schemaId", internalType: "uint64", type: "uint64" },
           {
-            name: 'linkedAttestationId',
-            internalType: 'uint64',
-            type: 'uint64',
+            name: "linkedAttestationId",
+            internalType: "uint64",
+            type: "uint64",
           },
-          { name: 'attestTimestamp', internalType: 'uint64', type: 'uint64' },
-          { name: 'revokeTimestamp', internalType: 'uint64', type: 'uint64' },
-          { name: 'attester', internalType: 'address', type: 'address' },
-          { name: 'validUntil', internalType: 'uint64', type: 'uint64' },
+          { name: "attestTimestamp", internalType: "uint64", type: "uint64" },
+          { name: "revokeTimestamp", internalType: "uint64", type: "uint64" },
+          { name: "attester", internalType: "address", type: "address" },
+          { name: "validUntil", internalType: "uint64", type: "uint64" },
           {
-            name: 'dataLocation',
-            internalType: 'enum DataLocation',
-            type: 'uint8',
+            name: "dataLocation",
+            internalType: "enum DataLocation",
+            type: "uint8",
           },
-          { name: 'revoked', internalType: 'bool', type: 'bool' },
-          { name: 'recipients', internalType: 'bytes[]', type: 'bytes[]' },
-          { name: 'data', internalType: 'bytes', type: 'bytes' },
+          { name: "revoked", internalType: "bool", type: "bool" },
+          { name: "recipients", internalType: "bytes[]", type: "bytes[]" },
+          { name: "data", internalType: "bytes", type: "bytes" },
         ],
       },
-      { name: 'resolverFeesETH', internalType: 'uint256[]', type: 'uint256[]' },
-      { name: 'indexingKeys', internalType: 'string[]', type: 'string[]' },
-      { name: 'delegateSignature', internalType: 'bytes', type: 'bytes' },
-      { name: 'extraData', internalType: 'bytes', type: 'bytes' },
+      { name: "resolverFeesETH", internalType: "uint256[]", type: "uint256[]" },
+      { name: "indexingKeys", internalType: "string[]", type: "string[]" },
+      { name: "delegateSignature", internalType: "bytes", type: "bytes" },
+      { name: "extraData", internalType: "bytes", type: "bytes" },
     ],
-    name: 'attestBatch',
+    name: "attestBatch",
     outputs: [
-      { name: 'attestationIds', internalType: 'uint64[]', type: 'uint64[]' },
+      { name: "attestationIds", internalType: "uint64[]", type: "uint64[]" },
     ],
-    stateMutability: 'payable',
+    stateMutability: "payable",
   },
   {
-    type: 'function',
+    type: "function",
     inputs: [
       {
-        name: 'attestations',
-        internalType: 'struct Attestation[]',
-        type: 'tuple[]',
+        name: "attestations",
+        internalType: "struct Attestation[]",
+        type: "tuple[]",
         components: [
-          { name: 'schemaId', internalType: 'uint64', type: 'uint64' },
+          { name: "schemaId", internalType: "uint64", type: "uint64" },
           {
-            name: 'linkedAttestationId',
-            internalType: 'uint64',
-            type: 'uint64',
+            name: "linkedAttestationId",
+            internalType: "uint64",
+            type: "uint64",
           },
-          { name: 'attestTimestamp', internalType: 'uint64', type: 'uint64' },
-          { name: 'revokeTimestamp', internalType: 'uint64', type: 'uint64' },
-          { name: 'attester', internalType: 'address', type: 'address' },
-          { name: 'validUntil', internalType: 'uint64', type: 'uint64' },
+          { name: "attestTimestamp", internalType: "uint64", type: "uint64" },
+          { name: "revokeTimestamp", internalType: "uint64", type: "uint64" },
+          { name: "attester", internalType: "address", type: "address" },
+          { name: "validUntil", internalType: "uint64", type: "uint64" },
           {
-            name: 'dataLocation',
-            internalType: 'enum DataLocation',
-            type: 'uint8',
+            name: "dataLocation",
+            internalType: "enum DataLocation",
+            type: "uint8",
           },
-          { name: 'revoked', internalType: 'bool', type: 'bool' },
-          { name: 'recipients', internalType: 'bytes[]', type: 'bytes[]' },
-          { name: 'data', internalType: 'bytes', type: 'bytes' },
+          { name: "revoked", internalType: "bool", type: "bool" },
+          { name: "recipients", internalType: "bytes[]", type: "bytes[]" },
+          { name: "data", internalType: "bytes", type: "bytes" },
         ],
       },
       {
-        name: 'resolverFeesERC20Tokens',
-        internalType: 'contract IERC20[]',
-        type: 'address[]',
+        name: "resolverFeesERC20Tokens",
+        internalType: "contract IERC20[]",
+        type: "address[]",
       },
       {
-        name: 'resolverFeesERC20Amount',
-        internalType: 'uint256[]',
-        type: 'uint256[]',
+        name: "resolverFeesERC20Amount",
+        internalType: "uint256[]",
+        type: "uint256[]",
       },
-      { name: 'indexingKeys', internalType: 'string[]', type: 'string[]' },
-      { name: 'delegateSignature', internalType: 'bytes', type: 'bytes' },
-      { name: 'extraData', internalType: 'bytes', type: 'bytes' },
+      { name: "indexingKeys", internalType: "string[]", type: "string[]" },
+      { name: "delegateSignature", internalType: "bytes", type: "bytes" },
+      { name: "extraData", internalType: "bytes", type: "bytes" },
     ],
-    name: 'attestBatch',
+    name: "attestBatch",
     outputs: [
-      { name: 'attestationIds', internalType: 'uint64[]', type: 'uint64[]' },
+      { name: "attestationIds", internalType: "uint64[]", type: "uint64[]" },
     ],
-    stateMutability: 'nonpayable',
+    stateMutability: "nonpayable",
   },
   {
-    type: 'function',
+    type: "function",
     inputs: [
       {
-        name: 'attestations',
-        internalType: 'struct Attestation[]',
-        type: 'tuple[]',
+        name: "attestations",
+        internalType: "struct Attestation[]",
+        type: "tuple[]",
         components: [
-          { name: 'schemaId', internalType: 'uint64', type: 'uint64' },
+          { name: "schemaId", internalType: "uint64", type: "uint64" },
           {
-            name: 'linkedAttestationId',
-            internalType: 'uint64',
-            type: 'uint64',
+            name: "linkedAttestationId",
+            internalType: "uint64",
+            type: "uint64",
           },
-          { name: 'attestTimestamp', internalType: 'uint64', type: 'uint64' },
-          { name: 'revokeTimestamp', internalType: 'uint64', type: 'uint64' },
-          { name: 'attester', internalType: 'address', type: 'address' },
-          { name: 'validUntil', internalType: 'uint64', type: 'uint64' },
+          { name: "attestTimestamp", internalType: "uint64", type: "uint64" },
+          { name: "revokeTimestamp", internalType: "uint64", type: "uint64" },
+          { name: "attester", internalType: "address", type: "address" },
+          { name: "validUntil", internalType: "uint64", type: "uint64" },
           {
-            name: 'dataLocation',
-            internalType: 'enum DataLocation',
-            type: 'uint8',
+            name: "dataLocation",
+            internalType: "enum DataLocation",
+            type: "uint8",
           },
-          { name: 'revoked', internalType: 'bool', type: 'bool' },
-          { name: 'recipients', internalType: 'bytes[]', type: 'bytes[]' },
-          { name: 'data', internalType: 'bytes', type: 'bytes' },
+          { name: "revoked", internalType: "bool", type: "bool" },
+          { name: "recipients", internalType: "bytes[]", type: "bytes[]" },
+          { name: "data", internalType: "bytes", type: "bytes" },
         ],
       },
-      { name: 'indexingKeys', internalType: 'string[]', type: 'string[]' },
-      { name: 'delegateSignature', internalType: 'bytes', type: 'bytes' },
-      { name: 'extraData', internalType: 'bytes', type: 'bytes' },
+      { name: "indexingKeys", internalType: "string[]", type: "string[]" },
+      { name: "delegateSignature", internalType: "bytes", type: "bytes" },
+      { name: "extraData", internalType: "bytes", type: "bytes" },
     ],
-    name: 'attestBatch',
+    name: "attestBatch",
     outputs: [
-      { name: 'attestationIds', internalType: 'uint64[]', type: 'uint64[]' },
+      { name: "attestationIds", internalType: "uint64[]", type: "uint64[]" },
     ],
-    stateMutability: 'nonpayable',
+    stateMutability: "nonpayable",
   },
   {
-    type: 'function',
+    type: "function",
     inputs: [
-      { name: 'offchainAttestationId', internalType: 'string', type: 'string' },
-      { name: 'delegateAttester', internalType: 'address', type: 'address' },
-      { name: 'delegateSignature', internalType: 'bytes', type: 'bytes' },
+      { name: "offchainAttestationId", internalType: "string", type: "string" },
+      { name: "delegateAttester", internalType: "address", type: "address" },
+      { name: "delegateSignature", internalType: "bytes", type: "bytes" },
     ],
-    name: 'attestOffchain',
+    name: "attestOffchain",
     outputs: [],
-    stateMutability: 'nonpayable',
+    stateMutability: "nonpayable",
   },
   {
-    type: 'function',
+    type: "function",
     inputs: [
-      { name: 'attestationIds', internalType: 'string[]', type: 'string[]' },
-      { name: 'delegateAttester', internalType: 'address', type: 'address' },
-      { name: 'delegateSignature', internalType: 'bytes', type: 'bytes' },
+      { name: "attestationIds", internalType: "string[]", type: "string[]" },
+      { name: "delegateAttester", internalType: "address", type: "address" },
+      { name: "delegateSignature", internalType: "bytes", type: "bytes" },
     ],
-    name: 'attestOffchainBatch',
+    name: "attestOffchainBatch",
     outputs: [],
-    stateMutability: 'nonpayable',
+    stateMutability: "nonpayable",
   },
   {
-    type: 'function',
+    type: "function",
     inputs: [],
-    name: 'attestationCounter',
-    outputs: [{ name: '', internalType: 'uint64', type: 'uint64' }],
-    stateMutability: 'view',
+    name: "attestationCounter",
+    outputs: [{ name: "", internalType: "uint64", type: "uint64" }],
+    stateMutability: "view",
   },
   {
-    type: 'function',
-    inputs: [{ name: 'attestationId', internalType: 'uint64', type: 'uint64' }],
-    name: 'getAttestation',
-    outputs: [
-      {
-        name: '',
-        internalType: 'struct Attestation',
-        type: 'tuple',
-        components: [
-          { name: 'schemaId', internalType: 'uint64', type: 'uint64' },
-          {
-            name: 'linkedAttestationId',
-            internalType: 'uint64',
-            type: 'uint64',
-          },
-          { name: 'attestTimestamp', internalType: 'uint64', type: 'uint64' },
-          { name: 'revokeTimestamp', internalType: 'uint64', type: 'uint64' },
-          { name: 'attester', internalType: 'address', type: 'address' },
-          { name: 'validUntil', internalType: 'uint64', type: 'uint64' },
-          {
-            name: 'dataLocation',
-            internalType: 'enum DataLocation',
-            type: 'uint8',
-          },
-          { name: 'revoked', internalType: 'bool', type: 'bool' },
-          { name: 'recipients', internalType: 'bytes[]', type: 'bytes[]' },
-          { name: 'data', internalType: 'bytes', type: 'bytes' },
-        ],
-      },
-    ],
-    stateMutability: 'view',
-  },
-  {
-    type: 'function',
-    inputs: [
-      {
-        name: 'attestations',
-        internalType: 'struct Attestation[]',
-        type: 'tuple[]',
-        components: [
-          { name: 'schemaId', internalType: 'uint64', type: 'uint64' },
-          {
-            name: 'linkedAttestationId',
-            internalType: 'uint64',
-            type: 'uint64',
-          },
-          { name: 'attestTimestamp', internalType: 'uint64', type: 'uint64' },
-          { name: 'revokeTimestamp', internalType: 'uint64', type: 'uint64' },
-          { name: 'attester', internalType: 'address', type: 'address' },
-          { name: 'validUntil', internalType: 'uint64', type: 'uint64' },
-          {
-            name: 'dataLocation',
-            internalType: 'enum DataLocation',
-            type: 'uint8',
-          },
-          { name: 'revoked', internalType: 'bool', type: 'bool' },
-          { name: 'recipients', internalType: 'bytes[]', type: 'bytes[]' },
-          { name: 'data', internalType: 'bytes', type: 'bytes' },
-        ],
-      },
-    ],
-    name: 'getDelegatedAttestBatchHash',
-    outputs: [{ name: '', internalType: 'bytes32', type: 'bytes32' }],
-    stateMutability: 'pure',
-  },
-  {
-    type: 'function',
-    inputs: [
-      {
-        name: 'attestation',
-        internalType: 'struct Attestation',
-        type: 'tuple',
-        components: [
-          { name: 'schemaId', internalType: 'uint64', type: 'uint64' },
-          {
-            name: 'linkedAttestationId',
-            internalType: 'uint64',
-            type: 'uint64',
-          },
-          { name: 'attestTimestamp', internalType: 'uint64', type: 'uint64' },
-          { name: 'revokeTimestamp', internalType: 'uint64', type: 'uint64' },
-          { name: 'attester', internalType: 'address', type: 'address' },
-          { name: 'validUntil', internalType: 'uint64', type: 'uint64' },
-          {
-            name: 'dataLocation',
-            internalType: 'enum DataLocation',
-            type: 'uint8',
-          },
-          { name: 'revoked', internalType: 'bool', type: 'bool' },
-          { name: 'recipients', internalType: 'bytes[]', type: 'bytes[]' },
-          { name: 'data', internalType: 'bytes', type: 'bytes' },
-        ],
-      },
-    ],
-    name: 'getDelegatedAttestHash',
-    outputs: [{ name: '', internalType: 'bytes32', type: 'bytes32' }],
-    stateMutability: 'pure',
-  },
-  {
-    type: 'function',
-    inputs: [
-      {
-        name: 'offchainAttestationIds',
-        internalType: 'string[]',
-        type: 'string[]',
-      },
-    ],
-    name: 'getDelegatedOffchainAttestBatchHash',
-    outputs: [{ name: '', internalType: 'bytes32', type: 'bytes32' }],
-    stateMutability: 'pure',
-  },
-  {
-    type: 'function',
-    inputs: [
-      { name: 'offchainAttestationId', internalType: 'string', type: 'string' },
-    ],
-    name: 'getDelegatedOffchainAttestHash',
-    outputs: [{ name: '', internalType: 'bytes32', type: 'bytes32' }],
-    stateMutability: 'pure',
-  },
-  {
-    type: 'function',
-    inputs: [
-      {
-        name: 'offchainAttestationIds',
-        internalType: 'string[]',
-        type: 'string[]',
-      },
-      { name: 'reasons', internalType: 'string[]', type: 'string[]' },
-    ],
-    name: 'getDelegatedOffchainRevokeBatchHash',
-    outputs: [{ name: '', internalType: 'bytes32', type: 'bytes32' }],
-    stateMutability: 'pure',
-  },
-  {
-    type: 'function',
-    inputs: [
-      { name: 'offchainAttestationId', internalType: 'string', type: 'string' },
-      { name: 'reason', internalType: 'string', type: 'string' },
-    ],
-    name: 'getDelegatedOffchainRevokeHash',
-    outputs: [{ name: '', internalType: 'bytes32', type: 'bytes32' }],
-    stateMutability: 'pure',
-  },
-  {
-    type: 'function',
-    inputs: [
-      {
-        name: 'schemas',
-        internalType: 'struct Schema[]',
-        type: 'tuple[]',
-        components: [
-          { name: 'registrant', internalType: 'address', type: 'address' },
-          { name: 'revocable', internalType: 'bool', type: 'bool' },
-          {
-            name: 'dataLocation',
-            internalType: 'enum DataLocation',
-            type: 'uint8',
-          },
-          { name: 'maxValidFor', internalType: 'uint64', type: 'uint64' },
-          { name: 'hook', internalType: 'contract ISPHook', type: 'address' },
-          { name: 'timestamp', internalType: 'uint64', type: 'uint64' },
-          { name: 'data', internalType: 'string', type: 'string' },
-        ],
-      },
-    ],
-    name: 'getDelegatedRegisterBatchHash',
-    outputs: [{ name: '', internalType: 'bytes32', type: 'bytes32' }],
-    stateMutability: 'pure',
-  },
-  {
-    type: 'function',
-    inputs: [
-      {
-        name: 'schema',
-        internalType: 'struct Schema',
-        type: 'tuple',
-        components: [
-          { name: 'registrant', internalType: 'address', type: 'address' },
-          { name: 'revocable', internalType: 'bool', type: 'bool' },
-          {
-            name: 'dataLocation',
-            internalType: 'enum DataLocation',
-            type: 'uint8',
-          },
-          { name: 'maxValidFor', internalType: 'uint64', type: 'uint64' },
-          { name: 'hook', internalType: 'contract ISPHook', type: 'address' },
-          { name: 'timestamp', internalType: 'uint64', type: 'uint64' },
-          { name: 'data', internalType: 'string', type: 'string' },
-        ],
-      },
-    ],
-    name: 'getDelegatedRegisterHash',
-    outputs: [{ name: '', internalType: 'bytes32', type: 'bytes32' }],
-    stateMutability: 'pure',
-  },
-  {
-    type: 'function',
-    inputs: [
-      { name: 'attestationIds', internalType: 'uint64[]', type: 'uint64[]' },
-      { name: 'reasons', internalType: 'string[]', type: 'string[]' },
-    ],
-    name: 'getDelegatedRevokeBatchHash',
-    outputs: [{ name: '', internalType: 'bytes32', type: 'bytes32' }],
-    stateMutability: 'pure',
-  },
-  {
-    type: 'function',
-    inputs: [
-      { name: 'attestationId', internalType: 'uint64', type: 'uint64' },
-      { name: 'reason', internalType: 'string', type: 'string' },
-    ],
-    name: 'getDelegatedRevokeHash',
-    outputs: [{ name: '', internalType: 'bytes32', type: 'bytes32' }],
-    stateMutability: 'pure',
-  },
-  {
-    type: 'function',
-    inputs: [
-      { name: 'offchainAttestationId', internalType: 'string', type: 'string' },
-    ],
-    name: 'getOffchainAttestation',
+    type: "function",
+    inputs: [{ name: "attestationId", internalType: "uint64", type: "uint64" }],
+    name: "getAttestation",
     outputs: [
       {
-        name: '',
-        internalType: 'struct OffchainAttestation',
-        type: 'tuple',
+        name: "",
+        internalType: "struct Attestation",
+        type: "tuple",
         components: [
-          { name: 'attester', internalType: 'address', type: 'address' },
-          { name: 'timestamp', internalType: 'uint64', type: 'uint64' },
+          { name: "schemaId", internalType: "uint64", type: "uint64" },
+          {
+            name: "linkedAttestationId",
+            internalType: "uint64",
+            type: "uint64",
+          },
+          { name: "attestTimestamp", internalType: "uint64", type: "uint64" },
+          { name: "revokeTimestamp", internalType: "uint64", type: "uint64" },
+          { name: "attester", internalType: "address", type: "address" },
+          { name: "validUntil", internalType: "uint64", type: "uint64" },
+          {
+            name: "dataLocation",
+            internalType: "enum DataLocation",
+            type: "uint8",
+          },
+          { name: "revoked", internalType: "bool", type: "bool" },
+          { name: "recipients", internalType: "bytes[]", type: "bytes[]" },
+          { name: "data", internalType: "bytes", type: "bytes" },
         ],
       },
     ],
-    stateMutability: 'view',
+    stateMutability: "view",
   },
   {
-    type: 'function',
-    inputs: [{ name: 'schemaId', internalType: 'uint64', type: 'uint64' }],
-    name: 'getSchema',
+    type: "function",
+    inputs: [
+      {
+        name: "attestations",
+        internalType: "struct Attestation[]",
+        type: "tuple[]",
+        components: [
+          { name: "schemaId", internalType: "uint64", type: "uint64" },
+          {
+            name: "linkedAttestationId",
+            internalType: "uint64",
+            type: "uint64",
+          },
+          { name: "attestTimestamp", internalType: "uint64", type: "uint64" },
+          { name: "revokeTimestamp", internalType: "uint64", type: "uint64" },
+          { name: "attester", internalType: "address", type: "address" },
+          { name: "validUntil", internalType: "uint64", type: "uint64" },
+          {
+            name: "dataLocation",
+            internalType: "enum DataLocation",
+            type: "uint8",
+          },
+          { name: "revoked", internalType: "bool", type: "bool" },
+          { name: "recipients", internalType: "bytes[]", type: "bytes[]" },
+          { name: "data", internalType: "bytes", type: "bytes" },
+        ],
+      },
+    ],
+    name: "getDelegatedAttestBatchHash",
+    outputs: [{ name: "", internalType: "bytes32", type: "bytes32" }],
+    stateMutability: "pure",
+  },
+  {
+    type: "function",
+    inputs: [
+      {
+        name: "attestation",
+        internalType: "struct Attestation",
+        type: "tuple",
+        components: [
+          { name: "schemaId", internalType: "uint64", type: "uint64" },
+          {
+            name: "linkedAttestationId",
+            internalType: "uint64",
+            type: "uint64",
+          },
+          { name: "attestTimestamp", internalType: "uint64", type: "uint64" },
+          { name: "revokeTimestamp", internalType: "uint64", type: "uint64" },
+          { name: "attester", internalType: "address", type: "address" },
+          { name: "validUntil", internalType: "uint64", type: "uint64" },
+          {
+            name: "dataLocation",
+            internalType: "enum DataLocation",
+            type: "uint8",
+          },
+          { name: "revoked", internalType: "bool", type: "bool" },
+          { name: "recipients", internalType: "bytes[]", type: "bytes[]" },
+          { name: "data", internalType: "bytes", type: "bytes" },
+        ],
+      },
+    ],
+    name: "getDelegatedAttestHash",
+    outputs: [{ name: "", internalType: "bytes32", type: "bytes32" }],
+    stateMutability: "pure",
+  },
+  {
+    type: "function",
+    inputs: [
+      {
+        name: "offchainAttestationIds",
+        internalType: "string[]",
+        type: "string[]",
+      },
+    ],
+    name: "getDelegatedOffchainAttestBatchHash",
+    outputs: [{ name: "", internalType: "bytes32", type: "bytes32" }],
+    stateMutability: "pure",
+  },
+  {
+    type: "function",
+    inputs: [
+      { name: "offchainAttestationId", internalType: "string", type: "string" },
+    ],
+    name: "getDelegatedOffchainAttestHash",
+    outputs: [{ name: "", internalType: "bytes32", type: "bytes32" }],
+    stateMutability: "pure",
+  },
+  {
+    type: "function",
+    inputs: [
+      {
+        name: "offchainAttestationIds",
+        internalType: "string[]",
+        type: "string[]",
+      },
+      { name: "reasons", internalType: "string[]", type: "string[]" },
+    ],
+    name: "getDelegatedOffchainRevokeBatchHash",
+    outputs: [{ name: "", internalType: "bytes32", type: "bytes32" }],
+    stateMutability: "pure",
+  },
+  {
+    type: "function",
+    inputs: [
+      { name: "offchainAttestationId", internalType: "string", type: "string" },
+      { name: "reason", internalType: "string", type: "string" },
+    ],
+    name: "getDelegatedOffchainRevokeHash",
+    outputs: [{ name: "", internalType: "bytes32", type: "bytes32" }],
+    stateMutability: "pure",
+  },
+  {
+    type: "function",
+    inputs: [
+      {
+        name: "schemas",
+        internalType: "struct Schema[]",
+        type: "tuple[]",
+        components: [
+          { name: "registrant", internalType: "address", type: "address" },
+          { name: "revocable", internalType: "bool", type: "bool" },
+          {
+            name: "dataLocation",
+            internalType: "enum DataLocation",
+            type: "uint8",
+          },
+          { name: "maxValidFor", internalType: "uint64", type: "uint64" },
+          { name: "hook", internalType: "contract ISPHook", type: "address" },
+          { name: "timestamp", internalType: "uint64", type: "uint64" },
+          { name: "data", internalType: "string", type: "string" },
+        ],
+      },
+    ],
+    name: "getDelegatedRegisterBatchHash",
+    outputs: [{ name: "", internalType: "bytes32", type: "bytes32" }],
+    stateMutability: "pure",
+  },
+  {
+    type: "function",
+    inputs: [
+      {
+        name: "schema",
+        internalType: "struct Schema",
+        type: "tuple",
+        components: [
+          { name: "registrant", internalType: "address", type: "address" },
+          { name: "revocable", internalType: "bool", type: "bool" },
+          {
+            name: "dataLocation",
+            internalType: "enum DataLocation",
+            type: "uint8",
+          },
+          { name: "maxValidFor", internalType: "uint64", type: "uint64" },
+          { name: "hook", internalType: "contract ISPHook", type: "address" },
+          { name: "timestamp", internalType: "uint64", type: "uint64" },
+          { name: "data", internalType: "string", type: "string" },
+        ],
+      },
+    ],
+    name: "getDelegatedRegisterHash",
+    outputs: [{ name: "", internalType: "bytes32", type: "bytes32" }],
+    stateMutability: "pure",
+  },
+  {
+    type: "function",
+    inputs: [
+      { name: "attestationIds", internalType: "uint64[]", type: "uint64[]" },
+      { name: "reasons", internalType: "string[]", type: "string[]" },
+    ],
+    name: "getDelegatedRevokeBatchHash",
+    outputs: [{ name: "", internalType: "bytes32", type: "bytes32" }],
+    stateMutability: "pure",
+  },
+  {
+    type: "function",
+    inputs: [
+      { name: "attestationId", internalType: "uint64", type: "uint64" },
+      { name: "reason", internalType: "string", type: "string" },
+    ],
+    name: "getDelegatedRevokeHash",
+    outputs: [{ name: "", internalType: "bytes32", type: "bytes32" }],
+    stateMutability: "pure",
+  },
+  {
+    type: "function",
+    inputs: [
+      { name: "offchainAttestationId", internalType: "string", type: "string" },
+    ],
+    name: "getOffchainAttestation",
     outputs: [
       {
-        name: '',
-        internalType: 'struct Schema',
-        type: 'tuple',
+        name: "",
+        internalType: "struct OffchainAttestation",
+        type: "tuple",
         components: [
-          { name: 'registrant', internalType: 'address', type: 'address' },
-          { name: 'revocable', internalType: 'bool', type: 'bool' },
-          {
-            name: 'dataLocation',
-            internalType: 'enum DataLocation',
-            type: 'uint8',
-          },
-          { name: 'maxValidFor', internalType: 'uint64', type: 'uint64' },
-          { name: 'hook', internalType: 'contract ISPHook', type: 'address' },
-          { name: 'timestamp', internalType: 'uint64', type: 'uint64' },
-          { name: 'data', internalType: 'string', type: 'string' },
+          { name: "attester", internalType: "address", type: "address" },
+          { name: "timestamp", internalType: "uint64", type: "uint64" },
         ],
       },
     ],
-    stateMutability: 'view',
+    stateMutability: "view",
   },
   {
-    type: 'function',
-    inputs: [
-      { name: 'schemaCounter_', internalType: 'uint64', type: 'uint64' },
-      { name: 'attestationCounter_', internalType: 'uint64', type: 'uint64' },
-    ],
-    name: 'initialize',
-    outputs: [],
-    stateMutability: 'nonpayable',
-  },
-  {
-    type: 'function',
-    inputs: [],
-    name: 'owner',
-    outputs: [{ name: '', internalType: 'address', type: 'address' }],
-    stateMutability: 'view',
-  },
-  {
-    type: 'function',
-    inputs: [],
-    name: 'proxiableUUID',
-    outputs: [{ name: '', internalType: 'bytes32', type: 'bytes32' }],
-    stateMutability: 'view',
-  },
-  {
-    type: 'function',
-    inputs: [
-      {
-        name: 'schema',
-        internalType: 'struct Schema',
-        type: 'tuple',
-        components: [
-          { name: 'registrant', internalType: 'address', type: 'address' },
-          { name: 'revocable', internalType: 'bool', type: 'bool' },
-          {
-            name: 'dataLocation',
-            internalType: 'enum DataLocation',
-            type: 'uint8',
-          },
-          { name: 'maxValidFor', internalType: 'uint64', type: 'uint64' },
-          { name: 'hook', internalType: 'contract ISPHook', type: 'address' },
-          { name: 'timestamp', internalType: 'uint64', type: 'uint64' },
-          { name: 'data', internalType: 'string', type: 'string' },
-        ],
-      },
-      { name: 'delegateSignature', internalType: 'bytes', type: 'bytes' },
-    ],
-    name: 'register',
-    outputs: [{ name: 'schemaId', internalType: 'uint64', type: 'uint64' }],
-    stateMutability: 'nonpayable',
-  },
-  {
-    type: 'function',
-    inputs: [
-      {
-        name: 'schemas',
-        internalType: 'struct Schema[]',
-        type: 'tuple[]',
-        components: [
-          { name: 'registrant', internalType: 'address', type: 'address' },
-          { name: 'revocable', internalType: 'bool', type: 'bool' },
-          {
-            name: 'dataLocation',
-            internalType: 'enum DataLocation',
-            type: 'uint8',
-          },
-          { name: 'maxValidFor', internalType: 'uint64', type: 'uint64' },
-          { name: 'hook', internalType: 'contract ISPHook', type: 'address' },
-          { name: 'timestamp', internalType: 'uint64', type: 'uint64' },
-          { name: 'data', internalType: 'string', type: 'string' },
-        ],
-      },
-      { name: 'delegateSignature', internalType: 'bytes', type: 'bytes' },
-    ],
-    name: 'registerBatch',
+    type: "function",
+    inputs: [{ name: "schemaId", internalType: "uint64", type: "uint64" }],
+    name: "getSchema",
     outputs: [
-      { name: 'schemaIds', internalType: 'uint64[]', type: 'uint64[]' },
+      {
+        name: "",
+        internalType: "struct Schema",
+        type: "tuple",
+        components: [
+          { name: "registrant", internalType: "address", type: "address" },
+          { name: "revocable", internalType: "bool", type: "bool" },
+          {
+            name: "dataLocation",
+            internalType: "enum DataLocation",
+            type: "uint8",
+          },
+          { name: "maxValidFor", internalType: "uint64", type: "uint64" },
+          { name: "hook", internalType: "contract ISPHook", type: "address" },
+          { name: "timestamp", internalType: "uint64", type: "uint64" },
+          { name: "data", internalType: "string", type: "string" },
+        ],
+      },
     ],
-    stateMutability: 'nonpayable',
+    stateMutability: "view",
   },
   {
-    type: 'function',
+    type: "function",
+    inputs: [
+      { name: "schemaCounter_", internalType: "uint64", type: "uint64" },
+      { name: "attestationCounter_", internalType: "uint64", type: "uint64" },
+    ],
+    name: "initialize",
+    outputs: [],
+    stateMutability: "nonpayable",
+  },
+  {
+    type: "function",
     inputs: [],
-    name: 'renounceOwnership',
-    outputs: [],
-    stateMutability: 'nonpayable',
+    name: "owner",
+    outputs: [{ name: "", internalType: "address", type: "address" }],
+    stateMutability: "view",
   },
   {
-    type: 'function',
-    inputs: [
-      { name: 'attestationId', internalType: 'uint64', type: 'uint64' },
-      { name: 'reason', internalType: 'string', type: 'string' },
-      { name: 'delegateSignature', internalType: 'bytes', type: 'bytes' },
-      { name: 'extraData', internalType: 'bytes', type: 'bytes' },
-    ],
-    name: 'revoke',
-    outputs: [],
-    stateMutability: 'nonpayable',
-  },
-  {
-    type: 'function',
-    inputs: [
-      { name: 'attestationId', internalType: 'uint64', type: 'uint64' },
-      { name: 'reason', internalType: 'string', type: 'string' },
-      {
-        name: 'resolverFeesERC20Token',
-        internalType: 'contract IERC20',
-        type: 'address',
-      },
-      {
-        name: 'resolverFeesERC20Amount',
-        internalType: 'uint256',
-        type: 'uint256',
-      },
-      { name: 'delegateSignature', internalType: 'bytes', type: 'bytes' },
-      { name: 'extraData', internalType: 'bytes', type: 'bytes' },
-    ],
-    name: 'revoke',
-    outputs: [],
-    stateMutability: 'nonpayable',
-  },
-  {
-    type: 'function',
-    inputs: [
-      { name: 'attestationId', internalType: 'uint64', type: 'uint64' },
-      { name: 'reason', internalType: 'string', type: 'string' },
-      { name: 'resolverFeesETH', internalType: 'uint256', type: 'uint256' },
-      { name: 'delegateSignature', internalType: 'bytes', type: 'bytes' },
-      { name: 'extraData', internalType: 'bytes', type: 'bytes' },
-    ],
-    name: 'revoke',
-    outputs: [],
-    stateMutability: 'payable',
-  },
-  {
-    type: 'function',
-    inputs: [
-      { name: 'attestationIds', internalType: 'uint64[]', type: 'uint64[]' },
-      { name: 'reasons', internalType: 'string[]', type: 'string[]' },
-      { name: 'delegateSignature', internalType: 'bytes', type: 'bytes' },
-      { name: 'extraData', internalType: 'bytes', type: 'bytes' },
-    ],
-    name: 'revokeBatch',
-    outputs: [],
-    stateMutability: 'nonpayable',
-  },
-  {
-    type: 'function',
-    inputs: [
-      { name: 'attestationIds', internalType: 'uint64[]', type: 'uint64[]' },
-      { name: 'reasons', internalType: 'string[]', type: 'string[]' },
-      { name: 'resolverFeesETH', internalType: 'uint256[]', type: 'uint256[]' },
-      { name: 'delegateSignature', internalType: 'bytes', type: 'bytes' },
-      { name: 'extraData', internalType: 'bytes', type: 'bytes' },
-    ],
-    name: 'revokeBatch',
-    outputs: [],
-    stateMutability: 'payable',
-  },
-  {
-    type: 'function',
-    inputs: [
-      { name: 'attestationIds', internalType: 'uint64[]', type: 'uint64[]' },
-      { name: 'reasons', internalType: 'string[]', type: 'string[]' },
-      {
-        name: 'resolverFeesERC20Tokens',
-        internalType: 'contract IERC20[]',
-        type: 'address[]',
-      },
-      {
-        name: 'resolverFeesERC20Amount',
-        internalType: 'uint256[]',
-        type: 'uint256[]',
-      },
-      { name: 'delegateSignature', internalType: 'bytes', type: 'bytes' },
-      { name: 'extraData', internalType: 'bytes', type: 'bytes' },
-    ],
-    name: 'revokeBatch',
-    outputs: [],
-    stateMutability: 'nonpayable',
-  },
-  {
-    type: 'function',
-    inputs: [
-      { name: 'offchainAttestationId', internalType: 'string', type: 'string' },
-      { name: 'reason', internalType: 'string', type: 'string' },
-      { name: 'delegateSignature', internalType: 'bytes', type: 'bytes' },
-    ],
-    name: 'revokeOffchain',
-    outputs: [],
-    stateMutability: 'nonpayable',
-  },
-  {
-    type: 'function',
-    inputs: [
-      {
-        name: 'offchainAttestationIds',
-        internalType: 'string[]',
-        type: 'string[]',
-      },
-      { name: 'reasons', internalType: 'string[]', type: 'string[]' },
-      { name: 'delegateSignature', internalType: 'bytes', type: 'bytes' },
-    ],
-    name: 'revokeOffchainBatch',
-    outputs: [],
-    stateMutability: 'nonpayable',
-  },
-  {
-    type: 'function',
+    type: "function",
     inputs: [],
-    name: 'schemaCounter',
-    outputs: [{ name: '', internalType: 'uint64', type: 'uint64' }],
-    stateMutability: 'view',
+    name: "proxiableUUID",
+    outputs: [{ name: "", internalType: "bytes32", type: "bytes32" }],
+    stateMutability: "view",
   },
   {
-    type: 'function',
-    inputs: [{ name: 'hook', internalType: 'address', type: 'address' }],
-    name: 'setGlobalHook',
-    outputs: [],
-    stateMutability: 'nonpayable',
-  },
-  {
-    type: 'function',
-    inputs: [{ name: 'paused', internalType: 'bool', type: 'bool' }],
-    name: 'setPause',
-    outputs: [],
-    stateMutability: 'nonpayable',
-  },
-  {
-    type: 'function',
-    inputs: [{ name: 'newOwner', internalType: 'address', type: 'address' }],
-    name: 'transferOwnership',
-    outputs: [],
-    stateMutability: 'nonpayable',
-  },
-  {
-    type: 'function',
+    type: "function",
     inputs: [
-      { name: 'newImplementation', internalType: 'address', type: 'address' },
-      { name: 'data', internalType: 'bytes', type: 'bytes' },
+      {
+        name: "schema",
+        internalType: "struct Schema",
+        type: "tuple",
+        components: [
+          { name: "registrant", internalType: "address", type: "address" },
+          { name: "revocable", internalType: "bool", type: "bool" },
+          {
+            name: "dataLocation",
+            internalType: "enum DataLocation",
+            type: "uint8",
+          },
+          { name: "maxValidFor", internalType: "uint64", type: "uint64" },
+          { name: "hook", internalType: "contract ISPHook", type: "address" },
+          { name: "timestamp", internalType: "uint64", type: "uint64" },
+          { name: "data", internalType: "string", type: "string" },
+        ],
+      },
+      { name: "delegateSignature", internalType: "bytes", type: "bytes" },
     ],
-    name: 'upgradeToAndCall',
-    outputs: [],
-    stateMutability: 'payable',
+    name: "register",
+    outputs: [{ name: "schemaId", internalType: "uint64", type: "uint64" }],
+    stateMutability: "nonpayable",
   },
   {
-    type: 'function',
-    inputs: [],
-    name: 'version',
-    outputs: [{ name: '', internalType: 'string', type: 'string' }],
-    stateMutability: 'pure',
+    type: "function",
+    inputs: [
+      {
+        name: "schemas",
+        internalType: "struct Schema[]",
+        type: "tuple[]",
+        components: [
+          { name: "registrant", internalType: "address", type: "address" },
+          { name: "revocable", internalType: "bool", type: "bool" },
+          {
+            name: "dataLocation",
+            internalType: "enum DataLocation",
+            type: "uint8",
+          },
+          { name: "maxValidFor", internalType: "uint64", type: "uint64" },
+          { name: "hook", internalType: "contract ISPHook", type: "address" },
+          { name: "timestamp", internalType: "uint64", type: "uint64" },
+          { name: "data", internalType: "string", type: "string" },
+        ],
+      },
+      { name: "delegateSignature", internalType: "bytes", type: "bytes" },
+    ],
+    name: "registerBatch",
+    outputs: [
+      { name: "schemaIds", internalType: "uint64[]", type: "uint64[]" },
+    ],
+    stateMutability: "nonpayable",
   },
-] as const
+  {
+    type: "function",
+    inputs: [],
+    name: "renounceOwnership",
+    outputs: [],
+    stateMutability: "nonpayable",
+  },
+  {
+    type: "function",
+    inputs: [
+      { name: "attestationId", internalType: "uint64", type: "uint64" },
+      { name: "reason", internalType: "string", type: "string" },
+      { name: "delegateSignature", internalType: "bytes", type: "bytes" },
+      { name: "extraData", internalType: "bytes", type: "bytes" },
+    ],
+    name: "revoke",
+    outputs: [],
+    stateMutability: "nonpayable",
+  },
+  {
+    type: "function",
+    inputs: [
+      { name: "attestationId", internalType: "uint64", type: "uint64" },
+      { name: "reason", internalType: "string", type: "string" },
+      {
+        name: "resolverFeesERC20Token",
+        internalType: "contract IERC20",
+        type: "address",
+      },
+      {
+        name: "resolverFeesERC20Amount",
+        internalType: "uint256",
+        type: "uint256",
+      },
+      { name: "delegateSignature", internalType: "bytes", type: "bytes" },
+      { name: "extraData", internalType: "bytes", type: "bytes" },
+    ],
+    name: "revoke",
+    outputs: [],
+    stateMutability: "nonpayable",
+  },
+  {
+    type: "function",
+    inputs: [
+      { name: "attestationId", internalType: "uint64", type: "uint64" },
+      { name: "reason", internalType: "string", type: "string" },
+      { name: "resolverFeesETH", internalType: "uint256", type: "uint256" },
+      { name: "delegateSignature", internalType: "bytes", type: "bytes" },
+      { name: "extraData", internalType: "bytes", type: "bytes" },
+    ],
+    name: "revoke",
+    outputs: [],
+    stateMutability: "payable",
+  },
+  {
+    type: "function",
+    inputs: [
+      { name: "attestationIds", internalType: "uint64[]", type: "uint64[]" },
+      { name: "reasons", internalType: "string[]", type: "string[]" },
+      { name: "delegateSignature", internalType: "bytes", type: "bytes" },
+      { name: "extraData", internalType: "bytes", type: "bytes" },
+    ],
+    name: "revokeBatch",
+    outputs: [],
+    stateMutability: "nonpayable",
+  },
+  {
+    type: "function",
+    inputs: [
+      { name: "attestationIds", internalType: "uint64[]", type: "uint64[]" },
+      { name: "reasons", internalType: "string[]", type: "string[]" },
+      { name: "resolverFeesETH", internalType: "uint256[]", type: "uint256[]" },
+      { name: "delegateSignature", internalType: "bytes", type: "bytes" },
+      { name: "extraData", internalType: "bytes", type: "bytes" },
+    ],
+    name: "revokeBatch",
+    outputs: [],
+    stateMutability: "payable",
+  },
+  {
+    type: "function",
+    inputs: [
+      { name: "attestationIds", internalType: "uint64[]", type: "uint64[]" },
+      { name: "reasons", internalType: "string[]", type: "string[]" },
+      {
+        name: "resolverFeesERC20Tokens",
+        internalType: "contract IERC20[]",
+        type: "address[]",
+      },
+      {
+        name: "resolverFeesERC20Amount",
+        internalType: "uint256[]",
+        type: "uint256[]",
+      },
+      { name: "delegateSignature", internalType: "bytes", type: "bytes" },
+      { name: "extraData", internalType: "bytes", type: "bytes" },
+    ],
+    name: "revokeBatch",
+    outputs: [],
+    stateMutability: "nonpayable",
+  },
+  {
+    type: "function",
+    inputs: [
+      { name: "offchainAttestationId", internalType: "string", type: "string" },
+      { name: "reason", internalType: "string", type: "string" },
+      { name: "delegateSignature", internalType: "bytes", type: "bytes" },
+    ],
+    name: "revokeOffchain",
+    outputs: [],
+    stateMutability: "nonpayable",
+  },
+  {
+    type: "function",
+    inputs: [
+      {
+        name: "offchainAttestationIds",
+        internalType: "string[]",
+        type: "string[]",
+      },
+      { name: "reasons", internalType: "string[]", type: "string[]" },
+      { name: "delegateSignature", internalType: "bytes", type: "bytes" },
+    ],
+    name: "revokeOffchainBatch",
+    outputs: [],
+    stateMutability: "nonpayable",
+  },
+  {
+    type: "function",
+    inputs: [],
+    name: "schemaCounter",
+    outputs: [{ name: "", internalType: "uint64", type: "uint64" }],
+    stateMutability: "view",
+  },
+  {
+    type: "function",
+    inputs: [{ name: "hook", internalType: "address", type: "address" }],
+    name: "setGlobalHook",
+    outputs: [],
+    stateMutability: "nonpayable",
+  },
+  {
+    type: "function",
+    inputs: [{ name: "paused", internalType: "bool", type: "bool" }],
+    name: "setPause",
+    outputs: [],
+    stateMutability: "nonpayable",
+  },
+  {
+    type: "function",
+    inputs: [{ name: "newOwner", internalType: "address", type: "address" }],
+    name: "transferOwnership",
+    outputs: [],
+    stateMutability: "nonpayable",
+  },
+  {
+    type: "function",
+    inputs: [
+      { name: "newImplementation", internalType: "address", type: "address" },
+      { name: "data", internalType: "bytes", type: "bytes" },
+    ],
+    name: "upgradeToAndCall",
+    outputs: [],
+    stateMutability: "payable",
+  },
+  {
+    type: "function",
+    inputs: [],
+    name: "version",
+    outputs: [{ name: "", internalType: "string", type: "string" }],
+    stateMutability: "pure",
+  },
+] as const;
 
 export const signProtocolAddress =
-  '0x4e4af2a21ebf62850fD99Eb6253E1eFBb56098cD' as const
+  "0x4e4af2a21ebf62850fD99Eb6253E1eFBb56098cD" as const;
 
 export const signProtocolConfig = {
   address: signProtocolAddress,
   abi: signProtocolAbi,
-} as const
+} as const;
 
 //////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
 // Action
@@ -2093,7 +2093,7 @@ export const signProtocolConfig = {
 export const readFoodiversePoints = /*#__PURE__*/ createReadContract({
   abi: foodiversePointsAbi,
   address: foodiversePointsAddress,
-})
+});
 
 /**
  * Wraps __{@link readContract}__ with `abi` set to __{@link foodiversePointsAbi}__ and `functionName` set to `"allowance"`
@@ -2107,8 +2107,8 @@ export const readFoodiversePoints = /*#__PURE__*/ createReadContract({
 export const readFoodiversePointsAllowance = /*#__PURE__*/ createReadContract({
   abi: foodiversePointsAbi,
   address: foodiversePointsAddress,
-  functionName: 'allowance',
-})
+  functionName: "allowance",
+});
 
 /**
  * Wraps __{@link readContract}__ with `abi` set to __{@link foodiversePointsAbi}__ and `functionName` set to `"balanceOf"`
@@ -2122,8 +2122,8 @@ export const readFoodiversePointsAllowance = /*#__PURE__*/ createReadContract({
 export const readFoodiversePointsBalanceOf = /*#__PURE__*/ createReadContract({
   abi: foodiversePointsAbi,
   address: foodiversePointsAddress,
-  functionName: 'balanceOf',
-})
+  functionName: "balanceOf",
+});
 
 /**
  * Wraps __{@link readContract}__ with `abi` set to __{@link foodiversePointsAbi}__ and `functionName` set to `"decimals"`
@@ -2137,8 +2137,8 @@ export const readFoodiversePointsBalanceOf = /*#__PURE__*/ createReadContract({
 export const readFoodiversePointsDecimals = /*#__PURE__*/ createReadContract({
   abi: foodiversePointsAbi,
   address: foodiversePointsAddress,
-  functionName: 'decimals',
-})
+  functionName: "decimals",
+});
 
 /**
  * Wraps __{@link readContract}__ with `abi` set to __{@link foodiversePointsAbi}__ and `functionName` set to `"name"`
@@ -2152,8 +2152,8 @@ export const readFoodiversePointsDecimals = /*#__PURE__*/ createReadContract({
 export const readFoodiversePointsName = /*#__PURE__*/ createReadContract({
   abi: foodiversePointsAbi,
   address: foodiversePointsAddress,
-  functionName: 'name',
-})
+  functionName: "name",
+});
 
 /**
  * Wraps __{@link readContract}__ with `abi` set to __{@link foodiversePointsAbi}__ and `functionName` set to `"owner"`
@@ -2167,8 +2167,8 @@ export const readFoodiversePointsName = /*#__PURE__*/ createReadContract({
 export const readFoodiversePointsOwner = /*#__PURE__*/ createReadContract({
   abi: foodiversePointsAbi,
   address: foodiversePointsAddress,
-  functionName: 'owner',
-})
+  functionName: "owner",
+});
 
 /**
  * Wraps __{@link readContract}__ with `abi` set to __{@link foodiversePointsAbi}__ and `functionName` set to `"symbol"`
@@ -2182,8 +2182,8 @@ export const readFoodiversePointsOwner = /*#__PURE__*/ createReadContract({
 export const readFoodiversePointsSymbol = /*#__PURE__*/ createReadContract({
   abi: foodiversePointsAbi,
   address: foodiversePointsAddress,
-  functionName: 'symbol',
-})
+  functionName: "symbol",
+});
 
 /**
  * Wraps __{@link readContract}__ with `abi` set to __{@link foodiversePointsAbi}__ and `functionName` set to `"totalSupply"`
@@ -2198,9 +2198,9 @@ export const readFoodiversePointsTotalSupply = /*#__PURE__*/ createReadContract(
   {
     abi: foodiversePointsAbi,
     address: foodiversePointsAddress,
-    functionName: 'totalSupply',
+    functionName: "totalSupply",
   },
-)
+);
 
 /**
  * Wraps __{@link writeContract}__ with `abi` set to __{@link foodiversePointsAbi}__
@@ -2214,7 +2214,7 @@ export const readFoodiversePointsTotalSupply = /*#__PURE__*/ createReadContract(
 export const writeFoodiversePoints = /*#__PURE__*/ createWriteContract({
   abi: foodiversePointsAbi,
   address: foodiversePointsAddress,
-})
+});
 
 /**
  * Wraps __{@link writeContract}__ with `abi` set to __{@link foodiversePointsAbi}__ and `functionName` set to `"approve"`
@@ -2228,8 +2228,8 @@ export const writeFoodiversePoints = /*#__PURE__*/ createWriteContract({
 export const writeFoodiversePointsApprove = /*#__PURE__*/ createWriteContract({
   abi: foodiversePointsAbi,
   address: foodiversePointsAddress,
-  functionName: 'approve',
-})
+  functionName: "approve",
+});
 
 /**
  * Wraps __{@link writeContract}__ with `abi` set to __{@link foodiversePointsAbi}__ and `functionName` set to `"mint"`
@@ -2243,8 +2243,8 @@ export const writeFoodiversePointsApprove = /*#__PURE__*/ createWriteContract({
 export const writeFoodiversePointsMint = /*#__PURE__*/ createWriteContract({
   abi: foodiversePointsAbi,
   address: foodiversePointsAddress,
-  functionName: 'mint',
-})
+  functionName: "mint",
+});
 
 /**
  * Wraps __{@link writeContract}__ with `abi` set to __{@link foodiversePointsAbi}__ and `functionName` set to `"renounceOwnership"`
@@ -2259,8 +2259,8 @@ export const writeFoodiversePointsRenounceOwnership =
   /*#__PURE__*/ createWriteContract({
     abi: foodiversePointsAbi,
     address: foodiversePointsAddress,
-    functionName: 'renounceOwnership',
-  })
+    functionName: "renounceOwnership",
+  });
 
 /**
  * Wraps __{@link writeContract}__ with `abi` set to __{@link foodiversePointsAbi}__ and `functionName` set to `"transfer"`
@@ -2274,8 +2274,8 @@ export const writeFoodiversePointsRenounceOwnership =
 export const writeFoodiversePointsTransfer = /*#__PURE__*/ createWriteContract({
   abi: foodiversePointsAbi,
   address: foodiversePointsAddress,
-  functionName: 'transfer',
-})
+  functionName: "transfer",
+});
 
 /**
  * Wraps __{@link writeContract}__ with `abi` set to __{@link foodiversePointsAbi}__ and `functionName` set to `"transferFrom"`
@@ -2290,8 +2290,8 @@ export const writeFoodiversePointsTransferFrom =
   /*#__PURE__*/ createWriteContract({
     abi: foodiversePointsAbi,
     address: foodiversePointsAddress,
-    functionName: 'transferFrom',
-  })
+    functionName: "transferFrom",
+  });
 
 /**
  * Wraps __{@link writeContract}__ with `abi` set to __{@link foodiversePointsAbi}__ and `functionName` set to `"transferOwnership"`
@@ -2306,8 +2306,8 @@ export const writeFoodiversePointsTransferOwnership =
   /*#__PURE__*/ createWriteContract({
     abi: foodiversePointsAbi,
     address: foodiversePointsAddress,
-    functionName: 'transferOwnership',
-  })
+    functionName: "transferOwnership",
+  });
 
 /**
  * Wraps __{@link simulateContract}__ with `abi` set to __{@link foodiversePointsAbi}__
@@ -2321,7 +2321,7 @@ export const writeFoodiversePointsTransferOwnership =
 export const simulateFoodiversePoints = /*#__PURE__*/ createSimulateContract({
   abi: foodiversePointsAbi,
   address: foodiversePointsAddress,
-})
+});
 
 /**
  * Wraps __{@link simulateContract}__ with `abi` set to __{@link foodiversePointsAbi}__ and `functionName` set to `"approve"`
@@ -2336,8 +2336,8 @@ export const simulateFoodiversePointsApprove =
   /*#__PURE__*/ createSimulateContract({
     abi: foodiversePointsAbi,
     address: foodiversePointsAddress,
-    functionName: 'approve',
-  })
+    functionName: "approve",
+  });
 
 /**
  * Wraps __{@link simulateContract}__ with `abi` set to __{@link foodiversePointsAbi}__ and `functionName` set to `"mint"`
@@ -2352,8 +2352,8 @@ export const simulateFoodiversePointsMint =
   /*#__PURE__*/ createSimulateContract({
     abi: foodiversePointsAbi,
     address: foodiversePointsAddress,
-    functionName: 'mint',
-  })
+    functionName: "mint",
+  });
 
 /**
  * Wraps __{@link simulateContract}__ with `abi` set to __{@link foodiversePointsAbi}__ and `functionName` set to `"renounceOwnership"`
@@ -2368,8 +2368,8 @@ export const simulateFoodiversePointsRenounceOwnership =
   /*#__PURE__*/ createSimulateContract({
     abi: foodiversePointsAbi,
     address: foodiversePointsAddress,
-    functionName: 'renounceOwnership',
-  })
+    functionName: "renounceOwnership",
+  });
 
 /**
  * Wraps __{@link simulateContract}__ with `abi` set to __{@link foodiversePointsAbi}__ and `functionName` set to `"transfer"`
@@ -2384,8 +2384,8 @@ export const simulateFoodiversePointsTransfer =
   /*#__PURE__*/ createSimulateContract({
     abi: foodiversePointsAbi,
     address: foodiversePointsAddress,
-    functionName: 'transfer',
-  })
+    functionName: "transfer",
+  });
 
 /**
  * Wraps __{@link simulateContract}__ with `abi` set to __{@link foodiversePointsAbi}__ and `functionName` set to `"transferFrom"`
@@ -2400,8 +2400,8 @@ export const simulateFoodiversePointsTransferFrom =
   /*#__PURE__*/ createSimulateContract({
     abi: foodiversePointsAbi,
     address: foodiversePointsAddress,
-    functionName: 'transferFrom',
-  })
+    functionName: "transferFrom",
+  });
 
 /**
  * Wraps __{@link simulateContract}__ with `abi` set to __{@link foodiversePointsAbi}__ and `functionName` set to `"transferOwnership"`
@@ -2416,8 +2416,8 @@ export const simulateFoodiversePointsTransferOwnership =
   /*#__PURE__*/ createSimulateContract({
     abi: foodiversePointsAbi,
     address: foodiversePointsAddress,
-    functionName: 'transferOwnership',
-  })
+    functionName: "transferOwnership",
+  });
 
 /**
  * Wraps __{@link watchContractEvent}__ with `abi` set to __{@link foodiversePointsAbi}__
@@ -2432,7 +2432,7 @@ export const watchFoodiversePointsEvent =
   /*#__PURE__*/ createWatchContractEvent({
     abi: foodiversePointsAbi,
     address: foodiversePointsAddress,
-  })
+  });
 
 /**
  * Wraps __{@link watchContractEvent}__ with `abi` set to __{@link foodiversePointsAbi}__ and `eventName` set to `"Approval"`
@@ -2447,8 +2447,8 @@ export const watchFoodiversePointsApprovalEvent =
   /*#__PURE__*/ createWatchContractEvent({
     abi: foodiversePointsAbi,
     address: foodiversePointsAddress,
-    eventName: 'Approval',
-  })
+    eventName: "Approval",
+  });
 
 /**
  * Wraps __{@link watchContractEvent}__ with `abi` set to __{@link foodiversePointsAbi}__ and `eventName` set to `"OwnershipTransferred"`
@@ -2463,8 +2463,8 @@ export const watchFoodiversePointsOwnershipTransferredEvent =
   /*#__PURE__*/ createWatchContractEvent({
     abi: foodiversePointsAbi,
     address: foodiversePointsAddress,
-    eventName: 'OwnershipTransferred',
-  })
+    eventName: "OwnershipTransferred",
+  });
 
 /**
  * Wraps __{@link watchContractEvent}__ with `abi` set to __{@link foodiversePointsAbi}__ and `eventName` set to `"Transfer"`
@@ -2479,8 +2479,8 @@ export const watchFoodiversePointsTransferEvent =
   /*#__PURE__*/ createWatchContractEvent({
     abi: foodiversePointsAbi,
     address: foodiversePointsAddress,
-    eventName: 'Transfer',
-  })
+    eventName: "Transfer",
+  });
 
 /**
  * Wraps __{@link readContract}__ with `abi` set to __{@link paymentGatewayAbi}__
@@ -2494,7 +2494,7 @@ export const watchFoodiversePointsTransferEvent =
 export const readPaymentGateway = /*#__PURE__*/ createReadContract({
   abi: paymentGatewayAbi,
   address: paymentGatewayAddress,
-})
+});
 
 /**
  * Wraps __{@link readContract}__ with `abi` set to __{@link paymentGatewayAbi}__ and `functionName` set to `"allowance"`
@@ -2508,8 +2508,8 @@ export const readPaymentGateway = /*#__PURE__*/ createReadContract({
 export const readPaymentGatewayAllowance = /*#__PURE__*/ createReadContract({
   abi: paymentGatewayAbi,
   address: paymentGatewayAddress,
-  functionName: 'allowance',
-})
+  functionName: "allowance",
+});
 
 /**
  * Wraps __{@link readContract}__ with `abi` set to __{@link paymentGatewayAbi}__ and `functionName` set to `"balanceOf"`
@@ -2523,8 +2523,8 @@ export const readPaymentGatewayAllowance = /*#__PURE__*/ createReadContract({
 export const readPaymentGatewayBalanceOf = /*#__PURE__*/ createReadContract({
   abi: paymentGatewayAbi,
   address: paymentGatewayAddress,
-  functionName: 'balanceOf',
-})
+  functionName: "balanceOf",
+});
 
 /**
  * Wraps __{@link readContract}__ with `abi` set to __{@link paymentGatewayAbi}__ and `functionName` set to `"decimals"`
@@ -2538,8 +2538,8 @@ export const readPaymentGatewayBalanceOf = /*#__PURE__*/ createReadContract({
 export const readPaymentGatewayDecimals = /*#__PURE__*/ createReadContract({
   abi: paymentGatewayAbi,
   address: paymentGatewayAddress,
-  functionName: 'decimals',
-})
+  functionName: "decimals",
+});
 
 /**
  * Wraps __{@link readContract}__ with `abi` set to __{@link paymentGatewayAbi}__ and `functionName` set to `"name"`
@@ -2553,8 +2553,8 @@ export const readPaymentGatewayDecimals = /*#__PURE__*/ createReadContract({
 export const readPaymentGatewayName = /*#__PURE__*/ createReadContract({
   abi: paymentGatewayAbi,
   address: paymentGatewayAddress,
-  functionName: 'name',
-})
+  functionName: "name",
+});
 
 /**
  * Wraps __{@link readContract}__ with `abi` set to __{@link paymentGatewayAbi}__ and `functionName` set to `"owner"`
@@ -2568,8 +2568,8 @@ export const readPaymentGatewayName = /*#__PURE__*/ createReadContract({
 export const readPaymentGatewayOwner = /*#__PURE__*/ createReadContract({
   abi: paymentGatewayAbi,
   address: paymentGatewayAddress,
-  functionName: 'owner',
-})
+  functionName: "owner",
+});
 
 /**
  * Wraps __{@link readContract}__ with `abi` set to __{@link paymentGatewayAbi}__ and `functionName` set to `"symbol"`
@@ -2583,8 +2583,8 @@ export const readPaymentGatewayOwner = /*#__PURE__*/ createReadContract({
 export const readPaymentGatewaySymbol = /*#__PURE__*/ createReadContract({
   abi: paymentGatewayAbi,
   address: paymentGatewayAddress,
-  functionName: 'symbol',
-})
+  functionName: "symbol",
+});
 
 /**
  * Wraps __{@link readContract}__ with `abi` set to __{@link paymentGatewayAbi}__ and `functionName` set to `"totalSupply"`
@@ -2598,8 +2598,8 @@ export const readPaymentGatewaySymbol = /*#__PURE__*/ createReadContract({
 export const readPaymentGatewayTotalSupply = /*#__PURE__*/ createReadContract({
   abi: paymentGatewayAbi,
   address: paymentGatewayAddress,
-  functionName: 'totalSupply',
-})
+  functionName: "totalSupply",
+});
 
 /**
  * Wraps __{@link writeContract}__ with `abi` set to __{@link paymentGatewayAbi}__
@@ -2613,7 +2613,7 @@ export const readPaymentGatewayTotalSupply = /*#__PURE__*/ createReadContract({
 export const writePaymentGateway = /*#__PURE__*/ createWriteContract({
   abi: paymentGatewayAbi,
   address: paymentGatewayAddress,
-})
+});
 
 /**
  * Wraps __{@link writeContract}__ with `abi` set to __{@link paymentGatewayAbi}__ and `functionName` set to `"approve"`
@@ -2627,8 +2627,8 @@ export const writePaymentGateway = /*#__PURE__*/ createWriteContract({
 export const writePaymentGatewayApprove = /*#__PURE__*/ createWriteContract({
   abi: paymentGatewayAbi,
   address: paymentGatewayAddress,
-  functionName: 'approve',
-})
+  functionName: "approve",
+});
 
 /**
  * Wraps __{@link writeContract}__ with `abi` set to __{@link paymentGatewayAbi}__ and `functionName` set to `"mint"`
@@ -2642,8 +2642,8 @@ export const writePaymentGatewayApprove = /*#__PURE__*/ createWriteContract({
 export const writePaymentGatewayMint = /*#__PURE__*/ createWriteContract({
   abi: paymentGatewayAbi,
   address: paymentGatewayAddress,
-  functionName: 'mint',
-})
+  functionName: "mint",
+});
 
 /**
  * Wraps __{@link writeContract}__ with `abi` set to __{@link paymentGatewayAbi}__ and `functionName` set to `"renounceOwnership"`
@@ -2658,8 +2658,8 @@ export const writePaymentGatewayRenounceOwnership =
   /*#__PURE__*/ createWriteContract({
     abi: paymentGatewayAbi,
     address: paymentGatewayAddress,
-    functionName: 'renounceOwnership',
-  })
+    functionName: "renounceOwnership",
+  });
 
 /**
  * Wraps __{@link writeContract}__ with `abi` set to __{@link paymentGatewayAbi}__ and `functionName` set to `"transfer"`
@@ -2673,8 +2673,8 @@ export const writePaymentGatewayRenounceOwnership =
 export const writePaymentGatewayTransfer = /*#__PURE__*/ createWriteContract({
   abi: paymentGatewayAbi,
   address: paymentGatewayAddress,
-  functionName: 'transfer',
-})
+  functionName: "transfer",
+});
 
 /**
  * Wraps __{@link writeContract}__ with `abi` set to __{@link paymentGatewayAbi}__ and `functionName` set to `"transferFrom"`
@@ -2689,8 +2689,8 @@ export const writePaymentGatewayTransferFrom =
   /*#__PURE__*/ createWriteContract({
     abi: paymentGatewayAbi,
     address: paymentGatewayAddress,
-    functionName: 'transferFrom',
-  })
+    functionName: "transferFrom",
+  });
 
 /**
  * Wraps __{@link writeContract}__ with `abi` set to __{@link paymentGatewayAbi}__ and `functionName` set to `"transferOwnership"`
@@ -2705,8 +2705,8 @@ export const writePaymentGatewayTransferOwnership =
   /*#__PURE__*/ createWriteContract({
     abi: paymentGatewayAbi,
     address: paymentGatewayAddress,
-    functionName: 'transferOwnership',
-  })
+    functionName: "transferOwnership",
+  });
 
 /**
  * Wraps __{@link simulateContract}__ with `abi` set to __{@link paymentGatewayAbi}__
@@ -2720,7 +2720,7 @@ export const writePaymentGatewayTransferOwnership =
 export const simulatePaymentGateway = /*#__PURE__*/ createSimulateContract({
   abi: paymentGatewayAbi,
   address: paymentGatewayAddress,
-})
+});
 
 /**
  * Wraps __{@link simulateContract}__ with `abi` set to __{@link paymentGatewayAbi}__ and `functionName` set to `"approve"`
@@ -2735,8 +2735,8 @@ export const simulatePaymentGatewayApprove =
   /*#__PURE__*/ createSimulateContract({
     abi: paymentGatewayAbi,
     address: paymentGatewayAddress,
-    functionName: 'approve',
-  })
+    functionName: "approve",
+  });
 
 /**
  * Wraps __{@link simulateContract}__ with `abi` set to __{@link paymentGatewayAbi}__ and `functionName` set to `"mint"`
@@ -2750,8 +2750,8 @@ export const simulatePaymentGatewayApprove =
 export const simulatePaymentGatewayMint = /*#__PURE__*/ createSimulateContract({
   abi: paymentGatewayAbi,
   address: paymentGatewayAddress,
-  functionName: 'mint',
-})
+  functionName: "mint",
+});
 
 /**
  * Wraps __{@link simulateContract}__ with `abi` set to __{@link paymentGatewayAbi}__ and `functionName` set to `"renounceOwnership"`
@@ -2766,8 +2766,8 @@ export const simulatePaymentGatewayRenounceOwnership =
   /*#__PURE__*/ createSimulateContract({
     abi: paymentGatewayAbi,
     address: paymentGatewayAddress,
-    functionName: 'renounceOwnership',
-  })
+    functionName: "renounceOwnership",
+  });
 
 /**
  * Wraps __{@link simulateContract}__ with `abi` set to __{@link paymentGatewayAbi}__ and `functionName` set to `"transfer"`
@@ -2782,8 +2782,8 @@ export const simulatePaymentGatewayTransfer =
   /*#__PURE__*/ createSimulateContract({
     abi: paymentGatewayAbi,
     address: paymentGatewayAddress,
-    functionName: 'transfer',
-  })
+    functionName: "transfer",
+  });
 
 /**
  * Wraps __{@link simulateContract}__ with `abi` set to __{@link paymentGatewayAbi}__ and `functionName` set to `"transferFrom"`
@@ -2798,8 +2798,8 @@ export const simulatePaymentGatewayTransferFrom =
   /*#__PURE__*/ createSimulateContract({
     abi: paymentGatewayAbi,
     address: paymentGatewayAddress,
-    functionName: 'transferFrom',
-  })
+    functionName: "transferFrom",
+  });
 
 /**
  * Wraps __{@link simulateContract}__ with `abi` set to __{@link paymentGatewayAbi}__ and `functionName` set to `"transferOwnership"`
@@ -2814,8 +2814,8 @@ export const simulatePaymentGatewayTransferOwnership =
   /*#__PURE__*/ createSimulateContract({
     abi: paymentGatewayAbi,
     address: paymentGatewayAddress,
-    functionName: 'transferOwnership',
-  })
+    functionName: "transferOwnership",
+  });
 
 /**
  * Wraps __{@link watchContractEvent}__ with `abi` set to __{@link paymentGatewayAbi}__
@@ -2829,7 +2829,7 @@ export const simulatePaymentGatewayTransferOwnership =
 export const watchPaymentGatewayEvent = /*#__PURE__*/ createWatchContractEvent({
   abi: paymentGatewayAbi,
   address: paymentGatewayAddress,
-})
+});
 
 /**
  * Wraps __{@link watchContractEvent}__ with `abi` set to __{@link paymentGatewayAbi}__ and `eventName` set to `"Approval"`
@@ -2844,8 +2844,8 @@ export const watchPaymentGatewayApprovalEvent =
   /*#__PURE__*/ createWatchContractEvent({
     abi: paymentGatewayAbi,
     address: paymentGatewayAddress,
-    eventName: 'Approval',
-  })
+    eventName: "Approval",
+  });
 
 /**
  * Wraps __{@link watchContractEvent}__ with `abi` set to __{@link paymentGatewayAbi}__ and `eventName` set to `"OwnershipTransferred"`
@@ -2860,8 +2860,8 @@ export const watchPaymentGatewayOwnershipTransferredEvent =
   /*#__PURE__*/ createWatchContractEvent({
     abi: paymentGatewayAbi,
     address: paymentGatewayAddress,
-    eventName: 'OwnershipTransferred',
-  })
+    eventName: "OwnershipTransferred",
+  });
 
 /**
  * Wraps __{@link watchContractEvent}__ with `abi` set to __{@link paymentGatewayAbi}__ and `eventName` set to `"Transfer"`
@@ -2876,8 +2876,8 @@ export const watchPaymentGatewayTransferEvent =
   /*#__PURE__*/ createWatchContractEvent({
     abi: paymentGatewayAbi,
     address: paymentGatewayAddress,
-    eventName: 'Transfer',
-  })
+    eventName: "Transfer",
+  });
 
 /**
  * Wraps __{@link readContract}__ with `abi` set to __{@link usdcAbi}__
@@ -2891,7 +2891,7 @@ export const watchPaymentGatewayTransferEvent =
 export const readUsdc = /*#__PURE__*/ createReadContract({
   abi: usdcAbi,
   address: usdcAddress,
-})
+});
 
 /**
  * Wraps __{@link readContract}__ with `abi` set to __{@link usdcAbi}__ and `functionName` set to `"allowance"`
@@ -2905,8 +2905,8 @@ export const readUsdc = /*#__PURE__*/ createReadContract({
 export const readUsdcAllowance = /*#__PURE__*/ createReadContract({
   abi: usdcAbi,
   address: usdcAddress,
-  functionName: 'allowance',
-})
+  functionName: "allowance",
+});
 
 /**
  * Wraps __{@link readContract}__ with `abi` set to __{@link usdcAbi}__ and `functionName` set to `"balanceOf"`
@@ -2920,8 +2920,8 @@ export const readUsdcAllowance = /*#__PURE__*/ createReadContract({
 export const readUsdcBalanceOf = /*#__PURE__*/ createReadContract({
   abi: usdcAbi,
   address: usdcAddress,
-  functionName: 'balanceOf',
-})
+  functionName: "balanceOf",
+});
 
 /**
  * Wraps __{@link readContract}__ with `abi` set to __{@link usdcAbi}__ and `functionName` set to `"decimals"`
@@ -2935,8 +2935,8 @@ export const readUsdcBalanceOf = /*#__PURE__*/ createReadContract({
 export const readUsdcDecimals = /*#__PURE__*/ createReadContract({
   abi: usdcAbi,
   address: usdcAddress,
-  functionName: 'decimals',
-})
+  functionName: "decimals",
+});
 
 /**
  * Wraps __{@link readContract}__ with `abi` set to __{@link usdcAbi}__ and `functionName` set to `"name"`
@@ -2950,8 +2950,8 @@ export const readUsdcDecimals = /*#__PURE__*/ createReadContract({
 export const readUsdcName = /*#__PURE__*/ createReadContract({
   abi: usdcAbi,
   address: usdcAddress,
-  functionName: 'name',
-})
+  functionName: "name",
+});
 
 /**
  * Wraps __{@link readContract}__ with `abi` set to __{@link usdcAbi}__ and `functionName` set to `"owner"`
@@ -2965,8 +2965,8 @@ export const readUsdcName = /*#__PURE__*/ createReadContract({
 export const readUsdcOwner = /*#__PURE__*/ createReadContract({
   abi: usdcAbi,
   address: usdcAddress,
-  functionName: 'owner',
-})
+  functionName: "owner",
+});
 
 /**
  * Wraps __{@link readContract}__ with `abi` set to __{@link usdcAbi}__ and `functionName` set to `"symbol"`
@@ -2980,8 +2980,8 @@ export const readUsdcOwner = /*#__PURE__*/ createReadContract({
 export const readUsdcSymbol = /*#__PURE__*/ createReadContract({
   abi: usdcAbi,
   address: usdcAddress,
-  functionName: 'symbol',
-})
+  functionName: "symbol",
+});
 
 /**
  * Wraps __{@link readContract}__ with `abi` set to __{@link usdcAbi}__ and `functionName` set to `"totalSupply"`
@@ -2995,8 +2995,8 @@ export const readUsdcSymbol = /*#__PURE__*/ createReadContract({
 export const readUsdcTotalSupply = /*#__PURE__*/ createReadContract({
   abi: usdcAbi,
   address: usdcAddress,
-  functionName: 'totalSupply',
-})
+  functionName: "totalSupply",
+});
 
 /**
  * Wraps __{@link writeContract}__ with `abi` set to __{@link usdcAbi}__
@@ -3010,7 +3010,7 @@ export const readUsdcTotalSupply = /*#__PURE__*/ createReadContract({
 export const writeUsdc = /*#__PURE__*/ createWriteContract({
   abi: usdcAbi,
   address: usdcAddress,
-})
+});
 
 /**
  * Wraps __{@link writeContract}__ with `abi` set to __{@link usdcAbi}__ and `functionName` set to `"approve"`
@@ -3024,8 +3024,8 @@ export const writeUsdc = /*#__PURE__*/ createWriteContract({
 export const writeUsdcApprove = /*#__PURE__*/ createWriteContract({
   abi: usdcAbi,
   address: usdcAddress,
-  functionName: 'approve',
-})
+  functionName: "approve",
+});
 
 /**
  * Wraps __{@link writeContract}__ with `abi` set to __{@link usdcAbi}__ and `functionName` set to `"mint"`
@@ -3039,8 +3039,8 @@ export const writeUsdcApprove = /*#__PURE__*/ createWriteContract({
 export const writeUsdcMint = /*#__PURE__*/ createWriteContract({
   abi: usdcAbi,
   address: usdcAddress,
-  functionName: 'mint',
-})
+  functionName: "mint",
+});
 
 /**
  * Wraps __{@link writeContract}__ with `abi` set to __{@link usdcAbi}__ and `functionName` set to `"renounceOwnership"`
@@ -3054,8 +3054,8 @@ export const writeUsdcMint = /*#__PURE__*/ createWriteContract({
 export const writeUsdcRenounceOwnership = /*#__PURE__*/ createWriteContract({
   abi: usdcAbi,
   address: usdcAddress,
-  functionName: 'renounceOwnership',
-})
+  functionName: "renounceOwnership",
+});
 
 /**
  * Wraps __{@link writeContract}__ with `abi` set to __{@link usdcAbi}__ and `functionName` set to `"transfer"`
@@ -3069,8 +3069,8 @@ export const writeUsdcRenounceOwnership = /*#__PURE__*/ createWriteContract({
 export const writeUsdcTransfer = /*#__PURE__*/ createWriteContract({
   abi: usdcAbi,
   address: usdcAddress,
-  functionName: 'transfer',
-})
+  functionName: "transfer",
+});
 
 /**
  * Wraps __{@link writeContract}__ with `abi` set to __{@link usdcAbi}__ and `functionName` set to `"transferFrom"`
@@ -3084,8 +3084,8 @@ export const writeUsdcTransfer = /*#__PURE__*/ createWriteContract({
 export const writeUsdcTransferFrom = /*#__PURE__*/ createWriteContract({
   abi: usdcAbi,
   address: usdcAddress,
-  functionName: 'transferFrom',
-})
+  functionName: "transferFrom",
+});
 
 /**
  * Wraps __{@link writeContract}__ with `abi` set to __{@link usdcAbi}__ and `functionName` set to `"transferOwnership"`
@@ -3099,8 +3099,8 @@ export const writeUsdcTransferFrom = /*#__PURE__*/ createWriteContract({
 export const writeUsdcTransferOwnership = /*#__PURE__*/ createWriteContract({
   abi: usdcAbi,
   address: usdcAddress,
-  functionName: 'transferOwnership',
-})
+  functionName: "transferOwnership",
+});
 
 /**
  * Wraps __{@link simulateContract}__ with `abi` set to __{@link usdcAbi}__
@@ -3114,7 +3114,7 @@ export const writeUsdcTransferOwnership = /*#__PURE__*/ createWriteContract({
 export const simulateUsdc = /*#__PURE__*/ createSimulateContract({
   abi: usdcAbi,
   address: usdcAddress,
-})
+});
 
 /**
  * Wraps __{@link simulateContract}__ with `abi` set to __{@link usdcAbi}__ and `functionName` set to `"approve"`
@@ -3128,8 +3128,8 @@ export const simulateUsdc = /*#__PURE__*/ createSimulateContract({
 export const simulateUsdcApprove = /*#__PURE__*/ createSimulateContract({
   abi: usdcAbi,
   address: usdcAddress,
-  functionName: 'approve',
-})
+  functionName: "approve",
+});
 
 /**
  * Wraps __{@link simulateContract}__ with `abi` set to __{@link usdcAbi}__ and `functionName` set to `"mint"`
@@ -3143,8 +3143,8 @@ export const simulateUsdcApprove = /*#__PURE__*/ createSimulateContract({
 export const simulateUsdcMint = /*#__PURE__*/ createSimulateContract({
   abi: usdcAbi,
   address: usdcAddress,
-  functionName: 'mint',
-})
+  functionName: "mint",
+});
 
 /**
  * Wraps __{@link simulateContract}__ with `abi` set to __{@link usdcAbi}__ and `functionName` set to `"renounceOwnership"`
@@ -3159,8 +3159,8 @@ export const simulateUsdcRenounceOwnership =
   /*#__PURE__*/ createSimulateContract({
     abi: usdcAbi,
     address: usdcAddress,
-    functionName: 'renounceOwnership',
-  })
+    functionName: "renounceOwnership",
+  });
 
 /**
  * Wraps __{@link simulateContract}__ with `abi` set to __{@link usdcAbi}__ and `functionName` set to `"transfer"`
@@ -3174,8 +3174,8 @@ export const simulateUsdcRenounceOwnership =
 export const simulateUsdcTransfer = /*#__PURE__*/ createSimulateContract({
   abi: usdcAbi,
   address: usdcAddress,
-  functionName: 'transfer',
-})
+  functionName: "transfer",
+});
 
 /**
  * Wraps __{@link simulateContract}__ with `abi` set to __{@link usdcAbi}__ and `functionName` set to `"transferFrom"`
@@ -3189,8 +3189,8 @@ export const simulateUsdcTransfer = /*#__PURE__*/ createSimulateContract({
 export const simulateUsdcTransferFrom = /*#__PURE__*/ createSimulateContract({
   abi: usdcAbi,
   address: usdcAddress,
-  functionName: 'transferFrom',
-})
+  functionName: "transferFrom",
+});
 
 /**
  * Wraps __{@link simulateContract}__ with `abi` set to __{@link usdcAbi}__ and `functionName` set to `"transferOwnership"`
@@ -3205,8 +3205,8 @@ export const simulateUsdcTransferOwnership =
   /*#__PURE__*/ createSimulateContract({
     abi: usdcAbi,
     address: usdcAddress,
-    functionName: 'transferOwnership',
-  })
+    functionName: "transferOwnership",
+  });
 
 /**
  * Wraps __{@link watchContractEvent}__ with `abi` set to __{@link usdcAbi}__
@@ -3220,7 +3220,7 @@ export const simulateUsdcTransferOwnership =
 export const watchUsdcEvent = /*#__PURE__*/ createWatchContractEvent({
   abi: usdcAbi,
   address: usdcAddress,
-})
+});
 
 /**
  * Wraps __{@link watchContractEvent}__ with `abi` set to __{@link usdcAbi}__ and `eventName` set to `"Approval"`
@@ -3234,8 +3234,8 @@ export const watchUsdcEvent = /*#__PURE__*/ createWatchContractEvent({
 export const watchUsdcApprovalEvent = /*#__PURE__*/ createWatchContractEvent({
   abi: usdcAbi,
   address: usdcAddress,
-  eventName: 'Approval',
-})
+  eventName: "Approval",
+});
 
 /**
  * Wraps __{@link watchContractEvent}__ with `abi` set to __{@link usdcAbi}__ and `eventName` set to `"OwnershipTransferred"`
@@ -3250,8 +3250,8 @@ export const watchUsdcOwnershipTransferredEvent =
   /*#__PURE__*/ createWatchContractEvent({
     abi: usdcAbi,
     address: usdcAddress,
-    eventName: 'OwnershipTransferred',
-  })
+    eventName: "OwnershipTransferred",
+  });
 
 /**
  * Wraps __{@link watchContractEvent}__ with `abi` set to __{@link usdcAbi}__ and `eventName` set to `"Transfer"`
@@ -3265,8 +3265,8 @@ export const watchUsdcOwnershipTransferredEvent =
 export const watchUsdcTransferEvent = /*#__PURE__*/ createWatchContractEvent({
   abi: usdcAbi,
   address: usdcAddress,
-  eventName: 'Transfer',
-})
+  eventName: "Transfer",
+});
 
 /**
  * Wraps __{@link readContract}__ with `abi` set to __{@link foodiRegistrarAbi}__
@@ -3274,7 +3274,7 @@ export const watchUsdcTransferEvent = /*#__PURE__*/ createWatchContractEvent({
 export const readFoodiRegistrar = /*#__PURE__*/ createReadContract({
   abi: foodiRegistrarAbi,
   address: foodiRegistrarAddress,
-})
+});
 
 /**
  * Wraps __{@link readContract}__ with `abi` set to __{@link foodiRegistrarAbi}__ and `functionName` set to `"available"`
@@ -3282,8 +3282,8 @@ export const readFoodiRegistrar = /*#__PURE__*/ createReadContract({
 export const readFoodiRegistrarAvailable = /*#__PURE__*/ createReadContract({
   abi: foodiRegistrarAbi,
   address: foodiRegistrarAddress,
-  functionName: 'available',
-})
+  functionName: "available",
+});
 
 /**
  * Wraps __{@link readContract}__ with `abi` set to __{@link foodiRegistrarAbi}__ and `functionName` set to `"targetRegistry"`
@@ -3292,8 +3292,8 @@ export const readFoodiRegistrarTargetRegistry =
   /*#__PURE__*/ createReadContract({
     abi: foodiRegistrarAbi,
     address: foodiRegistrarAddress,
-    functionName: 'targetRegistry',
-  })
+    functionName: "targetRegistry",
+  });
 
 /**
  * Wraps __{@link writeContract}__ with `abi` set to __{@link foodiRegistrarAbi}__
@@ -3301,7 +3301,7 @@ export const readFoodiRegistrarTargetRegistry =
 export const writeFoodiRegistrar = /*#__PURE__*/ createWriteContract({
   abi: foodiRegistrarAbi,
   address: foodiRegistrarAddress,
-})
+});
 
 /**
  * Wraps __{@link writeContract}__ with `abi` set to __{@link foodiRegistrarAbi}__ and `functionName` set to `"register"`
@@ -3309,8 +3309,8 @@ export const writeFoodiRegistrar = /*#__PURE__*/ createWriteContract({
 export const writeFoodiRegistrarRegister = /*#__PURE__*/ createWriteContract({
   abi: foodiRegistrarAbi,
   address: foodiRegistrarAddress,
-  functionName: 'register',
-})
+  functionName: "register",
+});
 
 /**
  * Wraps __{@link simulateContract}__ with `abi` set to __{@link foodiRegistrarAbi}__
@@ -3318,7 +3318,7 @@ export const writeFoodiRegistrarRegister = /*#__PURE__*/ createWriteContract({
 export const simulateFoodiRegistrar = /*#__PURE__*/ createSimulateContract({
   abi: foodiRegistrarAbi,
   address: foodiRegistrarAddress,
-})
+});
 
 /**
  * Wraps __{@link simulateContract}__ with `abi` set to __{@link foodiRegistrarAbi}__ and `functionName` set to `"register"`
@@ -3327,8 +3327,8 @@ export const simulateFoodiRegistrarRegister =
   /*#__PURE__*/ createSimulateContract({
     abi: foodiRegistrarAbi,
     address: foodiRegistrarAddress,
-    functionName: 'register',
-  })
+    functionName: "register",
+  });
 
 /**
  * Wraps __{@link watchContractEvent}__ with `abi` set to __{@link foodiRegistrarAbi}__
@@ -3336,7 +3336,7 @@ export const simulateFoodiRegistrarRegister =
 export const watchFoodiRegistrarEvent = /*#__PURE__*/ createWatchContractEvent({
   abi: foodiRegistrarAbi,
   address: foodiRegistrarAddress,
-})
+});
 
 /**
  * Wraps __{@link watchContractEvent}__ with `abi` set to __{@link foodiRegistrarAbi}__ and `eventName` set to `"NameRegistered"`
@@ -3345,8 +3345,8 @@ export const watchFoodiRegistrarNameRegisteredEvent =
   /*#__PURE__*/ createWatchContractEvent({
     abi: foodiRegistrarAbi,
     address: foodiRegistrarAddress,
-    eventName: 'NameRegistered',
-  })
+    eventName: "NameRegistered",
+  });
 
 /**
  * Wraps __{@link readContract}__ with `abi` set to __{@link foodiverseRegistrarAbi}__
@@ -3354,7 +3354,7 @@ export const watchFoodiRegistrarNameRegisteredEvent =
 export const readFoodiverseRegistrar = /*#__PURE__*/ createReadContract({
   abi: foodiverseRegistrarAbi,
   address: foodiverseRegistrarAddress,
-})
+});
 
 /**
  * Wraps __{@link readContract}__ with `abi` set to __{@link foodiverseRegistrarAbi}__ and `functionName` set to `"available"`
@@ -3363,8 +3363,8 @@ export const readFoodiverseRegistrarAvailable =
   /*#__PURE__*/ createReadContract({
     abi: foodiverseRegistrarAbi,
     address: foodiverseRegistrarAddress,
-    functionName: 'available',
-  })
+    functionName: "available",
+  });
 
 /**
  * Wraps __{@link readContract}__ with `abi` set to __{@link foodiverseRegistrarAbi}__ and `functionName` set to `"targetRegistry"`
@@ -3373,8 +3373,8 @@ export const readFoodiverseRegistrarTargetRegistry =
   /*#__PURE__*/ createReadContract({
     abi: foodiverseRegistrarAbi,
     address: foodiverseRegistrarAddress,
-    functionName: 'targetRegistry',
-  })
+    functionName: "targetRegistry",
+  });
 
 /**
  * Wraps __{@link writeContract}__ with `abi` set to __{@link foodiverseRegistrarAbi}__
@@ -3382,7 +3382,7 @@ export const readFoodiverseRegistrarTargetRegistry =
 export const writeFoodiverseRegistrar = /*#__PURE__*/ createWriteContract({
   abi: foodiverseRegistrarAbi,
   address: foodiverseRegistrarAddress,
-})
+});
 
 /**
  * Wraps __{@link writeContract}__ with `abi` set to __{@link foodiverseRegistrarAbi}__ and `functionName` set to `"register"`
@@ -3391,15 +3391,15 @@ export const writeFoodiverseRegistrarRegister =
   /*#__PURE__*/ createWriteContract({
     abi: foodiverseRegistrarAbi,
     address: foodiverseRegistrarAddress,
-    functionName: 'register',
-  })
+    functionName: "register",
+  });
 
 /**
  * Wraps __{@link simulateContract}__ with `abi` set to __{@link foodiverseRegistrarAbi}__
  */
 export const simulateFoodiverseRegistrar = /*#__PURE__*/ createSimulateContract(
   { abi: foodiverseRegistrarAbi, address: foodiverseRegistrarAddress },
-)
+);
 
 /**
  * Wraps __{@link simulateContract}__ with `abi` set to __{@link foodiverseRegistrarAbi}__ and `functionName` set to `"register"`
@@ -3408,8 +3408,8 @@ export const simulateFoodiverseRegistrarRegister =
   /*#__PURE__*/ createSimulateContract({
     abi: foodiverseRegistrarAbi,
     address: foodiverseRegistrarAddress,
-    functionName: 'register',
-  })
+    functionName: "register",
+  });
 
 /**
  * Wraps __{@link watchContractEvent}__ with `abi` set to __{@link foodiverseRegistrarAbi}__
@@ -3418,7 +3418,7 @@ export const watchFoodiverseRegistrarEvent =
   /*#__PURE__*/ createWatchContractEvent({
     abi: foodiverseRegistrarAbi,
     address: foodiverseRegistrarAddress,
-  })
+  });
 
 /**
  * Wraps __{@link watchContractEvent}__ with `abi` set to __{@link foodiverseRegistrarAbi}__ and `eventName` set to `"NameRegistered"`
@@ -3427,8 +3427,8 @@ export const watchFoodiverseRegistrarNameRegisteredEvent =
   /*#__PURE__*/ createWatchContractEvent({
     abi: foodiverseRegistrarAbi,
     address: foodiverseRegistrarAddress,
-    eventName: 'NameRegistered',
-  })
+    eventName: "NameRegistered",
+  });
 
 /**
  * Wraps __{@link readContract}__ with `abi` set to __{@link reverseRegistrarAbi}__
@@ -3436,7 +3436,7 @@ export const watchFoodiverseRegistrarNameRegisteredEvent =
 export const readReverseRegistrar = /*#__PURE__*/ createReadContract({
   abi: reverseRegistrarAbi,
   address: reverseRegistrarAddress,
-})
+});
 
 /**
  * Wraps __{@link readContract}__ with `abi` set to __{@link reverseRegistrarAbi}__ and `functionName` set to `"controllers"`
@@ -3445,9 +3445,9 @@ export const readReverseRegistrarControllers = /*#__PURE__*/ createReadContract(
   {
     abi: reverseRegistrarAbi,
     address: reverseRegistrarAddress,
-    functionName: 'controllers',
+    functionName: "controllers",
   },
-)
+);
 
 /**
  * Wraps __{@link readContract}__ with `abi` set to __{@link reverseRegistrarAbi}__ and `functionName` set to `"defaultResolver"`
@@ -3456,8 +3456,8 @@ export const readReverseRegistrarDefaultResolver =
   /*#__PURE__*/ createReadContract({
     abi: reverseRegistrarAbi,
     address: reverseRegistrarAddress,
-    functionName: 'defaultResolver',
-  })
+    functionName: "defaultResolver",
+  });
 
 /**
  * Wraps __{@link readContract}__ with `abi` set to __{@link reverseRegistrarAbi}__ and `functionName` set to `"ens"`
@@ -3465,8 +3465,8 @@ export const readReverseRegistrarDefaultResolver =
 export const readReverseRegistrarEns = /*#__PURE__*/ createReadContract({
   abi: reverseRegistrarAbi,
   address: reverseRegistrarAddress,
-  functionName: 'ens',
-})
+  functionName: "ens",
+});
 
 /**
  * Wraps __{@link readContract}__ with `abi` set to __{@link reverseRegistrarAbi}__ and `functionName` set to `"node"`
@@ -3474,8 +3474,8 @@ export const readReverseRegistrarEns = /*#__PURE__*/ createReadContract({
 export const readReverseRegistrarNode = /*#__PURE__*/ createReadContract({
   abi: reverseRegistrarAbi,
   address: reverseRegistrarAddress,
-  functionName: 'node',
-})
+  functionName: "node",
+});
 
 /**
  * Wraps __{@link readContract}__ with `abi` set to __{@link reverseRegistrarAbi}__ and `functionName` set to `"owner"`
@@ -3483,8 +3483,8 @@ export const readReverseRegistrarNode = /*#__PURE__*/ createReadContract({
 export const readReverseRegistrarOwner = /*#__PURE__*/ createReadContract({
   abi: reverseRegistrarAbi,
   address: reverseRegistrarAddress,
-  functionName: 'owner',
-})
+  functionName: "owner",
+});
 
 /**
  * Wraps __{@link writeContract}__ with `abi` set to __{@link reverseRegistrarAbi}__
@@ -3492,7 +3492,7 @@ export const readReverseRegistrarOwner = /*#__PURE__*/ createReadContract({
 export const writeReverseRegistrar = /*#__PURE__*/ createWriteContract({
   abi: reverseRegistrarAbi,
   address: reverseRegistrarAddress,
-})
+});
 
 /**
  * Wraps __{@link writeContract}__ with `abi` set to __{@link reverseRegistrarAbi}__ and `functionName` set to `"claim"`
@@ -3500,8 +3500,8 @@ export const writeReverseRegistrar = /*#__PURE__*/ createWriteContract({
 export const writeReverseRegistrarClaim = /*#__PURE__*/ createWriteContract({
   abi: reverseRegistrarAbi,
   address: reverseRegistrarAddress,
-  functionName: 'claim',
-})
+  functionName: "claim",
+});
 
 /**
  * Wraps __{@link writeContract}__ with `abi` set to __{@link reverseRegistrarAbi}__ and `functionName` set to `"claimForAddr"`
@@ -3510,8 +3510,8 @@ export const writeReverseRegistrarClaimForAddr =
   /*#__PURE__*/ createWriteContract({
     abi: reverseRegistrarAbi,
     address: reverseRegistrarAddress,
-    functionName: 'claimForAddr',
-  })
+    functionName: "claimForAddr",
+  });
 
 /**
  * Wraps __{@link writeContract}__ with `abi` set to __{@link reverseRegistrarAbi}__ and `functionName` set to `"claimWithResolver"`
@@ -3520,8 +3520,8 @@ export const writeReverseRegistrarClaimWithResolver =
   /*#__PURE__*/ createWriteContract({
     abi: reverseRegistrarAbi,
     address: reverseRegistrarAddress,
-    functionName: 'claimWithResolver',
-  })
+    functionName: "claimWithResolver",
+  });
 
 /**
  * Wraps __{@link writeContract}__ with `abi` set to __{@link reverseRegistrarAbi}__ and `functionName` set to `"renounceOwnership"`
@@ -3530,8 +3530,8 @@ export const writeReverseRegistrarRenounceOwnership =
   /*#__PURE__*/ createWriteContract({
     abi: reverseRegistrarAbi,
     address: reverseRegistrarAddress,
-    functionName: 'renounceOwnership',
-  })
+    functionName: "renounceOwnership",
+  });
 
 /**
  * Wraps __{@link writeContract}__ with `abi` set to __{@link reverseRegistrarAbi}__ and `functionName` set to `"setController"`
@@ -3540,8 +3540,8 @@ export const writeReverseRegistrarSetController =
   /*#__PURE__*/ createWriteContract({
     abi: reverseRegistrarAbi,
     address: reverseRegistrarAddress,
-    functionName: 'setController',
-  })
+    functionName: "setController",
+  });
 
 /**
  * Wraps __{@link writeContract}__ with `abi` set to __{@link reverseRegistrarAbi}__ and `functionName` set to `"setDefaultResolver"`
@@ -3550,8 +3550,8 @@ export const writeReverseRegistrarSetDefaultResolver =
   /*#__PURE__*/ createWriteContract({
     abi: reverseRegistrarAbi,
     address: reverseRegistrarAddress,
-    functionName: 'setDefaultResolver',
-  })
+    functionName: "setDefaultResolver",
+  });
 
 /**
  * Wraps __{@link writeContract}__ with `abi` set to __{@link reverseRegistrarAbi}__ and `functionName` set to `"setName"`
@@ -3559,8 +3559,8 @@ export const writeReverseRegistrarSetDefaultResolver =
 export const writeReverseRegistrarSetName = /*#__PURE__*/ createWriteContract({
   abi: reverseRegistrarAbi,
   address: reverseRegistrarAddress,
-  functionName: 'setName',
-})
+  functionName: "setName",
+});
 
 /**
  * Wraps __{@link writeContract}__ with `abi` set to __{@link reverseRegistrarAbi}__ and `functionName` set to `"setNameForAddr"`
@@ -3569,8 +3569,8 @@ export const writeReverseRegistrarSetNameForAddr =
   /*#__PURE__*/ createWriteContract({
     abi: reverseRegistrarAbi,
     address: reverseRegistrarAddress,
-    functionName: 'setNameForAddr',
-  })
+    functionName: "setNameForAddr",
+  });
 
 /**
  * Wraps __{@link writeContract}__ with `abi` set to __{@link reverseRegistrarAbi}__ and `functionName` set to `"transferOwnership"`
@@ -3579,8 +3579,8 @@ export const writeReverseRegistrarTransferOwnership =
   /*#__PURE__*/ createWriteContract({
     abi: reverseRegistrarAbi,
     address: reverseRegistrarAddress,
-    functionName: 'transferOwnership',
-  })
+    functionName: "transferOwnership",
+  });
 
 /**
  * Wraps __{@link simulateContract}__ with `abi` set to __{@link reverseRegistrarAbi}__
@@ -3588,7 +3588,7 @@ export const writeReverseRegistrarTransferOwnership =
 export const simulateReverseRegistrar = /*#__PURE__*/ createSimulateContract({
   abi: reverseRegistrarAbi,
   address: reverseRegistrarAddress,
-})
+});
 
 /**
  * Wraps __{@link simulateContract}__ with `abi` set to __{@link reverseRegistrarAbi}__ and `functionName` set to `"claim"`
@@ -3597,8 +3597,8 @@ export const simulateReverseRegistrarClaim =
   /*#__PURE__*/ createSimulateContract({
     abi: reverseRegistrarAbi,
     address: reverseRegistrarAddress,
-    functionName: 'claim',
-  })
+    functionName: "claim",
+  });
 
 /**
  * Wraps __{@link simulateContract}__ with `abi` set to __{@link reverseRegistrarAbi}__ and `functionName` set to `"claimForAddr"`
@@ -3607,8 +3607,8 @@ export const simulateReverseRegistrarClaimForAddr =
   /*#__PURE__*/ createSimulateContract({
     abi: reverseRegistrarAbi,
     address: reverseRegistrarAddress,
-    functionName: 'claimForAddr',
-  })
+    functionName: "claimForAddr",
+  });
 
 /**
  * Wraps __{@link simulateContract}__ with `abi` set to __{@link reverseRegistrarAbi}__ and `functionName` set to `"claimWithResolver"`
@@ -3617,8 +3617,8 @@ export const simulateReverseRegistrarClaimWithResolver =
   /*#__PURE__*/ createSimulateContract({
     abi: reverseRegistrarAbi,
     address: reverseRegistrarAddress,
-    functionName: 'claimWithResolver',
-  })
+    functionName: "claimWithResolver",
+  });
 
 /**
  * Wraps __{@link simulateContract}__ with `abi` set to __{@link reverseRegistrarAbi}__ and `functionName` set to `"renounceOwnership"`
@@ -3627,8 +3627,8 @@ export const simulateReverseRegistrarRenounceOwnership =
   /*#__PURE__*/ createSimulateContract({
     abi: reverseRegistrarAbi,
     address: reverseRegistrarAddress,
-    functionName: 'renounceOwnership',
-  })
+    functionName: "renounceOwnership",
+  });
 
 /**
  * Wraps __{@link simulateContract}__ with `abi` set to __{@link reverseRegistrarAbi}__ and `functionName` set to `"setController"`
@@ -3637,8 +3637,8 @@ export const simulateReverseRegistrarSetController =
   /*#__PURE__*/ createSimulateContract({
     abi: reverseRegistrarAbi,
     address: reverseRegistrarAddress,
-    functionName: 'setController',
-  })
+    functionName: "setController",
+  });
 
 /**
  * Wraps __{@link simulateContract}__ with `abi` set to __{@link reverseRegistrarAbi}__ and `functionName` set to `"setDefaultResolver"`
@@ -3647,8 +3647,8 @@ export const simulateReverseRegistrarSetDefaultResolver =
   /*#__PURE__*/ createSimulateContract({
     abi: reverseRegistrarAbi,
     address: reverseRegistrarAddress,
-    functionName: 'setDefaultResolver',
-  })
+    functionName: "setDefaultResolver",
+  });
 
 /**
  * Wraps __{@link simulateContract}__ with `abi` set to __{@link reverseRegistrarAbi}__ and `functionName` set to `"setName"`
@@ -3657,8 +3657,8 @@ export const simulateReverseRegistrarSetName =
   /*#__PURE__*/ createSimulateContract({
     abi: reverseRegistrarAbi,
     address: reverseRegistrarAddress,
-    functionName: 'setName',
-  })
+    functionName: "setName",
+  });
 
 /**
  * Wraps __{@link simulateContract}__ with `abi` set to __{@link reverseRegistrarAbi}__ and `functionName` set to `"setNameForAddr"`
@@ -3667,8 +3667,8 @@ export const simulateReverseRegistrarSetNameForAddr =
   /*#__PURE__*/ createSimulateContract({
     abi: reverseRegistrarAbi,
     address: reverseRegistrarAddress,
-    functionName: 'setNameForAddr',
-  })
+    functionName: "setNameForAddr",
+  });
 
 /**
  * Wraps __{@link simulateContract}__ with `abi` set to __{@link reverseRegistrarAbi}__ and `functionName` set to `"transferOwnership"`
@@ -3677,8 +3677,8 @@ export const simulateReverseRegistrarTransferOwnership =
   /*#__PURE__*/ createSimulateContract({
     abi: reverseRegistrarAbi,
     address: reverseRegistrarAddress,
-    functionName: 'transferOwnership',
-  })
+    functionName: "transferOwnership",
+  });
 
 /**
  * Wraps __{@link watchContractEvent}__ with `abi` set to __{@link reverseRegistrarAbi}__
@@ -3687,7 +3687,7 @@ export const watchReverseRegistrarEvent =
   /*#__PURE__*/ createWatchContractEvent({
     abi: reverseRegistrarAbi,
     address: reverseRegistrarAddress,
-  })
+  });
 
 /**
  * Wraps __{@link watchContractEvent}__ with `abi` set to __{@link reverseRegistrarAbi}__ and `eventName` set to `"ControllerChanged"`
@@ -3696,8 +3696,8 @@ export const watchReverseRegistrarControllerChangedEvent =
   /*#__PURE__*/ createWatchContractEvent({
     abi: reverseRegistrarAbi,
     address: reverseRegistrarAddress,
-    eventName: 'ControllerChanged',
-  })
+    eventName: "ControllerChanged",
+  });
 
 /**
  * Wraps __{@link watchContractEvent}__ with `abi` set to __{@link reverseRegistrarAbi}__ and `eventName` set to `"DefaultResolverChanged"`
@@ -3706,8 +3706,8 @@ export const watchReverseRegistrarDefaultResolverChangedEvent =
   /*#__PURE__*/ createWatchContractEvent({
     abi: reverseRegistrarAbi,
     address: reverseRegistrarAddress,
-    eventName: 'DefaultResolverChanged',
-  })
+    eventName: "DefaultResolverChanged",
+  });
 
 /**
  * Wraps __{@link watchContractEvent}__ with `abi` set to __{@link reverseRegistrarAbi}__ and `eventName` set to `"OwnershipTransferred"`
@@ -3716,8 +3716,8 @@ export const watchReverseRegistrarOwnershipTransferredEvent =
   /*#__PURE__*/ createWatchContractEvent({
     abi: reverseRegistrarAbi,
     address: reverseRegistrarAddress,
-    eventName: 'OwnershipTransferred',
-  })
+    eventName: "OwnershipTransferred",
+  });
 
 /**
  * Wraps __{@link watchContractEvent}__ with `abi` set to __{@link reverseRegistrarAbi}__ and `eventName` set to `"ReverseClaimed"`
@@ -3726,8 +3726,8 @@ export const watchReverseRegistrarReverseClaimedEvent =
   /*#__PURE__*/ createWatchContractEvent({
     abi: reverseRegistrarAbi,
     address: reverseRegistrarAddress,
-    eventName: 'ReverseClaimed',
-  })
+    eventName: "ReverseClaimed",
+  });
 
 /**
  * Wraps __{@link readContract}__ with `abi` set to __{@link signProtocolAbi}__
@@ -3735,7 +3735,7 @@ export const watchReverseRegistrarReverseClaimedEvent =
 export const readSignProtocol = /*#__PURE__*/ createReadContract({
   abi: signProtocolAbi,
   address: signProtocolAddress,
-})
+});
 
 /**
  * Wraps __{@link readContract}__ with `abi` set to __{@link signProtocolAbi}__ and `functionName` set to `"UPGRADE_INTERFACE_VERSION"`
@@ -3744,8 +3744,8 @@ export const readSignProtocolUpgradeInterfaceVersion =
   /*#__PURE__*/ createReadContract({
     abi: signProtocolAbi,
     address: signProtocolAddress,
-    functionName: 'UPGRADE_INTERFACE_VERSION',
-  })
+    functionName: "UPGRADE_INTERFACE_VERSION",
+  });
 
 /**
  * Wraps __{@link readContract}__ with `abi` set to __{@link signProtocolAbi}__ and `functionName` set to `"attestationCounter"`
@@ -3754,8 +3754,8 @@ export const readSignProtocolAttestationCounter =
   /*#__PURE__*/ createReadContract({
     abi: signProtocolAbi,
     address: signProtocolAddress,
-    functionName: 'attestationCounter',
-  })
+    functionName: "attestationCounter",
+  });
 
 /**
  * Wraps __{@link readContract}__ with `abi` set to __{@link signProtocolAbi}__ and `functionName` set to `"getAttestation"`
@@ -3763,8 +3763,8 @@ export const readSignProtocolAttestationCounter =
 export const readSignProtocolGetAttestation = /*#__PURE__*/ createReadContract({
   abi: signProtocolAbi,
   address: signProtocolAddress,
-  functionName: 'getAttestation',
-})
+  functionName: "getAttestation",
+});
 
 /**
  * Wraps __{@link readContract}__ with `abi` set to __{@link signProtocolAbi}__ and `functionName` set to `"getDelegatedAttestBatchHash"`
@@ -3773,8 +3773,8 @@ export const readSignProtocolGetDelegatedAttestBatchHash =
   /*#__PURE__*/ createReadContract({
     abi: signProtocolAbi,
     address: signProtocolAddress,
-    functionName: 'getDelegatedAttestBatchHash',
-  })
+    functionName: "getDelegatedAttestBatchHash",
+  });
 
 /**
  * Wraps __{@link readContract}__ with `abi` set to __{@link signProtocolAbi}__ and `functionName` set to `"getDelegatedAttestHash"`
@@ -3783,8 +3783,8 @@ export const readSignProtocolGetDelegatedAttestHash =
   /*#__PURE__*/ createReadContract({
     abi: signProtocolAbi,
     address: signProtocolAddress,
-    functionName: 'getDelegatedAttestHash',
-  })
+    functionName: "getDelegatedAttestHash",
+  });
 
 /**
  * Wraps __{@link readContract}__ with `abi` set to __{@link signProtocolAbi}__ and `functionName` set to `"getDelegatedOffchainAttestBatchHash"`
@@ -3793,8 +3793,8 @@ export const readSignProtocolGetDelegatedOffchainAttestBatchHash =
   /*#__PURE__*/ createReadContract({
     abi: signProtocolAbi,
     address: signProtocolAddress,
-    functionName: 'getDelegatedOffchainAttestBatchHash',
-  })
+    functionName: "getDelegatedOffchainAttestBatchHash",
+  });
 
 /**
  * Wraps __{@link readContract}__ with `abi` set to __{@link signProtocolAbi}__ and `functionName` set to `"getDelegatedOffchainAttestHash"`
@@ -3803,8 +3803,8 @@ export const readSignProtocolGetDelegatedOffchainAttestHash =
   /*#__PURE__*/ createReadContract({
     abi: signProtocolAbi,
     address: signProtocolAddress,
-    functionName: 'getDelegatedOffchainAttestHash',
-  })
+    functionName: "getDelegatedOffchainAttestHash",
+  });
 
 /**
  * Wraps __{@link readContract}__ with `abi` set to __{@link signProtocolAbi}__ and `functionName` set to `"getDelegatedOffchainRevokeBatchHash"`
@@ -3813,8 +3813,8 @@ export const readSignProtocolGetDelegatedOffchainRevokeBatchHash =
   /*#__PURE__*/ createReadContract({
     abi: signProtocolAbi,
     address: signProtocolAddress,
-    functionName: 'getDelegatedOffchainRevokeBatchHash',
-  })
+    functionName: "getDelegatedOffchainRevokeBatchHash",
+  });
 
 /**
  * Wraps __{@link readContract}__ with `abi` set to __{@link signProtocolAbi}__ and `functionName` set to `"getDelegatedOffchainRevokeHash"`
@@ -3823,8 +3823,8 @@ export const readSignProtocolGetDelegatedOffchainRevokeHash =
   /*#__PURE__*/ createReadContract({
     abi: signProtocolAbi,
     address: signProtocolAddress,
-    functionName: 'getDelegatedOffchainRevokeHash',
-  })
+    functionName: "getDelegatedOffchainRevokeHash",
+  });
 
 /**
  * Wraps __{@link readContract}__ with `abi` set to __{@link signProtocolAbi}__ and `functionName` set to `"getDelegatedRegisterBatchHash"`
@@ -3833,8 +3833,8 @@ export const readSignProtocolGetDelegatedRegisterBatchHash =
   /*#__PURE__*/ createReadContract({
     abi: signProtocolAbi,
     address: signProtocolAddress,
-    functionName: 'getDelegatedRegisterBatchHash',
-  })
+    functionName: "getDelegatedRegisterBatchHash",
+  });
 
 /**
  * Wraps __{@link readContract}__ with `abi` set to __{@link signProtocolAbi}__ and `functionName` set to `"getDelegatedRegisterHash"`
@@ -3843,8 +3843,8 @@ export const readSignProtocolGetDelegatedRegisterHash =
   /*#__PURE__*/ createReadContract({
     abi: signProtocolAbi,
     address: signProtocolAddress,
-    functionName: 'getDelegatedRegisterHash',
-  })
+    functionName: "getDelegatedRegisterHash",
+  });
 
 /**
  * Wraps __{@link readContract}__ with `abi` set to __{@link signProtocolAbi}__ and `functionName` set to `"getDelegatedRevokeBatchHash"`
@@ -3853,8 +3853,8 @@ export const readSignProtocolGetDelegatedRevokeBatchHash =
   /*#__PURE__*/ createReadContract({
     abi: signProtocolAbi,
     address: signProtocolAddress,
-    functionName: 'getDelegatedRevokeBatchHash',
-  })
+    functionName: "getDelegatedRevokeBatchHash",
+  });
 
 /**
  * Wraps __{@link readContract}__ with `abi` set to __{@link signProtocolAbi}__ and `functionName` set to `"getDelegatedRevokeHash"`
@@ -3863,8 +3863,8 @@ export const readSignProtocolGetDelegatedRevokeHash =
   /*#__PURE__*/ createReadContract({
     abi: signProtocolAbi,
     address: signProtocolAddress,
-    functionName: 'getDelegatedRevokeHash',
-  })
+    functionName: "getDelegatedRevokeHash",
+  });
 
 /**
  * Wraps __{@link readContract}__ with `abi` set to __{@link signProtocolAbi}__ and `functionName` set to `"getOffchainAttestation"`
@@ -3873,8 +3873,8 @@ export const readSignProtocolGetOffchainAttestation =
   /*#__PURE__*/ createReadContract({
     abi: signProtocolAbi,
     address: signProtocolAddress,
-    functionName: 'getOffchainAttestation',
-  })
+    functionName: "getOffchainAttestation",
+  });
 
 /**
  * Wraps __{@link readContract}__ with `abi` set to __{@link signProtocolAbi}__ and `functionName` set to `"getSchema"`
@@ -3882,8 +3882,8 @@ export const readSignProtocolGetOffchainAttestation =
 export const readSignProtocolGetSchema = /*#__PURE__*/ createReadContract({
   abi: signProtocolAbi,
   address: signProtocolAddress,
-  functionName: 'getSchema',
-})
+  functionName: "getSchema",
+});
 
 /**
  * Wraps __{@link readContract}__ with `abi` set to __{@link signProtocolAbi}__ and `functionName` set to `"owner"`
@@ -3891,8 +3891,8 @@ export const readSignProtocolGetSchema = /*#__PURE__*/ createReadContract({
 export const readSignProtocolOwner = /*#__PURE__*/ createReadContract({
   abi: signProtocolAbi,
   address: signProtocolAddress,
-  functionName: 'owner',
-})
+  functionName: "owner",
+});
 
 /**
  * Wraps __{@link readContract}__ with `abi` set to __{@link signProtocolAbi}__ and `functionName` set to `"proxiableUUID"`
@@ -3900,8 +3900,8 @@ export const readSignProtocolOwner = /*#__PURE__*/ createReadContract({
 export const readSignProtocolProxiableUuid = /*#__PURE__*/ createReadContract({
   abi: signProtocolAbi,
   address: signProtocolAddress,
-  functionName: 'proxiableUUID',
-})
+  functionName: "proxiableUUID",
+});
 
 /**
  * Wraps __{@link readContract}__ with `abi` set to __{@link signProtocolAbi}__ and `functionName` set to `"schemaCounter"`
@@ -3909,8 +3909,8 @@ export const readSignProtocolProxiableUuid = /*#__PURE__*/ createReadContract({
 export const readSignProtocolSchemaCounter = /*#__PURE__*/ createReadContract({
   abi: signProtocolAbi,
   address: signProtocolAddress,
-  functionName: 'schemaCounter',
-})
+  functionName: "schemaCounter",
+});
 
 /**
  * Wraps __{@link readContract}__ with `abi` set to __{@link signProtocolAbi}__ and `functionName` set to `"version"`
@@ -3918,8 +3918,8 @@ export const readSignProtocolSchemaCounter = /*#__PURE__*/ createReadContract({
 export const readSignProtocolVersion = /*#__PURE__*/ createReadContract({
   abi: signProtocolAbi,
   address: signProtocolAddress,
-  functionName: 'version',
-})
+  functionName: "version",
+});
 
 /**
  * Wraps __{@link writeContract}__ with `abi` set to __{@link signProtocolAbi}__
@@ -3927,7 +3927,7 @@ export const readSignProtocolVersion = /*#__PURE__*/ createReadContract({
 export const writeSignProtocol = /*#__PURE__*/ createWriteContract({
   abi: signProtocolAbi,
   address: signProtocolAddress,
-})
+});
 
 /**
  * Wraps __{@link writeContract}__ with `abi` set to __{@link signProtocolAbi}__ and `functionName` set to `"attest"`
@@ -3935,8 +3935,8 @@ export const writeSignProtocol = /*#__PURE__*/ createWriteContract({
 export const writeSignProtocolAttest = /*#__PURE__*/ createWriteContract({
   abi: signProtocolAbi,
   address: signProtocolAddress,
-  functionName: 'attest',
-})
+  functionName: "attest",
+});
 
 /**
  * Wraps __{@link writeContract}__ with `abi` set to __{@link signProtocolAbi}__ and `functionName` set to `"attestBatch"`
@@ -3944,8 +3944,8 @@ export const writeSignProtocolAttest = /*#__PURE__*/ createWriteContract({
 export const writeSignProtocolAttestBatch = /*#__PURE__*/ createWriteContract({
   abi: signProtocolAbi,
   address: signProtocolAddress,
-  functionName: 'attestBatch',
-})
+  functionName: "attestBatch",
+});
 
 /**
  * Wraps __{@link writeContract}__ with `abi` set to __{@link signProtocolAbi}__ and `functionName` set to `"attestOffchain"`
@@ -3954,8 +3954,8 @@ export const writeSignProtocolAttestOffchain =
   /*#__PURE__*/ createWriteContract({
     abi: signProtocolAbi,
     address: signProtocolAddress,
-    functionName: 'attestOffchain',
-  })
+    functionName: "attestOffchain",
+  });
 
 /**
  * Wraps __{@link writeContract}__ with `abi` set to __{@link signProtocolAbi}__ and `functionName` set to `"attestOffchainBatch"`
@@ -3964,8 +3964,8 @@ export const writeSignProtocolAttestOffchainBatch =
   /*#__PURE__*/ createWriteContract({
     abi: signProtocolAbi,
     address: signProtocolAddress,
-    functionName: 'attestOffchainBatch',
-  })
+    functionName: "attestOffchainBatch",
+  });
 
 /**
  * Wraps __{@link writeContract}__ with `abi` set to __{@link signProtocolAbi}__ and `functionName` set to `"initialize"`
@@ -3973,8 +3973,8 @@ export const writeSignProtocolAttestOffchainBatch =
 export const writeSignProtocolInitialize = /*#__PURE__*/ createWriteContract({
   abi: signProtocolAbi,
   address: signProtocolAddress,
-  functionName: 'initialize',
-})
+  functionName: "initialize",
+});
 
 /**
  * Wraps __{@link writeContract}__ with `abi` set to __{@link signProtocolAbi}__ and `functionName` set to `"register"`
@@ -3982,8 +3982,8 @@ export const writeSignProtocolInitialize = /*#__PURE__*/ createWriteContract({
 export const writeSignProtocolRegister = /*#__PURE__*/ createWriteContract({
   abi: signProtocolAbi,
   address: signProtocolAddress,
-  functionName: 'register',
-})
+  functionName: "register",
+});
 
 /**
  * Wraps __{@link writeContract}__ with `abi` set to __{@link signProtocolAbi}__ and `functionName` set to `"registerBatch"`
@@ -3992,9 +3992,9 @@ export const writeSignProtocolRegisterBatch = /*#__PURE__*/ createWriteContract(
   {
     abi: signProtocolAbi,
     address: signProtocolAddress,
-    functionName: 'registerBatch',
+    functionName: "registerBatch",
   },
-)
+);
 
 /**
  * Wraps __{@link writeContract}__ with `abi` set to __{@link signProtocolAbi}__ and `functionName` set to `"renounceOwnership"`
@@ -4003,8 +4003,8 @@ export const writeSignProtocolRenounceOwnership =
   /*#__PURE__*/ createWriteContract({
     abi: signProtocolAbi,
     address: signProtocolAddress,
-    functionName: 'renounceOwnership',
-  })
+    functionName: "renounceOwnership",
+  });
 
 /**
  * Wraps __{@link writeContract}__ with `abi` set to __{@link signProtocolAbi}__ and `functionName` set to `"revoke"`
@@ -4012,8 +4012,8 @@ export const writeSignProtocolRenounceOwnership =
 export const writeSignProtocolRevoke = /*#__PURE__*/ createWriteContract({
   abi: signProtocolAbi,
   address: signProtocolAddress,
-  functionName: 'revoke',
-})
+  functionName: "revoke",
+});
 
 /**
  * Wraps __{@link writeContract}__ with `abi` set to __{@link signProtocolAbi}__ and `functionName` set to `"revokeBatch"`
@@ -4021,8 +4021,8 @@ export const writeSignProtocolRevoke = /*#__PURE__*/ createWriteContract({
 export const writeSignProtocolRevokeBatch = /*#__PURE__*/ createWriteContract({
   abi: signProtocolAbi,
   address: signProtocolAddress,
-  functionName: 'revokeBatch',
-})
+  functionName: "revokeBatch",
+});
 
 /**
  * Wraps __{@link writeContract}__ with `abi` set to __{@link signProtocolAbi}__ and `functionName` set to `"revokeOffchain"`
@@ -4031,8 +4031,8 @@ export const writeSignProtocolRevokeOffchain =
   /*#__PURE__*/ createWriteContract({
     abi: signProtocolAbi,
     address: signProtocolAddress,
-    functionName: 'revokeOffchain',
-  })
+    functionName: "revokeOffchain",
+  });
 
 /**
  * Wraps __{@link writeContract}__ with `abi` set to __{@link signProtocolAbi}__ and `functionName` set to `"revokeOffchainBatch"`
@@ -4041,8 +4041,8 @@ export const writeSignProtocolRevokeOffchainBatch =
   /*#__PURE__*/ createWriteContract({
     abi: signProtocolAbi,
     address: signProtocolAddress,
-    functionName: 'revokeOffchainBatch',
-  })
+    functionName: "revokeOffchainBatch",
+  });
 
 /**
  * Wraps __{@link writeContract}__ with `abi` set to __{@link signProtocolAbi}__ and `functionName` set to `"setGlobalHook"`
@@ -4051,9 +4051,9 @@ export const writeSignProtocolSetGlobalHook = /*#__PURE__*/ createWriteContract(
   {
     abi: signProtocolAbi,
     address: signProtocolAddress,
-    functionName: 'setGlobalHook',
+    functionName: "setGlobalHook",
   },
-)
+);
 
 /**
  * Wraps __{@link writeContract}__ with `abi` set to __{@link signProtocolAbi}__ and `functionName` set to `"setPause"`
@@ -4061,8 +4061,8 @@ export const writeSignProtocolSetGlobalHook = /*#__PURE__*/ createWriteContract(
 export const writeSignProtocolSetPause = /*#__PURE__*/ createWriteContract({
   abi: signProtocolAbi,
   address: signProtocolAddress,
-  functionName: 'setPause',
-})
+  functionName: "setPause",
+});
 
 /**
  * Wraps __{@link writeContract}__ with `abi` set to __{@link signProtocolAbi}__ and `functionName` set to `"transferOwnership"`
@@ -4071,8 +4071,8 @@ export const writeSignProtocolTransferOwnership =
   /*#__PURE__*/ createWriteContract({
     abi: signProtocolAbi,
     address: signProtocolAddress,
-    functionName: 'transferOwnership',
-  })
+    functionName: "transferOwnership",
+  });
 
 /**
  * Wraps __{@link writeContract}__ with `abi` set to __{@link signProtocolAbi}__ and `functionName` set to `"upgradeToAndCall"`
@@ -4081,8 +4081,8 @@ export const writeSignProtocolUpgradeToAndCall =
   /*#__PURE__*/ createWriteContract({
     abi: signProtocolAbi,
     address: signProtocolAddress,
-    functionName: 'upgradeToAndCall',
-  })
+    functionName: "upgradeToAndCall",
+  });
 
 /**
  * Wraps __{@link simulateContract}__ with `abi` set to __{@link signProtocolAbi}__
@@ -4090,7 +4090,7 @@ export const writeSignProtocolUpgradeToAndCall =
 export const simulateSignProtocol = /*#__PURE__*/ createSimulateContract({
   abi: signProtocolAbi,
   address: signProtocolAddress,
-})
+});
 
 /**
  * Wraps __{@link simulateContract}__ with `abi` set to __{@link signProtocolAbi}__ and `functionName` set to `"attest"`
@@ -4098,8 +4098,8 @@ export const simulateSignProtocol = /*#__PURE__*/ createSimulateContract({
 export const simulateSignProtocolAttest = /*#__PURE__*/ createSimulateContract({
   abi: signProtocolAbi,
   address: signProtocolAddress,
-  functionName: 'attest',
-})
+  functionName: "attest",
+});
 
 /**
  * Wraps __{@link simulateContract}__ with `abi` set to __{@link signProtocolAbi}__ and `functionName` set to `"attestBatch"`
@@ -4108,8 +4108,8 @@ export const simulateSignProtocolAttestBatch =
   /*#__PURE__*/ createSimulateContract({
     abi: signProtocolAbi,
     address: signProtocolAddress,
-    functionName: 'attestBatch',
-  })
+    functionName: "attestBatch",
+  });
 
 /**
  * Wraps __{@link simulateContract}__ with `abi` set to __{@link signProtocolAbi}__ and `functionName` set to `"attestOffchain"`
@@ -4118,8 +4118,8 @@ export const simulateSignProtocolAttestOffchain =
   /*#__PURE__*/ createSimulateContract({
     abi: signProtocolAbi,
     address: signProtocolAddress,
-    functionName: 'attestOffchain',
-  })
+    functionName: "attestOffchain",
+  });
 
 /**
  * Wraps __{@link simulateContract}__ with `abi` set to __{@link signProtocolAbi}__ and `functionName` set to `"attestOffchainBatch"`
@@ -4128,8 +4128,8 @@ export const simulateSignProtocolAttestOffchainBatch =
   /*#__PURE__*/ createSimulateContract({
     abi: signProtocolAbi,
     address: signProtocolAddress,
-    functionName: 'attestOffchainBatch',
-  })
+    functionName: "attestOffchainBatch",
+  });
 
 /**
  * Wraps __{@link simulateContract}__ with `abi` set to __{@link signProtocolAbi}__ and `functionName` set to `"initialize"`
@@ -4138,8 +4138,8 @@ export const simulateSignProtocolInitialize =
   /*#__PURE__*/ createSimulateContract({
     abi: signProtocolAbi,
     address: signProtocolAddress,
-    functionName: 'initialize',
-  })
+    functionName: "initialize",
+  });
 
 /**
  * Wraps __{@link simulateContract}__ with `abi` set to __{@link signProtocolAbi}__ and `functionName` set to `"register"`
@@ -4148,8 +4148,8 @@ export const simulateSignProtocolRegister =
   /*#__PURE__*/ createSimulateContract({
     abi: signProtocolAbi,
     address: signProtocolAddress,
-    functionName: 'register',
-  })
+    functionName: "register",
+  });
 
 /**
  * Wraps __{@link simulateContract}__ with `abi` set to __{@link signProtocolAbi}__ and `functionName` set to `"registerBatch"`
@@ -4158,8 +4158,8 @@ export const simulateSignProtocolRegisterBatch =
   /*#__PURE__*/ createSimulateContract({
     abi: signProtocolAbi,
     address: signProtocolAddress,
-    functionName: 'registerBatch',
-  })
+    functionName: "registerBatch",
+  });
 
 /**
  * Wraps __{@link simulateContract}__ with `abi` set to __{@link signProtocolAbi}__ and `functionName` set to `"renounceOwnership"`
@@ -4168,8 +4168,8 @@ export const simulateSignProtocolRenounceOwnership =
   /*#__PURE__*/ createSimulateContract({
     abi: signProtocolAbi,
     address: signProtocolAddress,
-    functionName: 'renounceOwnership',
-  })
+    functionName: "renounceOwnership",
+  });
 
 /**
  * Wraps __{@link simulateContract}__ with `abi` set to __{@link signProtocolAbi}__ and `functionName` set to `"revoke"`
@@ -4177,8 +4177,8 @@ export const simulateSignProtocolRenounceOwnership =
 export const simulateSignProtocolRevoke = /*#__PURE__*/ createSimulateContract({
   abi: signProtocolAbi,
   address: signProtocolAddress,
-  functionName: 'revoke',
-})
+  functionName: "revoke",
+});
 
 /**
  * Wraps __{@link simulateContract}__ with `abi` set to __{@link signProtocolAbi}__ and `functionName` set to `"revokeBatch"`
@@ -4187,8 +4187,8 @@ export const simulateSignProtocolRevokeBatch =
   /*#__PURE__*/ createSimulateContract({
     abi: signProtocolAbi,
     address: signProtocolAddress,
-    functionName: 'revokeBatch',
-  })
+    functionName: "revokeBatch",
+  });
 
 /**
  * Wraps __{@link simulateContract}__ with `abi` set to __{@link signProtocolAbi}__ and `functionName` set to `"revokeOffchain"`
@@ -4197,8 +4197,8 @@ export const simulateSignProtocolRevokeOffchain =
   /*#__PURE__*/ createSimulateContract({
     abi: signProtocolAbi,
     address: signProtocolAddress,
-    functionName: 'revokeOffchain',
-  })
+    functionName: "revokeOffchain",
+  });
 
 /**
  * Wraps __{@link simulateContract}__ with `abi` set to __{@link signProtocolAbi}__ and `functionName` set to `"revokeOffchainBatch"`
@@ -4207,8 +4207,8 @@ export const simulateSignProtocolRevokeOffchainBatch =
   /*#__PURE__*/ createSimulateContract({
     abi: signProtocolAbi,
     address: signProtocolAddress,
-    functionName: 'revokeOffchainBatch',
-  })
+    functionName: "revokeOffchainBatch",
+  });
 
 /**
  * Wraps __{@link simulateContract}__ with `abi` set to __{@link signProtocolAbi}__ and `functionName` set to `"setGlobalHook"`
@@ -4217,8 +4217,8 @@ export const simulateSignProtocolSetGlobalHook =
   /*#__PURE__*/ createSimulateContract({
     abi: signProtocolAbi,
     address: signProtocolAddress,
-    functionName: 'setGlobalHook',
-  })
+    functionName: "setGlobalHook",
+  });
 
 /**
  * Wraps __{@link simulateContract}__ with `abi` set to __{@link signProtocolAbi}__ and `functionName` set to `"setPause"`
@@ -4227,8 +4227,8 @@ export const simulateSignProtocolSetPause =
   /*#__PURE__*/ createSimulateContract({
     abi: signProtocolAbi,
     address: signProtocolAddress,
-    functionName: 'setPause',
-  })
+    functionName: "setPause",
+  });
 
 /**
  * Wraps __{@link simulateContract}__ with `abi` set to __{@link signProtocolAbi}__ and `functionName` set to `"transferOwnership"`
@@ -4237,8 +4237,8 @@ export const simulateSignProtocolTransferOwnership =
   /*#__PURE__*/ createSimulateContract({
     abi: signProtocolAbi,
     address: signProtocolAddress,
-    functionName: 'transferOwnership',
-  })
+    functionName: "transferOwnership",
+  });
 
 /**
  * Wraps __{@link simulateContract}__ with `abi` set to __{@link signProtocolAbi}__ and `functionName` set to `"upgradeToAndCall"`
@@ -4247,8 +4247,8 @@ export const simulateSignProtocolUpgradeToAndCall =
   /*#__PURE__*/ createSimulateContract({
     abi: signProtocolAbi,
     address: signProtocolAddress,
-    functionName: 'upgradeToAndCall',
-  })
+    functionName: "upgradeToAndCall",
+  });
 
 /**
  * Wraps __{@link watchContractEvent}__ with `abi` set to __{@link signProtocolAbi}__
@@ -4256,7 +4256,7 @@ export const simulateSignProtocolUpgradeToAndCall =
 export const watchSignProtocolEvent = /*#__PURE__*/ createWatchContractEvent({
   abi: signProtocolAbi,
   address: signProtocolAddress,
-})
+});
 
 /**
  * Wraps __{@link watchContractEvent}__ with `abi` set to __{@link signProtocolAbi}__ and `eventName` set to `"AttestationMade"`
@@ -4265,8 +4265,8 @@ export const watchSignProtocolAttestationMadeEvent =
   /*#__PURE__*/ createWatchContractEvent({
     abi: signProtocolAbi,
     address: signProtocolAddress,
-    eventName: 'AttestationMade',
-  })
+    eventName: "AttestationMade",
+  });
 
 /**
  * Wraps __{@link watchContractEvent}__ with `abi` set to __{@link signProtocolAbi}__ and `eventName` set to `"AttestationRevoked"`
@@ -4275,8 +4275,8 @@ export const watchSignProtocolAttestationRevokedEvent =
   /*#__PURE__*/ createWatchContractEvent({
     abi: signProtocolAbi,
     address: signProtocolAddress,
-    eventName: 'AttestationRevoked',
-  })
+    eventName: "AttestationRevoked",
+  });
 
 /**
  * Wraps __{@link watchContractEvent}__ with `abi` set to __{@link signProtocolAbi}__ and `eventName` set to `"Initialized"`
@@ -4285,8 +4285,8 @@ export const watchSignProtocolInitializedEvent =
   /*#__PURE__*/ createWatchContractEvent({
     abi: signProtocolAbi,
     address: signProtocolAddress,
-    eventName: 'Initialized',
-  })
+    eventName: "Initialized",
+  });
 
 /**
  * Wraps __{@link watchContractEvent}__ with `abi` set to __{@link signProtocolAbi}__ and `eventName` set to `"OffchainAttestationMade"`
@@ -4295,8 +4295,8 @@ export const watchSignProtocolOffchainAttestationMadeEvent =
   /*#__PURE__*/ createWatchContractEvent({
     abi: signProtocolAbi,
     address: signProtocolAddress,
-    eventName: 'OffchainAttestationMade',
-  })
+    eventName: "OffchainAttestationMade",
+  });
 
 /**
  * Wraps __{@link watchContractEvent}__ with `abi` set to __{@link signProtocolAbi}__ and `eventName` set to `"OffchainAttestationRevoked"`
@@ -4305,8 +4305,8 @@ export const watchSignProtocolOffchainAttestationRevokedEvent =
   /*#__PURE__*/ createWatchContractEvent({
     abi: signProtocolAbi,
     address: signProtocolAddress,
-    eventName: 'OffchainAttestationRevoked',
-  })
+    eventName: "OffchainAttestationRevoked",
+  });
 
 /**
  * Wraps __{@link watchContractEvent}__ with `abi` set to __{@link signProtocolAbi}__ and `eventName` set to `"OwnershipTransferred"`
@@ -4315,8 +4315,8 @@ export const watchSignProtocolOwnershipTransferredEvent =
   /*#__PURE__*/ createWatchContractEvent({
     abi: signProtocolAbi,
     address: signProtocolAddress,
-    eventName: 'OwnershipTransferred',
-  })
+    eventName: "OwnershipTransferred",
+  });
 
 /**
  * Wraps __{@link watchContractEvent}__ with `abi` set to __{@link signProtocolAbi}__ and `eventName` set to `"SchemaRegistered"`
@@ -4325,8 +4325,8 @@ export const watchSignProtocolSchemaRegisteredEvent =
   /*#__PURE__*/ createWatchContractEvent({
     abi: signProtocolAbi,
     address: signProtocolAddress,
-    eventName: 'SchemaRegistered',
-  })
+    eventName: "SchemaRegistered",
+  });
 
 /**
  * Wraps __{@link watchContractEvent}__ with `abi` set to __{@link signProtocolAbi}__ and `eventName` set to `"Upgraded"`
@@ -4335,5 +4335,5 @@ export const watchSignProtocolUpgradedEvent =
   /*#__PURE__*/ createWatchContractEvent({
     abi: signProtocolAbi,
     address: signProtocolAddress,
-    eventName: 'Upgraded',
-  })
+    eventName: "Upgraded",
+  });

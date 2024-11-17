@@ -1,5 +1,6 @@
 "use client";
-import React, { useEffect } from "react";
+import React, { useEffect, useState } from "react";
+import Link from "next/link";
 import { useRouter } from "next/navigation";
 import { useSearchParams } from "next/navigation";
 import {
@@ -8,6 +9,7 @@ import {
   useIsLoggedIn,
 } from "@dynamic-labs/sdk-react-core";
 
+import { Button } from "@/components/ui/button";
 import SpinnerPage from "@/components/SpinnerPage";
 import { useSettings } from "@/components/providers/SettingsProvider";
 
@@ -20,9 +22,15 @@ export default function TgLoginPage() {
   const { telegramSignIn, isAuthWithTelegram } = useTelegramLogin();
   const isLoggedIn = useIsLoggedIn();
 
+  const [signInError, setSignInError] = useState<any>("");
+
   const referrerParam = searchParams.get("referrer");
   const referrer =
     referrerParam !== null ? decodeURIComponent(referrerParam) : "/app/store/1";
+
+  useEffect(() => {
+    updateSettings({ authProvider: "dynamic" });
+  })
 
   useEffect(() => {
     if (!sdkHasLoaded) {
@@ -30,20 +38,30 @@ export default function TgLoginPage() {
     }
 
     if (isLoggedIn) {
-      router.push(referrer);
+      setTimeout(()=>{
+        router.push(referrer);
+      }, 1500);
       return;
     }
 
-    (async () => {
-      updateSettings({ authProvider: "dynamic" });
-      const isLinkedWithTelegram = await isAuthWithTelegram();
-      if (isLinkedWithTelegram) {
-        return await telegramSignIn();
-      }
-
-      await telegramSignIn({ forceCreateUser: true });
-    })();
+    telegramSignIn({ forceCreateUser: true }).catch(setSignInError);
   }, [sdkHasLoaded, isLoggedIn]);
 
-  return <SpinnerPage message="Loading TG Login ..." />;
+  return (
+    <SpinnerPage message="Loading TG Login ...">
+        <p>{`referrer: ${referrer}`}</p>
+        <p>{`sdkHasLoaded: ${sdkHasLoaded}`}</p>
+        <p>{`isLoggedIn: ${isLoggedIn}`}</p>
+        <p>{`signInError: ${signInError}`}</p>
+        <div className="mt-2">
+          <Button
+            className=""
+            onClick={() => router.push(referrer)}
+            variant="link"
+            >
+              Continue to {referrer}
+          </Button>
+        </div>
+    </SpinnerPage>
+  );
 }

@@ -29,12 +29,13 @@ export const config: AppConfig = {
     morphHolesky,
     scrollSepolia,
     zircuitTestnet,
-    celo
+    celo,
   ],
 };
 
 export const wagmiConfig = createConfig({
-  chains: [sepolia,
+  chains: [
+    sepolia,
     mainnet,
     base,
     baseSepolia,

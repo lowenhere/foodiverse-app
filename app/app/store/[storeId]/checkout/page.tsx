@@ -14,18 +14,17 @@ import SpinnerPage from "@/components/SpinnerPage";
 import ErrorPage from "@/components/ErrorPage";
 
 export default function StoreCheckout() {
-  const { smartAccountClient, } = useSmartWallet();
+  const { smartAccountClient } = useSmartWallet();
   const { data: walletClient } = useWalletClient();
   const [sdk, setSdk] = useState<FoodiverseSDK | null>(null);
-
+  const [link, setLink] = useState<string | null>(null);
 
   const [confettiActive, setConfettiActive] = useState(false);
   const { data: storeData } = useStore();
-  const { cartItems } = useCart();
-  
+  const { cartItems, clearCart } = useCart();
+
   const [orderLoading, setOrderLoading] = useState(false);
   const [orderError, setOrderError] = useState<string | null>(null);
-
 
   useEffect(() => {
     if (smartAccountClient) {
@@ -36,7 +35,7 @@ export default function StoreCheckout() {
       const foodiverseSDK = new FoodiverseSDK(walletClient);
       setSdk(foodiverseSDK);
     }
-  }, [smartAccountClient, walletClient]); 
+  }, [smartAccountClient, walletClient]);
 
   useEffect(() => {
     handleCreateOrder();
@@ -62,34 +61,37 @@ export default function StoreCheckout() {
 
       console.log("Creating order:", order);
       const result = await sdk.createOrder(order);
+      setLink(result);
       console.log("Order created:", result);
     } catch (err: any) {
       console.error("Failed to create order:", err);
       setOrderError(err.message);
     } finally {
       setOrderLoading(false);
+      clearCart();
+      setConfettiActive(true);
     }
   };
 
-  
   return (
     <div className="flex flex-col items-center justify-center text-center h-full p-4">
-     {
-      orderLoading ??
-      <SpinnerPage message="checking out ..."/>
-     }
+      {orderLoading && <SpinnerPage message="checking out ..." />}
 
-     {orderError ?? <ErrorPage message={orderError}/>}
-     
-     {
-      (!orderLoading && !orderError) ?? 
-      <>
-      <UtensilsCrossed className="h-12 w-12 my-4" />
-      <p className="text-lg font-bold">Congratulations!</p>
-      <p>your order has been made</p>
-      <Confetti active={confettiActive} />
-      </>
-     } 
+      {orderError && <ErrorPage message={orderError} />}
+
+      {!orderLoading && !orderError && (
+        <>
+          <UtensilsCrossed className="h-12 w-12 my-4" />
+          <p className="text-lg font-bold">Congratulations!</p>
+          <p>Your order has been made</p>
+          <Confetti active={confettiActive} />
+          <div className="mt-4">
+            <a href={link} target="_blank" rel="noopener noreferrer">
+              View Order
+            </a>
+          </div>
+        </>
+      )}
     </div>
   );
 }

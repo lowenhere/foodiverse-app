@@ -14,7 +14,7 @@ export type Settings = {
 };
 
 const defaultSettings = {
-  authProvider: "privy",
+  authProvider: "dynamic",
 };
 
 const loadSettingsFromLocalStorage = () => {
