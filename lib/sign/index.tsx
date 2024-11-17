@@ -51,7 +51,7 @@ export class FoodiverseSDK {
     if (smartAccountClient) {
       this.smartAccountClient = smartAccountClient as SmartAccountClient;
       this.client = new SignProtocolClient(SpMode.OnChain, {
-        chain: EvmChains.baseSepolia,
+        chain: smartAccountClient.chain as EvmChains,
         account: privateKeyToAccount(
           "0x0000000000000000000000000000000000000000000000000000000000000001",
         ),
@@ -59,7 +59,7 @@ export class FoodiverseSDK {
       this.isSmartAccount = true;
     } else {
       this.client = new SignProtocolClient(SpMode.OnChain, {
-        chain: EvmChains.baseSepolia,
+        chain: walletClient.chain as EvmChains,
         walletClient: walletClient as WalletClient,
       });
       this.isSmartAccount = false;

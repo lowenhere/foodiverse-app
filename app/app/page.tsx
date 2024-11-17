@@ -8,8 +8,7 @@ import { FoodiverseSDK } from "@/lib/sign";
 import { useEffect, useState } from "react";
 import { Loader2 } from "lucide-react";
 import type { MenuType, MenuItemType } from "@/lib/sign/types";
-import { getWalletClient } from "@wagmi/core";
-import { wagmiConfig } from "@/config";
+
 import { useWalletClient } from "wagmi";
 
 export default function AppHome() {
@@ -35,7 +34,6 @@ export default function AppHome() {
           if (menus.length > 0) {
             const firstMenuItems = menuItems[menus[0].id] || [];
             setMenuItems(firstMenuItems);
-            console.log("Loaded menu items:", firstMenuItems);
           }
         } catch (err) {
           console.error("Failed to load menu items:", err);

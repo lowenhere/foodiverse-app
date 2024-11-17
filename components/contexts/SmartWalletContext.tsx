@@ -99,7 +99,7 @@ function useSmartWalletClient() {
       // Create smart account client
       const client = createSmartAccountClient({
         account: smartAccount,
-        chain: baseSepolia,
+        chain: chain,
         bundlerTransport: http(pimlicoUrl),
         paymaster: pimlicoClient,
         userOperation: {
