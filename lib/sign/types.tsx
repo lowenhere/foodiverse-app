@@ -40,7 +40,7 @@ export type OrderType = {
   createdAt: number;
   updatedAt: number;
   restaurantId: string;
-  items: OrderItemType[];
+  items: string[];
   total: number;
 };
 
