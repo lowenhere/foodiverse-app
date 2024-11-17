@@ -1,7 +1,17 @@
 "use client";
 import { PropsWithChildren } from "react";
 import { PrivyProvider } from "@privy-io/react-auth";
-import { baseSepolia, sepolia } from "viem/chains";
+import {
+  base,
+  baseSepolia,
+  celo,
+  mainnet,
+  mantleSepoliaTestnet,
+  morphHolesky,
+  scrollSepolia,
+  sepolia,
+  zircuitTestnet,
+} from "viem/chains";
 import { wagmiConfig } from "@/config";
 import { WagmiProvider } from "@privy-io/wagmi";
 
@@ -31,7 +41,17 @@ export function Web3ProvidersPrivy({ children }: PropsWithChildren) {
           createOnLogin: "all-users",
         },
         defaultChain: baseSepolia,
-        supportedChains: [baseSepolia, sepolia],
+        supportedChains: [
+          sepolia,
+          mainnet,
+          base,
+          baseSepolia,
+          mantleSepoliaTestnet,
+          morphHolesky,
+          scrollSepolia,
+          zircuitTestnet,
+          celo,
+        ],
       }}
     >
       <WagmiProvider config={wagmiConfig}>{children}</WagmiProvider>

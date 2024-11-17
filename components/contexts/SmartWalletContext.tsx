@@ -1,14 +1,8 @@
 import React, { createContext, useContext } from "react";
 import { SmartAccountClient } from "permissionless";
 import { useState, useEffect, useCallback } from "react";
-import { usePrivy, useWallets } from "@privy-io/react-auth";
-import {
-  usePublicClient,
-  useChainId,
-  useAccount,
-  useWalletClient,
-} from "wagmi";
-import { http, createWalletClient, custom, createPublicClient } from "viem";
+import { usePublicClient, useWalletClient } from "wagmi";
+import { WalletClient, http } from "viem";
 import { createSmartAccountClient } from "permissionless";
 import { toSimpleSmartAccount } from "permissionless/accounts";
 import { createPimlicoClient } from "permissionless/clients/pimlico";
@@ -39,7 +33,8 @@ function useSmartWalletClient() {
 
   const [smartAccountClient, setSmartAccountClient] =
     useState<SmartAccountClient | null>(null);
-  const [wagmiWalletClient, setWagmiWalletClient] = useState<any>(null);
+  const [wagmiWalletClient, setWagmiWalletClient] =
+    useState<WalletClient | null>(null);
   const [isLoading, setIsLoading] = useState(false);
   const [error, setError] = useState<string | null>(null);
   const [isInitialized, setIsInitialized] = useState(false);
@@ -62,16 +57,18 @@ function useSmartWalletClient() {
 
       // await setActiveWallet(embeddedWallet);
 
-      const chain = walletClient?.chain;
-      if (!chain) throw new Error("Chain not found");
+      console.log("🚀 | setupClients | walletClient:", walletClient);
 
-      const publicClient = createPublicClient({
-        chain: baseSepolia,
-        transport: http("https://base-sepolia-rpc.publicnode.com"),
-      });
+      const chain = walletClient?.chain;
+      // if (!chain) throw new Error("Chain not found");
+
+      // const publicClient = createPublicClient({
+      //   chain: baseSepolia,
+      //   transport: http("https://base-sepolia-rpc.publicnode.com"),
+      // });
 
       // Create Pimlico client
-      const pimlicoUrl = `https://api.pimlico.io/v2/${chain.id}/rpc?apikey=${process.env.NEXT_PUBLIC_PIMLICO_API_KEY}`;
+      const pimlicoUrl = `https://api.pimlico.io/v2/${chain?.id}/rpc?apikey=${process.env.NEXT_PUBLIC_PIMLICO_API_KEY}`;
       const pimlicoClient = createPimlicoClient({
         transport: http(pimlicoUrl),
         entryPoint: {
@@ -80,6 +77,7 @@ function useSmartWalletClient() {
         },
       });
 
+      console.log("🚀 | setupClients | pimlicoUrl:", pimlicoUrl);
       if (!publicClient) {
         throw new Error("Public client not available");
       }
@@ -119,11 +117,13 @@ function useSmartWalletClient() {
     } finally {
       setIsLoading(false);
     }
-  }, [setActiveWallet, walletClient, publicClient, isInitialized]);
+  }, [walletClient, publicClient]);
 
   useEffect(() => {
-    setupClients();
-  }, [setupClients]);
+    if (walletClient) {
+      setupClients();
+    }
+  }, [setupClients, walletClient]);
 
   return {
     smartAccountClient,

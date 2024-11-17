@@ -5,6 +5,7 @@ import { DynamicWagmiConnector } from "@dynamic-labs/wagmi-connector";
 import { WagmiProvider } from "wagmi";
 import { QueryClient, QueryClientProvider } from "@tanstack/react-query";
 import { wagmiConfig } from "@/config";
+import { Web3ProvidersWagmi } from "./Web3ProvidersWagmi";
 
 const queryClient = new QueryClient();
 
@@ -23,7 +24,9 @@ export function Web3ProvidersDynamic({ children }: { children: ReactNode }) {
         walletConnectors: [EthereumWalletConnectors],
       }}
     >
+      {/* <Web3ProvidersWagmi> */}
       <DynamicWagmiConnector>{children}</DynamicWagmiConnector>
+      {/* </Web3ProvidersWagmi> */}
     </DynamicContextProvider>
   );
 }

@@ -8,10 +8,14 @@ import { FoodiverseSDK } from "@/lib/sign";
 import { useEffect, useState } from "react";
 import { Loader2 } from "lucide-react";
 import type { MenuType, MenuItemType } from "@/lib/sign/types";
+import { getWalletClient } from "@wagmi/core";
+import { wagmiConfig } from "@/config";
+import { useWalletClient } from "wagmi";
 
 export default function AppHome() {
   const { smartAccountClient, isLoading, error } = useSmartWallet();
   const [sdk, setSdk] = useState<FoodiverseSDK | null>(null);
+  const { data: walletClient } = useWalletClient();
   const [orderLoading, setOrderLoading] = useState(false);
   const [orderError, setOrderError] = useState<string | null>(null);
   const [menuItems, setMenuItems] = useState<MenuItemType[]>([]);
@@ -19,7 +23,8 @@ export default function AppHome() {
   useEffect(() => {
     if (smartAccountClient) {
       // Initialize SDK with smart account
-      const foodiverseSDK = new FoodiverseSDK(smartAccountClient);
+
+      const foodiverseSDK = new FoodiverseSDK(walletClient, smartAccountClient);
       setSdk(foodiverseSDK);
 
       // Load menu items
@@ -38,8 +43,11 @@ export default function AppHome() {
       };
 
       loadMenuItems();
+    } else if (walletClient) {
+      const foodiverseSDK = new FoodiverseSDK(walletClient);
+      setSdk(foodiverseSDK);
     }
-  }, [smartAccountClient]);
+  }, [smartAccountClient, walletClient]);
 
   const handleCreateOrder = async () => {
     if (!sdk || menuItems.length === 0) return;
@@ -48,15 +56,22 @@ export default function AppHome() {
     setOrderError(null);
 
     try {
-      // Use the first two menu items from the loaded items
-      const orderItems = [
-        { menuItemId: menuItems[0].id, quantity: 1 },
-        { menuItemId: menuItems[1].id, quantity: 2, notes: "Extra spicy" },
-      ];
+      // Create order object matching OrderType
+      const order = {
+        id: crypto.randomUUID(), // Generate unique ID
+        status: "pending" as const,
+        createdAt: Math.floor(Date.now() / 1000),
+        updatedAt: Math.floor(Date.now() / 1000),
+        restaurantId: "1", // Using restaurant ID from context
+        items: [menuItems[0].id, menuItems[1].id], // Array of menu item IDs
+        total: Number(
+          BigInt(menuItems[0].price) + BigInt(menuItems[1].price) * BigInt(2),
+        ), // Calculate total with BigInt
+      };
 
-      console.log("Creating order with items:", orderItems);
-      const order = await sdk.createOrderWithItems("1", orderItems);
-      console.log("Order created:", order);
+      console.log("Creating order:", order);
+      const result = await sdk.createOrder(order);
+      console.log("Order created:", result);
     } catch (err: any) {
       console.error("Failed to create order:", err);
       setOrderError(err.message);
