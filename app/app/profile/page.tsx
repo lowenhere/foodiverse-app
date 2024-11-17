@@ -16,6 +16,7 @@ export default function ProfilePage() {
   const router = useRouter();
   const { settings } = useSettings();
   const { address } = useAccount();
+  const { ensName } = useReverseEnsLookup(address);
 
   let content = <p>Provider {settings.authProvider} not implemented</p>;
   if (settings.authProvider === "privy") {
@@ -34,8 +35,6 @@ export default function ProfilePage() {
   }
 
   if (settings.authProvider === "dynamic") {
-    const { ensName } = useReverseEnsLookup(address);
-
     return (
       <>
         <div className="w-full flex flex-col items-center mb-4">
