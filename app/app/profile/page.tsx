@@ -42,7 +42,12 @@ export default function ProfilePage() {
           <h2 className="text-l font-bold">ENS Profile</h2>
           <div className="flex flex-row items-center my-2 container max-w-3xl">
             <div className="flex w-full items-center space-x-2">
-              <Input type="string" className="grow pointer-events-none" disabled value={ensName ?? address}/>
+              <Input
+                type="string"
+                className="grow pointer-events-none"
+                disabled
+                value={ensName ?? address}
+              />
               <Button
                 disabled={ensName !== ""}
                 onClick={() => {

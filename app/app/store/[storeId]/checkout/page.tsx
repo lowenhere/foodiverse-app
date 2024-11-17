@@ -1,32 +1,22 @@
 "use client";
-import { useWallets, getEmbeddedConnectedWallet } from "@privy-io/react-auth";
+import { useState, useEffect } from "react";
+import { UtensilsCrossed } from "lucide-react";
+
+import Confetti from "react-dom-confetti";
 
 export default function StoreCheckout() {
-  const { ready, wallets } = useWallets();
+  const [active, setActive] = useState(false);
 
-  const logProvider = async () => {
-    const embeddedWallet = getEmbeddedConnectedWallet(wallets);
-    const provider = await embeddedWallet?.getEthereumProvider();
-    console.log("provider", provider);
-  };
-
-  if (!ready) {
-    return (
-      <>
-        <span className="loading loading-spinner loading-lg"></span>
-        <p className="my-4">setting up store checkout ...</p>
-      </>
-    );
-  }
+  setTimeout(() => {
+    setActive(true);
+  }, 1500);  
 
   return (
-    <div>
-      <button
-        className="mt-4 px-4 py-2 bg-blue-500 text-white rounded hover:bg-blue-600"
-        onClick={logProvider}
-      >
-        Do the thing
-      </button>
+    <div className="flex flex-col items-center justify-center text-center h-full p-4">
+      <UtensilsCrossed className="h-12 w-12 my-4" />
+      <p className="text-lg font-bold">Congratulations!</p>
+      <p>your order has been made</p>
+      <Confetti active={active} />
     </div>
   );
 }
