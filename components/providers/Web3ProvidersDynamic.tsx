@@ -24,9 +24,9 @@ export function Web3ProvidersDynamic({ children }: { children: ReactNode }) {
         walletConnectors: [EthereumWalletConnectors],
       }}
     >
-      {/* <Web3ProvidersWagmi> */}
-      <DynamicWagmiConnector>{children}</DynamicWagmiConnector>
-      {/* </Web3ProvidersWagmi> */}
+      <Web3ProvidersWagmi>
+        <DynamicWagmiConnector>{children}</DynamicWagmiConnector>
+      </Web3ProvidersWagmi>
     </DynamicContextProvider>
   );
 }
